@@ -13,6 +13,8 @@
 
 IB_DESIGNABLE  // 动态刷新
 
+static NSString *IMAGE_URL_HEAD = @"";
+
 @interface ESImageView : UIImageView<ICollectible,IReleasable,Initializble>
 
 /**
@@ -90,5 +92,7 @@ IB_DESIGNABLE  // 动态刷新
  @param urlBody  图片网络尾地址
  **/
 -(void) setImgWithUrlBody:(NSString*) urlBody;
+
++(NSString*) getImageUrlHead;
 
 @end

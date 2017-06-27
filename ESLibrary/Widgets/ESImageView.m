@@ -9,7 +9,6 @@
 
 @implementation ESImageView
 
-static NSString *IMAGE_URL_HEAD;
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     
@@ -114,6 +113,10 @@ static NSString *IMAGE_URL_HEAD;
 -(NSString*) getName
 {
     return _name;
+}
+
++(NSString *)getImageUrlHead{
+    return IMAGE_URL_HEAD;
 }
 
 @end
