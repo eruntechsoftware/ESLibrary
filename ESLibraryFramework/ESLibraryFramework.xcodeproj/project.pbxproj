@@ -192,6 +192,13 @@
 		3A112FD01F024AA3009B1D13 /* DALabeledCircularProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112F771F024AA3009B1D13 /* DALabeledCircularProgressView.h */; };
 		3A112FD11F024AA3009B1D13 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112F781F024AA3009B1D13 /* DALabeledCircularProgressView.m */; };
 		3A112FD21F024AA3009B1D13 /* ZLPhotoLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3A112F791F024AA3009B1D13 /* ZLPhotoLib.bundle */; };
+		3A112FD71F038243009B1D13 /* ESViewPager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FD41F038243009B1D13 /* ESViewPager.h */; };
+		3A112FD81F038243009B1D13 /* ESViewPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FD51F038243009B1D13 /* ESViewPager.m */; };
+		3A112FD91F038243009B1D13 /* ESViewPagerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FD61F038243009B1D13 /* ESViewPagerDelegate.h */; };
+		3A112FE41F038E92009B1D13 /* ESBanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FE01F038E92009B1D13 /* ESBanner.h */; };
+		3A112FE51F038E92009B1D13 /* ESBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FE11F038E92009B1D13 /* ESBanner.m */; };
+		3A112FE61F038E92009B1D13 /* ESPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FE21F038E92009B1D13 /* ESPageControl.h */; };
+		3A112FE71F038E92009B1D13 /* ESPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FE31F038E92009B1D13 /* ESPageControl.m */; };
 		3AA16B161EFA08DC00FA5CDA /* ESTextFieldEmail.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA16B0E1EFA08DC00FA5CDA /* ESTextFieldEmail.h */; };
 		3AA16B171EFA08DC00FA5CDA /* ESTextFieldEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA16B0F1EFA08DC00FA5CDA /* ESTextFieldEmail.m */; };
 		3AA16B181EFA08DC00FA5CDA /* ESTextFieldIDCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA16B101EFA08DC00FA5CDA /* ESTextFieldIDCard.h */; };
@@ -397,6 +404,13 @@
 		3A112F771F024AA3009B1D13 /* DALabeledCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALabeledCircularProgressView.h; sourceTree = "<group>"; };
 		3A112F781F024AA3009B1D13 /* DALabeledCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALabeledCircularProgressView.m; sourceTree = "<group>"; };
 		3A112F791F024AA3009B1D13 /* ZLPhotoLib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZLPhotoLib.bundle; sourceTree = "<group>"; };
+		3A112FD41F038243009B1D13 /* ESViewPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESViewPager.h; sourceTree = "<group>"; };
+		3A112FD51F038243009B1D13 /* ESViewPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESViewPager.m; sourceTree = "<group>"; };
+		3A112FD61F038243009B1D13 /* ESViewPagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESViewPagerDelegate.h; sourceTree = "<group>"; };
+		3A112FE01F038E92009B1D13 /* ESBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBanner.h; sourceTree = "<group>"; };
+		3A112FE11F038E92009B1D13 /* ESBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBanner.m; sourceTree = "<group>"; };
+		3A112FE21F038E92009B1D13 /* ESPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPageControl.h; sourceTree = "<group>"; };
+		3A112FE31F038E92009B1D13 /* ESPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPageControl.m; sourceTree = "<group>"; };
 		3AA16B0E1EFA08DC00FA5CDA /* ESTextFieldEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTextFieldEmail.h; sourceTree = "<group>"; };
 		3AA16B0F1EFA08DC00FA5CDA /* ESTextFieldEmail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESTextFieldEmail.m; sourceTree = "<group>"; };
 		3AA16B101EFA08DC00FA5CDA /* ESTextFieldIDCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTextFieldIDCard.h; sourceTree = "<group>"; };
@@ -597,6 +611,8 @@
 		3A05AF821ED28B4C00E69992 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				3A112FDF1F038E92009B1D13 /* ESBanner */,
+				3A112FD31F038243009B1D13 /* ESViewPager */,
 				3A112F0F1F024AA3009B1D13 /* SKFCamera */,
 				3A112F381F024AA3009B1D13 /* ZLPhotoLib */,
 				3A112F0B1F024A2C009B1D13 /* ESPhotoAddView.h */,
@@ -900,6 +916,27 @@
 			path = DACircularProgress;
 			sourceTree = "<group>";
 		};
+		3A112FD31F038243009B1D13 /* ESViewPager */ = {
+			isa = PBXGroup;
+			children = (
+				3A112FD41F038243009B1D13 /* ESViewPager.h */,
+				3A112FD51F038243009B1D13 /* ESViewPager.m */,
+				3A112FD61F038243009B1D13 /* ESViewPagerDelegate.h */,
+			);
+			path = ESViewPager;
+			sourceTree = "<group>";
+		};
+		3A112FDF1F038E92009B1D13 /* ESBanner */ = {
+			isa = PBXGroup;
+			children = (
+				3A112FE01F038E92009B1D13 /* ESBanner.h */,
+				3A112FE11F038E92009B1D13 /* ESBanner.m */,
+				3A112FE21F038E92009B1D13 /* ESPageControl.h */,
+				3A112FE31F038E92009B1D13 /* ESPageControl.m */,
+			);
+			path = ESBanner;
+			sourceTree = "<group>";
+		};
 		7D8C653C703EE27B5C39A97B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -925,6 +962,7 @@
 				3A05AFDB1ED28B4C00E69992 /* IReleasable.h in Headers */,
 				3A05AFB01ED28B4C00E69992 /* ESControlSearcher.h in Headers */,
 				3A05AFAE1ED28B4C00E69992 /* ESValidatorViewController.h in Headers */,
+				3A112FE41F038E92009B1D13 /* ESBanner.h in Headers */,
 				3A05AFDE1ED28B4C00E69992 /* IValidator.h in Headers */,
 				3A05AFDA1ED28B4C00E69992 /* Initializble.h in Headers */,
 				3A112F831F024AA3009B1D13 /* UIImage+FixOrientation.h in Headers */,
@@ -954,6 +992,7 @@
 				3A112FBD1F024AA3009B1D13 /* ZLPhotoPickerAssetsViewController.h in Headers */,
 				3A112FB31F024AA3009B1D13 /* ZLPhotoAssets.h in Headers */,
 				3AD5EA601F00EFB0003F85D8 /* UIView+UIViewBorderStyle.h in Headers */,
+				3A112FE61F038E92009B1D13 /* ESPageControl.h in Headers */,
 				3A05AFC41ED28B4C00E69992 /* ESDataIndexOf.h in Headers */,
 				3A112F941F024AA3009B1D13 /* UIView+layoutnew.h in Headers */,
 				3A112FAF1F024AA3009B1D13 /* ZLPhotoPickerBrowserPhotoView.h in Headers */,
@@ -968,6 +1007,7 @@
 				3A05AFB61ED28B4C00E69992 /* BaseViewController.h in Headers */,
 				3AD5EA5E1F00EFB0003F85D8 /* ESImageView.h in Headers */,
 				3A05AFD41ED28B4C00E69992 /* DataType.h in Headers */,
+				3A112FD91F038243009B1D13 /* ESViewPagerDelegate.h in Headers */,
 				3A05AFC81ED28B4C00E69992 /* ESNSString.h in Headers */,
 				3A05AFD61ED28B4C00E69992 /* ICollector.h in Headers */,
 				3A05AFBA1ED28B4C00E69992 /* UINavigationBar_Hidden.h in Headers */,
@@ -1017,6 +1057,7 @@
 				3A112F9A1F024AA3009B1D13 /* TOCropToolbar.h in Headers */,
 				3A05AFD01ED28B4C00E69992 /* DataCollection.h in Headers */,
 				3A05AFC61ED28B4C00E69992 /* ESFile.h in Headers */,
+				3A112FD71F038243009B1D13 /* ESViewPager.h in Headers */,
 				3A05AFB21ED28B4C00E69992 /* BaseNavigationController.h in Headers */,
 				3A05AFBD1ED28B4C00E69992 /* ESEncoding.h in Headers */,
 				3A112FA01F024AA3009B1D13 /* UIView+ZLExtension.h in Headers */,
@@ -1142,6 +1183,7 @@
 				3A05AFE31ED28B4C00E69992 /* ESButton.m in Sources */,
 				3A05AFC91ED28B4C00E69992 /* ESNSString.m in Sources */,
 				3A112FAA1F024AA3009B1D13 /* ZLPhotoPickerBrowserViewController.m in Sources */,
+				3A112FD81F038243009B1D13 /* ESViewPager.m in Sources */,
 				3A112F801F024AA3009B1D13 /* LLSimpleCamera.m in Sources */,
 				3A112F7E1F024AA3009B1D13 /* LLSimpleCamera+Helper.m in Sources */,
 				3A112F9D1F024AA3009B1D13 /* TOCropView.m in Sources */,
@@ -1179,6 +1221,7 @@
 				3A112F951F024AA3009B1D13 /* UIView+layoutnew.m in Sources */,
 				3A112FA41F024AA3009B1D13 /* ZLPhotoPickerBrowserPhoto.m in Sources */,
 				3AA16B1D1EFA08DC00FA5CDA /* ESTextFieldNumber.m in Sources */,
+				3A112FE71F038E92009B1D13 /* ESPageControl.m in Sources */,
 				3A112F9B1F024AA3009B1D13 /* TOCropToolbar.m in Sources */,
 				3A05AFFD1ED28B4C00E69992 /* UIButton+Bootstrap.m in Sources */,
 				3A05AFC71ED28B4C00E69992 /* ESFile.m in Sources */,
@@ -1191,6 +1234,7 @@
 				3A05AFB51ED28B4C00E69992 /* BaseTableViewController.m in Sources */,
 				3A112FB61F024AA3009B1D13 /* ZLPhotoPickerDatas.m in Sources */,
 				3A112F991F024AA3009B1D13 /* TOCropScrollView.m in Sources */,
+				3A112FE51F038E92009B1D13 /* ESBanner.m in Sources */,
 				3AD5EA611F00EFB0003F85D8 /* UIView+UIViewBorderStyle.m in Sources */,
 				3A112FAE1F024AA3009B1D13 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */,
 				3A05AFCF1ED28B4C00E69992 /* Data.m in Sources */,
