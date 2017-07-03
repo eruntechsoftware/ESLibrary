@@ -331,6 +331,38 @@ static UIColor *NavigationBar_barTintColor;
 }
 
 /**
+ 设置透明的topbar并设置左侧返回按钮
+ @param viewController 当前视图控制器
+ @param textColor 标题文本颜色
+ @param backImg 左侧返回按钮
+ **/
+-(void)setTransparentStyleBarWithViewController:(BaseViewController*)viewController titleTextColor:(UIColor*)textColor backImage:(UIImage*)backImg{
+    
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+    self.navigationBar.barStyle=UIStatusBarStyleDefault;
+    
+    [self.navigationBar setBackgroundColor:[UIColor clearColor]];
+    [self.navigationBar setTranslucent:YES];
+    
+    NSDictionary<NSString *,id>* navigationTitleAttribute=@{NSForegroundColorAttributeName:textColor};
+    self.navigationBar.titleTextAttributes = navigationTitleAttribute;
+    
+    //实例化按钮
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 90, self.navigationBar.frame.size.height)];
+    
+    //实例化图片视图
+    UIImageView* backImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 8, 25, 25)];
+    backImage.image = backImg;
+    
+    [backButton addSubview:backImage];
+    //添加事件
+    [backButton addTarget:self action:@selector(popViewControllerAnimated)  forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem  *barButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    
+    viewController.navigationItem.leftBarButtonItem = barButton;
+}
+
+/**
  恢复topbar的普通状态
  **/
 -(void)resumeNormalStyleBarWithViewController:(BaseViewController *)viewController{

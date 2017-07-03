@@ -133,4 +133,12 @@
  @param viewController 当前视图控制器
  **/
 -(void)resumeNormalStyleBarWithViewController:(BaseViewController*)viewController;
+
+/**
+ 设置透明的topbar并设置左侧返回按钮
+ @param viewController 当前视图控制器
+ @param textColor 标题文本颜色
+ @param backImg 左侧返回按钮
+ **/
+-(void)setTransparentStyleBarWithViewController:(BaseViewController*)viewController titleTextColor:(UIColor*)textColor backImage:(UIImage*)backImg;
 @end
