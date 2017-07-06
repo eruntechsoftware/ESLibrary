@@ -199,6 +199,13 @@
 		3A112FE51F038E92009B1D13 /* ESBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FE11F038E92009B1D13 /* ESBanner.m */; };
 		3A112FE61F038E92009B1D13 /* ESPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FE21F038E92009B1D13 /* ESPageControl.h */; };
 		3A112FE71F038E92009B1D13 /* ESPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FE31F038E92009B1D13 /* ESPageControl.m */; };
+		3A112FEB1F0B4042009B1D13 /* ImageCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FE91F0B4042009B1D13 /* ImageCollectionView.h */; };
+		3A112FEC1F0B4042009B1D13 /* ImageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FEA1F0B4042009B1D13 /* ImageCollectionView.m */; };
+		3A112FF01F0B4074009B1D13 /* ImageGardCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FED1F0B4074009B1D13 /* ImageGardCollectionViewCell.h */; };
+		3A112FF11F0B4074009B1D13 /* ImageGardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FEE1F0B4074009B1D13 /* ImageGardCollectionViewCell.m */; };
+		3A112FF21F0B4074009B1D13 /* ImageGardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A112FEF1F0B4074009B1D13 /* ImageGardCollectionViewCell.xib */; };
+		3A112FF51F0E1986009B1D13 /* CalculateViewWidth.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FF31F0E1986009B1D13 /* CalculateViewWidth.h */; };
+		3A112FF61F0E1986009B1D13 /* CalculateViewWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FF41F0E1986009B1D13 /* CalculateViewWidth.m */; };
 		3AA16B161EFA08DC00FA5CDA /* ESTextFieldEmail.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA16B0E1EFA08DC00FA5CDA /* ESTextFieldEmail.h */; };
 		3AA16B171EFA08DC00FA5CDA /* ESTextFieldEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA16B0F1EFA08DC00FA5CDA /* ESTextFieldEmail.m */; };
 		3AA16B181EFA08DC00FA5CDA /* ESTextFieldIDCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA16B101EFA08DC00FA5CDA /* ESTextFieldIDCard.h */; };
@@ -411,6 +418,13 @@
 		3A112FE11F038E92009B1D13 /* ESBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBanner.m; sourceTree = "<group>"; };
 		3A112FE21F038E92009B1D13 /* ESPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPageControl.h; sourceTree = "<group>"; };
 		3A112FE31F038E92009B1D13 /* ESPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPageControl.m; sourceTree = "<group>"; };
+		3A112FE91F0B4042009B1D13 /* ImageCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionView.h; sourceTree = "<group>"; };
+		3A112FEA1F0B4042009B1D13 /* ImageCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionView.m; sourceTree = "<group>"; };
+		3A112FED1F0B4074009B1D13 /* ImageGardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageGardCollectionViewCell.h; sourceTree = "<group>"; };
+		3A112FEE1F0B4074009B1D13 /* ImageGardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageGardCollectionViewCell.m; sourceTree = "<group>"; };
+		3A112FEF1F0B4074009B1D13 /* ImageGardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageGardCollectionViewCell.xib; sourceTree = "<group>"; };
+		3A112FF31F0E1986009B1D13 /* CalculateViewWidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculateViewWidth.h; sourceTree = "<group>"; };
+		3A112FF41F0E1986009B1D13 /* CalculateViewWidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculateViewWidth.m; sourceTree = "<group>"; };
 		3AA16B0E1EFA08DC00FA5CDA /* ESTextFieldEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTextFieldEmail.h; sourceTree = "<group>"; };
 		3AA16B0F1EFA08DC00FA5CDA /* ESTextFieldEmail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESTextFieldEmail.m; sourceTree = "<group>"; };
 		3AA16B101EFA08DC00FA5CDA /* ESTextFieldIDCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTextFieldIDCard.h; sourceTree = "<group>"; };
@@ -611,6 +625,7 @@
 		3A05AF821ED28B4C00E69992 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				3A112FE81F0B4024009B1D13 /* ImageCollectionView */,
 				3A112FDF1F038E92009B1D13 /* ESBanner */,
 				3A112FD31F038243009B1D13 /* ESViewPager */,
 				3A112F0F1F024AA3009B1D13 /* SKFCamera */,
@@ -937,6 +952,20 @@
 			path = ESBanner;
 			sourceTree = "<group>";
 		};
+		3A112FE81F0B4024009B1D13 /* ImageCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				3A112FF31F0E1986009B1D13 /* CalculateViewWidth.h */,
+				3A112FF41F0E1986009B1D13 /* CalculateViewWidth.m */,
+				3A112FED1F0B4074009B1D13 /* ImageGardCollectionViewCell.h */,
+				3A112FEE1F0B4074009B1D13 /* ImageGardCollectionViewCell.m */,
+				3A112FEF1F0B4074009B1D13 /* ImageGardCollectionViewCell.xib */,
+				3A112FE91F0B4042009B1D13 /* ImageCollectionView.h */,
+				3A112FEA1F0B4042009B1D13 /* ImageCollectionView.m */,
+			);
+			path = ImageCollectionView;
+			sourceTree = "<group>";
+		};
 		7D8C653C703EE27B5C39A97B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1025,6 +1054,7 @@
 				3A112F8F1F024AA3009B1D13 /* UIImage+CropRotate.h in Headers */,
 				3A05AFF21ED28B4C00E69992 /* ESTextField.h in Headers */,
 				3A112FCB1F024AA3009B1D13 /* ZLPhotoPickerImageView.h in Headers */,
+				3A112FF51F0E1986009B1D13 /* CalculateViewWidth.h in Headers */,
 				3A112F8D1F024AA3009B1D13 /* TOCropViewControllerTransitioning.h in Headers */,
 				3A112F9E1F024AA3009B1D13 /* UIImage+ZLPhotoLib.h in Headers */,
 				3A05AFCE1ED28B4C00E69992 /* Data.h in Headers */,
@@ -1043,6 +1073,7 @@
 				3A112FBB1F024AA3009B1D13 /* ZLNavigationController.h in Headers */,
 				3A05AFEC1ED28B4C00E69992 /* ESButtonSave.h in Headers */,
 				3A05AFCA1ED28B4C00E69992 /* GUID.h in Headers */,
+				3A112FEB1F0B4042009B1D13 /* ImageCollectionView.h in Headers */,
 				3A112FAB1F024AA3009B1D13 /* ZLPhotoPickerBrowserPhotoImageView.h in Headers */,
 				3A112FB11F024AA3009B1D13 /* ZLPhotoPickerCustomToolBarView.h in Headers */,
 				3A05AFBE1ED28B4C00E69992 /* SQLExpression.h in Headers */,
@@ -1055,6 +1086,7 @@
 				3A05AFFA1ED28B4C00E69992 /* NSString+FontAwesome.h in Headers */,
 				3A112FB51F024AA3009B1D13 /* ZLPhotoPickerDatas.h in Headers */,
 				3A112F9A1F024AA3009B1D13 /* TOCropToolbar.h in Headers */,
+				3A112FF01F0B4074009B1D13 /* ImageGardCollectionViewCell.h in Headers */,
 				3A05AFD01ED28B4C00E69992 /* DataCollection.h in Headers */,
 				3A05AFC61ED28B4C00E69992 /* ESFile.h in Headers */,
 				3A112FD71F038243009B1D13 /* ESViewPager.h in Headers */,
@@ -1125,6 +1157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A112FF21F0B4074009B1D13 /* ImageGardCollectionViewCell.xib in Resources */,
 				3A112F7C1F024AA3009B1D13 /* camera-flash@2x.png in Resources */,
 				3A112F7A1F024AA3009B1D13 /* ALCameraViewAssets.xcassets in Resources */,
 				3A112FD21F024AA3009B1D13 /* ZLPhotoLib.bundle in Resources */,
@@ -1189,6 +1222,8 @@
 				3A112F9D1F024AA3009B1D13 /* TOCropView.m in Sources */,
 				3A05AFF71ED28B4C00E69992 /* ESView.m in Sources */,
 				3A112FC81F024AA3009B1D13 /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */,
+				3A112FF11F0B4074009B1D13 /* ImageGardCollectionViewCell.m in Sources */,
+				3A112FEC1F0B4042009B1D13 /* ImageCollectionView.m in Sources */,
 				3A112FB81F024AA3009B1D13 /* ZLPhotoPickerGroup.m in Sources */,
 				3A05AFB11ED28B4C00E69992 /* ESControlSearcher.m in Sources */,
 				3A05AFF51ED28B4C00E69992 /* ESTextView.m in Sources */,
@@ -1199,6 +1234,7 @@
 				3A112FC21F024AA3009B1D13 /* ZLPhotoPickerViewController.m in Sources */,
 				3A05AFB91ED28B4C00E69992 /* PopAnimation.m in Sources */,
 				3A05AFF31ED28B4C00E69992 /* ESTextField.m in Sources */,
+				3A112FF61F0E1986009B1D13 /* CalculateViewWidth.m in Sources */,
 				3A05B0011ED28B4C00E69992 /* UIView+LayerEffects.m in Sources */,
 				3A112F821F024AA3009B1D13 /* UIImage+Crop.m in Sources */,
 				3A05AFB31ED28B4C00E69992 /* BaseNavigationController.m in Sources */,
