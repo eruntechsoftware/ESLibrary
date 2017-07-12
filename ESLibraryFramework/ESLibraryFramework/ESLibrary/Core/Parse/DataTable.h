@@ -9,13 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "DataCollection.h"
 
-@interface DataTable : NSObject<NSFastEnumeration> {
+@interface DataTable : NSMutableArray<NSObject> {
 @private
     //存储数据的容器
     NSMutableArray* _array;
-    //当前位置索引
-    int currIndex;
-    DataCollection* __unsafe_unretained _Nullable numbers[2000];
 }
 
 /**
@@ -60,11 +57,6 @@
  @return 元素长度
  **/
 -(NSUInteger)count;
-
-/**
- 转换成数组
- **/
--(void)convert2Array;
 
 /**
  获取当前对象的迭代器

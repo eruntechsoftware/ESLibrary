@@ -11,6 +11,7 @@
 /**数据校验类***/
 @interface Validator : NSObject{
     NSRegularExpression *_regex;
+    NSString* _expression;
 }
 
 /**

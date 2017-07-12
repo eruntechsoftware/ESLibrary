@@ -13,7 +13,7 @@
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if(self){
-        self.regularExpression = @"/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/";
+        self.regularExpression = [DataTypeExpression idCard];
         self.regularTooltip = @"请输入正确的身份证号码";
         self.placeholder = @"身份证";
     }
@@ -23,7 +23,7 @@
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if(self){
-        self.regularExpression = @"/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/";
+        self.regularExpression = [DataTypeExpression idCard];
         self.regularTooltip = @"请输入正确的身份证号码";
         self.placeholder = @"身份证";
     }

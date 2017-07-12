@@ -19,6 +19,7 @@
 -(id)initWithExpression:(NSString*) expression{
     self = [super init];
     if(expression!=nil && ![expression isEmpty]){
+        _expression = expression;
         _regex = [[NSRegularExpression alloc] initWithPattern:expression options:0 error:nil];
     }
     return self;
@@ -26,10 +27,13 @@
 
 -(BOOL) validataWithValue:(NSString*)value{
     if(_regex!=nil){
-        NSArray *results = [_regex matchesInString:value options:0 range:NSMakeRange(0, value.length)];
-        if (results!=nil && results.count>0) {
-            return YES;
-        }
+        NSRange range = [value rangeOfString:_expression
+                                     options:NSRegularExpressionSearch | NSAnchoredSearch | NSCaseInsensitiveSearch
+                                       range:NSMakeRange(0, value.length)
+                                      locale:[NSLocale currentLocale]];
+        // 断言/检索/替换
+        bool exist = range.location != NSNotFound;
+        return exist;
     }
     return NO;
 }

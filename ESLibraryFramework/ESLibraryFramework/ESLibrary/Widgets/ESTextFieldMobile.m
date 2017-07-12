@@ -13,7 +13,7 @@
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if(self){
-        self.regularExpression = @"/^1[3456789]\d{9}$";
+        self.regularExpression = [DataTypeExpression mobile];
         self.regularTooltip = @"请输入正确的手机号";
         self.placeholder = @"大陆地区手机号";
         self.keyboardType = UIKeyboardTypePhonePad;
@@ -24,7 +24,7 @@
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if(self){
-        self.regularExpression = @"/^1[3456789]\d{9}$";
+        self.regularExpression = [DataTypeExpression mobile];
         self.regularTooltip = @"请输入正确的手机号";
         self.placeholder = @"大陆地区手机号";
         self.keyboardType = UIKeyboardTypePhonePad;

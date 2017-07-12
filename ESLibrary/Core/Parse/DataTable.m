@@ -30,7 +30,7 @@
 -(void)addObject:(nonnull id)anObject{
     if(_array!=nil){
         [_array addObject:anObject];
-        [self convert2Array];
+//        [self convert2Array];
     }
 }
 
@@ -47,7 +47,7 @@
                 [_array addObject:obj];
             }
         }
-        [self convert2Array];
+//        [self convert2Array];
     }
 }
 
@@ -94,17 +94,6 @@
 }
 
 /**
- 转换成数组
- **/
--(void)convert2Array{
-    int index=0;
-    for(DataCollection* __unsafe_unretained params in _array){
-        numbers[index]=params;
-        index+=1;
-    }
-}
-
-/**
  获取当前对象的迭代器
  **/
 -(nonnull NSEnumerator*)objectEnumerator{
@@ -114,46 +103,6 @@
     return nil;
 }
 
-- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(null_unspecified id)stackbuf count:(NSUInteger)len
-{
-    // 我们用state来表示状态。状态为1返回零，说明迭代结束；若状态为0，则继续迭代
-    // state初始值为零
-    if(state->state > 0)
-        return 0;
-    
-    // mutationsPtr不能为空，如果假定在枚举过程中不发生修改，一般指向self
-    state->mutationsPtr = (long)self;
-    
-    // 我们将当前剩余长度放在state的extra[0]之中
-    NSUInteger retCount = state->extra[0];
-    
-    // 所要枚举的数组指针首地址；extra[1]起始值为零
-    state->itemsPtr = &numbers[state->extra[1]];
-    
-    // 若为零，说明这是第一次迭代
-    if(retCount == 0)
-        retCount = [_array count];
-    
-    // 这里需要判断当前数组长度是否超过了本次枚举所设置的最大长度
-    if(retCount > len)
-    {
-        // 设置extra[0]，存放剩余所要枚举的元素个数
-        state->extra[0] = retCount - len;
-        
-        // 设置extra[1]，存放后一次枚举起始元素索引
-        state->extra[1] += len;
-        
-        retCount = len;
-    }
-    else
-    {
-        // 若剩余所要枚举的元素个数小于最大限制个数，则状态变1，使得后一次迭代能直接结束
-        state->state++;
-    }
-    
-    // 返回这次所要枚举的数组一共含有多少元素
-    return retCount;
-}
 
 
 @end

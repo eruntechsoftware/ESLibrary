@@ -16,7 +16,7 @@
 //        self.regular = @"^[0-9A-Za-z]{1,50}";
 //        self.regularTooltip = @"请输入正确的URL";
 //        self.placeholder = @"网址";
-        self.regularExpression = @"^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$";
+        self.regularExpression = [DataTypeExpression eMail];
         self.regularTooltip = @"请输入正确的邮箱地址";
         self.placeholder = @"eMail地址";
         self.keyboardType = UIKeyboardTypeEmailAddress;
@@ -27,7 +27,7 @@
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if(self){
-        self.regularExpression = @"^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$";
+        self.regularExpression = [DataTypeExpression eMail];
         self.regularTooltip = @"请输入正确的邮箱地址";
         self.placeholder = @"eMail地址";
         self.keyboardType = UIKeyboardTypeEmailAddress;

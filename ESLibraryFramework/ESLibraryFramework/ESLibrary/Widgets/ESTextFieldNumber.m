@@ -13,7 +13,7 @@
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if(self){
-        self.regularExpression = @"^[0-9]*$";
+        self.regularExpression = [DataTypeExpression numeric];
         self.regularTooltip = @"请输入正确的数字";
         self.keyboardType = UIKeyboardTypeNumberPad;
     }
@@ -23,7 +23,7 @@
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if(self){
-        self.regularExpression = @"^[0-9]*$";
+        self.regularExpression = [DataTypeExpression numeric];
         self.regularTooltip = @"请输入正确的数字";
         self.keyboardType = UIKeyboardTypeNumberPad;
     }

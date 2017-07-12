@@ -16,7 +16,7 @@
 
 IB_DESIGNABLE
 
-@interface ESActionLoadPage : UIView<IDataQuery>
+@interface ESActionLoadPage : UIButton<IDataQuery>
 {
     SQLiteDatabase *_SQLiteDatabase;
     NSString *_sql;
@@ -57,11 +57,6 @@ IB_DESIGNABLE
  初始化屏幕采集、发布集合
  **/
 -(void) initialize;
-
-/**
- *显示要执行的sql或控件标题
- ***/
--(void) drawTitle:(CGContextRef) context;
 
 /**
  执行数据查询并发布数据到UIView

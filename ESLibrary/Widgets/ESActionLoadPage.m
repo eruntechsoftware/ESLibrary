@@ -15,15 +15,43 @@
 @synthesize dataType = _dataType;
 @synthesize isAuto = _isAuto;
 
-
-- (id)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
-    
+-(id)init{
+    self = [super init];
     if (self) {
-        self.backgroundColor = [UIColor lightGrayColor];
-        self.frame = CGRectMake(0, 0, 100, 50);
-        self.layer.borderColor = [[UIColor colorWithRed:248/255.0 green:0/255.0 blue:4/255.0 alpha:1] CGColor];
-        [self defaultStyle];
+        [self setClipsToBounds:YES];
+        self.layer.masksToBounds = YES;
+        self.layer.cornerRadius = 5;
+        self.layer.borderColor = [UIColor lightTextColor].CGColor;
+        [self setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+        [self setTitle:@"ActionLoadPage" forState:UIControlStateNormal];
+    }
+    return self;
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.hidden = YES;
+        [self setClipsToBounds:YES];
+        self.layer.masksToBounds = YES;
+        self.layer.cornerRadius = 5;
+        self.layer.borderColor = [UIColor lightTextColor].CGColor;
+        [self setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+        [self setTitle:@"ActionLoadPage" forState:UIControlStateNormal];
+    }
+    return self;
+}
+
+-(id)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.hidden = YES;
+        [self setClipsToBounds:YES];
+        self.layer.masksToBounds = YES;
+        self.layer.cornerRadius = 5;
+        self.layer.borderColor = [UIColor lightTextColor].CGColor;
+        [self setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+        [self setTitle:@"ActionLoadPage" forState:UIControlStateNormal];
     }
     return self;
 }
@@ -86,29 +114,15 @@
 
 }
 
-- (void)drawRect:(CGRect)rect{
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [self drawTitle:context];
-}
+
 
 /**
- *显示要执行的sql
- ***/
--(void) drawTitle:(CGContextRef) context{
-    /**写文字**/
-    CGContextSetRGBFillColor (context,  95, 95, 95, 1.0);//设置填充颜色
-    UIFont  *font = [UIFont boldSystemFontOfSize:15.0];//设置
-    CGSize size = self.frame.size;
-    if(_sql != nil){
-        [_sql drawInRect:CGRectMake(size.width/3, size.height/3, size.width, size.height) withFont:font];
-    }else{
-        [@"ActionLoadPage" drawInRect:CGRectMake(size.width/3, size.height/3, size.width, size.height) withFont:font];
-    }
-}
+ 设置sql显示标题
 
-
+ @param Sql Sql
+ */
 -(void)setSql:(NSString *)Sql{
     _sql = Sql;
-    [self invalidateIntrinsicContentSize];
 }
+
 @end

@@ -49,4 +49,11 @@
  返回phone类型正则表达式
  ***/
 +(NSString*) phone;
+
+
+/**
+ 身份证号正则表达式
+ @return 身份证号表达式
+ */
++ (NSString*) idCard;
 @end
