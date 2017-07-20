@@ -12,7 +12,7 @@
 
 /**
  隐藏NavigationBar下边线
- **/
+ */
 - (void)bottomLineViewHidden {
 
     [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];

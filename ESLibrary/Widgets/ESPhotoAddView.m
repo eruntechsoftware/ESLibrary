@@ -46,6 +46,7 @@
 
 }
 
+
 - (void) initializ
 {
     
@@ -57,13 +58,16 @@
     _formatter = [[NSDateFormatter alloc] init];
     _formatter.dateFormat = @"yyyyMMddHHmmss";
     
+    _placeholderImage = [UIImage imageNamed:@"icon_addpic_unfocused"];
+    _maxPhotoCount = 9;
+    
     [self setMyPhotoArray:_photoArray];
 
 }
 
 /**
  获取采集标记名
- **/
+ */
 -(NSArray*) getRequest
 {
     NSArray* array = [[NSArray alloc] initWithObjects:_name, nil];
@@ -74,7 +78,7 @@
  将数据发布到指定位置
  @param dataName 数据名称
  @param data 数据对象
- **/
+ */
 -(void) release:(NSString *)dataName data:(Data *)data
 {
     if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]]) {
@@ -91,7 +95,7 @@
 
 /**
  数据收集，返回ETDataCollection
- **/
+ */
 -(DataCollection*) collect
 {
     DataCollection *datas = (DataCollection*)[NSMutableArray arrayWithCapacity:1];
@@ -114,7 +118,7 @@
  设置照片数组
  @param photoArray 图片数组
  @return 返回此组件的动态计算高度
- **/
+ */
 -(CGFloat)setMyPhotoArray:(NSMutableArray*)photoArray{
     
     //为photoView的子项的最后一项添加点击事件调用相册或事相机
@@ -238,7 +242,7 @@
 
 /**
  初始化拍照相册选择弹出框
- **/
+ */
 -(void)photoAlert{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"将访问您的相机或者相册" preferredStyle:UIAlertControllerStyleActionSheet];
@@ -267,7 +271,7 @@
 
 /**
  打开照相机
- **/
+ */
 -(void) openCamera{
     
     //相机拍摄点击事件
@@ -296,7 +300,7 @@
 
 /**
  打开相册
- **/
+ */
 -(void) openPhotos{
     
     // 创建图片多选控制器
@@ -330,7 +334,7 @@
 /**
  点开照片看大图
  @param sender 点击的图片
- **/
+ */
 -(void)openPhotoView:(id)sender{
     
     UITapGestureRecognizer *singleTap = (UITapGestureRecognizer *)sender;
@@ -363,7 +367,7 @@
 
 /**
  删除照片的回调用
- **/
+ */
 - (void)photoBrowser:(ZLPhotoPickerBrowserViewController *)photoBrowser removePhotoAtIndex:(NSInteger)index{
     [_photoArray removeObjectAtIndex:index];
     [_photoPathArray removeObjectAtIndex:index];
@@ -372,7 +376,7 @@
 
 /**
  返回照片数组
- **/
+ */
 -(NSMutableArray*)getPhotoArray{
     
     return _photoArray;
@@ -380,7 +384,7 @@
 
 /**
  返回照片路径数组
- **/
+ */
 -(NSMutableArray*)getPhotoPathArray{
     
     return _photoPathArray;
@@ -388,7 +392,7 @@
 
 /**
  返回图片添加器的高度
- **/
+ */
 -(CGFloat) getPhotoViewHigh{
     
     if(_photoAddViewHigh == 0 ){

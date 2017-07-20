@@ -18,7 +18,7 @@ static NSString *_name;//数据库名称
 /**
  初始化数据库访问对象
  @return 数据库对象
- **/
+ */
 -(id) initDatabase
 {
     if (self) {
@@ -43,7 +43,7 @@ static NSString *_name;//数据库名称
 /**
  打开数据库，如果数据库不存在则创建数据库
  @return 是否打开或创建数据库
- **/
+ */
 -(BOOL) open
 {
     if (sqlite3_open([_path UTF8String], &_db)==SQLITE_OK)
@@ -60,7 +60,7 @@ static NSString *_name;//数据库名称
 
 /**
  关闭数据库
- **/
+ */
 -(void) close
 {
     sqlite3_close(_db);
@@ -70,7 +70,7 @@ static NSString *_name;//数据库名称
  执行sql语句，切勿用于项目内执行sql语句
  @param sql 执行的语句
  @return 是否成功
- **/
+ */
 -(BOOL) execute:(NSString *)sql
 {
     //错误消息
@@ -102,7 +102,7 @@ static NSString *_name;//数据库名称
  @param sqlFile sql文件
  @param dataParams 参数集
  @return 是否成功
- **/
+ */
 -(BOOL) execute:(nonnull NSString*)sqlFile params:(nullable DataCollection*)dataParams{
 
     BOOL result = NO;
@@ -148,7 +148,7 @@ static NSString *_name;//数据库名称
  执行sql语句并返回结果集，切勿用于项目内执行sql语句
  @param sql 执行的语句
  @return DataTable数据集
- **/
+ */
 -(DataTable*) executeTable:(NSString *)sql
 {
     //返回参数
@@ -211,7 +211,7 @@ static NSString *_name;//数据库名称
  执行sql语句并返回结果集，切勿用于项目内执行sql语句
  @param sql 执行的语句
  @return DataTable数据集
- **/
+ */
 -(DataTable*) executeTable:(NSString *)sql esencoding:(ESEncoding)encoding
 {
     //返回参数
@@ -284,7 +284,7 @@ static NSString *_name;//数据库名称
  @param sqlFile 执行的sql文件
  @param dataParams 参数集
  @return DataTable数据集
- **/
+ */
 -(DataTable*)executeTable:(NSString *)sqlFile params:(DataCollection *)dataParams {
     
     DataTable* result=[[DataTable alloc] initWithCapacity:0];
@@ -330,7 +330,7 @@ static NSString *_name;//数据库名称
  @param sqlFile 执行的sql文件
  @param dataParams 参数集
  @return DataTable数据集
- **/
+ */
 -(nonnull DataTable*) executeTable:(nonnull NSString*)sqlFile params:(nullable DataCollection*)dataParams esencoding:(ESEncoding)encoding{
     
     DataTable* result=[[DataTable alloc] initWithCapacity:0];

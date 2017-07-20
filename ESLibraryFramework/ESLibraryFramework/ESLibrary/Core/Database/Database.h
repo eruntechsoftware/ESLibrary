@@ -24,7 +24,7 @@
 
 /**
  获取数据库访问对象
- **/
+ */
 @property(nullable,nonatomic) sqlite3 *db;
 //@property(nonatomic, copy) NSString *path;
 
@@ -32,25 +32,25 @@
 /**
  初始化数据库访问对象
  @return 数据库对象
- **/
+ */
 -(nonnull id) initDatabase;
 
 /**
  打开数据库，如果数据库不存在则创建数据库  
  @return 是否打开或创建数据库
- **/
+ */
 -(BOOL) open;
 
 /**
  是否成功关闭数据库
- **/
+ */
 -(void) close;
 
 /**
  执行sql语句
  @param sql 执行的语句
  @return 是否成功
- **/
+ */
 -(BOOL) execute:(nonnull NSString*)sql;
 
 /**
@@ -58,14 +58,14 @@
  @param sqlFile sql文件
  @param dataParams 参数集
  @return 是否成功
- **/
+ */
 -(BOOL) execute:(nonnull NSString*)sqlFile params:(nullable DataCollection*)dataParams;
 
 /**
  执行sql语句并返回结果集
  @param sql 执行的语句
  @return DataTable数据集
- **/
+ */
 -(nonnull DataTable*) executeTable:(nonnull NSString*)sql;
 
 /**
@@ -73,7 +73,7 @@
  @param sql 执行的语句
  @param encoding  字符编码
  @return DataTable数据集
- **/
+ */
 -(nonnull DataTable*) executeTable:(nonnull NSString*)sql esencoding:(ESEncoding)encoding;
 
 /**
@@ -82,7 +82,7 @@
  @param dataParams 参数集
  @param encoding  字符编码
  @return DataTable数据集
- **/
+ */
 -(nonnull DataTable*) executeTable:(nonnull NSString*)sql params:(nullable DataCollection*)dataParams;
 
 /**
@@ -91,6 +91,6 @@
  @param dataParams 参数集
  @param encoding  字符编码
  @return DataTable数据集
- **/
+ */
 -(nonnull DataTable*) executeTable:(nonnull NSString*)sqlFile params:(nullable DataCollection*)dataParams esencoding:(ESEncoding)encoding;
 @end

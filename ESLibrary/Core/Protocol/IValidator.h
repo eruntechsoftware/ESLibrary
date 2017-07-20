@@ -10,9 +10,10 @@
 
 
 @protocol IValidator <NSObject>
+
 /**
  数据校验方法
 @return 数据校验是否通过
- **/
+ */
 -(BOOL)validator;
 @end

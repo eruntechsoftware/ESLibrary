@@ -19,6 +19,7 @@
     return self;
 }
 
+
 -(void) initializ{
     [super initializ];
     [self setTitle:@"提示"];
@@ -34,6 +35,6 @@
 {
     // Drawing code
 }
-**/
+*/
 
 @end

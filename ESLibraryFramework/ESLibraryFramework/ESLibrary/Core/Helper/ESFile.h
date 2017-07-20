@@ -16,28 +16,29 @@
     
 }
 
+
 /**
  获取document路径
  @return 文件夹路径
- **/
+ */
 +(NSString*) documentPath;
 
 /**
  获取缓存目录
  @return 文件夹路径
- **/
+ */
 +(NSString*) cachesPath;
 
 /**
  获取应用程序根目录
  @return 文件夹路径
- **/
+ */
 +(NSString*) homePath;
 
 /**
  获取应用程序临时目录
  @return 文件夹路径
- **/
+ */
 +(NSString*) tmpPath;
 
 /**
@@ -45,7 +46,7 @@
  @param fileName 文件名，不包含后缀名
  @param type 后缀名
  @return 文件内容
- **/
+ */
 +(NSMutableString*) readFile:(NSString*)fileName extension:(NSString*)type;
 
 /**
@@ -53,7 +54,7 @@
  @param fileName 文件名，不包含后缀名
  @param type 后缀名
  @return 文件路径
- **/
+ */
 +(NSString*) findFile:(NSString*)fileName extension:(NSString*)type;
 
 /**
@@ -61,13 +62,13 @@
  @param sourcePath 源文件路径
  @param targetPath 目标路径
  @return 是否成功复制
- **/
+ */
 +(BOOL) copyFileWithSourcePath:(NSString*)sourcePath target:(NSString*)targetPath;
 
 /**
  检查文件是否存在
  @param filePath 文件路径
  @return 是否存在
- **/
+ */
 +(BOOL) existsWithPath:(NSString*)filePath;
 @end

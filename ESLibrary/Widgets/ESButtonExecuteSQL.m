@@ -21,9 +21,10 @@
 @synthesize SQLiteDatabase=_SQLiteDatabase;
 @synthesize viewController=_viewController;
 
+
 /**
  初始化方法
- **/
+ */
 -(void)initializ
 {
     _title=@"消息";
@@ -32,7 +33,7 @@
 
 /**
  添加事件
- **/
+ */
 -(void) addEvent
 {
     [self addTarget:self action:@selector(btnSaveClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -45,7 +46,7 @@
 
 /**
   执行Sql文件
- **/
+ */
 -(void) execute
 {
     @try {
@@ -91,7 +92,7 @@
 
 /**
  收集数据，格式化SQL命令并执行
- **/
+ */
 -(void) executeSql
 {
     @try {

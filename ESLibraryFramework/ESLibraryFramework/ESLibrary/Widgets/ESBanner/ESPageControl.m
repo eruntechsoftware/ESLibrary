@@ -10,11 +10,12 @@
 
 @implementation ESPageControl
 
+
 /**
  设置默认图片和当前图片
  @param defultPageControlImg 默认图片
  @pramr currentPageControlImg 当前图片
- **/
+ */
 -(instancetype)initWithImg:(UIImage*)defaultPageControlImg _currentPageControlImg:(UIImage*) currentPageControlImg{
     
     self =[super init];

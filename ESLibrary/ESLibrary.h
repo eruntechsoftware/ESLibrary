@@ -43,6 +43,7 @@
 #import "IValidatible.h"
 #import "IValidator.h"
 #import "UIViewPassValueDelegate.h"
+#import "ESImageCollectionView.h"
 #import "ESActionLoadPage.h"
 #import "ESButton.h"
 #import "ESButtonClose.h"

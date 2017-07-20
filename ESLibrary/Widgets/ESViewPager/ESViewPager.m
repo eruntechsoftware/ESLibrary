@@ -18,12 +18,11 @@
 @synthesize flagColor=_flagColor;
 @synthesize scrollView = _scrollView;
 
-
 /**
  初始化ESViewPager布局
  @param array 视图容器
  @return ESViewPager
- **/
+ */
 -(id)initWithArray:(NSMutableArray*) array{
     CGRect bounds = [UIScreen mainScreen].bounds;
     if (self.backgroundColor==nil) {
@@ -72,7 +71,7 @@
  @param array 视图容器
  @param rootViewController 根视图控制器
  @return ESViewPager
- **/
+ */
 -(id)initWithArray:(NSMutableArray*) array rootViewController:(BaseViewController*) rootViewController{
     self=[self initWithArray:array];
     if(self){
@@ -87,7 +86,7 @@
  @param rootViewController 根视图控制器
  @param titleArray 标题数组
  @return ESViewPager
- **/
+ */
 -(id)initWithArray:(NSMutableArray*) array rootViewController:(BaseViewController*) rootViewController titles:(NSMutableArray*)titleArray{
     self = [self initWithArray:array rootViewController:rootViewController];
     if(self){
@@ -100,7 +99,7 @@
  初始化ESViewPager布局
  @param frame 布局范围
  @return ESViewPager
- **/
+ */
 -(id)initWithFrame:(CGRect)frame viewControllerArray:(NSMutableArray*) array{
     
     //实例化滚动视图
@@ -116,7 +115,7 @@
 
 /**
  根据视图容器布置当前滚动视图布局,并显示
- **/
+ */
 -(void)show{
     
     
@@ -241,7 +240,7 @@
 /**
  滑动到指定索引页
  @param index 索引下标
- **/
+ */
 -(void)scrollViewToPageIndex:(NSInteger)index{
 
     [_scrollView setContentOffset:CGPointMake(SCREEN_WIDTH*index, _flagView.frame.size.height+_flagView.frame.size.height) animated:YES];
@@ -255,7 +254,7 @@
 /**
  滑动到指定索引页
  @param ges 索引手势
- **/
+ */
 -(void)scrollViewToPageIndexByTag:(UITapGestureRecognizer*)ges{
     
     int index = (int)ges.view.tag;
@@ -269,7 +268,7 @@
 /**
  滑动结束后执行的处理
  @param index 索引下标
- **/
+ */
 -(void)viewPagerScrollDid:(NSInteger)index{
     [_scrollView setContentOffset:CGPointMake(SCREEN_WIDTH*index, 50)  animated: true];
 }
@@ -277,7 +276,7 @@
 /**
  滑动结束后标识线的滚动
  @param index 索引下标
- **/
+ */
 -(void)scrollFlagView:(NSInteger)index{
     
     //计算移动的目标位置
@@ -315,7 +314,7 @@
 /**
  设置标识线颜色
  @param flagColor 标识线颜色
- **/
+ */
 -(void)setFlagColor:(UIColor *)flagColor{
     _flagColor = flagColor;
 }
@@ -323,7 +322,7 @@
 /**
  设置标题文本颜色
  @param titleColor 标题颜色
- **/
+ */
 -(void)setTitleColor:(UIColor *)titleColor{
     _titleColor=titleColor;
 }
@@ -331,7 +330,7 @@
 /**
  设置标题高亮时文本颜色
  @param titleHighlightedColor 标题高亮颜色
- **/
+ */
 -(void)setTitleHighlightedColor:(UIColor *)titleHighlightedColor{
     _titleHighlightedColor=titleHighlightedColor;
 }

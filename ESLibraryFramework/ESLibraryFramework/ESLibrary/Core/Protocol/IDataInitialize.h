@@ -12,6 +12,6 @@
 @protocol IDataInitialize <NSObject>
 /**
  初始化方法，为控件提供基本服务
- **/
+ */
 -(void) dataInitialize;
 @end

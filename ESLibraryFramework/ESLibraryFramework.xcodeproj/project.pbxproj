@@ -103,9 +103,6 @@
 		3A05B0061ED28B5E00E69992 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A05B0051ED28B5E00E69992 /* UIKit.framework */; };
 		3A112F0D1F024A2C009B1D13 /* ESPhotoAddView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112F0B1F024A2C009B1D13 /* ESPhotoAddView.h */; };
 		3A112F0E1F024A2C009B1D13 /* ESPhotoAddView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112F0C1F024A2C009B1D13 /* ESPhotoAddView.m */; };
-		3A112F7A1F024AA3009B1D13 /* ALCameraViewAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A112F111F024AA3009B1D13 /* ALCameraViewAssets.xcassets */; };
-		3A112F7B1F024AA3009B1D13 /* camera-flash.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A112F121F024AA3009B1D13 /* camera-flash.png */; };
-		3A112F7C1F024AA3009B1D13 /* camera-flash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A112F131F024AA3009B1D13 /* camera-flash@2x.png */; };
 		3A112F7D1F024AA3009B1D13 /* LLSimpleCamera+Helper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112F141F024AA3009B1D13 /* LLSimpleCamera+Helper.h */; };
 		3A112F7E1F024AA3009B1D13 /* LLSimpleCamera+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112F151F024AA3009B1D13 /* LLSimpleCamera+Helper.m */; };
 		3A112F7F1F024AA3009B1D13 /* LLSimpleCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112F161F024AA3009B1D13 /* LLSimpleCamera.h */; };
@@ -128,7 +125,6 @@
 		3A112F901F024AA3009B1D13 /* UIImage+CropRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112F291F024AA3009B1D13 /* UIImage+CropRotate.m */; };
 		3A112F911F024AA3009B1D13 /* TOCropViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112F2A1F024AA3009B1D13 /* TOCropViewController.h */; };
 		3A112F921F024AA3009B1D13 /* TOCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112F2B1F024AA3009B1D13 /* TOCropViewController.m */; };
-		3A112F931F024AA3009B1D13 /* TOCropViewControllerLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A112F2C1F024AA3009B1D13 /* TOCropViewControllerLocalizable.strings */; };
 		3A112F941F024AA3009B1D13 /* UIView+layoutnew.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112F2D1F024AA3009B1D13 /* UIView+layoutnew.h */; };
 		3A112F951F024AA3009B1D13 /* UIView+layoutnew.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112F2E1F024AA3009B1D13 /* UIView+layoutnew.m */; };
 		3A112F961F024AA3009B1D13 /* TOCropOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112F301F024AA3009B1D13 /* TOCropOverlayView.h */; };
@@ -191,7 +187,6 @@
 		3A112FCF1F024AA3009B1D13 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112F761F024AA3009B1D13 /* DACircularProgressView.m */; };
 		3A112FD01F024AA3009B1D13 /* DALabeledCircularProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112F771F024AA3009B1D13 /* DALabeledCircularProgressView.h */; };
 		3A112FD11F024AA3009B1D13 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112F781F024AA3009B1D13 /* DALabeledCircularProgressView.m */; };
-		3A112FD21F024AA3009B1D13 /* ZLPhotoLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3A112F791F024AA3009B1D13 /* ZLPhotoLib.bundle */; };
 		3A112FD71F038243009B1D13 /* ESViewPager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FD41F038243009B1D13 /* ESViewPager.h */; };
 		3A112FD81F038243009B1D13 /* ESViewPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FD51F038243009B1D13 /* ESViewPager.m */; };
 		3A112FD91F038243009B1D13 /* ESViewPagerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FD61F038243009B1D13 /* ESViewPagerDelegate.h */; };
@@ -199,13 +194,11 @@
 		3A112FE51F038E92009B1D13 /* ESBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FE11F038E92009B1D13 /* ESBanner.m */; };
 		3A112FE61F038E92009B1D13 /* ESPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FE21F038E92009B1D13 /* ESPageControl.h */; };
 		3A112FE71F038E92009B1D13 /* ESPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FE31F038E92009B1D13 /* ESPageControl.m */; };
-		3A112FEB1F0B4042009B1D13 /* ImageCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FE91F0B4042009B1D13 /* ImageCollectionView.h */; };
-		3A112FEC1F0B4042009B1D13 /* ImageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FEA1F0B4042009B1D13 /* ImageCollectionView.m */; };
-		3A112FF01F0B4074009B1D13 /* ImageGardCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FED1F0B4074009B1D13 /* ImageGardCollectionViewCell.h */; };
-		3A112FF11F0B4074009B1D13 /* ImageGardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FEE1F0B4074009B1D13 /* ImageGardCollectionViewCell.m */; };
-		3A112FF21F0B4074009B1D13 /* ImageGardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A112FEF1F0B4074009B1D13 /* ImageGardCollectionViewCell.xib */; };
-		3A112FF51F0E1986009B1D13 /* CalculateViewWidth.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FF31F0E1986009B1D13 /* CalculateViewWidth.h */; };
-		3A112FF61F0E1986009B1D13 /* CalculateViewWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FF41F0E1986009B1D13 /* CalculateViewWidth.m */; };
+		3A7E93B51F174A3C009719FD /* ImageGardCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A7E93B21F174A3C009719FD /* ImageGardCollectionViewCell.h */; };
+		3A7E93B61F174A3C009719FD /* ImageGardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E93B31F174A3C009719FD /* ImageGardCollectionViewCell.m */; };
+		3A7E93B71F174A3C009719FD /* ImageGardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7E93B41F174A3C009719FD /* ImageGardCollectionViewCell.xib */; };
+		3A7E93BA1F174A5C009719FD /* ESImageCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A7E93B81F174A5C009719FD /* ESImageCollectionView.h */; };
+		3A7E93BB1F174A5C009719FD /* ESImageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E93B91F174A5C009719FD /* ESImageCollectionView.m */; };
 		3AA16B161EFA08DC00FA5CDA /* ESTextFieldEmail.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA16B0E1EFA08DC00FA5CDA /* ESTextFieldEmail.h */; };
 		3AA16B171EFA08DC00FA5CDA /* ESTextFieldEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA16B0F1EFA08DC00FA5CDA /* ESTextFieldEmail.m */; };
 		3AA16B181EFA08DC00FA5CDA /* ESTextFieldIDCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA16B101EFA08DC00FA5CDA /* ESTextFieldIDCard.h */; };
@@ -218,6 +211,11 @@
 		3AD5EA5F1F00EFB0003F85D8 /* ESImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD5EA5B1F00EFB0003F85D8 /* ESImageView.m */; };
 		3AD5EA601F00EFB0003F85D8 /* UIView+UIViewBorderStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AD5EA5C1F00EFB0003F85D8 /* UIView+UIViewBorderStyle.h */; };
 		3AD5EA611F00EFB0003F85D8 /* UIView+UIViewBorderStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD5EA5D1F00EFB0003F85D8 /* UIView+UIViewBorderStyle.m */; };
+		3AF2515A1F1C92C3007000BE /* TOCropViewControllerLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AF251591F1C92C3007000BE /* TOCropViewControllerLocalizable.strings */; };
+		3AF2515C1F1C9372007000BE /* ZLPhotoLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3AF2515B1F1C9372007000BE /* ZLPhotoLib.bundle */; };
+		3AF251601F1C93CA007000BE /* ALCameraViewAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF2515D1F1C93CA007000BE /* ALCameraViewAssets.xcassets */; };
+		3AF251611F1C93CA007000BE /* camera-flash.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AF2515E1F1C93CA007000BE /* camera-flash.png */; };
+		3AF251621F1C93CA007000BE /* camera-flash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AF2515F1F1C93CA007000BE /* camera-flash@2x.png */; };
 		3AFD77F01EFA060B0088D67C /* ESLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AFD77EF1EFA060B0088D67C /* ESLibrary.h */; };
 		507F3B98351BBEBFB773EB00 /* Pods_ESLibraryFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E767635055930DDBEB55B10 /* Pods_ESLibraryFramework.framework */; };
 /* End PBXBuildFile section */
@@ -254,8 +252,8 @@
 		3A05AF5E1ED28B4C00E69992 /* SQLExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLExpression.m; sourceTree = "<group>"; };
 		3A05AF5F1ED28B4C00E69992 /* SQLiteDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteDatabase.h; sourceTree = "<group>"; };
 		3A05AF601ED28B4C00E69992 /* SQLiteDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteDatabase.m; sourceTree = "<group>"; };
-		3A05AF621ED28B4C00E69992 /* DataTypeExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTypeExpression.h; sourceTree = "<group>"; };
-		3A05AF631ED28B4C00E69992 /* DataTypeExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTypeExpression.m; sourceTree = "<group>"; };
+		3A05AF621ED28B4C00E69992 /* DataTypeExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DataTypeExpression.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		3A05AF631ED28B4C00E69992 /* DataTypeExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DataTypeExpression.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		3A05AF641ED28B4C00E69992 /* ESDataIndexOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDataIndexOf.h; sourceTree = "<group>"; };
 		3A05AF651ED28B4C00E69992 /* ESDataIndexOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDataIndexOf.m; sourceTree = "<group>"; };
 		3A05AF661ED28B4C00E69992 /* ESFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESFile.h; sourceTree = "<group>"; };
@@ -264,14 +262,14 @@
 		3A05AF691ED28B4C00E69992 /* ESNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESNSString.m; sourceTree = "<group>"; };
 		3A05AF6A1ED28B4C00E69992 /* GUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUID.h; sourceTree = "<group>"; };
 		3A05AF6B1ED28B4C00E69992 /* GUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUID.m; sourceTree = "<group>"; };
-		3A05AF6C1ED28B4C00E69992 /* Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Validator.h; sourceTree = "<group>"; };
+		3A05AF6C1ED28B4C00E69992 /* Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Validator.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		3A05AF6D1ED28B4C00E69992 /* Validator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Validator.m; sourceTree = "<group>"; };
 		3A05AF6F1ED28B4C00E69992 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		3A05AF701ED28B4C00E69992 /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
 		3A05AF711ED28B4C00E69992 /* DataCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCollection.h; sourceTree = "<group>"; };
 		3A05AF721ED28B4C00E69992 /* DataCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCollection.m; sourceTree = "<group>"; };
-		3A05AF731ED28B4C00E69992 /* DataTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTable.h; sourceTree = "<group>"; };
-		3A05AF741ED28B4C00E69992 /* DataTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTable.m; sourceTree = "<group>"; };
+		3A05AF731ED28B4C00E69992 /* DataTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DataTable.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		3A05AF741ED28B4C00E69992 /* DataTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DataTable.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		3A05AF751ED28B4C00E69992 /* DataType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataType.h; sourceTree = "<group>"; };
 		3A05AF771ED28B4C00E69992 /* ICollectible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICollectible.h; sourceTree = "<group>"; };
 		3A05AF781ED28B4C00E69992 /* ICollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICollector.h; sourceTree = "<group>"; };
@@ -322,9 +320,6 @@
 		3A05B0051ED28B5E00E69992 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3A112F0B1F024A2C009B1D13 /* ESPhotoAddView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPhotoAddView.h; sourceTree = "<group>"; };
 		3A112F0C1F024A2C009B1D13 /* ESPhotoAddView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPhotoAddView.m; sourceTree = "<group>"; };
-		3A112F111F024AA3009B1D13 /* ALCameraViewAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ALCameraViewAssets.xcassets; sourceTree = "<group>"; };
-		3A112F121F024AA3009B1D13 /* camera-flash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-flash.png"; sourceTree = "<group>"; };
-		3A112F131F024AA3009B1D13 /* camera-flash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-flash@2x.png"; sourceTree = "<group>"; };
 		3A112F141F024AA3009B1D13 /* LLSimpleCamera+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LLSimpleCamera+Helper.h"; sourceTree = "<group>"; };
 		3A112F151F024AA3009B1D13 /* LLSimpleCamera+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LLSimpleCamera+Helper.m"; sourceTree = "<group>"; };
 		3A112F161F024AA3009B1D13 /* LLSimpleCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSimpleCamera.h; sourceTree = "<group>"; };
@@ -347,7 +342,6 @@
 		3A112F291F024AA3009B1D13 /* UIImage+CropRotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CropRotate.m"; sourceTree = "<group>"; };
 		3A112F2A1F024AA3009B1D13 /* TOCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCropViewController.h; sourceTree = "<group>"; };
 		3A112F2B1F024AA3009B1D13 /* TOCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCropViewController.m; sourceTree = "<group>"; };
-		3A112F2C1F024AA3009B1D13 /* TOCropViewControllerLocalizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = TOCropViewControllerLocalizable.strings; sourceTree = "<group>"; };
 		3A112F2D1F024AA3009B1D13 /* UIView+layoutnew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+layoutnew.h"; sourceTree = "<group>"; };
 		3A112F2E1F024AA3009B1D13 /* UIView+layoutnew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+layoutnew.m"; sourceTree = "<group>"; };
 		3A112F301F024AA3009B1D13 /* TOCropOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCropOverlayView.h; sourceTree = "<group>"; };
@@ -410,7 +404,6 @@
 		3A112F761F024AA3009B1D13 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
 		3A112F771F024AA3009B1D13 /* DALabeledCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALabeledCircularProgressView.h; sourceTree = "<group>"; };
 		3A112F781F024AA3009B1D13 /* DALabeledCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALabeledCircularProgressView.m; sourceTree = "<group>"; };
-		3A112F791F024AA3009B1D13 /* ZLPhotoLib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZLPhotoLib.bundle; sourceTree = "<group>"; };
 		3A112FD41F038243009B1D13 /* ESViewPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESViewPager.h; sourceTree = "<group>"; };
 		3A112FD51F038243009B1D13 /* ESViewPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESViewPager.m; sourceTree = "<group>"; };
 		3A112FD61F038243009B1D13 /* ESViewPagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESViewPagerDelegate.h; sourceTree = "<group>"; };
@@ -418,13 +411,11 @@
 		3A112FE11F038E92009B1D13 /* ESBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBanner.m; sourceTree = "<group>"; };
 		3A112FE21F038E92009B1D13 /* ESPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPageControl.h; sourceTree = "<group>"; };
 		3A112FE31F038E92009B1D13 /* ESPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPageControl.m; sourceTree = "<group>"; };
-		3A112FE91F0B4042009B1D13 /* ImageCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionView.h; sourceTree = "<group>"; };
-		3A112FEA1F0B4042009B1D13 /* ImageCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionView.m; sourceTree = "<group>"; };
-		3A112FED1F0B4074009B1D13 /* ImageGardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageGardCollectionViewCell.h; sourceTree = "<group>"; };
-		3A112FEE1F0B4074009B1D13 /* ImageGardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageGardCollectionViewCell.m; sourceTree = "<group>"; };
-		3A112FEF1F0B4074009B1D13 /* ImageGardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageGardCollectionViewCell.xib; sourceTree = "<group>"; };
-		3A112FF31F0E1986009B1D13 /* CalculateViewWidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculateViewWidth.h; sourceTree = "<group>"; };
-		3A112FF41F0E1986009B1D13 /* CalculateViewWidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculateViewWidth.m; sourceTree = "<group>"; };
+		3A7E93B21F174A3C009719FD /* ImageGardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageGardCollectionViewCell.h; sourceTree = "<group>"; };
+		3A7E93B31F174A3C009719FD /* ImageGardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageGardCollectionViewCell.m; sourceTree = "<group>"; };
+		3A7E93B41F174A3C009719FD /* ImageGardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageGardCollectionViewCell.xib; sourceTree = "<group>"; };
+		3A7E93B81F174A5C009719FD /* ESImageCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESImageCollectionView.h; sourceTree = "<group>"; };
+		3A7E93B91F174A5C009719FD /* ESImageCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESImageCollectionView.m; sourceTree = "<group>"; };
 		3AA16B0E1EFA08DC00FA5CDA /* ESTextFieldEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTextFieldEmail.h; sourceTree = "<group>"; };
 		3AA16B0F1EFA08DC00FA5CDA /* ESTextFieldEmail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESTextFieldEmail.m; sourceTree = "<group>"; };
 		3AA16B101EFA08DC00FA5CDA /* ESTextFieldIDCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTextFieldIDCard.h; sourceTree = "<group>"; };
@@ -437,6 +428,11 @@
 		3AD5EA5B1F00EFB0003F85D8 /* ESImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESImageView.m; sourceTree = "<group>"; };
 		3AD5EA5C1F00EFB0003F85D8 /* UIView+UIViewBorderStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewBorderStyle.h"; sourceTree = "<group>"; };
 		3AD5EA5D1F00EFB0003F85D8 /* UIView+UIViewBorderStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewBorderStyle.m"; sourceTree = "<group>"; };
+		3AF251591F1C92C3007000BE /* TOCropViewControllerLocalizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = TOCropViewControllerLocalizable.strings; sourceTree = "<group>"; };
+		3AF2515B1F1C9372007000BE /* ZLPhotoLib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ZLPhotoLib.bundle; path = DACircularProgress/ZLPhotoLib.bundle; sourceTree = "<group>"; };
+		3AF2515D1F1C93CA007000BE /* ALCameraViewAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ALCameraViewAssets.xcassets; sourceTree = "<group>"; };
+		3AF2515E1F1C93CA007000BE /* camera-flash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-flash.png"; sourceTree = "<group>"; };
+		3AF2515F1F1C93CA007000BE /* camera-flash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-flash@2x.png"; sourceTree = "<group>"; };
 		3AFD77EF1EFA060B0088D67C /* ESLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESLibrary.h; sourceTree = "<group>"; };
 		561BCC5E191F86D087F8FB51 /* Pods-ESLibraryFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESLibraryFramework.release.xcconfig"; path = "Pods/Target Support Files/Pods-ESLibraryFramework/Pods-ESLibraryFramework.release.xcconfig"; sourceTree = "<group>"; };
 		A14954A88852306C93DEFBEE /* Pods-ESLibraryFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESLibraryFramework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ESLibraryFramework/Pods-ESLibraryFramework.debug.xcconfig"; sourceTree = "<group>"; };
@@ -625,7 +621,7 @@
 		3A05AF821ED28B4C00E69992 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				3A112FE81F0B4024009B1D13 /* ImageCollectionView */,
+				3A7E93B11F174A3C009719FD /* ESImageCollectionView */,
 				3A112FDF1F038E92009B1D13 /* ESBanner */,
 				3A112FD31F038243009B1D13 /* ESViewPager */,
 				3A112F0F1F024AA3009B1D13 /* SKFCamera */,
@@ -714,9 +710,9 @@
 		3A112F101F024AA3009B1D13 /* LLSimpleCamera */ = {
 			isa = PBXGroup;
 			children = (
-				3A112F111F024AA3009B1D13 /* ALCameraViewAssets.xcassets */,
-				3A112F121F024AA3009B1D13 /* camera-flash.png */,
-				3A112F131F024AA3009B1D13 /* camera-flash@2x.png */,
+				3AF2515D1F1C93CA007000BE /* ALCameraViewAssets.xcassets */,
+				3AF2515E1F1C93CA007000BE /* camera-flash.png */,
+				3AF2515F1F1C93CA007000BE /* camera-flash@2x.png */,
 				3A112F141F024AA3009B1D13 /* LLSimpleCamera+Helper.h */,
 				3A112F151F024AA3009B1D13 /* LLSimpleCamera+Helper.m */,
 				3A112F161F024AA3009B1D13 /* LLSimpleCamera.h */,
@@ -737,7 +733,7 @@
 				3A112F211F024AA3009B1D13 /* Models */,
 				3A112F2A1F024AA3009B1D13 /* TOCropViewController.h */,
 				3A112F2B1F024AA3009B1D13 /* TOCropViewController.m */,
-				3A112F2C1F024AA3009B1D13 /* TOCropViewControllerLocalizable.strings */,
+				3AF251591F1C92C3007000BE /* TOCropViewControllerLocalizable.strings */,
 				3A112F2D1F024AA3009B1D13 /* UIView+layoutnew.h */,
 				3A112F2E1F024AA3009B1D13 /* UIView+layoutnew.m */,
 				3A112F2F1F024AA3009B1D13 /* Views */,
@@ -778,9 +774,9 @@
 		3A112F381F024AA3009B1D13 /* ZLPhotoLib */ = {
 			isa = PBXGroup;
 			children = (
+				3AF2515B1F1C9372007000BE /* ZLPhotoLib.bundle */,
 				3A112F391F024AA3009B1D13 /* Classes */,
 				3A112F741F024AA3009B1D13 /* DACircularProgress */,
-				3A112F791F024AA3009B1D13 /* ZLPhotoLib.bundle */,
 			);
 			path = ZLPhotoLib;
 			sourceTree = "<group>";
@@ -952,18 +948,16 @@
 			path = ESBanner;
 			sourceTree = "<group>";
 		};
-		3A112FE81F0B4024009B1D13 /* ImageCollectionView */ = {
+		3A7E93B11F174A3C009719FD /* ESImageCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				3A112FF31F0E1986009B1D13 /* CalculateViewWidth.h */,
-				3A112FF41F0E1986009B1D13 /* CalculateViewWidth.m */,
-				3A112FED1F0B4074009B1D13 /* ImageGardCollectionViewCell.h */,
-				3A112FEE1F0B4074009B1D13 /* ImageGardCollectionViewCell.m */,
-				3A112FEF1F0B4074009B1D13 /* ImageGardCollectionViewCell.xib */,
-				3A112FE91F0B4042009B1D13 /* ImageCollectionView.h */,
-				3A112FEA1F0B4042009B1D13 /* ImageCollectionView.m */,
+				3A7E93B21F174A3C009719FD /* ImageGardCollectionViewCell.h */,
+				3A7E93B31F174A3C009719FD /* ImageGardCollectionViewCell.m */,
+				3A7E93B41F174A3C009719FD /* ImageGardCollectionViewCell.xib */,
+				3A7E93B81F174A5C009719FD /* ESImageCollectionView.h */,
+				3A7E93B91F174A5C009719FD /* ESImageCollectionView.m */,
 			);
-			path = ImageCollectionView;
+			path = ESImageCollectionView;
 			sourceTree = "<group>";
 		};
 		7D8C653C703EE27B5C39A97B /* Pods */ = {
@@ -1021,6 +1015,7 @@
 				3A112FBD1F024AA3009B1D13 /* ZLPhotoPickerAssetsViewController.h in Headers */,
 				3A112FB31F024AA3009B1D13 /* ZLPhotoAssets.h in Headers */,
 				3AD5EA601F00EFB0003F85D8 /* UIView+UIViewBorderStyle.h in Headers */,
+				3A7E93BA1F174A5C009719FD /* ESImageCollectionView.h in Headers */,
 				3A112FE61F038E92009B1D13 /* ESPageControl.h in Headers */,
 				3A05AFC41ED28B4C00E69992 /* ESDataIndexOf.h in Headers */,
 				3A112F941F024AA3009B1D13 /* UIView+layoutnew.h in Headers */,
@@ -1054,7 +1049,6 @@
 				3A112F8F1F024AA3009B1D13 /* UIImage+CropRotate.h in Headers */,
 				3A05AFF21ED28B4C00E69992 /* ESTextField.h in Headers */,
 				3A112FCB1F024AA3009B1D13 /* ZLPhotoPickerImageView.h in Headers */,
-				3A112FF51F0E1986009B1D13 /* CalculateViewWidth.h in Headers */,
 				3A112F8D1F024AA3009B1D13 /* TOCropViewControllerTransitioning.h in Headers */,
 				3A112F9E1F024AA3009B1D13 /* UIImage+ZLPhotoLib.h in Headers */,
 				3A05AFCE1ED28B4C00E69992 /* Data.h in Headers */,
@@ -1073,7 +1067,6 @@
 				3A112FBB1F024AA3009B1D13 /* ZLNavigationController.h in Headers */,
 				3A05AFEC1ED28B4C00E69992 /* ESButtonSave.h in Headers */,
 				3A05AFCA1ED28B4C00E69992 /* GUID.h in Headers */,
-				3A112FEB1F0B4042009B1D13 /* ImageCollectionView.h in Headers */,
 				3A112FAB1F024AA3009B1D13 /* ZLPhotoPickerBrowserPhotoImageView.h in Headers */,
 				3A112FB11F024AA3009B1D13 /* ZLPhotoPickerCustomToolBarView.h in Headers */,
 				3A05AFBE1ED28B4C00E69992 /* SQLExpression.h in Headers */,
@@ -1086,13 +1079,13 @@
 				3A05AFFA1ED28B4C00E69992 /* NSString+FontAwesome.h in Headers */,
 				3A112FB51F024AA3009B1D13 /* ZLPhotoPickerDatas.h in Headers */,
 				3A112F9A1F024AA3009B1D13 /* TOCropToolbar.h in Headers */,
-				3A112FF01F0B4074009B1D13 /* ImageGardCollectionViewCell.h in Headers */,
 				3A05AFD01ED28B4C00E69992 /* DataCollection.h in Headers */,
 				3A05AFC61ED28B4C00E69992 /* ESFile.h in Headers */,
 				3A112FD71F038243009B1D13 /* ESViewPager.h in Headers */,
 				3A05AFB21ED28B4C00E69992 /* BaseNavigationController.h in Headers */,
 				3A05AFBD1ED28B4C00E69992 /* ESEncoding.h in Headers */,
 				3A112FA01F024AA3009B1D13 /* UIView+ZLExtension.h in Headers */,
+				3A7E93B51F174A3C009719FD /* ImageGardCollectionViewCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1157,12 +1150,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A112FF21F0B4074009B1D13 /* ImageGardCollectionViewCell.xib in Resources */,
-				3A112F7C1F024AA3009B1D13 /* camera-flash@2x.png in Resources */,
-				3A112F7A1F024AA3009B1D13 /* ALCameraViewAssets.xcassets in Resources */,
-				3A112FD21F024AA3009B1D13 /* ZLPhotoLib.bundle in Resources */,
-				3A112F7B1F024AA3009B1D13 /* camera-flash.png in Resources */,
-				3A112F931F024AA3009B1D13 /* TOCropViewControllerLocalizable.strings in Resources */,
+				3AF251621F1C93CA007000BE /* camera-flash@2x.png in Resources */,
+				3AF2515C1F1C9372007000BE /* ZLPhotoLib.bundle in Resources */,
+				3A7E93B71F174A3C009719FD /* ImageGardCollectionViewCell.xib in Resources */,
+				3AF2515A1F1C92C3007000BE /* TOCropViewControllerLocalizable.strings in Resources */,
+				3AF251601F1C93CA007000BE /* ALCameraViewAssets.xcassets in Resources */,
+				3AF251611F1C93CA007000BE /* camera-flash.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1206,6 +1199,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7E93BB1F174A5C009719FD /* ESImageCollectionView.m in Sources */,
+				3A7E93B61F174A3C009719FD /* ImageGardCollectionViewCell.m in Sources */,
 				3A112FA81F024AA3009B1D13 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */,
 				3A05AFF91ED28B4C00E69992 /* ESButton+Bootstrap.m in Sources */,
 				3AA16B191EFA08DC00FA5CDA /* ESTextFieldIDCard.m in Sources */,
@@ -1222,8 +1217,6 @@
 				3A112F9D1F024AA3009B1D13 /* TOCropView.m in Sources */,
 				3A05AFF71ED28B4C00E69992 /* ESView.m in Sources */,
 				3A112FC81F024AA3009B1D13 /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */,
-				3A112FF11F0B4074009B1D13 /* ImageGardCollectionViewCell.m in Sources */,
-				3A112FEC1F0B4042009B1D13 /* ImageCollectionView.m in Sources */,
 				3A112FB81F024AA3009B1D13 /* ZLPhotoPickerGroup.m in Sources */,
 				3A05AFB11ED28B4C00E69992 /* ESControlSearcher.m in Sources */,
 				3A05AFF51ED28B4C00E69992 /* ESTextView.m in Sources */,
@@ -1234,7 +1227,6 @@
 				3A112FC21F024AA3009B1D13 /* ZLPhotoPickerViewController.m in Sources */,
 				3A05AFB91ED28B4C00E69992 /* PopAnimation.m in Sources */,
 				3A05AFF31ED28B4C00E69992 /* ESTextField.m in Sources */,
-				3A112FF61F0E1986009B1D13 /* CalculateViewWidth.m in Sources */,
 				3A05B0011ED28B4C00E69992 /* UIView+LayerEffects.m in Sources */,
 				3A112F821F024AA3009B1D13 /* UIImage+Crop.m in Sources */,
 				3A05AFB31ED28B4C00E69992 /* BaseNavigationController.m in Sources */,

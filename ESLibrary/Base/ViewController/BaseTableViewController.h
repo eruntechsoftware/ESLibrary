@@ -36,34 +36,34 @@ IB_DESIGNABLE
 
 /**
  获取UITableView头部视图
- **/
+ */
 @property (strong, nonatomic, null_unspecified) MJRefreshNormalHeader *header;
 
 /**
  获取UITableView页脚视图
- **/
+ */
 @property (strong, nonatomic, null_unspecified) MJRefreshAutoNormalFooter *footer;
 
 
 /**
  设置上拉下拉刷新组件
  @param tableView 刷新的tableView
- **/
+ */
 -(void)setRefreshView:(null_unspecified UITableView*)tableView;
 
 /**
  下拉刷新操作，重写该方法实现下拉刷新后的处理
- **/
+ */
 -(void)pullDownToRefresh;
 
 /**
  上拉加载更多操作，重写该方法实现下拉刷新后的处理
- **/
+ */
 -(void)pullUpToRefresh;
 
 /**
  头部和底部停止刷新状态
- **/
+ */
 -(void)stopRefreshing;
 
 @end

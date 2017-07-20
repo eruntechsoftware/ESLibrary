@@ -10,14 +10,13 @@
 
 
 @implementation ControlSearcher
-
 @synthesize handlers=_handlers;
 
 /**
  初始化循环类
  @param mutableHandlers 实现IControlSearcherHandler协议类
  @return ControlSearcher
- **/
+ */
 -(ControlSearcher*) initControlSearcherWithHandler:(NSMutableArray *)mutableHandlers
 {
     self = [super init];
@@ -32,7 +31,7 @@
 /**
  遍历对象方法
  @param viewController 视图控制器
- **/
+ */
 -(void) search:(id)viewController
 {
     //主线程执行

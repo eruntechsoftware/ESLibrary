@@ -11,10 +11,11 @@
 
 @protocol IReleaser <NSObject>
 
+
 /**
  数据发布
  @param result DataTable数据集
- **/
+ */
 @required
 -(void) release:(id) result;
 @end

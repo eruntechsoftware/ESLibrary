@@ -14,10 +14,11 @@
 @synthesize collectors=_collectors;
 @synthesize releasers=_releasers;
 
+
 /**
  初始化数据库访问对象
  @return 数据库对象
- **/
+ */
 -(id) initDatabase
 {
     self = [super init];
@@ -34,7 +35,7 @@
 /**
  执行Sql语句
  @return 是否执行成功
- **/
+ */
 -(BOOL) execute
 {
     @try
@@ -60,7 +61,7 @@
 /**
  执行Sql语句，并返回数据集
  @return DataTable数据集
- **/
+ */
 -(DataTable*) executeTable
 {
     @try
@@ -88,7 +89,7 @@
 
 /**
  执行数据集发布
- **/
+ */
 -(void)executeTable:(DataTable*)dataTable
 {
     if (dataTable!=NULL && [dataTable count]>0) {

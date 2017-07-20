@@ -58,7 +58,7 @@
 
 /**
  初始化屏幕采集、发布集合
- **/
+ */
 -(void) initialize{
     controller = (BaseViewController*)[self searchViewController];
     if ([_sign isEqualToString:@""]) {
@@ -75,7 +75,7 @@
 
 /**
  执行数据查询并发布数据到UIView
- **/
+ */
 -(void) execute{
     @try {
         if(_isAuto){
@@ -93,7 +93,7 @@
 
 /**
  执行数据查询并发布数据到UIView
- **/
+ */
 -(void) execute:(DataTable*)dataTable{
     @try {
         // 主线程执行：

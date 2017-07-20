@@ -12,7 +12,7 @@
 
 /**
  查找当前UIView的UIViewController
- **/
+ */
 - (UIViewController*) searchViewController {
     for (UIView* next = [self superview]; next; next = next.superview) {
         UIResponder* nextResponder = [next nextResponder];

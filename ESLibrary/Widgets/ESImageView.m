@@ -27,10 +27,11 @@
     return self;
 }
 
+
 /**
  显示网络图片
  @param urlBody  图片网络尾地址
- **/
+ */
 -(void) setImgWithUrlBody:(NSString*) urlBody{
     
     NSString *imgUrl = [[NSString alloc] initWithFormat:@"%@%@",IMAGE_URL_HEAD,urlBody];
@@ -47,7 +48,7 @@
 
 /**
  设置边框颜色
- **/
+ */
 -(void)setBorderColor:(UIColor *)borderColor{
     
     self.layer.borderColor = borderColor.CGColor;
@@ -55,7 +56,7 @@
 
 /**
  设置边框宽度
- **/
+ */
 -(void)setBorderWidth:(CGFloat)borderWidth{
     self.layer.borderWidth = borderWidth;
 
@@ -63,7 +64,7 @@
 
 /**
  设置圆角度数
- **/
+ */
 -(void)setCornerRadius:(CGFloat)cornerRadius{
     
     self.layer.cornerRadius = cornerRadius;
@@ -75,7 +76,7 @@
 
 /**
  获取采集标记名
- **/
+ */
 -(NSArray*) getRequest
 {
     NSArray* array = [[NSArray alloc] initWithObjects:_name, nil];
@@ -86,7 +87,7 @@
  将数据发布到指定位置
  @param dataName 数据名称
  @param data 数据对象
- **/
+ */
 -(void) release:(NSString *)dataName data:(Data *)data
 {
     if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]]) {
@@ -96,7 +97,7 @@
 
 /**
  数据收集，返回ETDataCollection
- **/
+ */
 -(DataCollection*) collect
 {
     DataCollection *datas = (DataCollection*)[NSMutableArray arrayWithCapacity:1];

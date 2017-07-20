@@ -15,7 +15,7 @@
  正则表达式校验器
  @param expression 校验表达式
  @return 校验器
- **/
+ */
 -(id)initWithExpression:(NSString*) expression{
     self = [super init];
     if(expression!=nil && ![expression isEmpty]){

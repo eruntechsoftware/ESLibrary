@@ -45,14 +45,15 @@ IB_DESIGNABLE
 //获取当前UIView所属视图控制器
 @property (retain,nonatomic) UIViewController *viewController;
 
+
 /**
  初始化方法
- **/
+ */
 -(void)initializ;
 
 /**
  添加事件
- **/
+ */
 -(void) addEvent;
 
 //执行数据库访问

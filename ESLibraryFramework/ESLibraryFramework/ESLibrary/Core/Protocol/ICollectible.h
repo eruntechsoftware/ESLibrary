@@ -14,14 +14,14 @@
 /**
  数据收集，返回ETDataCollection
  @return DataCollection集合
- **/
+ */
 @required
 -(DataCollection*) collect;
 
 /**
  获取收集标记集合，返回NSString[]
  @return 标记集合
- **/
+ */
 @required
 -(NSString *) getCollectSign;
 
@@ -29,7 +29,7 @@
  设置采集标记，多个标记以‘|!’分割
  例如：ForSave|!ForQuery
  @param sign 采集标记
- **/
+ */
 @required
 -(void) setCollectSign:(NSMutableString*) sign;
 @end

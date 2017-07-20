@@ -13,11 +13,12 @@
 @synthesize viewController=_viewController;
 @synthesize result=_result;
 
+
 /**
  初始化数据发布控制器
  @param viewController 当前视图控制器
  @return 数据发布控制器
- **/
+ */
 -(id)initWithViewController:(UIViewController*)viewController
 {
     self = [super init];
@@ -33,7 +34,7 @@
  @param viewController 当前视图控制器
  @param datatable 数据集
  @return 数据发布控制器
- **/
+ */
 -(id) initWithViewController:(UIViewController*)viewController dataTable:(DataTable*)datatable
 {
     self = [super init];
@@ -48,7 +49,7 @@
 /**
  发布数据
  @param result 数据集
- **/
+ */
 -(void) release:(id)result
 {
     if (result!=nil) {
@@ -65,7 +66,7 @@
 /**
  循环基类实现接口，循环接口调用此接口实现方法
  @param obj uiview对象
- **/
+ */
 -(void) handle:(id) obj
 {
     DataCollection *firstDataCollection = [_result objectAtIndex:0];
@@ -82,7 +83,7 @@
  循环基类实现接口，调用此方法实现，以决定是否继续执行
  @param obj 采集对象
  @return 是否继续执行
- **/
+ */
 -(BOOL) isPicked:(id) obj
 {
     return [obj conformsToProtocol:@protocol(IReleasable)];

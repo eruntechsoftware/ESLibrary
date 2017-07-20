@@ -104,7 +104,7 @@
 
 /**
  初始化视图
- **/
+ */
 -(void) initWithViewController{
     
     //是否自动关闭键盘输入
@@ -129,7 +129,7 @@
 /**
  UIViewController间数据传值
  @param params 参数集
- **/
+ */
 - (void)passValue:(DataCollection *)params{
     if (params!=nil) {
         //接收子页面传递的数据集
@@ -152,7 +152,7 @@
  UIViewController间数据传值
  @param params 参数集
  @param closed 子页面通知是否关闭当前页面
- **/
+ */
 - (void)passValue:(nullable DataCollection*)params isClosed:(BOOL)closed{
     if (params!=nil) {
         //接收子页面传递的数据集
@@ -174,7 +174,7 @@
 /**
  UIViewController接收子页面传值
  @param params 参数集
- **/
+ */
 -(void)onRefresh:(nullable DataCollection*)params{
     //解决导航栏控制器弹出视图错误问题
     self.baseNavigationController.baseViewController = self;
@@ -184,7 +184,7 @@
  UIViewController接收子页面传值
  @param params 参数集
  @param closed 子页面通知是否关闭当前页面
- **/
+ */
 - (void)onRefresh:(nullable DataCollection*)params isClosed:(BOOL)closed{
     //解决导航栏控制器弹出视图错误问题
     self.baseNavigationController.baseViewController = self;
@@ -198,7 +198,7 @@
  @param delegate 传值委托
  @param flag 是否动画方式展示
  @param completion 打开目标后回调方法
- ***/
+ */
 -(void)presentViewController:(nonnull BaseViewController *)viewControllerToPresent params:(DataCollection*)dataParams passValueDelegate:(id<UIViewPassValueDelegate>) delegate animated:(BOOL)flag completion:(void (^ __nullable)(void))completion{
     //接收传递参数
     viewControllerToPresent.receiveDataParams = dataParams;
@@ -213,7 +213,7 @@
  @param flag 是否动画
  @param dataParams 屏幕参数
  @param completion 回调
- ***/
+ */
 -(void)dismissViewControllerAnimated:(BOOL)flag params:(DataCollection *)dataParams completion:(void (^)(void))completion{
     if (_passValueDelegate != nil){
         [_passValueDelegate passValue:dataParams];
@@ -223,7 +223,7 @@
 
 /**
  检查屏幕输入必填项
- ***/
+ */
 -(Boolean)validator{
     ESValidatorViewController* validator = [[ESValidatorViewController alloc] initWithViewController:self];
     return [validator validator];
@@ -231,7 +231,7 @@
 
 /**
  收集屏幕数据，默认采集标签为ForSave
- ***/
+ */
 -(DataCollection*) collect{
     ESCollectViewController* collectViewController = [[ESCollectViewController alloc] initWithViewController:self sign:@"ForSave"];
     return [collectViewController collect];
@@ -241,7 +241,7 @@
 /**
  收集屏幕数据
  sign:采集标记
- ***/
+ */
 -(DataCollection*) collect:(NSString*)sign{
     ESCollectViewController* collectViewController = [[ESCollectViewController alloc] initWithViewController:self sign:sign];
     return [collectViewController collect];
@@ -250,7 +250,7 @@
 /**
  发布数据到当前ViewController
  @params table 数据集
- **/
+ */
 -(void)release:(DataTable*)table{
     ESReleaseViewController *ReleaseViewController = [[ESReleaseViewController alloc] initWithViewController:self dataTable:table];
     [ReleaseViewController release:nil];
@@ -258,7 +258,7 @@
 
 /**
  添加关闭键盘输入事件监听
- ***/
+ */
 -(void)addDismissKeyboardAction{
     
     _tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
@@ -267,21 +267,21 @@
 
 /**
  移除关闭键盘输入事件监听
- ***/
+ */
 -(void)removeDismissKeyboardAction{
     [self.view removeGestureRecognizer:_tap];
 }
 
 /**
  关闭键盘输入事件
- ***/
+ */
 -(void) dismissKeyboard{
     [self resignResponder:self.view];
 }
 
 /**
  关闭键盘输入事件
- ***/
+ */
 -(void) resignResponder:(UIView*)parentView{
     if(parentView != nil){
         for(UIView* view in parentView.subviews){
@@ -298,7 +298,7 @@
 /**
  设置标题栏文本
  @param titleText 标题文本
- ***/
+ */
 -(void)setTitleText:(NSString *)titleText{
     self.title=titleText;
 }
@@ -306,7 +306,7 @@
 /**
  设置触摸空白处后自动关闭键盘输入
  @param isDismissKeyboard 标题文本
- ***/
+ */
 -(void)setIsDismissKeyboard:(BOOL)isDismissKeyboard{
     _isDismissKeyboard=isDismissKeyboard;
 }
@@ -314,7 +314,7 @@
 
 /**
  返回当前视图控制器的navigationController
- ***/
+ */
 -(BaseNavigationController*)baseNavigationController{
     if(self.navigationController!=nil){
         return (BaseNavigationController*)self.navigationController;
@@ -326,7 +326,7 @@
 /**
  获取导航栏高度
  @return 导航栏高度
- **/
+ */
 -(CGFloat)getNavigationBarHeight{
     if(self.navigationController!=nil){
         return self.navigationController.navigationBar.frame.size.height;
@@ -336,14 +336,14 @@
 
 /**
  导航视图控制器右侧按钮单击事件处理方法
- **/
+ */
 -(void)btnRightOnClick{
 
 }
 
 /**
  导航视图控制器左侧按钮单击事件处理方法
- **/
+ */
 -(void)btnLeftOnClick{
     
 }
@@ -371,7 +371,7 @@
 
 /**
  获取设备类型
- **/
+ */
 -(DeviceName)deviceName{
     NSString* phoneVersion = [[UIDevice currentDevice] systemVersion];
     struct utsname systemInfo;
@@ -487,7 +487,7 @@
  添加无网络或无数据视图
  @param noDataType 无网络或无数据类型选择
  @param onClick 重新尝试按钮的点击block
- **/
+ */
 -(void) addNoDataView :(NoDataType) noDataType{
     
     _noDataGroupView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
@@ -523,7 +523,7 @@
 
 /**
  无数据无网络时，重新加载的按钮点击事件，需要子类中重写此方法
- **/
+ */
 -(void) btnReloadDataOnClick:(UIButton*) btn{
     
     //移除视图

@@ -11,6 +11,7 @@
 #import "ESDataIndexOf.h"
 #import "ESEncoding.h"
 #import "ESFile.h"
+
 @interface SQLExpression : NSObject {
     
 }
@@ -20,7 +21,7 @@
  @param sql 执行的语句
  @param dataParams 参数集
  @return 格式化后的SQL
- **/
+ */
 +(nonnull NSString*) formatWithSql:(nonnull NSString*)sql params:(nullable DataCollection*)dataParams;
 
 /**
@@ -29,14 +30,14 @@
  @param dataParams 参数集
  @param encoding  字符编码
  @return 格式化后的SQL
- **/
+ */
 +(NSString*) formatWithSql:(NSString*)sql params:(DataCollection*)dataParams esencoding:(ESEncoding)encoding;
 
 /**
  从指定目录读取sql文件，并返回sql内容
  @param fileName sql文件
  @return 读取SQL
- **/
+ */
 +(nonnull NSString*) readSqlFile:(nullable NSString*)fileName;
 
 @end

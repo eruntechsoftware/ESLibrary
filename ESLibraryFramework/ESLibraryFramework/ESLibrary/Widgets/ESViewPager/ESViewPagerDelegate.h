@@ -11,7 +11,7 @@
 /**
  滑动结束后执行的处理
  @param index 索引下标
- **/
+ */
 -(void)viewPagerScrollDid:(int)index;
 
 @end

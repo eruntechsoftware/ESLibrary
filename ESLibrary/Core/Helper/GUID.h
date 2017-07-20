@@ -11,6 +11,6 @@
 @interface GUID : NSObject
 /**
  生产GUID
- **/
+ */
 +(NSString*)newGUID;
 @end

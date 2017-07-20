@@ -14,7 +14,7 @@
 /**
  收集数据接口
  @return DataCollection集合
- **/
+ */
 @required
 -(DataCollection*) collect;
 

@@ -10,8 +10,9 @@
 
 @interface UINavigationBar (Hidden)
 
+
 /**
  隐藏NavigationBar下边线
- **/
+ */
 - (void)bottomLineViewHidden;
 @end

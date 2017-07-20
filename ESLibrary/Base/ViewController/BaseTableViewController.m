@@ -24,7 +24,7 @@
 /**
  设置上拉下拉刷新组件
  @param tableView 刷新的tableView
- **/
+ */
 -(void)setRefreshView:(UITableView*)tableView{
     // 1. 添加刷新头部控件的方法
     _header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -51,21 +51,21 @@
 
 /**
  下拉刷新操作，重写该方法实现下拉刷新后的处理
- **/
+ */
 -(void)pullDownToRefresh{
     [_header beginRefreshing];
 }
 
 /**
  上拉加载更多操作，重写该方法实现下拉刷新后的处理
- **/
+ */
 -(void)pullUpToRefresh{
     [_footer beginRefreshing];
 }
 
 /**
  头部和底部停止刷新状态
- **/
+ */
 -(void)stopRefreshing{
     [_header endRefreshing];
     [_footer endRefreshing];

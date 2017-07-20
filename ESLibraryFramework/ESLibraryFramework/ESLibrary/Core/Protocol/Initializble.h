@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+
 /**
  初始化协议
- **/
+ */
 @protocol Initializble <NSObject>
 
 /**
  初始化方法，为控件提供基本服务
- **/
+ */
 -(void) initializ;
 @end

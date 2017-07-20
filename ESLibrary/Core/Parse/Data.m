@@ -21,7 +21,7 @@
  @param name 数据名称
  @param value datavalue
  @return Data
- **/
+ */
 -(id) initWithDataName:(NSString *)name dataValue :(id)value
 {
     self = [super init];
@@ -40,7 +40,7 @@
  @param type 数据类型
  @param value datavalue
  @return Data
- **/
+ */
 -(id) initWithDataName:(NSString *)name  dataType:(DataType) type dataValue :(id)value
 {
     self = [super init];
@@ -55,7 +55,7 @@
 /**
  输出Integer值
  @return 整型数据
- ***/
+ */
 -(NSInteger) toInteger{
     if(_value==nil){
         return -100000;
@@ -66,7 +66,7 @@
 /**
  输出String值
  @return String
- ***/
+ */
 -(NSString*) toString{
     if(_value==nil){
         return @"";
@@ -77,7 +77,7 @@
 /**
  输出Boolean值
  @return Boolean
- ***/
+ */
 -(BOOL) toBoolean{
     if(_value==nil){
         return NO;

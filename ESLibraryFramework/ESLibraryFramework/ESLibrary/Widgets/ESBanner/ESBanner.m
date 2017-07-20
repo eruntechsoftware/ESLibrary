@@ -18,12 +18,12 @@
 
 - (void) initializ
 {
-    
+
 }
 
 /**
  获取采集标记名
- **/
+ */
 -(NSArray*) getRequest
 {
     NSArray* array = [[NSArray alloc] initWithObjects:_name, nil];
@@ -34,7 +34,7 @@
  将数据发布到指定位置
  @param dataName 数据名称
  @param data 数据对象
- **/
+ */
 -(void) release:(NSString *)dataName data:(Data *)data
 {
     
@@ -60,7 +60,7 @@
 
 /**
  数据收集，返回ETDataCollection
- **/
+ */
 -(DataCollection*) collect
 {
     DataCollection *datas = (DataCollection*)[NSMutableArray arrayWithCapacity:1];
@@ -82,7 +82,7 @@
 /**
  初始化小圆点组件
  @param rect  构造出的banner的rect
-**/
+*/
 -(UIPageControl*)myPageControl{
     
     _esPageControl = [[ESPageControl alloc] initWithImg:_defaultPageControlImg _currentPageControlImg:_currentPageControlImg];
@@ -108,7 +108,7 @@
 
 /**
  初始化以及启动定时器
-**/
+*/
 -(void)addTimer{
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:_timeInterval target:self selector:@selector(next) userInfo:nil repeats:true];
@@ -118,7 +118,7 @@
 
 /**
  切换图片（控制器）
-**/
+*/
 -(void)next{
     
     CGPoint point = CGPointMake([self bounds].size.width *_current, 0);
@@ -135,7 +135,7 @@
 /**
  初始化小圆点组件
  @param imgArray  banner的图片数组
-**/
+*/
 -(void)addImgInBanner: (NSMutableArray*) imgArray{
     
     CGFloat width = self.frame.size.width;
@@ -159,7 +159,7 @@
 
 /**
  scollview的滚动监听
-**/
+*/
 -(void) scrollViewDidScroll:(UIScrollView *)scrollView{
     
     CGFloat scrollviewW =  scrollView.frame.size.width;
@@ -174,7 +174,7 @@
  初始化scollView
  @param width  scollwview的宽度
  @param high  scollwview的高度
-**/
+*/
 -(void)setMyScollViewWithWidth:(CGFloat)width viewHigh:(CGFloat)high{
     
     _uiScollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, width, high)];

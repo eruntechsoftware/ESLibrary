@@ -13,7 +13,7 @@
 
 /**
  设置或获取navigationBar默认颜色
- **/
+ */
 static UIColor *NavigationBar_barTintColor;
 
 @synthesize baseViewController=_baseViewController;
@@ -26,14 +26,14 @@ static UIColor *NavigationBar_barTintColor;
 /**
  设置NavigationBar颜色
  @param barTintColor 标题颜色
- **/
+ */
 +(void)setNavigationBar_barTintColor:(nonnull UIColor*)barTintColor{
     NavigationBar_barTintColor = barTintColor;
 }
 
 /**
  获取NavigationBar颜色
- **/
+ */
 +(UIColor*)getNavigationBar_barTintColor{
     return NavigationBar_barTintColor;
 }
@@ -65,7 +65,7 @@ static UIColor *NavigationBar_barTintColor;
  初始化视图控制器
  @param baseViewController 视图控制器
  @return BaseNavigationController
- ***/
+ */
 - (id)initWithViewController:(BaseViewController *)baseViewController{
     
     self.baseViewController = baseViewController;
@@ -80,7 +80,7 @@ static UIColor *NavigationBar_barTintColor;
  @param baseViewController 视图控制器
  @param flag 是否隐藏返回按钮
  @return BaseNavigationController
- ***/
+ */
 - (nonnull id)initWithViewController:(nonnull BaseViewController*)baseViewController isLeftBtnBackHidden:(BOOL)flag{
     
     self.baseViewController = baseViewController;
@@ -98,7 +98,7 @@ static UIColor *NavigationBar_barTintColor;
  @param dataParams DataCollection类型数据集
  @param delegate 传值委托实现对象
  @param flag 是否动画方式展示
- ***/
+ */
 - (void) pushViewController:(BaseViewController *)viewController params:(DataCollection *)dataParams passValueDelegate:(id<UIViewPassValueDelegate>) delegate animated:(BOOL)flag{
     
     self.baseViewController = viewController;
@@ -124,7 +124,7 @@ static UIColor *NavigationBar_barTintColor;
  推入视图控制器
  @param viewController 目标视图控制器
  @param flag 是否动画方式展示
- ***/
+ */
 - (void) pushViewController:(UIViewController *)viewController animated:(BOOL)flag{
     [super pushViewController:viewController animated:flag];
 
@@ -136,7 +136,7 @@ static UIColor *NavigationBar_barTintColor;
  @param viewController 目标视图控制器
  @param backHidden 是否隐藏返回按钮
  @param flag 是否动画方式展示
- ***/
+ */
 - (void) pushViewController:(UIViewController *)viewController leftBackHidden:(BOOL)backHidden animated:(BOOL)flag;{
     [super pushViewController:viewController animated:flag];
     viewController.navigationItem.leftBarButtonItem = [self backButton:backHidden];
@@ -145,7 +145,7 @@ static UIColor *NavigationBar_barTintColor;
 
 /**
  创建返回按钮
- ***/
+ */
 - (UIBarButtonItem*) backButton :(BOOL) hidden{
     
     UIBarButtonItem* barButton;
@@ -176,7 +176,7 @@ static UIColor *NavigationBar_barTintColor;
 /**
  创建左侧按钮,并添加到导航视图控制器
  @param text 按钮文本
- ***/
+ */
 - (UIBarButtonItem*)  leftBarButtonItem:(UIViewController*)viewController text:(NSString*)text{
     
     UIBarButtonItem* barButton;
@@ -194,7 +194,7 @@ static UIColor *NavigationBar_barTintColor;
 /**
  创建右侧按钮,并添加到导航视图控制器
  @param text 按钮文本
- ***/
+ */
 - (UIBarButtonItem*) rightBarButtonItem:(UIViewController*)viewController text:(NSString*)text{
     
     UIBarButtonItem* barButton;
@@ -212,7 +212,7 @@ static UIColor *NavigationBar_barTintColor;
 /**
  创建右侧图形按钮,并添加到导航视图控制器
  @param img 图片
- ***/
+ */
 - (UIBarButtonItem*) rightImageBarButtonItem:(UIViewController*)viewController rightImageButton:(UIImage*)img{
     
     UIBarButtonItem* barButton;
@@ -237,7 +237,7 @@ static UIColor *NavigationBar_barTintColor;
 
 /**
  导航视图控制器右侧按钮单击事件处理方法
- **/
+ */
 -(void)btnRightOnClick{
     if(_baseViewController!=nil){
         [_baseViewController btnRightOnClick];
@@ -246,7 +246,7 @@ static UIColor *NavigationBar_barTintColor;
 
 /**
  导航视图控制器左侧按钮单击事件处理方法
- **/
+ */
 -(void)btnLeftOnClick{
     if(_baseViewController!=nil){
         [_baseViewController btnLeftOnClick];
@@ -258,7 +258,7 @@ static UIColor *NavigationBar_barTintColor;
  弹出viewController
  @param params 类型数据集
  @param flag 是否动画方式展示
- ***/
+ */
 - (void) popViewControllerAnimated:(DataCollection*)params animated:(BOOL)flag{
     [_baseViewController.passValueDelegate passValue: params];
     [super popViewControllerAnimated:YES];
@@ -269,7 +269,7 @@ static UIColor *NavigationBar_barTintColor;
  @param params 类型数据集
  @param closed 通知父页面是否关闭
  @param flag 是否动画方式展示
- ***/
+ */
 - (void) popViewControllerAnimated:(DataCollection*)params isClosed:(BOOL)closed animated:(BOOL)flag{
     
     [_baseViewController.passValueDelegate passValue: params isClosed:closed];
@@ -278,7 +278,7 @@ static UIColor *NavigationBar_barTintColor;
 
 /**
  弹出viewController，并将当前页面接收到的子页面数据集继续向父页面传递
- **/
+ */
 -(void)popViewControllerAnimated{
     [self popViewControllerAnimated:_baseViewController.subTransferDataParams animated:YES];
 }
@@ -286,7 +286,7 @@ static UIColor *NavigationBar_barTintColor;
 /**
  为当前的topbar添加搜索框
  @param placeholderStr 提示文字
- **/
+ */
 -(void)addSeacherView:(NSString*) placeholderStr;{
 
     _seacherFild = [[UITextField alloc] initWithFrame:CGRectMake(55, 25, SCREEN_WIDTH - 105, 32)];
@@ -303,7 +303,7 @@ static UIColor *NavigationBar_barTintColor;
  设置透明的topbar
  @param viewController 当前视图控制器
  @param textColor 标题文本颜色
- **/
+ */
 -(void)setTransparentStyleBarWithViewController:(BaseViewController*)viewController titleTextColor:(UIColor*)textColor{
     
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
@@ -335,7 +335,7 @@ static UIColor *NavigationBar_barTintColor;
  @param viewController 当前视图控制器
  @param textColor 标题文本颜色
  @param backImg 左侧返回按钮
- **/
+ */
 -(void)setTransparentStyleBarWithViewController:(BaseViewController*)viewController titleTextColor:(UIColor*)textColor backImage:(UIImage*)backImg{
     
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
@@ -364,7 +364,7 @@ static UIColor *NavigationBar_barTintColor;
 
 /**
  恢复topbar的普通状态
- **/
+ */
 -(void)resumeNormalStyleBarWithViewController:(BaseViewController *)viewController{
     
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;

@@ -15,7 +15,7 @@
  @param search：原字符串
  @param replace：替换后字符串
  @return 替换后的字符串
- **/
+ */
 -(NSString*) replaceWithSearch:(NSString *)searchStr replace:(NSString *)replaceStr
 {
     NSMutableString *mutableStr = [NSMutableString stringWithString:self];
@@ -33,7 +33,7 @@
 /**
  去除字符串左右两边的空格
  @return 去空格后的字符串
- ***/
+ */
 -(NSString*)trim{
     return [self stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
@@ -41,7 +41,7 @@
 /**
  判断字符串是否为空
  @return 是否为空
- **/
+ */
 - (BOOL)isEmpty{
     if (self!=nil) {
         return [[self trim] isEqualToString:@""];
@@ -54,7 +54,7 @@
  @param font    显示的字体
  @param maxSize 最大的显示范围
  @return 占用的宽高
- ***/
+ */
 - (CGSize)sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize
 {
     NSDictionary *dict = @{NSFontAttributeName: font};
@@ -66,7 +66,7 @@
 /**
  Base64解码
  @return Base64解码后的字符串
- **/
+ */
 -(NSString*)deCode
 {
         NSMutableString *result = [NSMutableString new];
@@ -156,7 +156,7 @@
 /**
  转换为Base64编码
  @return Base64编码后的字符串
- **/
+ */
 -(NSString*) enCode
 {
     if ( self == nil ) {
@@ -256,7 +256,7 @@
  char转换为UTF8转换为GBK编码
  @param val 输入char类型数据
  @return GBK编码后的字符串
- **/
+ */
 +(NSString*)UTF8ToGBK:(char*) val
 {
     NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding (kCFStringEncodingGB_18030_2000);
@@ -266,7 +266,7 @@
 
 /**
  字符串从左边补0
- **/
+ */
 -(NSString*)fillLeftWithZero:(NSString*)inStr :(int)len
 {
     NSMutableString *temp = [NSMutableString new];

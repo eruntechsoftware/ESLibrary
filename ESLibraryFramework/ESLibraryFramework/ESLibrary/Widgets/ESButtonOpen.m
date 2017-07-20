@@ -29,9 +29,10 @@
     return self;
 }
 
+
 /**
  初始化事件
- **/
+ */
 -(void)initializ
 {
     [self redStyle];
@@ -41,7 +42,7 @@
 
 /**
  添加事件
- **/
+ */
 -(void)addEvent
 {
     [self addTarget:self action:@selector(btnOpenClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -49,7 +50,7 @@
 
 /**
  单击事件执行
- **/
+ */
 -(void)btnOpenClick:(id)sender
 {
     if(_isValidate == YES){
@@ -64,7 +65,7 @@
 
 /**
  实例化并呈现目标UIViewController
- **/
+ */
 -(void) open
 {
     @try

@@ -13,9 +13,10 @@
 #define FontName @"Helvetica-Bold"
 #define PaddingInErrorPopUp 5
 
+
 /**
  Default message for validating length, you can also assign message separately using method 'updateLengthValidationMsg:' for textfields.
- **/
+ */
 #define MsgValidateLength @"This field cannot be blank"
 #import <UIKit/UIKit.h>
 

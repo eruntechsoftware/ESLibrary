@@ -56,7 +56,7 @@
 
 /**
  初始化事件
- **/
+ */
 -(void)initializ
 {
     _viewController = [self searchViewController];
@@ -64,7 +64,7 @@
 
 /**
  添加事nonatomic, 件
- **/
+ */
 -(void)addEvent
 {
     
@@ -78,7 +78,7 @@
 
 /**
  获取采集标记名
- **/
+ */
 -(NSArray*) getRequest
 {
     NSArray* array = [[NSArray alloc] initWithObjects:_name, nil];
@@ -87,7 +87,7 @@
 
 /**
  将数据发布到指定位置
- **/
+ */
 -(void) release:(NSString *)dataName data:(Data *)data
 {
     if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]]) {
@@ -97,7 +97,7 @@
 
 /**
  数据收集，返回ETDataCollection
- **/
+ */
 -(DataCollection*) collect
 {
     DataCollection *datas = (DataCollection*)[NSMutableArray arrayWithCapacity:1];
@@ -110,14 +110,14 @@
  设置采集标记，多个标记以‘|!’分割
  例如：ForSave|!ForQuery
  @param sign 采集标记
- **/
+ */
 -(void)setCollectSign:(NSMutableString *)sign{
     _collectSign=sign;
 }
 
 /**
  获取收集标记集合，返回NSString[]
- **/
+ */
 -(NSString *) getCollectSign
 {
     return _collectSign;
@@ -131,7 +131,7 @@
 
 /**
  数据校验
- ***/
+ */
 -(BOOL)dataValidator
 {
     //如果不能为空，则提示消息

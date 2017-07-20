@@ -17,17 +17,17 @@
 
 /**
  数据名称
- **/
+ */
 @property (strong, nonatomic) NSString* name;
 
 /**
  数据类型
- **/
+ */
 @property(assign, nonatomic) DataType dataType;
 
 /**
  值
- **/
+ */
 @property(strong, nonatomic) id value;
 
 /**
@@ -35,7 +35,7 @@
  @param name 数据名称
  @param value datavalue
  @return Data
- **/
+ */
 -(id) initWithDataName:(NSString *)name dataValue :(id)value;
 
 /**
@@ -44,24 +44,24 @@
  @param type 数据类型
  @param value datavalue
  @return Data
- **/
+ */
 -(id) initWithDataName:(NSString *)name  dataType:(DataType) type dataValue :(id)value;
 
 /**
  输出Integer值
  @return 整型数据
- ***/
+ */
 -(NSInteger) toInteger;
 
 /**
  输出String值
  @return String
- ***/
+ */
 -(NSString*) toString;
 
 /**
  输出Boolean值
  @return Boolean
- ***/
+ */
 -(BOOL) toBoolean;
 @end

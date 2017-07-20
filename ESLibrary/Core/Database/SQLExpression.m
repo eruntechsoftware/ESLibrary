@@ -16,7 +16,7 @@
  @param sql 执行的语句
  @param dataParams 参数集
  @return 格式化后的SQL
- ***/
+ */
 +(NSString*) formatWithSql:(NSString*)sql params:(DataCollection*)dataParams
 {
 //    NSMutableString *realSql = [[NSMutableString alloc] initWithString:sample];
@@ -65,7 +65,7 @@
  @param sql 执行的语句
  @param dataParams 参数集
  @return 格式化后的SQL
- ***/
+ */
 +(NSString*) formatWithSql:(NSString*)sql params:(DataCollection*)dataParams esencoding:(ESEncoding)encoding
 {
     //    NSMutableString *realSql = [[NSMutableString alloc] initWithString:sample];
@@ -119,7 +119,7 @@
  从指定目录读取sql文件，并返回sql内容
  @param fileName sql文件
  @return 读取SQL
- **/
+ */
 +(NSString*) readSqlFile:(NSString*)fileName
 {
     return [ESFile readFile:fileName extension:@"sql"];

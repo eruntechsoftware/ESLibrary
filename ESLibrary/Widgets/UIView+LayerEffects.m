@@ -9,10 +9,9 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIView.h>
 
-
 @implementation UIView(LayerEffects)
 
-/** simple setting using the layer **/
+/** simple setting using the layer */
 - (void) setCornerRadius : (CGFloat) radius {
 	self.layer.cornerRadius = radius;
 }

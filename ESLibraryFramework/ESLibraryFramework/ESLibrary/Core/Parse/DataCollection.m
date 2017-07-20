@@ -16,7 +16,7 @@
  创建DataCollection对象
  @param numbers 初始容量
  @return DataCollection
- ***/
+ */
 -(id)initWithCapacity:(NSInteger)numbers{
     _array = [NSMutableArray arrayWithCapacity:numbers];
     return self;
@@ -26,7 +26,7 @@
  根据名称查找Data
  @param name 数据名称
  @return Data
- **/
+ */
 -(Data*) dataWithName:(NSString*) name
 {
     if (_array != nil) {
@@ -42,7 +42,7 @@
 /**
  添加Data元素
  @param anObject Data
- **/
+ */
 -(void)addObject:(id)anObject{
     if(_array!=nil){
         [_array addObject:anObject];
@@ -53,7 +53,7 @@
 /**
  添加DataTable
  @param dataCollection DataCollection
- **/
+ */
 -(void)addAllObjects:(DataCollection *)dataCollection{
     if(_array!=nil){
         if(dataCollection!=nil && dataCollection.count>0){
@@ -70,7 +70,7 @@
 /**
  移除Data元素
  @param anObject Data
- **/
+ */
 -(void)removeObject:(id)anObject{
     if(_array!=nil){
         [_array removeObject:anObject];
@@ -79,7 +79,7 @@
 
 /**
  移除所有元素
- **/
+ */
 -(void)removeAllObjects{
     if(_array!=nil){
         [_array removeAllObjects];
@@ -90,7 +90,7 @@
  获取指定索引位置的数据集
  @param index 索引位置
  @return Data
- **/
+ */
 -(nonnull Data*)objectAtIndex:(NSUInteger)index{
     if(_array!=nil){
         return[_array objectAtIndex:index];
@@ -101,7 +101,7 @@
 /**
  获取元素长度
  @return 元素长度
- **/
+ */
 -(NSUInteger)count{
     if(_array!=nil){
         return[_array count];
@@ -111,7 +111,7 @@
 
 /**
  转换成数组
- **/
+ */
 -(void)convert2Array{
     int index=0;
     for(Data* __unsafe_unretained data in _array){
@@ -122,7 +122,7 @@
 
 /**
  获取当前对象的迭代器
- **/
+ */
 -(nonnull NSEnumerator*)objectEnumerator{
     if(_array!=nil){
         return [_array objectEnumerator];

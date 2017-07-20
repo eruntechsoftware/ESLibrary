@@ -16,21 +16,22 @@
     
 }
 
+
 /**
  设置或获取视图控制器循环对象
- **/
+ */
 @property (nullable, nonatomic, retain) NSMutableArray* handlers;
 
 /**
  初始化循环类
  @param mutableHandlers 实现IControlSearcherHandler协议类
  @return ControlSearcher
- **/
+ */
 -(nonnull ControlSearcher*) initControlSearcherWithHandler:(nonnull NSMutableArray*)mutableHandlers;
 
 /**
  遍历对象方法
  @param viewController 视图控制器
- **/
+ */
 -(void) search:(nonnull id) viewController;
 @end

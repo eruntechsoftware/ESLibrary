@@ -23,33 +23,34 @@ IB_DESIGNABLE
     BOOL _isValidate;
 }
 
+
 /**
  设置或获取当前所属的视图控制器
- **/
+ */
 @property (retain,nonatomic) BaseViewController *viewController;
 
 /**
  设置或获取按钮采集标记
- **/
+ */
 @property (copy,nonatomic)IBInspectable NSString *sign;
 
 /**
  设置或获取按钮执行之前是否调用校验方法
- **/
+ */
 @property (assign,nonatomic)IBInspectable BOOL isValidate;
 
 /**
  初始化方法
- **/
+ */
 -(void)initializ;
 
 /**
  添加事件
- **/
+ */
 -(void) addEvent;
 
 /**
  关闭视图控制器
- **/
+ */
 -(void) close;
 @end

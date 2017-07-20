@@ -18,7 +18,7 @@
  初始化数据收集控制器
  @param viewController 当前视图控制器
  @return 数据收集器
- **/
+ */
 -(id) initWithViewController:(UIViewController*)viewController
 {
     self=[super init];
@@ -30,12 +30,13 @@
     return nil;
 }
 
+
 /**
  初始化数据收集控制器
  @param view 当前视图控制器
  @param strSign 采集标记
  @return 数据收集器
- **/
+ */
 -(id) initWithViewController:(UIViewController*)viewController sign:(NSString*) strSign
 {
     self=[super init];
@@ -52,7 +53,7 @@
 /**
  收集视图控制器的数据
  @return DataCollection数据集
- **/
+ */
 -(DataCollection*) collect
 {
     @try {
@@ -75,7 +76,7 @@
 /**
  循环基类实现接口，循环接口调用此接口实现方法
  @param obj uiview对象
- **/
+ */
 -(void) handle:(id)obj
 {
     @try {
@@ -101,7 +102,7 @@
 /**
  循环基类实现接口，调用此方法实现，以决定是否继续执行
  @param obj 采集对象
- **/
+ */
 -(BOOL) isPicked:(id)obj
 {
     @try {
@@ -126,7 +127,7 @@
  检查是否可以匹配采集标记
  @param target 目标标记
  @param strings 标记数组
- **/
+ */
 -(BOOL) matchSign:(NSString *)target :(NSArray *)strings
 {
     NSEnumerator *enumerator = [strings objectEnumerator];

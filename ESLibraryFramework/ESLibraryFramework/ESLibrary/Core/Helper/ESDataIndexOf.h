@@ -14,11 +14,12 @@
     
 }
 
+
 /**
  根据名称查找Data元素
  @param name 查找的元素名称
  @param dataCollection 数据集
  @return Data元素
- **/
+ */
 +(id) dataAtName:(NSString *)name params:(DataCollection*)dataCollection;
 @end

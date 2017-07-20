@@ -14,7 +14,7 @@
 
 /**
  查找当前View的UIViewController
- **/
+ */
 - (UIViewController*) searchViewController;
 
 -(void)defaultStyle;

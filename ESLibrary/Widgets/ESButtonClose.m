@@ -16,7 +16,7 @@
 
 /**
  初始化方法
- **/
+ */
 -(void)initializ
 {
     [self redStyle];
@@ -24,9 +24,10 @@
     _viewController=(BaseViewController*)[self searchViewController];
 }
 
+
 /**
  添加事件
- **/
+ */
 -(void) addEvent
 {
     [self addTarget:self action:@selector(btnCloseClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -34,7 +35,7 @@
 
 /**
  单击事件执行
- **/
+ */
 -(void)btnCloseClick:(id)sender
 {
     if(_isValidate == YES){
@@ -49,7 +50,7 @@
 
 /**
  关闭视图控制器
- **/
+ */
 -(void) close
 {
     @try
