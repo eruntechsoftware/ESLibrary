@@ -13,14 +13,34 @@
 #import "IReleasable.h"
 #import "Initializble.h"
 
+@protocol ESPhotoAddViewDelegate <NSObject>
+
+
+/**
+ 图片控件布局完成后执行方法
+
+ @param height 当前布局高度约束值
+ @param imgCount 图片总数
+ */
+-(void)imageViewLayout:(CGFloat)height imageCount:(NSUInteger)imgCount;
+
+@end
+
+
 IB_DESIGNABLE
 @interface ESPhotoAddView : UIView<ZLPhotoPickerBrowserViewControllerDelegate,ICollectible,IReleasable,Initializble>
 {
+    id<ESPhotoAddViewDelegate> _photoAddViewDelegate;
     NSMutableString * _collectSign;
     NSString * _name;
     DataType _dataType;
     BaseViewController *_rootViewController;
 }
+
+/**
+ 设置或获取ESPhotoAddViewDelegate委托
+ */
+@property(strong,nonatomic)id<ESPhotoAddViewDelegate> photoAddViewDelegate;
 
 /**
  设置或获取高度约束
@@ -36,6 +56,8 @@ IB_DESIGNABLE
  设置或获取服务器图片数组分割符
  */
 @property (strong,nonatomic)IBInspectable NSString *splitMark;
+
+
 
 /**
  设置或获取最多图片数

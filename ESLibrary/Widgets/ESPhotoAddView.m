@@ -14,7 +14,7 @@
 
 @implementation ESPhotoAddView
 
-
+@synthesize photoAddViewDelegate=_photoAddViewDelegate;
 @synthesize collectSign=_collectSign;
 @synthesize name=_name;
 @synthesize dataType=_dataType;
@@ -45,7 +45,6 @@
     return self;
 
 }
-
 
 - (void) initializ
 {
@@ -149,7 +148,7 @@
     }
     
     //一行四个图片。间隔为6，计算出每个照片的宽高
-    _photoWidth = ([UIScreen mainScreen].bounds.size.width - 30) / 4 -6;
+    _photoWidth = (self.frame.size.width-18)/4;
     
     //初始化整个view的高度
    _photoAddViewHigh = 0;
@@ -202,7 +201,7 @@
             }
         
             //初始化图片view的位置和大小，动态计算出 x坐标 和 y坐标
-            ESImageView *uiPhoto = [[ESImageView alloc] initWithFrame:CGRectMake((xPlace-1)*(_photoWidth+6), ((int)(index/4))*(_photoWidth+6), _photoWidth, _photoWidth)];
+            ESImageView *uiPhoto = [[ESImageView alloc] initWithFrame:CGRectMake((xPlace-1)*6+(xPlace-1)*_photoWidth, ((int)(index/4))*(_photoWidth+6), _photoWidth, _photoWidth)];
            [uiPhoto setContentMode:UIViewContentModeScaleAspectFill];
            uiPhoto.clipsToBounds = YES;
         
@@ -237,6 +236,11 @@
     }
     //返回photoAddView的动态高度
     _heightConstraint.constant = _photoAddViewHigh;
+    
+    //布局完成后调用代理协议
+    if (_photoAddViewDelegate!=nil) {
+        [_photoAddViewDelegate imageViewLayout:_photoAddViewHigh imageCount:photoArray.count];
+    }
     return _photoAddViewHigh;
 }
 
@@ -322,8 +326,8 @@
                 NSString *fileName = [NSString stringWithFormat:@"%@%d.png", str,i];
                 [_photoPathArray addObject:fileName];
                 
-                [self setMyPhotoArray:_photoArray];
             }
+            [self setMyPhotoArray:_photoArray];
         }
     };
     
@@ -361,7 +365,7 @@
     _browerVc.photos = photos;
     
     // 展示控制器
-    [_browerVc showPushPickerVc:_rootViewController];
+    [_browerVc showPickerVc:_rootViewController];
     
 }
 
