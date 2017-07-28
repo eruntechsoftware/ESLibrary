@@ -3,10 +3,11 @@ Pod::Spec.new do |s|
 
   s.name         = "ESLibrary"
 
-  s.version      = "1.0.6"
-use ourself"
+  s.version      = "1.0.7"
 
-  s.homepage     = "https://github.com/eruntechsoftware/ESLibrary"
+  s.summary      = "A ESLibrary to use ourself"
+
+  s.homepage = "https://github.com/eruntechsoftware/ESLibrary"
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
