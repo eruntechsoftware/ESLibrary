@@ -3,9 +3,8 @@ Pod::Spec.new do |s|
 
   s.name         = "ESLibrary"
 
-  s.version      = "1.0.5"
-
-  s.summary      = "A ESLibrary to use ourself"
+  s.version      = "1.0.6"
+use ourself"
 
   s.homepage     = "https://github.com/eruntechsoftware/ESLibrary"
 
