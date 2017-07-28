@@ -10,9 +10,11 @@
 #import "ESLabel.h"
 
 @interface ESTextView()<UITextViewDelegate>
-{
-    ESLabel *PlaceholderLabel;
-}
+
+/**
+ 占位符Label
+ */
+@property (strong,nonatomic) ESLabel *placeHolderLabel;
 
 @end
 @implementation ESTextView
@@ -24,10 +26,28 @@
 @synthesize context=_context;
 @synthesize viewController=_viewController;
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self addPlaceHolderLabel];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self addPlaceHolderLabel];
+    }
+    return self;
+}
+
 - (id) initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
-        
         [self awakeFromNib];
+        [self addPlaceHolderLabel];
     }
     return self;
 }
@@ -35,23 +55,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.contentInset = UIEdgeInsetsMake(60, self.frame.size.height/3, 0, 0);
-//    self.textContainerInset = UIEdgeInsetsMake(0, 100, 0, 0);
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(DidChange:) name:UITextViewTextDidChangeNotification object:self];
-
-    float left=16,top=0,hegiht=30;
-    
-    self.placeholderColor = [UIColor lightGrayColor];
-    PlaceholderLabel=[[ESLabel alloc] initWithFrame:CGRectMake(left, top
-                                                               , self.frame.size.width, hegiht)];
-    PlaceholderLabel.font=[UIFont fontWithName:@"Helvetica" size:13];
-    PlaceholderLabel.textColor=self.placeholderColor;
-    PlaceholderLabel.lineBreakMode = UILineBreakModeWordWrap;
-//    PlaceholderLabel.textAlignment=NSTextAlignmentJustified;
-    PlaceholderLabel.numberOfLines = 0;
-    [self addSubview:PlaceholderLabel];
-    PlaceholderLabel.text=self.placeholder;
-
 }
 
 /**
@@ -143,37 +147,29 @@
     return YES;
 }
 
--(void)setPlaceholder:(NSString *)placeholder{
-    if (placeholder.length == 0 || [placeholder isEqualToString:@""]) {
-        PlaceholderLabel.hidden=YES;
-    }
-    else
-        PlaceholderLabel.text=placeholder;
-    _placeholder=placeholder;
+/**
+ 添加占位符PlaceHolderLabel
+ */
+- (void)addPlaceHolderLabel
+{
+    UILabel *placeHolderLabel = [[UILabel alloc] init];
+    placeHolderLabel.numberOfLines = 0;
+    placeHolderLabel.textColor = [UIColor grayColor];
+    [placeHolderLabel sizeToFit];
+    placeHolderLabel.font = [UIFont systemFontOfSize:12.f];
+    _placeHolderLabel = placeHolderLabel;
+    [self addSubview:_placeHolderLabel];
+    [self setValue:_placeHolderLabel forKey:@"_placeholderLabel"];
+}
 
-    
+-(void)setPlaceholder:(NSString *)placeholder{
+    _placeHolderLabel.text = placeholder;
 }
 
 -(void)DidChange:(NSNotification*)noti{
-    
-    if (self.placeholder.length == 0 || [self.placeholder isEqualToString:@""]) {
-        PlaceholderLabel.hidden=YES;
-    }
-    
-    if (self.text.length > 0) {
-        PlaceholderLabel.hidden=YES;
-    }
-    else{
-        PlaceholderLabel.hidden=NO;
-    }
-    
     //校验数据
     [self dataValidator];
     
-}
-
--(void) placeholderHidden{
-    PlaceholderLabel.hidden=YES;
 }
 
 @end
