@@ -15,16 +15,17 @@
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self=[super initWithCoder:aDecoder];
     if (self) {
-        _btnErrorMessage = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width-20, self.frame.size.height/4+3, 18, 18)];
-        _btnErrorMessage.backgroundColor = [UIColor orangeColor];
-        [_btnErrorMessage setTitle:@"!" forState:UIControlStateNormal];
-        CGFloat radius = _btnErrorMessage.bounds.size.width/2;
-        _btnErrorMessage.layer.cornerRadius=radius;
-        _btnErrorMessage.layer.borderWidth=0.5;
-        _btnErrorMessage.layer.borderColor = [UIColor yellowColor].CGColor;
-        _btnErrorMessage.hidden=YES;
+        _isRequiredimage = [UIImage imageNamed:@"ESTextField_Required_icon"];
+//        _btnErrorMessage = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width-20, self.frame.size.height/4+3, 18, 18)];
+//        _btnErrorMessage.backgroundColor = [UIColor orangeColor];
+//        [_btnErrorMessage setTitle:@"!" forState:UIControlStateNormal];
+//        CGFloat radius = _btnErrorMessage.bounds.size.width/2;
+//        _btnErrorMessage.layer.cornerRadius=radius;
+//        _btnErrorMessage.layer.borderWidth=0.5;
+//        _btnErrorMessage.layer.borderColor = [UIColor yellowColor].CGColor;
+//        _btnErrorMessage.hidden=YES;
         
-        [self addSubview:_btnErrorMessage];
+//        [self addSubview:_btnErrorMessage];
     }
     return self;
 }
@@ -47,7 +48,8 @@
     [[self rac_signalForControlEvents:UIControlEventEditingDidEnd] subscribeNext:^(__kindof UIControl * _Nullable x) {
         BOOL result = [self dataValidator];
         if (!result) {
-            [self shakeAnimationMethod];
+//            [self shakeAnimationMethod];
+            [self setNeedsDisplay];
         }
     }];
 }
@@ -123,35 +125,47 @@
 {
     //如果不能为空，则提示消息
     if(_isRequired && [[self.text trim] isEqualToString:@""]){
-        [self.viewController.view makeToast:_isRequiredTooltip duration:3.0
-                                   position:CSToastPositionCenter];
         return NO;
     }
     if(_regularExpression!=nil && ![_regularExpression isEmpty]){
         //正则表达式验证
         BOOL result = [_validator validataWithValue:self.text];
-        _btnErrorMessage.hidden = result;
+//        _btnErrorMessage.hidden = result;
         return result;
     }
     return YES;
 }
 
 /**
- 抖动动画
- */
-- (void)shakeAnimationMethod
+ * 提示校验错误
+ * **/
+-(void) hint
 {
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position.x"];
-    CGFloat positionX = _btnErrorMessage.layer.position.x;
-    animation.values = @[@(positionX-3),@(positionX)];
-    animation.repeatCount = 10;
-    animation.duration = 0.05;
-    animation.autoreverses = YES;
-    [_btnErrorMessage.layer addAnimation:animation forKey:nil];
+    [self.viewController.view makeToast:self.placeholder duration:3.0
+                               position:CSToastPositionCenter];
 }
 
--(void)drawRect:(CGRect)rect{
+///**
+// 抖动动画
+// */
+//- (void)shakeAnimationMethod
+//{
+//    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position.x"];
+//    CGFloat positionX = _btnErrorMessage.layer.position.x;
+//    animation.values = @[@(positionX-3),@(positionX)];
+//    animation.repeatCount = 10;
+//    animation.duration = 0.05;
+//    animation.autoreverses = YES;
+//    [_btnErrorMessage.layer addAnimation:animation forKey:nil];
+//}
+
+-(void)drawRect:(CGRect)rect
+{
     [super drawRect:rect];
+    if(_isRequired)
+    {
+        [_isRequiredimage drawInRect:CGRectMake(self.bounds.origin.x-46-23, self.bounds.size.height/2-46/2, 46, 46)];
+    }
 }
 
 

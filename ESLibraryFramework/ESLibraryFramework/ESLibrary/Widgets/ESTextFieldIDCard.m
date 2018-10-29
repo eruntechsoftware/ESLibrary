@@ -14,8 +14,8 @@
     self = [super initWithCoder:aDecoder];
     if(self){
         self.regularExpression = [DataTypeExpression idCard];
-        self.regularTooltip = @"请输入正确的身份证号码";
-        self.placeholder = @"身份证";
+        self.placeholder = @"请输入身份证号码";
+//        self.placeholder = @"身份证";
     }
     return self;
 }
@@ -24,8 +24,8 @@
     self = [super initWithFrame:frame];
     if(self){
         self.regularExpression = [DataTypeExpression idCard];
-        self.regularTooltip = @"请输入正确的身份证号码";
-        self.placeholder = @"身份证";
+        self.placeholder = @"请输入身份证号码";
+//        self.placeholder = @"身份证";
     }
     return self;
 }

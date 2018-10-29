@@ -15,6 +15,7 @@
 @interface ESValidatorViewController : NSObject<IControlSearcherHandler, IValidator> {
     UIViewController *_viewController;
     BOOL _result;
+    BOOL _validatorResult;
 }
 
 /**

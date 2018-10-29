@@ -17,8 +17,8 @@
 //        self.regularTooltip = @"请输入正确的URL";
 //        self.placeholder = @"网址";
         self.regularExpression = [DataTypeExpression eMail];
-        self.regularTooltip = @"请输入正确的邮箱地址";
-        self.placeholder = @"eMail地址";
+        self.placeholder = @"请输入邮箱地址";
+//        self.placeholder = @"eMail地址";
         self.keyboardType = UIKeyboardTypeEmailAddress;
     }
     return self;
@@ -28,8 +28,8 @@
     self = [super initWithFrame:frame];
     if(self){
         self.regularExpression = [DataTypeExpression eMail];
-        self.regularTooltip = @"请输入正确的邮箱地址";
-        self.placeholder = @"eMail地址";
+        self.placeholder = @"请输入邮箱地址";
+//        self.placeholder = @"eMail地址";
         self.keyboardType = UIKeyboardTypeEmailAddress;
     }
     return self;

@@ -218,6 +218,11 @@
 		3AF251621F1C93CA007000BE /* camera-flash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AF2515F1F1C93CA007000BE /* camera-flash@2x.png */; };
 		3AFD77F01EFA060B0088D67C /* ESLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AFD77EF1EFA060B0088D67C /* ESLibrary.h */; };
 		507F3B98351BBEBFB773EB00 /* Pods_ESLibraryFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E767635055930DDBEB55B10 /* Pods_ESLibraryFramework.framework */; };
+		922846272186ABD5007B51A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 922846262186ABD5007B51A2 /* Assets.xcassets */; };
+		9228462E2186ED10007B51A2 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9228462C2186ED10007B51A2 /* Toast+UIView.m */; };
+		9228462F2186ED10007B51A2 /* Toast+UIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9228462D2186ED10007B51A2 /* Toast+UIView.h */; };
+		922846322186F637007B51A2 /* ESHiddenFeild.h in Headers */ = {isa = PBXBuildFile; fileRef = 922846302186F637007B51A2 /* ESHiddenFeild.h */; };
+		922846332186F637007B51A2 /* ESHiddenFeild.m in Sources */ = {isa = PBXBuildFile; fileRef = 922846312186F637007B51A2 /* ESHiddenFeild.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -435,6 +440,11 @@
 		3AF2515F1F1C93CA007000BE /* camera-flash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-flash@2x.png"; sourceTree = "<group>"; };
 		3AFD77EF1EFA060B0088D67C /* ESLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESLibrary.h; sourceTree = "<group>"; };
 		561BCC5E191F86D087F8FB51 /* Pods-ESLibraryFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESLibraryFramework.release.xcconfig"; path = "Pods/Target Support Files/Pods-ESLibraryFramework/Pods-ESLibraryFramework.release.xcconfig"; sourceTree = "<group>"; };
+		922846262186ABD5007B51A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9228462C2186ED10007B51A2 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
+		9228462D2186ED10007B51A2 /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
+		922846302186F637007B51A2 /* ESHiddenFeild.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESHiddenFeild.h; sourceTree = "<group>"; };
+		922846312186F637007B51A2 /* ESHiddenFeild.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESHiddenFeild.m; sourceTree = "<group>"; };
 		A14954A88852306C93DEFBEE /* Pods-ESLibraryFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESLibraryFramework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ESLibraryFramework/Pods-ESLibraryFramework.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -473,6 +483,7 @@
 		3A05AF351ED28B3300E69992 /* ESLibraryFramework */ = {
 			isa = PBXGroup;
 			children = (
+				922846262186ABD5007B51A2 /* Assets.xcassets */,
 				3A05AF3E1ED28B4C00E69992 /* ESLibrary */,
 				3A05AF371ED28B3300E69992 /* Info.plist */,
 			);
@@ -493,6 +504,7 @@
 		3A05AF3F1ED28B4C00E69992 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				9228462A2186ED10007B51A2 /* Helper */,
 				3A05AF401ED28B4C00E69992 /* Parse */,
 				3A05AF4B1ED28B4C00E69992 /* Security */,
 				3A05AF4E1ED28B4C00E69992 /* ViewController */,
@@ -669,6 +681,8 @@
 				3A05AFA31ED28B4C00E69992 /* UINavigationBar+Hidden.m */,
 				3A05AFA41ED28B4C00E69992 /* UIView+LayerEffects.h */,
 				3A05AFA51ED28B4C00E69992 /* UIView+LayerEffects.m */,
+				922846302186F637007B51A2 /* ESHiddenFeild.h */,
+				922846312186F637007B51A2 /* ESHiddenFeild.m */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -969,6 +983,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9228462A2186ED10007B51A2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9228462B2186ED10007B51A2 /* Toast */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		9228462B2186ED10007B51A2 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				9228462C2186ED10007B51A2 /* Toast+UIView.m */,
+				9228462D2186ED10007B51A2 /* Toast+UIView.h */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1005,6 +1036,7 @@
 				3A05AFCC1ED28B4C00E69992 /* Validator.h in Headers */,
 				3A05AFA81ED28B4C00E69992 /* ESDataQueryViewController.h in Headers */,
 				3A112FA71F024AA3009B1D13 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.h in Headers */,
+				922846322186F637007B51A2 /* ESHiddenFeild.h in Headers */,
 				3A112FA91F024AA3009B1D13 /* ZLPhotoPickerBrowserViewController.h in Headers */,
 				3A112FCE1F024AA3009B1D13 /* DACircularProgressView.h in Headers */,
 				3A112FC71F024AA3009B1D13 /* ZLPhotoPickerFooterCollectionReusableView.h in Headers */,
@@ -1074,6 +1106,7 @@
 				3A05AFC01ED28B4C00E69992 /* SQLiteDatabase.h in Headers */,
 				3AA16B181EFA08DC00FA5CDA /* ESTextFieldIDCard.h in Headers */,
 				3A112F7F1F024AA3009B1D13 /* LLSimpleCamera.h in Headers */,
+				9228462F2186ED10007B51A2 /* Toast+UIView.h in Headers */,
 				3A112FC51F024AA3009B1D13 /* ZLPhotoPickerCollectionViewCell.h in Headers */,
 				3A05AFEE1ED28B4C00E69992 /* ESIQPopUp.h in Headers */,
 				3A05AFFA1ED28B4C00E69992 /* NSString+FontAwesome.h in Headers */,
@@ -1156,6 +1189,7 @@
 				3AF2515A1F1C92C3007000BE /* TOCropViewControllerLocalizable.strings in Resources */,
 				3AF251601F1C93CA007000BE /* ALCameraViewAssets.xcassets in Resources */,
 				3AF251611F1C93CA007000BE /* camera-flash.png in Resources */,
+				922846272186ABD5007B51A2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1202,8 +1236,10 @@
 				3A7E93BB1F174A5C009719FD /* ESImageCollectionView.m in Sources */,
 				3A7E93B61F174A3C009719FD /* ImageGardCollectionViewCell.m in Sources */,
 				3A112FA81F024AA3009B1D13 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */,
+				9228462E2186ED10007B51A2 /* Toast+UIView.m in Sources */,
 				3A05AFF91ED28B4C00E69992 /* ESButton+Bootstrap.m in Sources */,
 				3AA16B191EFA08DC00FA5CDA /* ESTextFieldIDCard.m in Sources */,
+				922846332186F637007B51A2 /* ESHiddenFeild.m in Sources */,
 				3A05AFE71ED28B4C00E69992 /* ESButtonDelete.m in Sources */,
 				3A112F8C1F024AA3009B1D13 /* TOCroppedImageAttributes.m in Sources */,
 				3A05AFCB1ED28B4C00E69992 /* GUID.m in Sources */,

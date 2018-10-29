@@ -22,7 +22,7 @@
 @synthesize isRequired=_isRequired;
 @synthesize name=_name;
 @synthesize dataType=_dataType;
-@synthesize isRequiredTooltip=_isRequiredTooltip;
+//@synthesize isRequiredTooltip=_isRequiredTooltip;
 @synthesize context=_context;
 @synthesize viewController=_viewController;
 
@@ -30,6 +30,7 @@
 {
     self = [super init];
     if (self) {
+        _isRequiredimage = [UIImage imageNamed:@"ESTextField_Required_icon"];
         [self addPlaceHolderLabel];
     }
     return self;
@@ -140,11 +141,24 @@
 {
     //如果不能为空，则提示消息
     if(_isRequired && [[self.text trim] isEqualToString:@""]){
-        [self.viewController.view makeToast:_isRequiredTooltip duration:3.0
-                                   position:CSToastPositionCenter];
         return NO;
     }
     return YES;
+}
+
+-(void)hint
+{
+    [self.viewController.view makeToast:self.placeholder duration:3.0
+                               position:CSToastPositionCenter];
+}
+
+-(void)drawRect:(CGRect)rect
+{
+    [super drawRect:rect];
+    if(_isRequired)
+    {
+        [_isRequiredimage drawInRect:CGRectMake(self.bounds.origin.x-46-23, self.bounds.size.height/2-46/2, 46, 46)];
+    }
 }
 
 /**
@@ -169,7 +183,6 @@
 -(void)DidChange:(NSNotification*)noti{
     //校验数据
     [self dataValidator];
-    
 }
 
 @end
