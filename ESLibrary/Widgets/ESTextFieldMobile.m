@@ -14,8 +14,8 @@
     self = [super initWithCoder:aDecoder];
     if(self){
         self.regularExpression = [DataTypeExpression mobile];
-        self.regularTooltip = @"请输入正确的手机号";
-        self.placeholder = @"大陆地区手机号";
+        self.placeholder = @"请输入手机号";
+//        self.placeholder = @"大陆地区手机号";
         self.keyboardType = UIKeyboardTypePhonePad;
     }
     return self;
@@ -25,8 +25,8 @@
     self = [super initWithFrame:frame];
     if(self){
         self.regularExpression = [DataTypeExpression mobile];
-        self.regularTooltip = @"请输入正确的手机号";
-        self.placeholder = @"大陆地区手机号";
+        self.placeholder = @"请输入手机号";
+//        self.placeholder = @"大陆地区手机号";
         self.keyboardType = UIKeyboardTypePhonePad;
     }
     return self;

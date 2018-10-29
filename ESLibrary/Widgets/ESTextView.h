@@ -30,7 +30,8 @@ IB_DESIGNABLE
     BOOL _isRequired;
     NSString * _name;
     DataType _dataType;
-    NSString *_isRequiredTooltip;
+//    NSString *_isRequiredTooltip;
+    UIImage *_isRequiredimage;
     CGContextRef _context;
     UIViewController* _viewController;
 }
@@ -52,7 +53,7 @@ IB_DESIGNABLE
 /**
  设置或获取非空提示信息
  */
-@property(nonatomic, copy)IBInspectable NSString *isRequiredTooltip;
+//@property(nonatomic, copy)IBInspectable NSString *isRequiredTooltip;
 
 /**
  设置或获取绘图设备上下文

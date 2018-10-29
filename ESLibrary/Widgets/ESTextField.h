@@ -26,6 +26,11 @@ IB_DESIGNABLE
 {   
     CGContextRef _context;
     Validator *_validator;
+    UIImage *_isRequiredimage;
+    NSMutableString * _collectSign;
+    BOOL _isRequired;
+    NSString * _name;
+    UIViewController* _viewController;
 }
 
 
@@ -47,14 +52,14 @@ IB_DESIGNABLE
 /**
  设置或获取非空提示信息
  */
-@property(nonatomic, copy)IBInspectable NSString *isRequiredTooltip;
+//@property(nonatomic, copy)IBInspectable NSString *isRequiredTooltip;
 
 //@property(assign,nonatomic) NSInteger dataTypeValue;
 
 /**
  设置或获取正则表达式校验错误提示
  */
-@property(copy, nonatomic)IBInspectable NSString *regularTooltip;
+//@property(copy, nonatomic)IBInspectable NSString *regularTooltip;
 
 /**
  设置或获取正则表达式
@@ -79,7 +84,7 @@ IB_DESIGNABLE
 /**
  获取当前文本控件的错误提示
  */
-@property(retain,nonatomic)UIButton* btnErrorMessage;
+//@property(retain,nonatomic)UIButton* btnErrorMessage;
 
 /**
  设置或获取当前占位提示颜色
@@ -136,5 +141,10 @@ IB_DESIGNABLE
  数据校验，验证输入内容合法性
  */
 -(BOOL) dataValidator;
+
+/**
+ * 提示校验错误
+ * **/
+-(void) hint;
 
 @end

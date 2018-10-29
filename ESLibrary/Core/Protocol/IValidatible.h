@@ -16,4 +16,9 @@
  @return 数据校验是否通过
  */
 -(BOOL)dataValidator;
+
+/**
+ * 提示校验错误
+ * **/
+-(void) hint;
 @end

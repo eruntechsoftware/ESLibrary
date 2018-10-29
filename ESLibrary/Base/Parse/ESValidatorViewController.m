@@ -23,6 +23,7 @@
     if (self) {
         self.viewController=viewController;
         self->_result=YES;
+        self->_validatorResult=YES;
         return self;
     }
     return nil;
@@ -49,6 +50,15 @@
  */
 -(void) handle:(id)obj
 {
+    if (_result)
+    {
+        _result = [obj dataValidator];
+        if (!_result)
+        {
+            [obj hint];
+            _validatorResult = NO;
+        }
+    }
 //    if ([obj dataValidator]==NO) {
 //        _result=NO;
 //    }else{
@@ -63,16 +73,6 @@
  */
 -(BOOL) isPicked:(id)obj
 {
-    //如果验证状态为通过，则继续验证下一个UIView，否则就略过
-    if(self->_result==YES){
-        if([obj conformsToProtocol:@protocol(IValidatible)]==YES){
-            if ([obj dataValidator]==NO) {
-                _result=NO;
-            }else{
-                _result=YES;
-            }
-        }
-    }
-    return _result;
+    return [obj conformsToProtocol:@protocol(IValidatible)];
 }
 @end
