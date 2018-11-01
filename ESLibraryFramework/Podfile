@@ -2,13 +2,13 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, ‘8.0’
 use_frameworks!
 
-pod 'SDWebImage', '~>4.4.2'
-pod 'MBProgressHUD', '~> 1.0.0'
-pod 'pop', '~> 1.0'
-pod 'Toast', '~> 4.0'
+pod 'SDWebImage'
+pod 'MBProgressHUD'
+pod 'pop'
+pod 'Toast'
 
 target ’ESLibraryFramework’ do
-pod 'AFNetworking', '~> 3.2.1'
-pod 'ReactiveObjC', '~> 3.0.0'
+pod 'AFNetworking'
+pod 'ReactiveObjC'
 pod 'MJRefresh'
 end

@@ -14,23 +14,23 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - MBProgressHUD (1.0.0)
+  - MBProgressHUD (1.1.0)
   - MJRefresh (3.1.15.7)
   - pop (1.0.12)
-  - ReactiveObjC (3.0.0)
+  - ReactiveObjC (3.1.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
   - Toast (4.0.0)
 
 DEPENDENCIES:
-  - AFNetworking (~> 3.2.1)
-  - MBProgressHUD (~> 1.0.0)
+  - AFNetworking
+  - MBProgressHUD
   - MJRefresh
-  - pop (~> 1.0)
-  - ReactiveObjC (~> 3.0.0)
-  - SDWebImage (~> 4.4.2)
-  - Toast (~> 4.0)
+  - pop
+  - ReactiveObjC
+  - SDWebImage
+  - Toast
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -44,13 +44,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
-  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 994fb34cae99ca199631ceb8c128245187e15e46
+PODFILE CHECKSUM: c90f4fb74089a3305bfb12135ae043a1afec5e9c
 
 COCOAPODS: 1.5.3

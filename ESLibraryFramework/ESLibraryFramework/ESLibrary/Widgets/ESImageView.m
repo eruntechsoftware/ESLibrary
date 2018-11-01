@@ -44,7 +44,20 @@
     }
 }
 
-
+/**
+ 显示网络图片
+ @param urlBody  图片网络尾地址
+ */
+-(void) setImageURL:(NSString*) url{
+    
+    NSURL *nsUrl = [NSURL URLWithString:url];
+    
+    if(_placeholderImage != nil){
+        [self sd_setImageWithURL:nsUrl placeholderImage:_placeholderImage];
+    }else{
+        [self sd_setImageWithURL:nsUrl];
+    }
+}
 
 /**
  设置边框颜色
@@ -91,7 +104,7 @@
 -(void) release:(NSString *)dataName data:(Data *)data
 {
     if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]]) {
-        [self setImgWithUrlBody:(NSString*)data.value];
+        [self setImageURL:[data.value toString]];
     }
 }
 
