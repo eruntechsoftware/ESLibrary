@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
-//#import "ZLPhotoPickerBrowserViewController.h"
+#import "ZLPhotoPickerBrowserViewController.h"
 #import "ICollectible.h"
 #import "IReleasable.h"
 #import "Initializble.h"
