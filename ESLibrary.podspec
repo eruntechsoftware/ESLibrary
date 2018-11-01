@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
   s.name         = "ESLibrary"
 
-  s.version      = "1.0.7"
+  s.version      = "1.1.1"
 
   s.summary      = "A ESLibrary to use ourself"
 
@@ -19,10 +19,10 @@ s.ios.deployment_target = "8.0"
   s.source       = { :git => "https://github.com/eruntechsoftware/ESLibrary.git", :tag => s.version }
 s.frameworks = "Foundation", "UIKit"
   s.library   = "sqlite3"
-s.dependency 'MJRefresh', '~> 3.1.12'
-s.dependency 'Toast', '~> 3.0'
-s.dependency 'ReactiveObjC', '~> 3.0.0'
-s.dependency 'SDWebImage', '~>3.8'
+s.dependency 'MJRefresh'
+s.dependency 'Toast'
+s.dependency 'ReactiveObjC'
+s.dependency 'SDWebImage'
 
   #s.public_header_files = "ESLibrary/Base/ViewController/ESLibraryHeaderFiles.h"
 
