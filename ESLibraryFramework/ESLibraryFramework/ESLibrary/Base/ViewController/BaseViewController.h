@@ -181,6 +181,23 @@ IB_DESIGNABLE
 -(void)release:(DataTable*)table;
 
 /**
+ * 数据发布前处理方法
+ */
+-(void)releaseing;
+
+/**
+ * 数据发布后处理方法
+ */
+-(void)released;
+
+/**
+ 发布数据到当前ViewController
+ @params flag 标记
+ @params params 数据集
+ */
+-(void)release:(int)flag params:(DataCollection*)params;
+
+/**
  添加关闭键盘输入事件监听
  */
 -(void)addDismissKeyboardAction;
@@ -234,14 +251,4 @@ IB_DESIGNABLE
  */
 - (void)onRefresh:(nullable DataCollection*)params isClosed:(BOOL)closed;
 
-/**
-  添加无网络或无数据视图
- @param noDataType 无网络或无数据类型选择
- */
--(void) addNoDataView :(NoDataType) noDataType;
-
-/**
-无数据无网络时，重新加载的按钮点击事件，需要子类中重写此方法
- */
--(void) btnReloadDataOnClick:(UIButton*) btn;
 @end

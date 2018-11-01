@@ -163,6 +163,8 @@
 		3AF251621F1C93CA007000BE /* camera-flash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AF2515F1F1C93CA007000BE /* camera-flash@2x.png */; };
 		3AFD77F01EFA060B0088D67C /* ESLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AFD77EF1EFA060B0088D67C /* ESLibrary.h */; };
 		507F3B98351BBEBFB773EB00 /* Pods_ESLibraryFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E767635055930DDBEB55B10 /* Pods_ESLibraryFramework.framework */; };
+		920E4E7D218AEBA60038EB04 /* ESRoundImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 920E4E7B218AEBA60038EB04 /* ESRoundImageView.h */; };
+		920E4E7E218AEBA60038EB04 /* ESRoundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E4E7C218AEBA60038EB04 /* ESRoundImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -325,6 +327,8 @@
 		3AF2515F1F1C93CA007000BE /* camera-flash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-flash@2x.png"; sourceTree = "<group>"; };
 		3AFD77EF1EFA060B0088D67C /* ESLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESLibrary.h; sourceTree = "<group>"; };
 		561BCC5E191F86D087F8FB51 /* Pods-ESLibraryFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESLibraryFramework.release.xcconfig"; path = "Pods/Target Support Files/Pods-ESLibraryFramework/Pods-ESLibraryFramework.release.xcconfig"; sourceTree = "<group>"; };
+		920E4E7B218AEBA60038EB04 /* ESRoundImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRoundImageView.h; sourceTree = "<group>"; };
+		920E4E7C218AEBA60038EB04 /* ESRoundImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRoundImageView.m; sourceTree = "<group>"; };
 		A14954A88852306C93DEFBEE /* Pods-ESLibraryFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESLibraryFramework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ESLibraryFramework/Pods-ESLibraryFramework.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -511,6 +515,8 @@
 		3A05AF821ED28B4C00E69992 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				920E4E7B218AEBA60038EB04 /* ESRoundImageView.h */,
+				920E4E7C218AEBA60038EB04 /* ESRoundImageView.m */,
 				3A7E93B11F174A3C009719FD /* ESImageCollectionView */,
 				3A112FDF1F038E92009B1D13 /* ESBanner */,
 				3A112FD31F038243009B1D13 /* ESViewPager */,
@@ -777,6 +783,7 @@
 				3A05AFCA1ED28B4C00E69992 /* GUID.h in Headers */,
 				3A05AFBE1ED28B4C00E69992 /* SQLExpression.h in Headers */,
 				3A05AFBB1ED28B4C00E69992 /* Database.h in Headers */,
+				920E4E7D218AEBA60038EB04 /* ESRoundImageView.h in Headers */,
 				3A05AFC01ED28B4C00E69992 /* SQLiteDatabase.h in Headers */,
 				3AA16B181EFA08DC00FA5CDA /* ESTextFieldIDCard.h in Headers */,
 				3A112F7F1F024AA3009B1D13 /* LLSimpleCamera.h in Headers */,
@@ -926,6 +933,7 @@
 				3A112F951F024AA3009B1D13 /* UIView+layoutnew.m in Sources */,
 				3AA16B1D1EFA08DC00FA5CDA /* ESTextFieldNumber.m in Sources */,
 				3A112FE71F038E92009B1D13 /* ESPageControl.m in Sources */,
+				920E4E7E218AEBA60038EB04 /* ESRoundImageView.m in Sources */,
 				3A112F9B1F024AA3009B1D13 /* TOCropToolbar.m in Sources */,
 				3A05AFFD1ED28B4C00E69992 /* UIButton+Bootstrap.m in Sources */,
 				3A05AFC71ED28B4C00E69992 /* ESFile.m in Sources */,
