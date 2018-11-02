@@ -136,15 +136,15 @@
         _subTransferDataParams = params;
         DataTable *table = [[DataTable alloc] initWithCapacity:1];
         [table addObject:params];
-        ESReleaseViewController *release = [[ESReleaseViewController alloc] initWithViewController:self dataTable:table];
-        [release release:table];
         
-        ESDataQueryViewController *queryViewController = [[ESDataQueryViewController alloc] initWithViewController:self];
-        [queryViewController execute];
+        [self release:table];
         
-        [self onRefresh:params];
+//        ESDataQueryViewController *queryViewController = [[ESDataQueryViewController alloc] initWithViewController:self];
+//        [queryViewController execute];
+        
+        
     }else{
-        [self onRefresh:nil];
+        [self release:nil];
     }
 }
 
@@ -165,31 +165,11 @@
         ESDataQueryViewController *queryViewController = [[ESDataQueryViewController alloc] initWithViewController:self];
         [queryViewController execute];
         
-        [self onRefresh:params isClosed:closed];
+        [self dismissViewControllerAnimated:YES isParentClosed:closed params:params completion:nil];
     }else{
-        [self onRefresh:nil isClosed:closed];
+        [self dismissViewControllerAnimated:YES isParentClosed:closed params:nil completion:nil];
     }
 }
-
-/**
- UIViewController接收子页面传值
- @param params 参数集
- */
--(void)onRefresh:(nullable DataCollection*)params{
-    //解决导航栏控制器弹出视图错误问题
-    self.baseNavigationController.baseViewController = self;
-}
-
-/**
- UIViewController接收子页面传值
- @param params 参数集
- @param closed 子页面通知是否关闭当前页面
- */
-- (void)onRefresh:(nullable DataCollection*)params isClosed:(BOOL)closed{
-    //解决导航栏控制器弹出视图错误问题
-    self.baseNavigationController.baseViewController = self;
-}
-
 
 /**
  跳转到目标ViewController，并且传送参数到目标ViewController
@@ -217,6 +197,22 @@
 -(void)dismissViewControllerAnimated:(BOOL)flag params:(DataCollection *)dataParams completion:(void (^)(void))completion{
     if (_passValueDelegate != nil){
         [_passValueDelegate passValue:dataParams];
+    }
+    [self dismissViewControllerAnimated:flag completion:completion];
+}
+
+/**
+ 弹出当前ViewController
+ @param flag 是否动画
+ @param parentClosed 是否关闭上级屏幕
+ @param dataParams 屏幕参数
+ @param completion 回调
+ */
+-(void)dismissViewControllerAnimated:(BOOL)flag isParentClosed:(BOOL)parentClosed params:(nullable DataCollection*)dataParams completion:(void (^ __nullable)(void))completion
+{
+    /**传数据到上级页面**/
+    if (_passValueDelegate != nil){
+        [_passValueDelegate passValue:dataParams isClosed:parentClosed];
     }
     [self dismissViewControllerAnimated:flag completion:completion];
 }
@@ -254,8 +250,11 @@
 -(void)release:(DataTable*)table{
     @try {
         [self releaseing];
-        ESReleaseViewController *ReleaseViewController = [[ESReleaseViewController alloc] initWithViewController:self dataTable:table];
-        [ReleaseViewController release:nil];
+        if(table!=nil)
+        {
+            ESReleaseViewController *releaseViewController = [[ESReleaseViewController alloc] initWithViewController:self dataTable:table];
+            [releaseViewController release:nil];
+        }
         [self released];
     } @catch (NSException *exception) {
         
@@ -273,10 +272,13 @@
 {
     @try {
         [self releaseing];
-        DataTable *table = [DataTable alloc];
-        [table addObject:params];
-        ESReleaseViewController *ReleaseViewController = [[ESReleaseViewController alloc] initWithViewController:self dataTable:table];
-        [ReleaseViewController release:nil];
+        if(params!=nil)
+        {
+            DataTable *table = [[DataTable alloc] initWithCapacity:1];
+            [table addObject:params];
+            ESReleaseViewController *releaseViewController = [[ESReleaseViewController alloc] initWithViewController:self dataTable:table];
+            [releaseViewController release:table];
+        }
         [self released];
     } @catch (NSException *exception) {
         

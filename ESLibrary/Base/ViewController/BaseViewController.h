@@ -158,6 +158,15 @@ IB_DESIGNABLE
 */
 -(void)dismissViewControllerAnimated:(BOOL)flag params:(nullable DataCollection*)dataParams completion:(void (^ __nullable)(void))completion;
 
+/**
+ 弹出当前ViewController
+ @param flag 是否动画
+ @param parentClosed 是否关闭上级屏幕
+ @param dataParams 屏幕参数
+ @param completion 回调
+ */
+-(void)dismissViewControllerAnimated:(BOOL)flag isParentClosed:(BOOL)parentClosed params:(nullable DataCollection*)dataParams completion:(void (^ __nullable)(void))completion;
+
 
 /**
  检查屏幕输入必填项
@@ -179,6 +188,23 @@ IB_DESIGNABLE
  @params table 数据集
  */
 -(void)release:(DataTable*)table;
+
+/**
+ * 数据发布前处理方法
+ */
+-(void)releaseing;
+
+/**
+ * 数据发布后处理方法
+ */
+-(void)released;
+
+/**
+ 发布数据到当前ViewController
+ @params flag 标记
+ @params params 数据集
+ */
+-(void)release:(int)flag params:(DataCollection*)params;
 
 /**
  添加关闭键盘输入事件监听
@@ -221,27 +247,4 @@ IB_DESIGNABLE
  */
 -(void)btnLeftOnClick;
 
-/**
- UIViewController接收子页面传值
- @param params 参数集
- */
--(void)onRefresh:(nullable DataCollection*)params;
-
-/**
- UIViewController接收子页面传值
- @param params 参数集
- @param closed 子页面通知是否关闭当前页面
- */
-- (void)onRefresh:(nullable DataCollection*)params isClosed:(BOOL)closed;
-
-/**
-  添加无网络或无数据视图
- @param noDataType 无网络或无数据类型选择
- */
--(void) addNoDataView :(NoDataType) noDataType;
-
-/**
-无数据无网络时，重新加载的按钮点击事件，需要子类中重写此方法
- */
--(void) btnReloadDataOnClick:(UIButton*) btn;
 @end

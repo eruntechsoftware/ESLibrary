@@ -136,15 +136,15 @@
         _subTransferDataParams = params;
         DataTable *table = [[DataTable alloc] initWithCapacity:1];
         [table addObject:params];
-        ESReleaseViewController *release = [[ESReleaseViewController alloc] initWithViewController:self dataTable:table];
-        [release release:table];
         
-        ESDataQueryViewController *queryViewController = [[ESDataQueryViewController alloc] initWithViewController:self];
-        [queryViewController execute];
+        [self release:table];
         
-        [self onRefresh:params];
+//        ESDataQueryViewController *queryViewController = [[ESDataQueryViewController alloc] initWithViewController:self];
+//        [queryViewController execute];
+        
+        
     }else{
-        [self onRefresh:nil];
+        [self release:nil];
     }
 }
 
@@ -165,31 +165,11 @@
         ESDataQueryViewController *queryViewController = [[ESDataQueryViewController alloc] initWithViewController:self];
         [queryViewController execute];
         
-        [self onRefresh:params isClosed:closed];
+        [self dismissViewControllerAnimated:YES isParentClosed:closed params:params completion:nil];
     }else{
-        [self onRefresh:nil isClosed:closed];
+        [self dismissViewControllerAnimated:YES isParentClosed:closed params:nil completion:nil];
     }
 }
-
-/**
- UIViewController接收子页面传值
- @param params 参数集
- */
--(void)onRefresh:(nullable DataCollection*)params{
-    //解决导航栏控制器弹出视图错误问题
-    self.baseNavigationController.baseViewController = self;
-}
-
-/**
- UIViewController接收子页面传值
- @param params 参数集
- @param closed 子页面通知是否关闭当前页面
- */
-- (void)onRefresh:(nullable DataCollection*)params isClosed:(BOOL)closed{
-    //解决导航栏控制器弹出视图错误问题
-    self.baseNavigationController.baseViewController = self;
-}
-
 
 /**
  跳转到目标ViewController，并且传送参数到目标ViewController
@@ -217,6 +197,22 @@
 -(void)dismissViewControllerAnimated:(BOOL)flag params:(DataCollection *)dataParams completion:(void (^)(void))completion{
     if (_passValueDelegate != nil){
         [_passValueDelegate passValue:dataParams];
+    }
+    [self dismissViewControllerAnimated:flag completion:completion];
+}
+
+/**
+ 弹出当前ViewController
+ @param flag 是否动画
+ @param parentClosed 是否关闭上级屏幕
+ @param dataParams 屏幕参数
+ @param completion 回调
+ */
+-(void)dismissViewControllerAnimated:(BOOL)flag isParentClosed:(BOOL)parentClosed params:(nullable DataCollection*)dataParams completion:(void (^ __nullable)(void))completion
+{
+    /**传数据到上级页面**/
+    if (_passValueDelegate != nil){
+        [_passValueDelegate passValue:dataParams isClosed:parentClosed];
     }
     [self dismissViewControllerAnimated:flag completion:completion];
 }
@@ -252,8 +248,59 @@
  @params table 数据集
  */
 -(void)release:(DataTable*)table{
-    ESReleaseViewController *ReleaseViewController = [[ESReleaseViewController alloc] initWithViewController:self dataTable:table];
-    [ReleaseViewController release:nil];
+    @try {
+        [self releaseing];
+        if(table!=nil)
+        {
+            ESReleaseViewController *releaseViewController = [[ESReleaseViewController alloc] initWithViewController:self dataTable:table];
+            [releaseViewController release:nil];
+        }
+        [self released];
+    } @catch (NSException *exception) {
+        
+    } @finally {
+        
+    }
+    
+}
+
+/**
+ 发布数据到当前ViewController
+ @params params 数据集
+ */
+-(void)release:(int)flag params:(DataCollection*)params
+{
+    @try {
+        [self releaseing];
+        if(params!=nil)
+        {
+            DataTable *table = [[DataTable alloc] initWithCapacity:1];
+            [table addObject:params];
+            ESReleaseViewController *releaseViewController = [[ESReleaseViewController alloc] initWithViewController:self dataTable:table];
+            [releaseViewController release:table];
+        }
+        [self released];
+    } @catch (NSException *exception) {
+        
+    } @finally {
+        
+    }
+}
+
+/**
+ * 数据发布前处理方法
+ */
+-(void)releaseing
+{
+    
+}
+
+/**
+ * 数据发布后处理方法
+ */
+-(void)released
+{
+    
 }
 
 /**
@@ -481,54 +528,6 @@
     }
     
     return deviceName;
-}
-
-/**
- 添加无网络或无数据视图
- @param noDataType 无网络或无数据类型选择
- @param onClick 重新尝试按钮的点击block
- */
--(void) addNoDataView :(NoDataType) noDataType{
-    
-    _noDataGroupView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    _noDataGroupView.backgroundColor = [UIColor colorWithRed:240.0/255.0 green:240.0/255.0 blue:240.0/255.0 alpha:1];
-    
-    UIImageView *logo = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/3, SCREEN_HEIGHT/2 - SCREEN_WIDTH/3/13*8,SCREEN_WIDTH/3 ,SCREEN_WIDTH/3/13*16 )];
-    if(noDataType == NoNetwork){
-    
-        [logo setImage:[UIImage imageNamed:@"back_no_network"]];
-    }else{
-        [logo setImage:[UIImage imageNamed:@"back_no_data"]];
-    }
-    UIButton *reloadBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/3, SCREEN_HEIGHT/2 + SCREEN_WIDTH/3/13*8 + 20,SCREEN_WIDTH/3 ,SCREEN_WIDTH/3/4)];
-   
-    reloadBtn.layer.cornerRadius = 3;
-    reloadBtn.layer.borderColor = [UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1].CGColor;
-    reloadBtn.layer.borderWidth = 1;
-    
-    [reloadBtn setTitle:@"刷新" forState:UIControlStateNormal];
-    [reloadBtn setFont:[UIFont systemFontOfSize:13]];
-    [reloadBtn setTitleColor:[UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1] forState:UIControlStateNormal];
-    //button标题的偏移量，这个偏移量是相对于图片的
-    reloadBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 0);
-    [reloadBtn addTarget:self action:@selector(btnReloadDataOnClick:) forControlEvents:UIControlEventTouchUpInside];
-    UIImageView *smallReload = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/6 - 10-SCREEN_WIDTH/3/4/2, SCREEN_WIDTH/3/8 - SCREEN_WIDTH/3/16, SCREEN_WIDTH/3/4/2+2, SCREEN_WIDTH/3/4/2)];
-    [smallReload setImage:[UIImage imageNamed:@"btn_refresh"]];
-    
-    [reloadBtn addSubview:smallReload];
-    [_noDataGroupView addSubview:logo];
-    [_noDataGroupView addSubview:reloadBtn];
-    [self.view addSubview:_noDataGroupView];
-}
-
-/**
- 无数据无网络时，重新加载的按钮点击事件，需要子类中重写此方法
- */
--(void) btnReloadDataOnClick:(UIButton*) btn{
-    
-    //移除视图
-    [_noDataGroupView removeFromSuperview];
-    
 }
 
 @end

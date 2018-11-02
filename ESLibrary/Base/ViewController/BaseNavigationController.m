@@ -185,7 +185,7 @@ static UIColor *NavigationBar_barTintColor;
         
         barButton = [[UIBarButtonItem alloc] initWithTitle:text style:UIBarButtonItemStyleDone target:self action:@selector(btnLeftOnClick)];
         viewController.navigationItem.leftBarButtonItem = barButton;
-        [viewController.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14],NSFontAttributeName, nil] forState:UIControlStateNormal];
+        [viewController.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:12],NSFontAttributeName, nil] forState:UIControlStateNormal];
         [viewController.navigationItem.leftBarButtonItem setTintColor:[UIColor whiteColor]];
     }
     return barButton;

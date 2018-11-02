@@ -158,6 +158,15 @@ IB_DESIGNABLE
 */
 -(void)dismissViewControllerAnimated:(BOOL)flag params:(nullable DataCollection*)dataParams completion:(void (^ __nullable)(void))completion;
 
+/**
+ 弹出当前ViewController
+ @param flag 是否动画
+ @param parentClosed 是否关闭上级屏幕
+ @param dataParams 屏幕参数
+ @param completion 回调
+ */
+-(void)dismissViewControllerAnimated:(BOOL)flag isParentClosed:(BOOL)parentClosed params:(nullable DataCollection*)dataParams completion:(void (^ __nullable)(void))completion;
+
 
 /**
  检查屏幕输入必填项
@@ -237,18 +246,5 @@ IB_DESIGNABLE
  导航视图控制器左侧按钮单击事件处理方法
  */
 -(void)btnLeftOnClick;
-
-/**
- UIViewController接收子页面传值
- @param params 参数集
- */
--(void)onRefresh:(nullable DataCollection*)params;
-
-/**
- UIViewController接收子页面传值
- @param params 参数集
- @param closed 子页面通知是否关闭当前页面
- */
-- (void)onRefresh:(nullable DataCollection*)params isClosed:(BOOL)closed;
 
 @end
