@@ -151,7 +151,7 @@
 /**
  UIViewController间数据传值
  @param params 参数集
- @param closed 子页面通知是否关闭当前页面
+ @param closed 子页面通知是否关闭上级页面
  */
 - (void)passValue:(nullable DataCollection*)params isClosed:(BOOL)closed{
     if (params!=nil) {

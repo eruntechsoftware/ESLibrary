@@ -240,11 +240,11 @@ IB_DESIGNABLE
 /**
  导航视图控制器右侧按钮单击事件处理方法
  */
--(void)btnRightOnClick;
+-(void)onRightClick;
 
 /**
  导航视图控制器左侧按钮单击事件处理方法
  */
--(void)btnLeftOnClick;
+-(void)onLeftClick;
 
 @end

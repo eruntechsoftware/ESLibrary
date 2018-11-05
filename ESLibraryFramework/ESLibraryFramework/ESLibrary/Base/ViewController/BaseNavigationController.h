@@ -41,7 +41,7 @@
  @param flag 是否隐藏返回按钮
  @return BaseNavigationController
  */
-- (nonnull id)initWithViewController:(nonnull BaseViewController*)baseViewController isLeftBtnBackHidden:(BOOL)flag;
+- (nonnull id)initWithViewController:(nonnull BaseViewController*)baseViewController isLeftBackHidden:(BOOL)flag;
 
 /**
  设置NavigationBar颜色

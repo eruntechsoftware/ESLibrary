@@ -127,7 +127,7 @@ static UIColor *NavigationBar_barTintColor;
  */
 - (void) pushViewController:(UIViewController *)viewController animated:(BOOL)flag{
     [super pushViewController:viewController animated:flag];
-
+    viewController.hidesBottomBarWhenPushed=YES;
     viewController.navigationItem.leftBarButtonItem = [self backButton:self.baseViewController.isLeftBtnBackHidden];
 }
 
@@ -139,6 +139,7 @@ static UIColor *NavigationBar_barTintColor;
  */
 - (void) pushViewController:(UIViewController *)viewController leftBackHidden:(BOOL)backHidden animated:(BOOL)flag;{
     [super pushViewController:viewController animated:flag];
+    viewController.hidesBottomBarWhenPushed=YES;
     viewController.navigationItem.leftBarButtonItem = [self backButton:backHidden];
 }
 
@@ -183,7 +184,7 @@ static UIColor *NavigationBar_barTintColor;
     
     if(viewController.navigationItem!=nil){
         
-        barButton = [[UIBarButtonItem alloc] initWithTitle:text style:UIBarButtonItemStyleDone target:self action:@selector(btnLeftOnClick)];
+        barButton = [[UIBarButtonItem alloc] initWithTitle:text style:UIBarButtonItemStyleDone target:self action:@selector(onLeftClick)];
         viewController.navigationItem.leftBarButtonItem = barButton;
         [viewController.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:12],NSFontAttributeName, nil] forState:UIControlStateNormal];
         [viewController.navigationItem.leftBarButtonItem setTintColor:[UIColor whiteColor]];
@@ -201,7 +202,7 @@ static UIColor *NavigationBar_barTintColor;
     
     if(viewController.navigationItem!=nil){
        
-        barButton = [[UIBarButtonItem alloc] initWithTitle:text style:UIBarButtonItemStyleDone target:self action:@selector(btnRightOnClick)];
+        barButton = [[UIBarButtonItem alloc] initWithTitle:text style:UIBarButtonItemStyleDone target:self action:@selector(onRightClick)];
         viewController.navigationItem.rightBarButtonItem = barButton;
         [viewController.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14],NSFontAttributeName, nil] forState:UIControlStateNormal];
         [viewController.navigationItem.rightBarButtonItem setTintColor:[UIColor whiteColor]];
@@ -238,18 +239,18 @@ static UIColor *NavigationBar_barTintColor;
 /**
  导航视图控制器右侧按钮单击事件处理方法
  */
--(void)btnRightOnClick{
+-(void)onRightClick{
     if(_baseViewController!=nil){
-        [_baseViewController btnRightOnClick];
+        [_baseViewController onRightClick];
     }
 }
 
 /**
  导航视图控制器左侧按钮单击事件处理方法
  */
--(void)btnLeftOnClick{
+-(void)onLeftClick{
     if(_baseViewController!=nil){
-        [_baseViewController btnLeftOnClick];
+        [_baseViewController onLeftClick];
     }
 }
 
@@ -270,9 +271,9 @@ static UIColor *NavigationBar_barTintColor;
  @param closed 通知父页面是否关闭
  @param flag 是否动画方式展示
  */
-- (void) popViewControllerAnimated:(DataCollection*)params isClosed:(BOOL)closed animated:(BOOL)flag{
+- (void) popViewControllerAnimated:(DataCollection*)params isClosed:(BOOL)parentClosed animated:(BOOL)flag{
     
-    [_baseViewController.passValueDelegate passValue: params isClosed:closed];
+    [_baseViewController.passValueDelegate passValue: params isClosed:parentClosed];
     [super popViewControllerAnimated:YES];
 }
 

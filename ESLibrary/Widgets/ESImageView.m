@@ -14,6 +14,7 @@
     
     self = [super initWithCoder:aDecoder];
     [self setClipsToBounds:YES];
+    self.userInteractionEnabled=YES;
     self.layer.masksToBounds = YES;
     [self setContentMode:UIViewContentModeScaleAspectFill];
     return self;
@@ -22,6 +23,7 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
+    self.userInteractionEnabled=YES;
     self.layer.masksToBounds = YES;
     [self setContentMode:UIViewContentModeScaleAspectFill];
     return self;
