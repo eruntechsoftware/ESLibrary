@@ -29,36 +29,34 @@
     return self;
 }
 
-
-/**
- 显示网络图片
- @param urlBody  图片网络尾地址
- */
--(void) setImgWithUrlBody:(NSString*) urlBody{
-    
-    NSString *imgUrl = [[NSString alloc] initWithFormat:@"%@%@",IMAGE_URL_HEAD,urlBody];
-    NSURL *nsUrl = [NSURL URLWithString:imgUrl];
-    
-    if(_placeholderImage != nil){
-        [self sd_setImageWithURL:nsUrl placeholderImage:_placeholderImage];
-    }else{
-        [self sd_setImageWithURL:nsUrl];
-    }
-}
-
 /**
  显示网络图片
  @param urlBody  图片网络尾地址
  */
 -(void) setImageURL:(NSString*) url{
     
-    NSURL *nsUrl = [NSURL URLWithString:url];
-    
-    if(_placeholderImage != nil){
-        [self sd_setImageWithURL:nsUrl placeholderImage:_placeholderImage];
-    }else{
-        [self sd_setImageWithURL:nsUrl];
+    @try
+    {
+        NSURL *nsUrl = [NSURL URLWithString:url];
+        
+        if(_placeholderImage != nil)
+        {
+            [self sd_setImageWithURL:nsUrl placeholderImage:_placeholderImage];
+        }
+        else
+        {
+            [self sd_setImageWithURL:nsUrl];
+        }
     }
+    @catch (NSException *exception)
+    {
+        
+    }
+    @finally
+    {
+        
+    }
+    
 }
 
 /**
@@ -107,6 +105,7 @@
 {
     if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]]) {
         [self setImageURL:[data.value toString]];
+        [self setImage:[UIImage imageNamed:[data.value toString]]];
     }
 }
 
