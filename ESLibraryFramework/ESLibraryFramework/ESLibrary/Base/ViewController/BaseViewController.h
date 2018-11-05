@@ -109,6 +109,11 @@ IB_DESIGNABLE
 @property (nullable,strong,nonatomic) IBInspectable NSString* leftText;
 
 /**
+ 设置或获取视图控制器的Tabbar是否隐藏
+ */
+@property (assign,nonatomic) IBInspectable BOOL* hiddenBottomBar;
+
+/**
  设置或获取右侧单击事件处理方法
  */
 @property (nullable,assign,nonatomic) SEL rightBarButtonOnClick;

@@ -105,6 +105,8 @@ static UIColor *NavigationBar_barTintColor;
     
     if([viewController isKindOfClass:[BaseViewController class]]){
         self.baseViewController.isLeftBtnBackHidden = NO;
+
+        self.baseViewController.hidesBottomBarWhenPushed=self.baseViewController.hiddenBottomBar;
         
         //目标视图控制器接收的参数
         viewController.receiveDataParams = dataParams;
@@ -127,7 +129,6 @@ static UIColor *NavigationBar_barTintColor;
  */
 - (void) pushViewController:(UIViewController *)viewController animated:(BOOL)flag{
     [super pushViewController:viewController animated:flag];
-    viewController.hidesBottomBarWhenPushed=YES;
     viewController.navigationItem.leftBarButtonItem = [self backButton:self.baseViewController.isLeftBtnBackHidden];
 }
 
@@ -139,7 +140,6 @@ static UIColor *NavigationBar_barTintColor;
  */
 - (void) pushViewController:(UIViewController *)viewController leftBackHidden:(BOOL)backHidden animated:(BOOL)flag;{
     [super pushViewController:viewController animated:flag];
-    viewController.hidesBottomBarWhenPushed=YES;
     viewController.navigationItem.leftBarButtonItem = [self backButton:backHidden];
 }
 
