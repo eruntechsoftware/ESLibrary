@@ -14,6 +14,8 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
+        [self setImage:[UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(_stateNormalImage)] forState:UIControlStateNormal];
+        [self setImage:[UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(_stateCheckedImage)] forState:UIControlStateSelected];
         [self addTarget:self action:@selector(changeState:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
@@ -23,6 +25,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        [self setImage:[UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(_stateNormalImage)] forState:UIControlStateNormal];
+        [self setImage:[UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(_stateCheckedImage)] forState:UIControlStateSelected];
+        
         [self addTarget:self action:@selector(changeState:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
@@ -68,6 +73,13 @@
             self.selected=YES;
         }
         if ([[data.value toString] isEqualToString:@"0"]) {
+            self.selected=NO;
+        }
+        
+        if ([[data.value toString] isEqualToString:@"true"]) {
+            self.selected=YES;
+        }
+        if ([[data.value toString] isEqualToString:@"false"]) {
             self.selected=NO;
         }
     }
@@ -117,6 +129,10 @@
     return YES;
 }
 
+-(void)hint
+{
+    
+}
 
 /**
     更改选中状态

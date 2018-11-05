@@ -156,7 +156,7 @@ static UIColor *NavigationBar_barTintColor;
     if (hidden == NO) {
        
         UIImageView* backImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 8, 25, 25)];
-        backImage.image = [UIImage imageNamed:@"back"];
+        backImage.image = [UIImage imageNamed:@"arrow_left_icon"];
         backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 90, self.navigationBar.frame.size.height)];
         [backButton addSubview:backImage];
        

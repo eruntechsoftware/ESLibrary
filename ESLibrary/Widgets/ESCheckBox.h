@@ -51,6 +51,16 @@
 @property(retain,nonatomic)IBInspectable UIColor *placeholderColor;
 
 /**
+ 设置或获取选中时的图片
+ **/
+@property(retain,nonatomic)IBInspectable UIImage *stateCheckedImage;
+
+/**
+ 设置或获取未选中时的图片
+ **/
+@property(retain,nonatomic)IBInspectable UIImage *stateNormalImage;
+
+/**
  初始化方法
  **/
 -(void)initializ;

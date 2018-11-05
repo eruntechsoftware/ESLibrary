@@ -140,6 +140,8 @@
 		3A112FE51F038E92009B1D13 /* ESBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FE11F038E92009B1D13 /* ESBanner.m */; };
 		3A112FE61F038E92009B1D13 /* ESPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FE21F038E92009B1D13 /* ESPageControl.h */; };
 		3A112FE71F038E92009B1D13 /* ESPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FE31F038E92009B1D13 /* ESPageControl.m */; };
+		3A57A969218FCB4200F55340 /* ESCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A57A967218FCB4200F55340 /* ESCheckBox.m */; };
+		3A57A96A218FCB4200F55340 /* ESCheckBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A57A968218FCB4200F55340 /* ESCheckBox.h */; };
 		3A7E93B51F174A3C009719FD /* ImageGardCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A7E93B21F174A3C009719FD /* ImageGardCollectionViewCell.h */; };
 		3A7E93B61F174A3C009719FD /* ImageGardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E93B31F174A3C009719FD /* ImageGardCollectionViewCell.m */; };
 		3A7E93B71F174A3C009719FD /* ImageGardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7E93B41F174A3C009719FD /* ImageGardCollectionViewCell.xib */; };
@@ -304,6 +306,8 @@
 		3A112FE11F038E92009B1D13 /* ESBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBanner.m; sourceTree = "<group>"; };
 		3A112FE21F038E92009B1D13 /* ESPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPageControl.h; sourceTree = "<group>"; };
 		3A112FE31F038E92009B1D13 /* ESPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPageControl.m; sourceTree = "<group>"; };
+		3A57A967218FCB4200F55340 /* ESCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESCheckBox.m; sourceTree = "<group>"; };
+		3A57A968218FCB4200F55340 /* ESCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCheckBox.h; sourceTree = "<group>"; };
 		3A7E93B21F174A3C009719FD /* ImageGardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageGardCollectionViewCell.h; sourceTree = "<group>"; };
 		3A7E93B31F174A3C009719FD /* ImageGardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageGardCollectionViewCell.m; sourceTree = "<group>"; };
 		3A7E93B41F174A3C009719FD /* ImageGardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageGardCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -515,6 +519,8 @@
 		3A05AF821ED28B4C00E69992 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				3A57A968218FCB4200F55340 /* ESCheckBox.h */,
+				3A57A967218FCB4200F55340 /* ESCheckBox.m */,
 				920E4E7B218AEBA60038EB04 /* ESRoundImageView.h */,
 				920E4E7C218AEBA60038EB04 /* ESRoundImageView.m */,
 				3A7E93B11F174A3C009719FD /* ESImageCollectionView */,
@@ -766,6 +772,7 @@
 				3A05AFD91ED28B4C00E69992 /* IDataQuery.h in Headers */,
 				3A05B0001ED28B4C00E69992 /* UIView+LayerEffects.h in Headers */,
 				3AA16B161EFA08DC00FA5CDA /* ESTextFieldEmail.h in Headers */,
+				3A57A96A218FCB4200F55340 /* ESCheckBox.h in Headers */,
 				3A112F8F1F024AA3009B1D13 /* UIImage+CropRotate.h in Headers */,
 				3A05AFF21ED28B4C00E69992 /* ESTextField.h in Headers */,
 				3A112F8D1F024AA3009B1D13 /* TOCropViewControllerTransitioning.h in Headers */,
@@ -925,6 +932,7 @@
 				3A05AFAD1ED28B4C00E69992 /* ESReleaseViewController.m in Sources */,
 				3A05AFAF1ED28B4C00E69992 /* ESValidatorViewController.m in Sources */,
 				3A05AFAB1ED28B4C00E69992 /* ESInitializeViewController.m in Sources */,
+				3A57A969218FCB4200F55340 /* ESCheckBox.m in Sources */,
 				3A05AFC11ED28B4C00E69992 /* SQLiteDatabase.m in Sources */,
 				3A05AFFF1ED28B4C00E69992 /* UINavigationBar+Hidden.m in Sources */,
 				3A05AFC51ED28B4C00E69992 /* ESDataIndexOf.m in Sources */,
