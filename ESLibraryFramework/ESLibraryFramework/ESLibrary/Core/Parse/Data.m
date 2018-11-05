@@ -53,6 +53,23 @@
 }
 
 /**
+ 初始化Data，输入dataName、dataType、dataValue
+ @param name 数据名称
+ @param block 回调方法
+ @return Data
+ */
+-(id) initWithDataName:(NSString *)name  operationBlock :(OperationBlock)block
+{
+    self = [super init];
+    if (self) {
+        self.name=name;
+        self.dataType=_dataType;
+        self.block=block;
+    }
+    return self;
+}
+
+/**
  输出Integer值
  @return 整型数据
  */

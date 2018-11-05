@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DataType.h"
+typedef void(^OperationBlock)(id listView, NSIndexPath *indexPath);
 
 @interface  Data :NSObject {
     NSString* _name;
@@ -31,6 +32,11 @@
 @property(strong, nonatomic) id value;
 
 /**
+ 回调
+ */
+@property(copy, nonatomic) OperationBlock block;
+
+/**
  初始化Data，输入name、value
  @param name 数据名称
  @param value datavalue
@@ -46,6 +52,14 @@
  @return Data
  */
 -(id) initWithDataName:(NSString *)name  dataType:(DataType) type dataValue :(id)value;
+
+/**
+ 初始化Data，输入dataName、dataType、dataValue
+ @param name 数据名称
+ @param block 回调方法
+ @return Data
+ */
+-(id) initWithDataName:(NSString *)name  operationBlock :(OperationBlock)block;
 
 /**
  输出Integer值
