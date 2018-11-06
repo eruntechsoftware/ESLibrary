@@ -107,13 +107,13 @@
 {
     if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]])
     {
-        if([_validator validataWithValue:[data.value toString]])
+        if([_validator validataWithValue:(NSString*)data.value])
         {
-            [self setImageURL:[data.value toString]];
+            [self setImageURL:(NSString*)data.value];
         }
         else
         {
-            [self setImage:[UIImage imageNamed:[data.value toString]]];
+            [self setImage:[UIImage imageNamed:(NSString*)data.value]];
         }
     }
 }
