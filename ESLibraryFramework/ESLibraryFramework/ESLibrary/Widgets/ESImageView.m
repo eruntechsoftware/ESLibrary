@@ -104,8 +104,14 @@
 -(void) release:(NSString *)dataName data:(Data *)data
 {
     if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]]) {
-        [self setImageURL:[data.value toString]];
-        [self setImage:[UIImage imageNamed:[data.value toString]]];
+        if([[data.value toString] containsString:@"http://"] || [[data.value toString] containsString:@"https://"])
+        {
+            [self setImageURL:[data.value toString]];
+        }
+        else
+        {
+            [self setImage:[UIImage imageNamed:[data.value toString]]];
+        }
     }
 }
 
