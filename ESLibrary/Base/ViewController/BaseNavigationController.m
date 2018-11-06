@@ -150,23 +150,24 @@ static UIColor *NavigationBar_barTintColor;
 - (UIBarButtonItem*) backButton :(BOOL) hidden{
     
     UIBarButtonItem* barButton;
-    
     UIButton* backButton;
     
     //不隐藏导航栏按钮
-    if (hidden == NO) {
-       
+    if (hidden == NO)
+    {
         UIImageView* backImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 8, 25, 25)];
         backImage.image = [UIImage imageNamed:@"arrow_left_icon"];
         backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 90, self.navigationBar.frame.size.height)];
         [backButton addSubview:backImage];
        
         //添加默认处理事件
-        SEL popViewController = @selector(popViewControllerAnimated);
+        SEL popViewController = @selector(onLeftClick);
         
         [backButton addTarget:self action:popViewController  forControlEvents:UIControlEventTouchUpInside];
         barButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    }else{
+    }
+    else
+    {
         backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 90, self.navigationBar.frame.size.height)];
         barButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     }
@@ -181,9 +182,7 @@ static UIColor *NavigationBar_barTintColor;
 - (UIBarButtonItem*)  leftBarButtonItem:(UIViewController*)viewController text:(NSString*)text{
     
     UIBarButtonItem* barButton;
-    
     if(viewController.navigationItem!=nil){
-        
         barButton = [[UIBarButtonItem alloc] initWithTitle:text style:UIBarButtonItemStyleDone target:self action:@selector(onLeftClick)];
         viewController.navigationItem.leftBarButtonItem = barButton;
         [viewController.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:12],NSFontAttributeName, nil] forState:UIControlStateNormal];
@@ -197,11 +196,8 @@ static UIColor *NavigationBar_barTintColor;
  @param text 按钮文本
  */
 - (UIBarButtonItem*) rightBarButtonItem:(UIViewController*)viewController text:(NSString*)text{
-    
     UIBarButtonItem* barButton;
-    
     if(viewController.navigationItem!=nil){
-       
         barButton = [[UIBarButtonItem alloc] initWithTitle:text style:UIBarButtonItemStyleDone target:self action:@selector(onRightClick)];
         viewController.navigationItem.rightBarButtonItem = barButton;
         [viewController.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14],NSFontAttributeName, nil] forState:UIControlStateNormal];
@@ -218,10 +214,8 @@ static UIColor *NavigationBar_barTintColor;
     
     UIBarButtonItem* barButton;
     if(viewController.navigationItem!=nil){
-        
         //实例化按钮
         UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 90, self.navigationBar.frame.size.height)];
-        
         //实例化图片视图
         UIImageView* backImage = [[UIImageView alloc] initWithFrame:CGRectMake(73, self.navigationBar.frame.size.height/2 - 10, 18, 18)];
         backImage.image = img;

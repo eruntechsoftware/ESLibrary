@@ -126,6 +126,11 @@
 //    [validator validator];
 }
 
+-(void)onLeftClick
+{
+    [self.baseNavigationController popViewControllerAnimated:self.subTransferDataParams animated:YES];
+}
+
 /**
  UIViewController间数据传值
  @param params 参数集
