@@ -13,17 +13,14 @@
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     
     self = [super initWithCoder:aDecoder];
-    _validator = [[Validator alloc] initWithExpression:[DataTypeExpression url]];
     [self setClipsToBounds:YES];
     self.userInteractionEnabled=YES;
     self.layer.masksToBounds = YES;
-    [self setContentMode:UIViewContentModeScaleAspectFill];
     return self;
 }
 
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
-    _validator = [[Validator alloc] initWithExpression:[DataTypeExpression url]];
     [self setClipsToBounds:YES];
     self.userInteractionEnabled=YES;
     self.layer.masksToBounds = YES;
@@ -109,6 +106,10 @@
  */
 -(void) release:(NSString *)dataName data:(Data *)data
 {
+    if(_validator==nil)
+    {
+        _validator = [[Validator alloc] initWithExpression:[DataTypeExpression url]];
+    }
     if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]])
     {
         if([_validator validataWithValue:(NSString*)data.value])
