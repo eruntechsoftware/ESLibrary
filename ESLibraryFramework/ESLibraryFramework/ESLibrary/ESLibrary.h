@@ -56,6 +56,7 @@
 #import "ESTextFieldMobile.h"
 #import "ESTextFieldEmail.h"
 #import "ESTextView.h"
+#import "ESRoundImageView.h"
 #import "ESImageView.h"
 #import "ESView.h"
 #import "ESButton+Bootstrap.h"
