@@ -56,4 +56,10 @@
  @return 身份证号表达式
  */
 + (NSString*) idCard;
+
+/**
+ url正则表达式
+ @return url表达式
+ */
++ (NSString*) url;
 @end

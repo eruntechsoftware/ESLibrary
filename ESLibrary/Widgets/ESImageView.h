@@ -9,6 +9,8 @@
 #import "ICollectible.h"
 #import "IReleasable.h"
 #import "Initializble.h"
+#import "Validator.h"
+#import "DataTypeExpression.h"
 #import "UIImageView+WebCache.h"
 
 IB_DESIGNABLE  // 动态刷新
@@ -16,7 +18,9 @@ IB_DESIGNABLE  // 动态刷新
 static NSString *IMAGE_URL_HEAD = @"";
 
 @interface ESImageView : UIImageView<ICollectible,IReleasable,Initializble>
-
+{
+    Validator *_validator;
+}
 /**
  设置或获取占位图片
  */
@@ -86,12 +90,6 @@ static NSString *IMAGE_URL_HEAD = @"";
  @param sign 采集标记
  */
 -(void) setCollectSign:(NSMutableString*) sign;
-
-/**
- 显示网络图片
- @param urlBody  图片网络尾地址
- */
--(void) setImgWithUrlBody:(NSString*) urlBody;
 
 +(NSString*) getImageUrlHead;
 

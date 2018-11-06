@@ -13,6 +13,7 @@
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     
     self = [super initWithCoder:aDecoder];
+    _validator = [[Validator alloc] initWithExpression:[DataTypeExpression url]];
     [self setClipsToBounds:YES];
     self.userInteractionEnabled=YES;
     self.layer.masksToBounds = YES;
@@ -22,6 +23,7 @@
 
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
+    _validator = [[Validator alloc] initWithExpression:[DataTypeExpression url]];
     [self setClipsToBounds:YES];
     self.userInteractionEnabled=YES;
     self.layer.masksToBounds = YES;
@@ -103,8 +105,9 @@
  */
 -(void) release:(NSString *)dataName data:(Data *)data
 {
-    if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]]) {
-        if([[data.value toString] containsString:@"http://"] || [[data.value toString] containsString:@"https://"])
+    if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]])
+    {
+        if([_validator validataWithValue:[data.value toString]])
         {
             [self setImageURL:[data.value toString]];
         }
