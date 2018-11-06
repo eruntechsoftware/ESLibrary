@@ -33,21 +33,25 @@
 
 /**
  显示网络图片
- @param urlBody  图片网络尾地址
+ @param url  图片网络尾地址
  */
 -(void) setImageURL:(NSString*) url{
     
     @try
     {
         NSURL *nsUrl = [NSURL URLWithString:url];
-        
+        [SDWebImageDownloader.sharedDownloader setValue:@"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"forHTTPHeaderField:@"Accept"];
         if(_placeholderImage != nil)
         {
             [self sd_setImageWithURL:nsUrl placeholderImage:_placeholderImage];
         }
         else
         {
-            [self sd_setImageWithURL:nsUrl];
+            [self sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL)
+            {
+                
+            }];
+
         }
     }
     @catch (NSException *exception)
