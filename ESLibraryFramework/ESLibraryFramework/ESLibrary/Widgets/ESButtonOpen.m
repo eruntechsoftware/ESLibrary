@@ -18,14 +18,12 @@
 
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
-    [self redStyle];
     [self invalidateIntrinsicContentSize];
     return self;
 }
 
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
-    [self redStyle];
     return self;
 }
 

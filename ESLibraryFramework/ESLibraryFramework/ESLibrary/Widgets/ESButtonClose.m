@@ -19,7 +19,6 @@
  */
 -(void)initializ
 {
-    [self redStyle];
     [self addEvent];
     _viewController=(BaseViewController*)[self searchViewController];
 }
