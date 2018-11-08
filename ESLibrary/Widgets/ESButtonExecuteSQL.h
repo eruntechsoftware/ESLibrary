@@ -14,7 +14,7 @@
 #import "ESFile.h"
 #import "ESView.h"
 #import "SQLiteDatabase.h"
-#import "ESButton+Bootstrap.h"
+#import "UIButton+Bootstrap.h"
 #import "ESButton.h"
 IB_DESIGNABLE
 @interface ESButtonExecuteSQL : ESButton<Initializble>

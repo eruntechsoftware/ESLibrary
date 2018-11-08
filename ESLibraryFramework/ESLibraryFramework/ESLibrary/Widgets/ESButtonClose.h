@@ -12,7 +12,7 @@
 #import "BaseViewController.h"
 #import "BaseNavigationController.h"
 #import "ESView.h"
-#import "ESButton+Bootstrap.h"
+#import "UIButton+Bootstrap.h"
 #import "ESButton.h"
 
 IB_DESIGNABLE
