@@ -24,6 +24,7 @@
 
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
+    
     return self;
 }
 
@@ -33,7 +34,7 @@
  */
 -(void)initializ
 {
-    [self redStyle];
+    [self defaultStyle];
     [self addEvent];
     _viewController=(BaseViewController*)[self searchViewController];
 }
