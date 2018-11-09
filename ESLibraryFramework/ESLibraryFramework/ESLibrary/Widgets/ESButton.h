@@ -61,4 +61,6 @@ IB_DESIGNABLE
  设置或获取控背景高亮颜色
  */
 @property(nonatomic, assign)IBInspectable  UIColor *backgroundHighlightedColor;
+
+-(void)applyStyle;
 @end

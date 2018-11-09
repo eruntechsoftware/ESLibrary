@@ -14,24 +14,32 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
+        
+    }
+    return self;
+}
+
+-(void)applyStyle
+{
+    if(self)
+    {
         self.layer.borderWidth = _borderWidth;
         self.layer.cornerRadius = _cornerRadius;
         self.layer.shouldRasterize = YES;
         self.layer.rasterizationScale = [UIScreen mainScreen].scale;
         self.layer.borderColor = [self borderColor].CGColor;
-
+        
         [self setAdjustsImageWhenHighlighted:NO];
         
         self.layer.shadowOffset =  CGSizeMake(3, 5);
         self.layer.shadowOpacity = _shadowOpacity;
         self.layer.shadowColor =  [self shadowColor].CGColor;
-
+        
         [self setBackgroundImage:[self buttonImageFromColor:[self backgroundNormalColor]] forState:UIControlStateNormal];
         [self setBackgroundImage:[self buttonImageFromColor:[self backgroundHighlightedColor]] forState:UIControlStateHighlighted];
         
         self.layer.borderColor = [[UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1] CGColor];
     }
-    return self;
 }
 
 -(UIColor*)backgroundNormalColor
