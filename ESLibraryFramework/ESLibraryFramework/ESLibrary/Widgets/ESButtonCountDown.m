@@ -16,18 +16,16 @@
  **/
 -(void)setCountDownTime:(int)countDownTime{
     
-    self.tag = countDownTime;
-    [self addTarget:self action:@selector(startCountDown:) forControlEvents:UIControlEventTouchDown];
+    _countDownTime = countDownTime;
+//    [self addTarget:self action:@selector(startCountDown:) forControlEvents:UIControlEventTouchDown];
     
 }
 
 /**
  开始计时
- @param btn 点击的按钮
  **/
--(void)startCountDown:(UIButton*) btn{
+-(void)startCountDown{
     
-    _countDownTime = btn.tag;
     _title = self.titleLabel.text;
     self.userInteractionEnabled = NO;
     

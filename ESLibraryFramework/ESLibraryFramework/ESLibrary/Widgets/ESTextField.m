@@ -15,17 +15,9 @@
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self=[super initWithCoder:aDecoder];
     if (self) {
-        _isRequiredimage = [UIImage imageNamed:@"ESTextField_Required_icon"];
-//        _btnErrorMessage = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width-20, self.frame.size.height/4+3, 18, 18)];
-//        _btnErrorMessage.backgroundColor = [UIColor orangeColor];
-//        [_btnErrorMessage setTitle:@"!" forState:UIControlStateNormal];
-//        CGFloat radius = _btnErrorMessage.bounds.size.width/2;
-//        _btnErrorMessage.layer.cornerRadius=radius;
-//        _btnErrorMessage.layer.borderWidth=0.5;
-//        _btnErrorMessage.layer.borderColor = [UIColor yellowColor].CGColor;
-//        _btnErrorMessage.hidden=YES;
-        
-//        [self addSubview:_btnErrorMessage];
+        _requiredImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width-36, self.bounds.size.height/2-23/2, 23, 23)];
+        _requiredImageView.image=[UIImage imageNamed:@"ESTextField_Required_icon"];
+        [self addSubview:_requiredImageView];
     }
     return self;
 }
@@ -48,8 +40,8 @@
     [[self rac_signalForControlEvents:UIControlEventEditingDidEnd] subscribeNext:^(__kindof UIControl * _Nullable x) {
         BOOL result = [self dataValidator];
         if (!result) {
-//            [self shakeAnimationMethod];
-            [self setNeedsDisplay];
+            [self shakeAnimationMethod];
+            //            [self setNeedsDisplay];
         }
     }];
 }
@@ -59,7 +51,7 @@
  */
 -(void)addEvent
 {
-//    [self addTarget:self action:@selector(textBoxChanged:) forControlEvents:UIControlEventEditingDidBegin];
+    //    [self addTarget:self action:@selector(textBoxChanged:) forControlEvents:UIControlEventEditingDidBegin];
 }
 
 -(void)textBoxChanged:(id)sender
@@ -130,7 +122,7 @@
     if(_regularExpression!=nil && ![_regularExpression isEmpty]){
         //正则表达式验证
         BOOL result = [_validator validataWithValue:self.text];
-//        _btnErrorMessage.hidden = result;
+        //        _btnErrorMessage.hidden = result;
         return result;
     }
     return YES;
@@ -141,34 +133,35 @@
  * **/
 -(void) hint
 {
+    [self shakeAnimationMethod];
     [self.viewController.view makeToast:self.placeholder duration:3.0
                                position:CSToastPositionCenter];
 }
 
-///**
-// 抖动动画
-// */
-//- (void)shakeAnimationMethod
-//{
-//    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position.x"];
-//    CGFloat positionX = _btnErrorMessage.layer.position.x;
-//    animation.values = @[@(positionX-3),@(positionX)];
-//    animation.repeatCount = 10;
-//    animation.duration = 0.05;
-//    animation.autoreverses = YES;
-//    [_btnErrorMessage.layer addAnimation:animation forKey:nil];
-//}
+/**
+ 抖动动画
+ */
+- (void)shakeAnimationMethod
+{
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position.x"];
+    CGFloat positionX = _requiredImageView.layer.position.x;
+    animation.values = @[@(positionX-2.5),@(positionX)];
+    animation.repeatCount = 10;
+    animation.duration = 0.02;
+    animation.autoreverses = YES;
+    [_requiredImageView.layer addAnimation:animation forKey:nil];
+}
 
 -(void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
-    if(_isRequired)
-    {
-        [_isRequiredimage drawInRect:CGRectMake(self.bounds.origin.x-46-23, self.bounds.size.height/2-46/2, 46, 46)];
-    }
 }
 
-
+- (void)setIsRequired:(BOOL)isRequired
+{
+    _isRequired=isRequired;
+    _requiredImageView.hidden=!isRequired;
+}
 //-(void)drawPlaceholderInRect:(CGRect)rect{
 //    [_placeholderColor setFill];
 //    CGRect plrect = CGRectMake(rect.origin.x, rect.origin.y+rect.size.height/4, rect.size.width, rect.size.height);

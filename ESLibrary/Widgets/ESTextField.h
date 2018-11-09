@@ -23,7 +23,7 @@
 
 IB_DESIGNABLE
 @interface ESTextField : UITextField<ICollectible,IReleasable,IValidatible,Initializble>
-{   
+{
     CGContextRef _context;
     Validator *_validator;
     UIImage *_isRequiredimage;
@@ -91,7 +91,15 @@ IB_DESIGNABLE
  @property(retain,nonatomic)IBInspectable UIColor *placeholderColor;
  */
 
+/**
+ 非空校验提示
+ */
+@property(retain,nonatomic)UIImageView *requiredImageView;
 
+/**
+ 数据校验错误提示
+ */
+@property(retain,nonatomic)UIImageView *errorImageView;
 /**
  初始化方法
  */

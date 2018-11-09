@@ -138,6 +138,8 @@
 		3A112FE51F038E92009B1D13 /* ESBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FE11F038E92009B1D13 /* ESBanner.m */; };
 		3A112FE61F038E92009B1D13 /* ESPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FE21F038E92009B1D13 /* ESPageControl.h */; };
 		3A112FE71F038E92009B1D13 /* ESPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FE31F038E92009B1D13 /* ESPageControl.m */; };
+		3A1EEFFF21953608000B6662 /* ESButtonCountDown.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A1EEFFD21953607000B6662 /* ESButtonCountDown.h */; };
+		3A1EF00021953608000B6662 /* ESButtonCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1EEFFE21953608000B6662 /* ESButtonCountDown.m */; };
 		3A57A969218FCB4200F55340 /* ESCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A57A967218FCB4200F55340 /* ESCheckBox.m */; };
 		3A57A96A218FCB4200F55340 /* ESCheckBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A57A968218FCB4200F55340 /* ESCheckBox.h */; };
 		3A7E93B51F174A3C009719FD /* ImageGardCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A7E93B21F174A3C009719FD /* ImageGardCollectionViewCell.h */; };
@@ -302,6 +304,8 @@
 		3A112FE11F038E92009B1D13 /* ESBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBanner.m; sourceTree = "<group>"; };
 		3A112FE21F038E92009B1D13 /* ESPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPageControl.h; sourceTree = "<group>"; };
 		3A112FE31F038E92009B1D13 /* ESPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPageControl.m; sourceTree = "<group>"; };
+		3A1EEFFD21953607000B6662 /* ESButtonCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESButtonCountDown.h; sourceTree = "<group>"; };
+		3A1EEFFE21953608000B6662 /* ESButtonCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESButtonCountDown.m; sourceTree = "<group>"; };
 		3A57A967218FCB4200F55340 /* ESCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESCheckBox.m; sourceTree = "<group>"; };
 		3A57A968218FCB4200F55340 /* ESCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCheckBox.h; sourceTree = "<group>"; };
 		3A7E93B21F174A3C009719FD /* ImageGardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageGardCollectionViewCell.h; sourceTree = "<group>"; };
@@ -525,6 +529,8 @@
 				3A112F0F1F024AA3009B1D13 /* SKFCamera */,
 				3AD5EA5A1F00EFB0003F85D8 /* ESImageView.h */,
 				3AD5EA5B1F00EFB0003F85D8 /* ESImageView.m */,
+				3A1EEFFD21953607000B6662 /* ESButtonCountDown.h */,
+				3A1EEFFE21953608000B6662 /* ESButtonCountDown.m */,
 				3AD5EA5C1F00EFB0003F85D8 /* UIView+UIViewBorderStyle.h */,
 				3AD5EA5D1F00EFB0003F85D8 /* UIView+UIViewBorderStyle.m */,
 				3A05AF831ED28B4C00E69992 /* ESActionLoadPage.h */,
@@ -791,6 +797,7 @@
 				3A05AFFA1ED28B4C00E69992 /* NSString+FontAwesome.h in Headers */,
 				3A112F9A1F024AA3009B1D13 /* TOCropToolbar.h in Headers */,
 				3A05AFD01ED28B4C00E69992 /* DataCollection.h in Headers */,
+				3A1EEFFF21953608000B6662 /* ESButtonCountDown.h in Headers */,
 				3A05AFC61ED28B4C00E69992 /* ESFile.h in Headers */,
 				3A112FD71F038243009B1D13 /* ESViewPager.h in Headers */,
 				3A05AFB21ED28B4C00E69992 /* BaseNavigationController.h in Headers */,
@@ -930,6 +937,7 @@
 				3A05AFC51ED28B4C00E69992 /* ESDataIndexOf.m in Sources */,
 				3A05AFFB1ED28B4C00E69992 /* NSString+FontAwesome.m in Sources */,
 				3A05AFA71ED28B4C00E69992 /* ESCollectViewController.m in Sources */,
+				3A1EF00021953608000B6662 /* ESButtonCountDown.m in Sources */,
 				3A112F951F024AA3009B1D13 /* UIView+layoutnew.m in Sources */,
 				3AA16B1D1EFA08DC00FA5CDA /* ESTextFieldNumber.m in Sources */,
 				3A112FE71F038E92009B1D13 /* ESPageControl.m in Sources */,
