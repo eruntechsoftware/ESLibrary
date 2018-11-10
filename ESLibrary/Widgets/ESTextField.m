@@ -15,9 +15,7 @@
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self=[super initWithCoder:aDecoder];
     if (self) {
-        _requiredImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width-36, self.bounds.size.height/2-23/2, 23, 23)];
-        _requiredImageView.image=[UIImage imageNamed:@"ESTextField_Required_icon"];
-        [self addSubview:_requiredImageView];
+        
     }
     return self;
 }
@@ -160,6 +158,9 @@
 - (void)setIsRequired:(BOOL)isRequired
 {
     _isRequired=isRequired;
+    _requiredImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width-36, self.bounds.size.height/2-23/2, 23, 23)];
+    _requiredImageView.image=[UIImage imageNamed:@"ESTextField_Required_icon"];
+    [self addSubview:_requiredImageView];
     _requiredImageView.hidden=!isRequired;
 }
 //-(void)drawPlaceholderInRect:(CGRect)rect{
