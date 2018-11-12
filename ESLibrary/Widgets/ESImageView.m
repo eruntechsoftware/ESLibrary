@@ -41,10 +41,11 @@
         //此方法会先从memory中取。
         return [cache imageFromDiskCacheForKey:key];
     }
-    else
-    {
-        return self.image;
-    }
+//    else
+//    {
+//        return self.image;
+//    }
+    return nil;
 }
 
 
