@@ -78,15 +78,15 @@ static UIColor *NavigationBar_barTintColor;
 /**
  初始化视图控制器
  @param baseViewController 视图控制器
- @param flag 是否隐藏返回按钮
+ @param animated 是否隐藏返回按钮
  @return BaseNavigationController
  */
-- (nonnull id)initWithViewController:(nonnull BaseViewController*)baseViewController isLeftBtnBackHidden:(BOOL)flag{
+- (nonnull id)initWithViewController:(nonnull BaseViewController*)baseViewController isLeftBtnBackHidden:(BOOL)animated{
     
     self.baseViewController = baseViewController;
     
     if([self.baseViewController isKindOfClass:[BaseViewController class]]){
-        self.baseViewController.isLeftBtnBackHidden = flag;
+        self.baseViewController.isLeftBtnBackHidden = animated;
     }
     self = [super initWithRootViewController:baseViewController];
     return self;
@@ -97,9 +97,9 @@ static UIColor *NavigationBar_barTintColor;
  @param viewController 目标视图控制器
  @param dataParams DataCollection类型数据集
  @param delegate 传值委托实现对象
- @param flag 是否动画方式展示
+ @param animated 是否动画方式展示
  */
-- (void) pushViewController:(BaseViewController *)viewController params:(DataCollection *)dataParams passValueDelegate:(id<UIViewPassValueDelegate>) delegate animated:(BOOL)flag{
+- (void) pushViewController:(BaseViewController *)viewController params:(DataCollection *)dataParams passValueDelegate:(id<UIViewPassValueDelegate>) delegate animated:(BOOL)animated{
     
     self.baseViewController = viewController;
     
@@ -119,16 +119,21 @@ static UIColor *NavigationBar_barTintColor;
         //self.leftButtonHidden = false;
     }
     //跳转新屏幕
-    [self pushViewController:viewController animated:flag];
+    [self pushViewController:viewController animated:animated];
 }
 
 /**
  推入视图控制器
  @param viewController 目标视图控制器
- @param flag 是否动画方式展示
+ @param animated 是否动画方式展示
  */
-- (void) pushViewController:(UIViewController *)viewController animated:(BOOL)flag{
-    [super pushViewController:viewController animated:flag];
+- (void) pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    if (self.childViewControllers.count > 0)
+    {
+        // 隐藏底部
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
+    [super pushViewController:viewController animated:animated];
     viewController.navigationItem.leftBarButtonItem = [self backButton:self.baseViewController.isLeftBtnBackHidden];
 }
 
@@ -136,10 +141,16 @@ static UIColor *NavigationBar_barTintColor;
  推入视图控制器
  @param viewController 目标视图控制器
  @param backHidden 是否隐藏返回按钮
- @param flag 是否动画方式展示
+ @param animated 是否动画方式展示
  */
-- (void) pushViewController:(UIViewController *)viewController leftBackHidden:(BOOL)backHidden animated:(BOOL)flag;{
-    [super pushViewController:viewController animated:flag];
+- (void) pushViewController:(UIViewController *)viewController leftBackHidden:(BOOL)backHidden animated:(BOOL)animated;{
+    
+    if (self.childViewControllers.count > 0)
+    {
+        // 隐藏底部
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
+    [self pushViewController:viewController animated:animated];
     viewController.navigationItem.leftBarButtonItem = [self backButton:backHidden];
 }
 
@@ -252,9 +263,9 @@ static UIColor *NavigationBar_barTintColor;
 /**
  弹出viewController
  @param params 类型数据集
- @param flag 是否动画方式展示
+ @param animated 是否动画方式展示
  */
-- (void) popViewControllerAnimated:(DataCollection*)params animated:(BOOL)flag{
+- (void) popViewControllerAnimated:(DataCollection*)params animated:(BOOL)animated{
     [_baseViewController.passValueDelegate passValue: params];
     [super popViewControllerAnimated:YES];
 }
@@ -263,9 +274,9 @@ static UIColor *NavigationBar_barTintColor;
  弹出viewController
  @param params 类型数据集
  @param closed 通知父页面是否关闭
- @param flag 是否动画方式展示
+ @param animated 是否动画方式展示
  */
-- (void) popViewControllerAnimated:(DataCollection*)params isClosed:(BOOL)parentClosed animated:(BOOL)flag{
+- (void) popViewControllerAnimated:(DataCollection*)params isClosed:(BOOL)parentClosed animated:(BOOL)animated{
     
     [_baseViewController.passValueDelegate passValue: params isClosed:parentClosed];
     [super popViewControllerAnimated:YES];

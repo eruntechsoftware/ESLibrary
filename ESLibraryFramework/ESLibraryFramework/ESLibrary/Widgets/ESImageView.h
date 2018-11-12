@@ -20,6 +20,7 @@ static NSString *IMAGE_URL_HEAD = @"";
 @interface ESImageView : UIImageView<ICollectible,IReleasable,Initializble>
 {
     Validator *_validator;
+    NSString *_URL;
 }
 /**
  设置或获取占位图片
@@ -55,6 +56,11 @@ static NSString *IMAGE_URL_HEAD = @"";
  初始化方法
  */
 -(void)initializ;
+
+/**
+ 获取图片
+ */
+-(UIImage*)image;
 
 /**
  获取采集标记名

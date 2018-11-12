@@ -29,6 +29,26 @@
 }
 
 /**
+ 获取图片
+ */
+-(UIImage*)image
+{
+    if(_URL!=nil)
+    {
+        SDWebImageManager *manager = [SDWebImageManager sharedManager];
+        NSString* key = [manager cacheKeyForURL:[NSURL URLWithString:_URL]];
+        SDImageCache* cache = [SDImageCache sharedImageCache];
+        //此方法会先从memory中取。
+        return [cache imageFromDiskCacheForKey:key];
+    }
+    else
+    {
+        return self.image;
+    }
+}
+
+
+/**
  显示网络图片
  @param url  图片网络尾地址
  */
@@ -36,6 +56,7 @@
     
     @try
     {
+        _URL = url;
         NSURL *nsUrl = [NSURL URLWithString:url];
         [SDWebImageDownloader.sharedDownloader setValue:@"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"forHTTPHeaderField:@"Accept"];
         if(_placeholderImage != nil)

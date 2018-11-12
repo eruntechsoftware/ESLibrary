@@ -38,10 +38,10 @@
 /**
  初始化视图控制器
  @param baseViewController 视图控制器
- @param flag 是否隐藏返回按钮
+ @param animated 是否隐藏返回按钮
  @return BaseNavigationController
  */
-- (nonnull id)initWithViewController:(nonnull BaseViewController*)baseViewController isLeftBackHidden:(BOOL)flag;
+- (nonnull id)initWithViewController:(nonnull BaseViewController*)baseViewController isLeftBackHidden:(BOOL)animated;
 
 /**
  设置NavigationBar颜色
@@ -59,33 +59,33 @@
  @param viewController 目标视图控制器
  @param dataParams DataCollection类型数据集
  @param delegate 传值委托实现对象
- @param flag 是否动画方式展示
+ @param animated 是否动画方式展示
  */
-- (void) pushViewController:(nonnull BaseViewController*)viewController params:(nullable DataCollection*)dataParams passValueDelegate:(nonnull id<UIViewPassValueDelegate>)delegate animated:(BOOL)flag;
+- (void) pushViewController:(nonnull BaseViewController*)viewController params:(nullable DataCollection*)dataParams passValueDelegate:(nonnull id<UIViewPassValueDelegate>)delegate animated:(BOOL)animated;
 
 
 /**
  弹出viewController
  @param params 类型数据集
- @param flag 是否动画方式展示
+ @param animated 是否动画方式展示
  */
-- (void) popViewControllerAnimated:(nullable DataCollection*)params animated:( BOOL)flag;
+- (void) popViewControllerAnimated:(nullable DataCollection*)params animated:( BOOL)animated;
 
 /**
  弹出viewController
  @param params 类型数据集
  @param closed 通知父页面是否关闭
- @param flag 是否动画方式展示
+ @param animated 是否动画方式展示
  */
-- (void) popViewControllerAnimated:(DataCollection*)params isClosed:(BOOL)closed animated:(BOOL)flag;
+- (void) popViewControllerAnimated:(DataCollection*)params isClosed:(BOOL)closed animated:(BOOL)animated;
 
 /**
  推入视图控制器
  @param viewController 目标视图控制器
  @param backHidden 是否隐藏返回按钮
- @param flag 是否动画方式展示
+ @param animated 是否动画方式展示
  */
-- (void) pushViewController:(nonnull UIViewController *)viewController leftBackHidden:(BOOL)backHidden animated:(BOOL)flag;
+- (void) pushViewController:(nonnull UIViewController *)viewController leftBackHidden:(BOOL)backHidden animated:(BOOL)animated;
 
 /**
  创建左侧按钮,并添加到导航视图控制器
