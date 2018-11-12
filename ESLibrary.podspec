@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
   s.name         = "ESLibrary"
 
-  s.version      = "1.2.17"
+  s.version      = "1.2.18"
 
   s.summary      = "A ESLibrary to use ourself"
 

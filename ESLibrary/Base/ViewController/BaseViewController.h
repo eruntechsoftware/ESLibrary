@@ -16,7 +16,7 @@
 #import "ESDataQueryViewController.h"
 #import "UIViewPassValueDelegate.h"
 #import "ESCollectViewController.h"
-#import "UIView+Toast.h"
+#import "Toast.h"
 #import <sys/utsname.h>
 
 // 获得屏幕尺寸

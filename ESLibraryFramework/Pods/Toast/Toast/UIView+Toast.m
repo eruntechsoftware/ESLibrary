@@ -23,7 +23,7 @@
 //  TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 //  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "UIView+Toast.h"
+#import "Toast.h"
 #import <QuartzCore/QuartzCore.h>
 #import <objc/runtime.h>
 

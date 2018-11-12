@@ -14,7 +14,7 @@
 #import "BaseViewController.h"
 #import "BaseNavigationController.h"
 #import "ESView.h"
-#import "UIView+Toast.h"
+#import "Toast.h"
 #import "UIButton+Bootstrap.h"
 #import "ESButton.h"
 

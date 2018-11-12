@@ -14,7 +14,7 @@
 #import "IValidatible.h"
 #import "Validator.h"
 #import "Initializble.h"
-#import "UIView+Toast.h"
+#import "Toast.h"
 #import "ESView.h"
 #import "DataType.h"
 #import "DataTypeExpression.h"
