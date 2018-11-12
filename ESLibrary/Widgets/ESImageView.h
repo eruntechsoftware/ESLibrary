@@ -60,7 +60,7 @@ static NSString *IMAGE_URL_HEAD = @"";
 /**
  获取图片
  */
--(UIImage*)image;
+-(UIImage*)imageWithCache;
 
 /**
  获取采集标记名

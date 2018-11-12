@@ -31,7 +31,7 @@
 /**
  获取图片
  */
--(UIImage*)image
+-(UIImage*)imageWithCache
 {
     if(_URL!=nil)
     {
