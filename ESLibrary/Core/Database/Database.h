@@ -28,12 +28,18 @@
 @property(nullable,nonatomic) sqlite3 *db;
 //@property(nonatomic, copy) NSString *path;
 
-
 /**
  初始化数据库访问对象
  @return 数据库对象
  */
--(nonnull id) initDatabase;
+-(instancetype) initDatabase;
+
+/**
+ 初始化数据库访问对象
+ @param databaseName 数据库文件名
+ @return 数据库对象
+ */
+-(instancetype) initDatabaseWithName:(NSString*)databaseName;
 
 /**
  打开数据库，如果数据库不存在则创建数据库  

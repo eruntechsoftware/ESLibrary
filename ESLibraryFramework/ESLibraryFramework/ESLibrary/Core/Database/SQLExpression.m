@@ -107,7 +107,7 @@
                 //                realSql = [realSql stringByReplacingOccurrencesOfString:target withString:value];
             }
         }else{
-            realSql = [realSql stringByReplacingOccurrencesOfString:targetRange withString:@"''"];
+            realSql = [[NSMutableString alloc] initWithString:[realSql stringByReplacingOccurrencesOfString:targetRange withString:@"''"]];
         }
     }
     NSLog(@"%@", realSql);
