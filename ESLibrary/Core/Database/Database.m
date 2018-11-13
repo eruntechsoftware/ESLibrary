@@ -125,14 +125,21 @@ static NSString *_name;//数据库名称
  */
 -(BOOL) open
 {
-    if (sqlite3_open([_path UTF8String], &_db)==SQLITE_OK)
+    @try
     {
-        return TRUE;
+        if (sqlite3_open([_path UTF8String], &_db)==SQLITE_OK)
+        {
+            return TRUE;
+        }
     }
-    else
+    @catch (NSException *exception)
     {
-        NSException *exception = [NSException exceptionWithName:@"打开数据库" reason:@"打开或创建数据库失败！" userInfo:nil];
+        NSLog(@"%@",exception.description);
         @throw exception;
+    }
+    @finally
+    {
+        
     }
     return FALSE;
 }
