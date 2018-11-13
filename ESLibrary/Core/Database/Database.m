@@ -239,57 +239,84 @@ static NSString *_name;//数据库名称
 {
     //返回参数
     DataTable *table=nil;
-    //打开数据库
-    if([self open]==TRUE)
+    @try
     {
-        //错误消息
-        const char* errmsg;
-        const char* charsql = [sql UTF8String];
-        //结果集
-        sqlite3_stmt * statement;
-        //列数
-        int columns;
-
-        if (sqlite3_prepare_v2(_db, charsql, -1, &statement, &errmsg)==SQLITE_OK) {
+        //打开数据库
+        if([self open]==TRUE)
+        {
+            //错误消息
+            const char* errmsg;
+            const char* charsql = [sql UTF8String];
+            //结果集
+            sqlite3_stmt * statement;
+            //列数
+            int columns;
             
-            if(statement!=nil){
-                //获取列长度
-                columns = sqlite3_column_count(statement);
+            if (sqlite3_prepare_v2(_db, charsql, -1, &statement, &errmsg)==SQLITE_OK) {
                 
-                if(columns>0){
-                    //实例化 DataTable对象
-                    table = [[DataTable alloc] initWithCapacity:1];
-                    //循环集合
-                    while (sqlite3_step(statement) == SQLITE_ROW) {
-                        //声明并实例化DataCollection对象
-                        DataCollection *datas = [[DataCollection alloc] initWithCapacity:columns];
-                        //循环列集合
-                        for (int i=0; i<columns; i++) {
-                            //获取列名称字段，将字段值char类型转换为NSString类型
-                            NSString *name = [[NSString alloc] initWithUTF8String:sqlite3_column_name(statement, i)];
-                            //获取列值字段，将字段值char类型转换为NSObject类型
-                            NSObject *value = [[NSString alloc] initWithUTF8String:(char*)sqlite3_column_text(statement, i)];
-                            
-                            Data *data =  [[Data alloc] initWithDataName:name dataValue:value];
-                            [datas addObject:data];
+                if(statement!=nil){
+                    //获取列长度
+                    columns = sqlite3_column_count(statement);
+                    
+                    if(columns>0){
+                        //实例化 DataTable对象
+                        table = [[DataTable alloc] initWithCapacity:1];
+                        NSString *name;
+                        NSObject *value;
+                        //循环集合
+                        while (sqlite3_step(statement) == SQLITE_ROW) {
+                            //声明并实例化DataCollection对象
+                            DataCollection *datas = [[DataCollection alloc] initWithCapacity:columns];
+                            //循环列集合
+                            for (int i=0; i<columns; i++)
+                            {
+                                @try
+                                {
+                                    //获取列名称字段，将字段值char类型转换为NSString类型
+                                    name = [[NSString alloc] initWithUTF8String:sqlite3_column_name(statement, i)];
+                                    //获取列值字段，将字段值char类型转换为NSObject类型
+                                    value = [[NSString alloc] initWithUTF8String:(char*)sqlite3_column_text(statement, i)];
+                                }
+                                @catch (NSException *exception)
+                                {
+                                    if(value==nil)
+                                    {
+                                        value=@"";
+                                    }
+                                }
+                                @finally
+                                {
+                                    Data *data =  [[Data alloc] initWithDataName:name dataValue:value];
+                                    [datas addObject:data];
+                                }
+                                
+                            }
+                            [table addObject:datas];
                         }
-                        [table addObject:datas];
                     }
+                    //释放结果集
+                    sqlite3_finalize(statement);
                 }
-                //释放结果集
-                sqlite3_finalize(statement);
+            }
+            else
+            {
+                //获取错误信息，并将错误抛出
+                NSString* errString = [[NSString alloc] initWithUTF8String:errmsg];
+                NSException *exception = [NSException exceptionWithName:@"SQLiteDatabase Exception" reason:errString userInfo:nil];
+                @throw exception;
             }
         }
-        else
-        {
-            //获取错误信息，并将错误抛出
-            NSString* errString = [[NSString alloc] initWithUTF8String:errmsg];
-            NSException *exception = [NSException exceptionWithName:@"SQLiteDatabase Exception" reason:errString userInfo:nil];
-            @throw exception;
-        }
     }
-    //关闭数据库
-    [self close];
+    @catch (NSException *exception)
+    {
+        //关闭数据库
+        [self close];
+    }
+    @finally
+    {
+        //关闭数据库
+        [self close];
+    }
     return table;
 }
 
