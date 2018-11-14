@@ -1,5 +1,6 @@
-typedef IBInspectable enum
+
+typedef   IBInspectable NS_ENUM(NSUInteger, ModeType)
 {
-    AND
-    ,OR,
-}ModeType;
+    AND,
+    OR
+};

@@ -92,6 +92,8 @@ IB_DESIGNABLE
  */
 @property(nonatomic)IBInspectable ModeType modeType;
 
+@property(nonatomic,unsafe_unretained)IBInspectable NSUInteger modeType1;
+
 /**
  设置或获取当前所属的视图控制器
  */
