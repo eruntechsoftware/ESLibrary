@@ -14,6 +14,7 @@
 #import "IValidatible.h"
 #import "Validator.h"
 #import "Initializble.h"
+#import "IStateProtected.h"
 #import "Toast.h"
 #import "ESView.h"
 #import "DataType.h"
@@ -22,7 +23,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 
 IB_DESIGNABLE
-@interface ESTextField : UITextField<ICollectible,IReleasable,IValidatible,Initializble>
+@interface ESTextField : UITextField<ICollectible,IReleasable,IValidatible,Initializble,IStateProtected>
 {
     CGContextRef _context;
     Validator *_validator;
@@ -74,7 +75,22 @@ IB_DESIGNABLE
 /**
  设置或获取数据类型
  */
-@property(assign, nonatomic) DataType dataType;
+@property(assign, nonatomic)IBInspectable DataType dataType;
+
+/**
+ 设置或获取UIView显示时的目标ID
+ */
+@property(nonatomic)IBInspectable NSString* stateHiddenId;
+
+/**
+ 设置或获取UIView显示时的目标值
+ */
+@property(nonatomic)IBInspectable NSString* wantedStateValue;
+
+/**
+ 设置或获取UIView对比类型，AND：条件全部满足才可以显示，OR：满足一个即可显示
+ */
+@property(nonatomic)IBInspectable ModeType modeType;
 
 /**
  设置或获取当前所属的视图控制器
