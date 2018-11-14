@@ -51,7 +51,7 @@ IB_DESIGNABLE
 /**
  设置或获取UIView对比类型，AND：条件全部满足才可以显示，OR：满足一个即可显示
  */
-@property(nonatomic)IBInspectable ModeType modeType;
+@property(nonatomic)IBInspectable enum ModeType modeType;
 
 /**
  初始化方法

@@ -164,7 +164,7 @@
     _requiredImageView.hidden=!isRequired;
 }
 
-- (ModeType)getModeType {
+- (enum ModeType)getModeType {
     return _modeType;
 }
 
@@ -176,7 +176,7 @@
     return _wantedStateValue;
 }
 
-- (void)modeType:(ModeType)modeType {
+- (void)modeType:(enum ModeType)modeType {
     _modeType=modeType;
 }
 

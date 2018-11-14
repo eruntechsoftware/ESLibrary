@@ -28,8 +28,8 @@
 -(void)protectState:(BOOL)isMatched;
 
 @required
--(void)modeType:(ModeType)modeType;
+-(void)modeType:(enum ModeType)modeType;
 
 @required
--(ModeType) getModeType;
+-(enum ModeType) getModeType;
 @end
