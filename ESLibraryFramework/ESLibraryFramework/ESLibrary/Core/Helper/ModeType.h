@@ -1,6 +1,6 @@
 
-typedef   IBInspectable NS_ENUM(NSUInteger, ModeType)
+typedef IBInspectable NS_OPTIONS(NSUInteger, ModeType)
 {
-    AND,
-    OR
+    AND= 1 <<  0,
+    OR= 1 <<  1
 };
