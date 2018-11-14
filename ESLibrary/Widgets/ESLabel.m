@@ -97,7 +97,7 @@
     
 }
 
-- (enum ModeType)getModeType {
+- (ModeType)getModeType {
     return _modeType;
 }
 

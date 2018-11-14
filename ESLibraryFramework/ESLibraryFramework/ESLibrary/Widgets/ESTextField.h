@@ -87,12 +87,11 @@ IB_DESIGNABLE
  */
 @property(nonatomic)IBInspectable NSString* wantedStateValue;
 
+@property ModeType modeType;
 /**
  设置或获取UIView对比类型，AND：条件全部满足才可以显示，OR：满足一个即可显示
  */
-@property(nonatomic)IBInspectable enum ModeType modeType;
-
-@property(nonatomic,unsafe_unretained)IBInspectable NSUInteger modeType1;
+@property(nonatomic, setter=setModeTypeAsInt:)IBInspectable NSInteger modeTypeLink;
 
 /**
  设置或获取当前所属的视图控制器

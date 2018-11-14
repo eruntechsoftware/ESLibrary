@@ -164,7 +164,12 @@
     _requiredImageView.hidden=!isRequired;
 }
 
-- (enum ModeType)getModeType {
+- (void)setModeTypeAsInt:(NSInteger)value
+{
+    self.ModeType = (ModeType)value;
+}
+
+- (ModeType)getModeType {
     return _modeType;
 }
 
