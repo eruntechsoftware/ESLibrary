@@ -31,5 +31,5 @@
  @param sign 采集标记
  */
 @required
--(void) setCollectSign:(NSMutableString*) sign;
+-(void) collectSign:(NSMutableString*) sign;
 @end

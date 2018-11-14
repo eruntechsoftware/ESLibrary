@@ -1,4 +1,4 @@
-typedef enum
+typedef IBInspectable enum
 {
     String
     ,Integer

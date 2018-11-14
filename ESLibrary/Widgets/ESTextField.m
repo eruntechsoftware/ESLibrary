@@ -163,9 +163,40 @@
     [self addSubview:_requiredImageView];
     _requiredImageView.hidden=!isRequired;
 }
-//-(void)drawPlaceholderInRect:(CGRect)rect{
-//    [_placeholderColor setFill];
-//    CGRect plrect = CGRectMake(rect.origin.x, rect.origin.y+rect.size.height/4, rect.size.width, rect.size.height);
-//    [[self placeholder] drawInRect:plrect withFont:[UIFont systemFontOfSize:13]];
-//}
+
+- (ModeType)getModeType {
+    return _modeType;
+}
+
+- (NSString *)getStateHiddenId {
+    return _stateHiddenId;
+}
+
+- (NSString *)getWantedStateValue {
+    return _wantedStateValue;
+}
+
+- (void)modeType:(ModeType)modeType {
+    _modeType=modeType;
+}
+
+- (void)protectState:(BOOL)isMatched {
+    if(isMatched)
+    {
+        [self setHidden:NO];
+    }
+    else
+    {
+        [self setHidden:YES];
+    }
+}
+
+- (void)stateHiddenId:(NSString *)stateHiddenId {
+    _stateHiddenId=stateHiddenId;
+}
+
+- (void)wantedStateValue:(NSString *)wantedStateValue {
+    _wantedStateValue=wantedStateValue;
+}
+
 @end
