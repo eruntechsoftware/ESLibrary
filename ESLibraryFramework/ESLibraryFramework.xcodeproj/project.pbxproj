@@ -147,6 +147,8 @@
 		3A7E93B71F174A3C009719FD /* ImageGardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7E93B41F174A3C009719FD /* ImageGardCollectionViewCell.xib */; };
 		3A7E93BA1F174A5C009719FD /* ESImageCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A7E93B81F174A5C009719FD /* ESImageCollectionView.h */; };
 		3A7E93BB1F174A5C009719FD /* ESImageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E93B91F174A5C009719FD /* ESImageCollectionView.m */; };
+		3A91A639219BFDEE008C2A9A /* ModeType.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A91A638219BFDEE008C2A9A /* ModeType.h */; };
+		3A91A63B219BFEA3008C2A9A /* IStateProtected.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A91A63A219BFEA3008C2A9A /* IStateProtected.h */; };
 		3AA16B161EFA08DC00FA5CDA /* ESTextFieldEmail.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA16B0E1EFA08DC00FA5CDA /* ESTextFieldEmail.h */; };
 		3AA16B171EFA08DC00FA5CDA /* ESTextFieldEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA16B0F1EFA08DC00FA5CDA /* ESTextFieldEmail.m */; };
 		3AA16B181EFA08DC00FA5CDA /* ESTextFieldIDCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA16B101EFA08DC00FA5CDA /* ESTextFieldIDCard.h */; };
@@ -313,6 +315,8 @@
 		3A7E93B41F174A3C009719FD /* ImageGardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageGardCollectionViewCell.xib; sourceTree = "<group>"; };
 		3A7E93B81F174A5C009719FD /* ESImageCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESImageCollectionView.h; sourceTree = "<group>"; };
 		3A7E93B91F174A5C009719FD /* ESImageCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESImageCollectionView.m; sourceTree = "<group>"; };
+		3A91A638219BFDEE008C2A9A /* ModeType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeType.h; sourceTree = "<group>"; };
+		3A91A63A219BFEA3008C2A9A /* IStateProtected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IStateProtected.h; sourceTree = "<group>"; };
 		3AA16B0E1EFA08DC00FA5CDA /* ESTextFieldEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTextFieldEmail.h; sourceTree = "<group>"; };
 		3AA16B0F1EFA08DC00FA5CDA /* ESTextFieldEmail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESTextFieldEmail.m; sourceTree = "<group>"; };
 		3AA16B101EFA08DC00FA5CDA /* ESTextFieldIDCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTextFieldIDCard.h; sourceTree = "<group>"; };
@@ -468,6 +472,7 @@
 		3A05AF611ED28B4C00E69992 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				3A91A638219BFDEE008C2A9A /* ModeType.h */,
 				3A05AF621ED28B4C00E69992 /* DataTypeExpression.h */,
 				3A05AF631ED28B4C00E69992 /* DataTypeExpression.m */,
 				3A05AF641ED28B4C00E69992 /* ESDataIndexOf.h */,
@@ -501,6 +506,7 @@
 		3A05AF761ED28B4C00E69992 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				3A91A63A219BFEA3008C2A9A /* IStateProtected.h */,
 				3A05AF771ED28B4C00E69992 /* ICollectible.h */,
 				3A05AF781ED28B4C00E69992 /* ICollector.h */,
 				3A05AF791ED28B4C00E69992 /* IControlSearcherHandler.h */,
@@ -770,6 +776,8 @@
 				3A05AFDC1ED28B4C00E69992 /* IReleaser.h in Headers */,
 				3A05AFDD1ED28B4C00E69992 /* IValidatible.h in Headers */,
 				3A05AFD91ED28B4C00E69992 /* IDataQuery.h in Headers */,
+				3A91A63B219BFEA3008C2A9A /* IStateProtected.h in Headers */,
+				3A91A639219BFDEE008C2A9A /* ModeType.h in Headers */,
 				3A05B0001ED28B4C00E69992 /* UIView+LayerEffects.h in Headers */,
 				3AA16B161EFA08DC00FA5CDA /* ESTextFieldEmail.h in Headers */,
 				3A57A96A218FCB4200F55340 /* ESCheckBox.h in Headers */,

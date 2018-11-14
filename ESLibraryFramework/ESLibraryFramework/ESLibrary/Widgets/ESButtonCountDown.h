@@ -21,7 +21,6 @@
 
 /**
  开始计时
- @param btn 计时按钮
  **/
 -(void)startCountDown;
 

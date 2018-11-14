@@ -10,11 +10,13 @@
 #import "ICollectible.h"
 #import "IReleasable.h"
 #import "Initializble.h"
+#import "IStateProtected.h"
 #import "ESNSString.h"
 #import "ESView.h"
+#import "ModeType.h"
 
 IB_DESIGNABLE
-@interface ESLabel : UILabel<ICollectible,IReleasable,Initializble>
+@interface ESLabel : UILabel<ICollectible,IReleasable,Initializble,IStateProtected>
 {
     NSMutableString * _collectSign;
     NSString * _name;
@@ -24,7 +26,7 @@ IB_DESIGNABLE
 /**
  设置或获取采集标记
  */
-@property(nonatomic, copy)IBInspectable NSString *collectSign;
+@property(nonatomic, copy)IBInspectable NSMutableString* collectSign;
 
 /**
  设置或获取UIView名称
@@ -34,7 +36,22 @@ IB_DESIGNABLE
 /**
  设置或获取数据类型
  */
-@property(nonatomic) DataType dataType;
+@property(nonatomic)IBInspectable DataType dataType;
+
+/**
+ 设置或获取UIView显示时的目标ID
+ */
+@property(nonatomic)IBInspectable NSString* stateHiddenId;
+
+/**
+ 设置或获取UIView显示时的目标值
+ */
+@property(nonatomic)IBInspectable NSString* wantedStateValue;
+
+/**
+ 设置或获取UIView对比类型，AND：条件全部满足才可以显示，OR：满足一个即可显示
+ */
+@property(nonatomic)IBInspectable ModeType modeType;
 
 /**
  初始化方法

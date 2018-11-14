@@ -73,6 +73,11 @@
     return _collectSign;
 }
 
+- (void)collectSign:(NSMutableString *)sign {
+    _collectSign=sign;
+}
+
+
 -(NSString*) getName
 {
     return _name;
@@ -90,6 +95,41 @@
     
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, textSize.height);
     
+}
+
+- (ModeType)getModeType {
+    return _modeType;
+}
+
+- (NSString *)getStateHiddenId {
+    return _stateHiddenId;
+}
+
+- (NSString *)getWantedStateValue {
+    return _wantedStateValue;
+}
+
+- (void)modeType:(ModeType)modeType {
+    _modeType=modeType;
+}
+
+- (void)protectState:(BOOL)isMatched {
+    if(isMatched)
+    {
+        [self setHidden:NO];
+    }
+    else
+    {
+        [self setHidden:YES];
+    }
+}
+
+- (void)stateHiddenId:(NSString *)stateHiddenId {
+    _stateHiddenId=stateHiddenId;
+}
+
+- (void)wantedStateValue:(NSString *)wantedStateValue {
+    _wantedStateValue=wantedStateValue;
 }
 
 @end
