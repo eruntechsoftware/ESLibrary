@@ -16,6 +16,7 @@
 #import "ESDataQueryViewController.h"
 #import "UIViewPassValueDelegate.h"
 #import "ESCollectViewController.h"
+#import "ESControlStateProtector.h"
 #import "Toast.h"
 #import <sys/utsname.h>
 

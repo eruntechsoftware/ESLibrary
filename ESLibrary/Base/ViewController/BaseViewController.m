@@ -170,6 +170,9 @@
         ESDataQueryViewController *queryViewController = [[ESDataQueryViewController alloc] initWithViewController:self];
         [queryViewController execute];
         
+        ESControlStateProtector *controlStateProtector = [[ESControlStateProtector alloc] initWithViewController:self];
+        [controlStateProtector stateProtector];
+        
         [self dismissViewControllerAnimated:YES isParentClosed:closed params:params completion:nil];
     }else{
         [self dismissViewControllerAnimated:YES isParentClosed:closed params:nil completion:nil];

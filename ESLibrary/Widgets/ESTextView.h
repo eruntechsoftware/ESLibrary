@@ -86,6 +86,21 @@ IB_DESIGNABLE
 @property(strong,nonatomic)IBInspectable UIFont * placeholderFont;
 
 /**
+ 设置或获取UIView显示时的目标ID
+ */
+@property(nonatomic)IBInspectable NSString* stateHiddenId;
+
+/**
+ 设置或获取UIView显示时的目标值
+ */
+@property(nonatomic)IBInspectable NSString* wantedStateValue;
+
+/**
+ 设置或获取UIView对比类型，YES：条件全部满足才可以显示，NO：满足一个即可显示
+ */
+@property(nonatomic)IBInspectable BOOL *wantedModeType;
+
+/**
  杜明悦
  初始化方法
  */

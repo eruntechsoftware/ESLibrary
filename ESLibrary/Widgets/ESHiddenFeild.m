@@ -13,7 +13,16 @@
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self=[super initWithCoder:aDecoder];
     if (self) {
-        self.hidden=true;
+        self.hidden=YES;
+    }
+    return self;
+}
+
+-(id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.hidden=YES;
     }
     return self;
 }

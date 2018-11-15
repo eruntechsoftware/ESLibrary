@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ModeType.h"
 
 @protocol IValidatible <NSObject>
 /**
