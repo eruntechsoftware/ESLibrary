@@ -97,20 +97,18 @@
     
 }
 
-- (ModeType)getModeType {
-    return _modeType;
-}
 
-- (NSString *)getStateHiddenId {
+
+- (NSString *)stateHiddenId {
     return _stateHiddenId;
 }
 
-- (NSString *)getWantedStateValue {
+- (NSString *)wantedStateValue {
     return _wantedStateValue;
 }
 
-- (void)modeType:(enum ModeType)modeType {
-    _modeType=modeType;
+-(BOOL)wantedModeType{
+    return _wantedModeType;
 }
 
 - (void)protectState:(BOOL)isMatched {
@@ -130,6 +128,11 @@
 
 - (void)wantedStateValue:(NSString *)wantedStateValue {
     _wantedStateValue=wantedStateValue;
+}
+
+- (void)wantedModeType:(BOOL)wantedModeType
+{
+    _wantedModeType=wantedModeType;
 }
 
 @end

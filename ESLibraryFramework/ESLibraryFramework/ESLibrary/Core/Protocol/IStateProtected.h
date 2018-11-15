@@ -7,19 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ModeType.h"
 
 
 @protocol IStateProtected <NSObject>
 
 @required
--(NSString*)getStateHiddenId;
+-(NSString*)stateHiddenId;
 
 @required
 -(void)stateHiddenId:(NSString*)stateHiddenId;
 
 @required
--(NSString*)getWantedStateValue;
+-(NSString*)wantedStateValue;
 
 @required
 -(void)wantedStateValue:(NSString*) wantedStateValue;
@@ -28,8 +27,8 @@
 -(void)protectState:(BOOL)isMatched;
 
 @required
--(void)modeType:(enum ModeType)modeType;
+-(void)wantedModeType:(BOOL)wantedModeType;
 
 @required
--(enum ModeType) getModeType;
+-(BOOL)wantedModeType;
 @end

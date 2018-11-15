@@ -13,7 +13,6 @@
 #import "IStateProtected.h"
 #import "ESNSString.h"
 #import "ESView.h"
-#import "ModeType.h"
 
 IB_DESIGNABLE
 @interface ESLabel : UILabel<ICollectible,IReleasable,Initializble,IStateProtected>
@@ -49,9 +48,9 @@ IB_DESIGNABLE
 @property(nonatomic)IBInspectable NSString* wantedStateValue;
 
 /**
- 设置或获取UIView对比类型，AND：条件全部满足才可以显示，OR：满足一个即可显示
+ 设置或获取UIView对比类型，YES：条件全部满足才可以显示，NO：满足一个即可显示
  */
-@property(nonatomic)IBInspectable enum ModeType modeType;
+@property(nonatomic)IBInspectable BOOL wantedModeType;
 
 /**
  初始化方法
