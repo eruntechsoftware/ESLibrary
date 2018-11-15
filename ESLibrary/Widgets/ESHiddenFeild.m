@@ -18,6 +18,11 @@
     return self;
 }
 
+- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
+    
+}
+
+
 -(id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -27,12 +32,99 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+/**
+ 初始化事件
+ */
+-(void)initializ
+{
+    _viewController = [self searchViewController];
+    _validator=[[Validator alloc] initWithExpression:_regularExpression];
 }
-*/
+
+/**
+ 获取采集标记名
+ */
+-(NSArray*) getRequest
+{
+    NSArray* array = [[NSArray alloc] initWithObjects:_name, nil];
+    return array;
+}
+
+/**
+ 将数据发布到指定位置
+ */
+-(void) release:(NSString *)dataName data:(Data *)data
+{
+    if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]]) {
+        [self setText:(NSString*)data.value];
+    }
+}
+
+/**
+ 数据收集，返回DataCollection
+ */
+-(DataCollection*) collect
+{
+    DataCollection *datas = [[DataCollection alloc] initWithCapacity:1];
+    Data *data = [[Data alloc] initWithDataName:self.name dataValue:self.text];
+    [datas addObject:data];
+    return datas;
+}
+
+/**
+ 设置采集标记，多个标记以‘|!’分割
+ 例如：ForSave|!ForQuery
+ @param sign 采集标记
+ */
+-(void)setCollectSign:(NSMutableString *)sign{
+    _collectSign=sign;
+}
+
+/**
+ 获取收集标记集合，返回NSString[]
+ */
+-(NSString *) getCollectSign
+{
+    return _collectSign;
+}
+
+- (void)collectSign:(NSMutableString *)sign {
+    _collectSign=sign;
+}
+
+
+
+-(NSString*) getName
+{
+    return _name;
+}
+
+-(BOOL)dataValidator
+{
+    //如果不能为空，则提示消息
+    if(_isRequired && [[self.text trim] isEqualToString:@""]){
+        return NO;
+    }
+    if(_regularExpression!=nil && ![_regularExpression isEmpty]){
+        //正则表达式验证
+        BOOL result = [_validator validataWithValue:self.text];
+        return result;
+    }
+    return YES;
+}
+
+/**
+ * 提示校验错误
+ * **/
+-(void) hint
+{
+    [self.viewController.view makeToast:self.placeholder duration:3.0
+                               position:CSToastPositionCenter];
+}
+
+- (void)setIsRequired:(BOOL)isRequired
+{
+    _isRequired=isRequired;
+}
 
 @end
