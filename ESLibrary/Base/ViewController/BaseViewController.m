@@ -144,10 +144,11 @@
         
         [self release:table];
         
-//        ESDataQueryViewController *queryViewController = [[ESDataQueryViewController alloc] initWithViewController:self];
-//        [queryViewController execute];
+        ESDataQueryViewController *queryViewController = [[ESDataQueryViewController alloc] initWithViewController:self];
+        [queryViewController execute];
         
-        
+        ESControlStateProtector *controlStateProtector = [[ESControlStateProtector alloc] initWithViewController:self];
+        [controlStateProtector stateProtector];
     }else{
         [self release:nil];
     }
