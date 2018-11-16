@@ -16,10 +16,7 @@
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     
     self = [super initWithCoder:aDecoder];
-    [self setClipsToBounds:YES];
-    self.userInteractionEnabled=YES;
-    self.layer.masksToBounds = YES;
-    [self setContentMode:UIViewContentModeScaleAspectFill];
+    
     return self;
 }
 
@@ -27,7 +24,10 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        [self setClipsToBounds:YES];
+        self.userInteractionEnabled=YES;
+        self.layer.masksToBounds = YES;
+        [self setContentMode:UIViewContentModeScaleAspectFill];
     }
     return self;
 }
