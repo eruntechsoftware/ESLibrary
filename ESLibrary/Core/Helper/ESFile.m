@@ -109,40 +109,57 @@
     }
     }
     
-    if (isDir==NO) {
-        //检查目标文件是否存在
-        if ([sourcePath pathExtension]) {
-            if ([fileManager isReadableFileAtPath:sourcePath]) {
-                NSError *err;
-                //删除目标文件,防止写入失败
-                [fileManager removeItemAtPath:targetPath error:&err];
-                if ([fileManager copyItemAtPath:sourcePath toPath:targetPath error:&err]==YES) {
-                    NSLog(@"%@",@"成功创建目标文件！");
-                    return TRUE;
-                }
-                else
-                {
-                    NSException *exception = [NSException exceptionWithName: @"FileException"
-                                                                     reason: @"源文件复制到目标路径时出现错误！"
-                                                                   userInfo: nil];
-                    @throw exception;
-                }
-            }
-            else
-            {
-                NSException *exception = [NSException exceptionWithName: @"FileException"
-                                                                 reason: @"无法读取源文件，请重新检查文件！"
-                                                               userInfo: nil];
-                @throw exception;
-            }
-        }
-        else
+    if (isDir==NO)
+    {
+        @try
         {
-            NSException *exception = [NSException exceptionWithName: @"FileException"
-                                                             reason: @"源文件路径无效，请重新检查文件！"
-                                                           userInfo: nil];
-            @throw exception;
+            //检查目标文件是否存在
+            if ([sourcePath pathExtension])
+            {
+                if ([fileManager isReadableFileAtPath:sourcePath])
+                {
+                    NSError *err;
+                    //删除目标文件,防止写入失败
+                    [fileManager removeItemAtPath:targetPath error:&err];
+                    if ([fileManager copyItemAtPath:sourcePath toPath:targetPath error:&err]==YES)
+                    {
+                        NSLog(@"%@",@"成功创建目标文件！");
+                        return TRUE;
+                    }
+//                    else
+//                    {
+//                        NSException *exception = [NSException exceptionWithName: @"FileException"
+//                                                                         reason: @"源文件复制到目标路径时出现错误！"
+//                                                                       userInfo: nil];
+//                        @throw exception;
+//                    }
+                }
+//                else
+//                {
+//                    NSException *exception = [NSException exceptionWithName: @"FileException"
+//                                                                     reason: @"无法读取源文件，请重新检查文件！"
+//                                                                   userInfo: nil];
+//                    @throw exception;
+//                }
+            }
+//            else
+//            {
+//                NSException *exception = [NSException exceptionWithName: @"FileException"
+//                                                                 reason: @"源文件路径无效，请重新检查文件！"
+//                                                               userInfo: nil];
+//                @throw exception;
+//            }
+            
         }
+        @catch (NSException *exception)
+        {
+            NSLog(@"%@",exception.description);
+        }
+        @finally
+        {
+            
+        }
+        
     }
     return FALSE;
 }

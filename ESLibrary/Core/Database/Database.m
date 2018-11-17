@@ -95,6 +95,16 @@ static NSString *_name;//数据库名称
     //如果路径存在则直接返回
     if(_path!=nil && ![[_path trim] isEqualToString:@""])
     {
+        if (sourcePath == nil)
+        {
+            sourcePath = [ESFile findFile:@"db" extension:@"sqlite"];
+        }
+        
+        //如果目标目录无数据库文件，则复制当前文件到目标目录
+        if(![ESFile existsWithPath:_path])
+        {
+            [ESFile copyFileWithSourcePath:sourcePath target:_path];
+        }
         return self;
     }
     else

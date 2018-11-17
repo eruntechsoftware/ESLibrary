@@ -13,13 +13,9 @@
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self=[super initWithCoder:aDecoder];
     if (self) {
-        self.hidden=YES;
+        
     }
     return self;
-}
-
-- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
-    
 }
 
 
@@ -27,7 +23,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.hidden=YES;
+       
     }
     return self;
 }
@@ -37,6 +33,7 @@
  */
 -(void)initializ
 {
+    self.hidden=YES;
     _viewController = [self searchViewController];
     _validator=[[Validator alloc] initWithExpression:_regularExpression];
 }
