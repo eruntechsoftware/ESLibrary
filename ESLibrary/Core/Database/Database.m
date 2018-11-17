@@ -17,8 +17,8 @@ static NSString *_name;//数据库名称
 
 /**
  初始化数据库访问对象
- @return 数据库对象
- */
+@return 数据库对象
+*/
 -(instancetype) initDatabase
 {
     self = [super init];
@@ -33,43 +33,22 @@ static NSString *_name;//数据库名称
     //如果路径存在则直接返回
     if(_path!=nil && ![[_path trim] isEqualToString:@""])
     {
-        if (sourcePath == nil)
-        {
-            sourcePath = [ESFile findFile:@"db" extension:@"sqlite"];
-        }
-        
-        //如果目标目录无数据库文件，则复制当前文件到目标目录
-        if(![ESFile existsWithPath:_path])
-        {
-            [ESFile copyFileWithSourcePath:sourcePath target:_path];
-        }
+        //如果数据库文件存在，则初始化数据库访问对象
         return self;
     }
     else
     {
+        //1.获得数据库文件的路径
+        NSString *doc=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        NSString *fileName=[doc stringByAppendingPathComponent:_name];
+        
+        //存储数据库路径
+        NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
         if (self)
         {
-            if (sourcePath == nil)
-            {
-                sourcePath = [ESFile findFile:@"db" extension:@"sqlite"];
-            }
-            
-            if (targetPath == nil)
-            {
-                targetPath = [[ESFile cachesPath] stringByAppendingPathComponent:_name];
-            }
-            
-            //如果目标目录无数据库文件，则复制当前文件到目标目录
-            if(![ESFile existsWithPath:targetPath])
-            {
-                [ESFile copyFileWithSourcePath:sourcePath target:targetPath];
-            }
-            _path = [targetPath copy];
-            
-            
             if(userDefaults!=nil)
             {
-                [userDefaults setObject:_path forKey:@"DataPath"];
+                [userDefaults setObject:fileName forKey:@"DataPath"];
             }
         }
     }
@@ -84,56 +63,21 @@ static NSString *_name;//数据库名称
 {
     _name=databaseName;
     self = [super init];
-
-    //取出存储的路径
-    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
-    if(userDefaults!=nil)
-    {
-        _path = [userDefaults objectForKey:@"DataPath"];
-    }
     
-    //如果路径存在则直接返回
-    if(_path!=nil && ![[_path trim] isEqualToString:@""])
+    //1.获得数据库文件的路径
+    NSString *doc=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *fileName=[doc stringByAppendingPathComponent:_name];
+    
+    //2.获得数据库
+    _db=[FMDatabase databaseWithPath:fileName];
+    
+    //存储数据库路径
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    if (self)
     {
-        if (sourcePath == nil)
+        if(userDefaults!=nil)
         {
-            sourcePath = [ESFile findFile:@"db" extension:@"sqlite"];
-        }
-        
-        //如果目标目录无数据库文件，则复制当前文件到目标目录
-        if(![ESFile existsWithPath:_path])
-        {
-            [ESFile copyFileWithSourcePath:sourcePath target:_path];
-        }
-        return self;
-    }
-    else
-    {
-        if (self)
-        {
-            _name=databaseName;
-            if (sourcePath == nil)
-            {
-                sourcePath = [ESFile findFile:@"db" extension:@"sqlite"];
-            }
-            
-            if (targetPath == nil)
-            {
-                targetPath = [[ESFile cachesPath] stringByAppendingPathComponent:_name];
-            }
-            
-            //如果目标目录无数据库文件，则复制当前文件到目标目录
-            if(![ESFile existsWithPath:targetPath])
-            {
-                [ESFile copyFileWithSourcePath:sourcePath target:targetPath];
-            }
-            _path = [targetPath copy];
-            
-            
-            if(userDefaults!=nil)
-            {
-                [userDefaults setObject:_path forKey:@"DataPath"];
-            }
+            [userDefaults setObject:fileName forKey:@"DataPath"];
         }
     }
     return self;

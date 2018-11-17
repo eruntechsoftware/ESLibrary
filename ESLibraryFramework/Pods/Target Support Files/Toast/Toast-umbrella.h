@@ -10,7 +10,7 @@
 #endif
 #endif
 
-#import "Toast.h"
+#import "UIView+Toast.h"
 #import "Toast.h"
 
 FOUNDATION_EXPORT double ToastVersionNumber;
