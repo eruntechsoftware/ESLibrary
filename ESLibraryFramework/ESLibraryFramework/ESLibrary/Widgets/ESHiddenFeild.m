@@ -56,7 +56,7 @@
 -(void) release:(NSString *)dataName data:(Data *)data
 {
     if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]]) {
-        [self setText:(NSString*)data.value];
+        [self.titleLabel setText:(NSString*)data.value];
     }
 }
 
@@ -66,7 +66,7 @@
 -(DataCollection*) collect
 {
     DataCollection *datas = [[DataCollection alloc] initWithCapacity:1];
-    Data *data = [[Data alloc] initWithDataName:self.name dataValue:self.text];
+    Data *data = [[Data alloc] initWithDataName:self.name dataValue:self.titleLabel.text];
     [datas addObject:data];
     return datas;
 }
@@ -102,12 +102,12 @@
 -(BOOL)dataValidator
 {
     //如果不能为空，则提示消息
-    if(_isRequired && [[self.text trim] isEqualToString:@""]){
+    if(_isRequired && [[self.titleLabel.text trim] isEqualToString:@""]){
         return NO;
     }
     if(_regularExpression!=nil && ![_regularExpression isEmpty]){
         //正则表达式验证
-        BOOL result = [_validator validataWithValue:self.text];
+        BOOL result = [_validator validataWithValue:self.titleLabel.text];
         return result;
     }
     return YES;

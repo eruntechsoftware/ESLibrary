@@ -17,7 +17,7 @@
 IB_DESIGNABLE
 @interface ESLabel : UILabel<ICollectible,IReleasable,Initializble,IStateProtected>
 {
-    NSMutableString * _collectSign;
+    NSString * _collectSign;
     NSString * _name;
     DataType _dataType;
 }
@@ -25,7 +25,7 @@ IB_DESIGNABLE
 /**
  设置或获取采集标记
  */
-@property(nonatomic, copy)IBInspectable NSMutableString* collectSign;
+@property(nonatomic, copy)IBInspectable NSString* collectSign;
 
 /**
  设置或获取UIView名称
@@ -90,6 +90,6 @@ IB_DESIGNABLE
  例如：ForSave|!ForQuery
  @param sign 采集标记
  */
--(void) setCollectSign:(NSMutableString*) sign;
+-(void) collectSign:(NSString*) sign;
 
 @end

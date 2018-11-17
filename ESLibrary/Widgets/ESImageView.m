@@ -161,6 +161,11 @@
     return _collectSign;
 }
 
+- (void)collectSign:(NSString *)sign
+{
+    _collectSign=sign;
+}
+
 -(NSString*) getName
 {
     return _name;

@@ -106,7 +106,7 @@
  例如：ForSave|!ForQuery
  @param sign 采集标记
  **/
--(void)setCollectSign:(NSMutableString *)sign{
+-(void)collectSign:(NSString *)sign{
     _collectSign=sign;
 }
 

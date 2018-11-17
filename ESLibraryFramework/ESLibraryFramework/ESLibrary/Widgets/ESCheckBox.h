@@ -30,7 +30,7 @@
 /**
  设置或获取采集标记
  **/
-@property(nonatomic, copy)IBInspectable NSMutableString *collectSign;
+@property(nonatomic, copy)IBInspectable NSString *collectSign;
 
 
 /**
@@ -103,7 +103,7 @@
  例如：ForSave|!ForQuery
  @param sign 采集标记
  **/
--(void) setCollectSign:(NSMutableString*) sign;
+-(void) collectSign:(NSString*) sign;
 
 /**
  数据校验，验证输入内容合法性

@@ -73,7 +73,7 @@
     return _collectSign;
 }
 
-- (void)collectSign:(NSMutableString *)sign {
+- (void)collectSign:(NSString *)sign {
     _collectSign=sign;
 }
 

@@ -45,7 +45,7 @@ static NSString *IMAGE_URL_HEAD = @"";
 /**
  设置或获取采集标记
  */
-@property(nonatomic, copy)IBInspectable NSMutableString *collectSign;
+@property(nonatomic, copy)IBInspectable NSString *collectSign;
 
 /**
  设置或获取UIView名称
@@ -95,7 +95,7 @@ static NSString *IMAGE_URL_HEAD = @"";
  例如：ForSave|!ForQuery
  @param sign 采集标记
  */
--(void) setCollectSign:(NSMutableString*) sign;
+-(void) collectSign:(NSString*) sign;
 
 +(NSString*) getImageUrlHead;
 
