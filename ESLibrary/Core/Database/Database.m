@@ -68,9 +68,6 @@ static NSString *_name;//数据库名称
     NSString *doc=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSString *fileName=[doc stringByAppendingPathComponent:_name];
     
-    //2.获得数据库
-    _db=[FMDatabase databaseWithPath:fileName];
-    
     //存储数据库路径
     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
     if (self)
