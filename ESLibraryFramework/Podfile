@@ -6,7 +6,6 @@ pod 'SDWebImage'
 pod 'MBProgressHUD'
 pod 'pop'
 pod 'Toast'
-pod 'FMDB'
 
 target ’ESLibraryFramework’ do
 pod 'AFNetworking'
