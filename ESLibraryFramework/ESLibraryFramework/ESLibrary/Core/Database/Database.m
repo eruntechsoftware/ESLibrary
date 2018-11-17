@@ -64,9 +64,10 @@ static NSString *_name;//数据库名称
     _name=databaseName;
     self = [super init];
     
-    //1.获得数据库文件的路径
-    NSString *doc=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *fileName=[doc stringByAppendingPathComponent:_name];
+    if (sourcePath == nil)
+    {
+        sourcePath = [ESFile findFile:@"db" extension:@"sqlite"];
+    }
     
     //存储数据库路径
     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
@@ -74,7 +75,7 @@ static NSString *_name;//数据库名称
     {
         if(userDefaults!=nil)
         {
-            [userDefaults setObject:fileName forKey:@"DataPath"];
+            [userDefaults setObject:sourcePath forKey:@"DataPath"];
         }
     }
     return self;
