@@ -14,7 +14,7 @@
 #import "ESView.h"
 
 IB_DESIGNABLE
-@interface ESButton : UIButton<IReleasable,IReleasable,Initializble>
+@interface ESButton : UIButton<IReleasable,ICollectible,Initializble>
 {
     
 }
