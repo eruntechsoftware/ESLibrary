@@ -7,12 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ICollectible.h"
+#import "IReleasable.h"
+#import "Initializble.h"
 #import "ESNSString.h"
 #import "ESView.h"
 
 IB_DESIGNABLE
-@interface ESButton : UIButton
+@interface ESButton : UIButton<IReleasable,IReleasable,Initializble>
 {
     
 }
+
+/**
+ 设置或获取采集标记
+ */
+@property(nonatomic, copy)IBInspectable NSString* collectSign;
+
+/**
+ 设置或获取UIView名称
+ */
+@property(nonatomic, copy)IBInspectable NSString *name;
 @end

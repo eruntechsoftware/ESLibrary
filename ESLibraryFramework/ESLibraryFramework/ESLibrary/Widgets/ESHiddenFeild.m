@@ -13,7 +13,7 @@
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self=[super initWithCoder:aDecoder];
     if (self) {
-        
+        self.hidden=YES;
     }
     return self;
 }
@@ -23,7 +23,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-       
+       self.hidden=YES;
     }
     return self;
 }
