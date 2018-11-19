@@ -16,96 +16,60 @@
 
 /**
  初始化ESViewPager布局
- @param array 视图容器
  @return ESViewPager
  */
--(id)initWithArray:(NSMutableArray*) array{
-    CGRect bounds = [UIScreen mainScreen].bounds;
-    if (self.backgroundColor==nil) {
-        self.backgroundColor = [UIColor whiteColor];
-    }
-    
-    //设置标题颜色
-    if (_tabTitleTextDefaultColor==nil) {
-        _tabTitleTextDefaultColor=[UIColor blackColor];
-    }
-    
-    //设置标题高亮颜色
-    if (_tabTitleHighlightedColor==nil) {
-        _tabTitleHighlightedColor=[UIColor redColor];
-    }
-    
-    
-    //设置标识线颜色
-    if(_tabIndexerColor==nil){
-        _tabIndexerColor=[UIColor redColor];
-    }
-    _oldIndex = 0;
-    
-    _scrollIndex = -1;
-    
-    //实例化滚动视图
-    _scrollView = [[UIScrollView alloc] initWithFrame:bounds];
-    _scrollView.delegate = self;
-    
-    self=[super initWithFrame:bounds];
-    if(self){
-        _viewControllerArray = array;
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        CGRect bounds = self.bounds;
+        if (self.backgroundColor==nil) {
+            self.backgroundColor = [UIColor whiteColor];
+        }
+        
+        //设置标题颜色
+        if (_tabTitleTextDefaultColor==nil) {
+            _tabTitleTextDefaultColor=[UIColor blackColor];
+        }
+        
+        //设置标题高亮颜色
+        if (_tabTitleHighlightedColor==nil) {
+            _tabTitleHighlightedColor=[UIColor redColor];
+        }
+        
+        
+        //设置标识线颜色
+        if(_tabIndexerColor==nil){
+            _tabIndexerColor=[UIColor redColor];
+        }
+        _oldIndex = 0;
+        
+        _scrollIndex = -1;
+        
+        //实例化滚动视图
+        _scrollView = [[UIScrollView alloc] initWithFrame:bounds];
+        _scrollView.delegate = self;
     }
     return self;
 }
 
 /**
  初始化ESViewPager布局
- @param array 视图容器
- @param rootViewController 根视图控制器
- @return ESViewPager
- */
--(id)initWithArray:(NSMutableArray*) array rootViewController:(BaseViewController*) rootViewController{
-    self=[self initWithArray:array];
-    if(self){
-        self.rootViewController=rootViewController;
-    }
-    return self;
-}
-
-/**
- 初始化ESViewPager布局
- @param array 视图容器
+ @param viewControllerArray 视图容器
  @param rootViewController 根视图控制器
  @param titleArray 标题数组
- @return ESViewPager
  */
--(id)initWithArray:(NSMutableArray*) array rootViewController:(BaseViewController*) rootViewController titles:(NSMutableArray*)titleArray{
-    self = [self initWithArray:array rootViewController:rootViewController];
-    if(self){
-        _titleArray = titleArray;
-    }
-    return self;
-}
-
-/**
- 初始化ESViewPager布局
- @param frame 布局范围
- @return ESViewPager
- */
--(id)initWithFrame:(CGRect)frame viewControllerArray:(NSMutableArray*) array{
+-(void)initWithViewController:(NSMutableArray*) viewControllerArray rootViewController:(BaseViewController*) rootViewController titles:(NSMutableArray*)titleArray{
     
-    //实例化滚动视图
-    _scrollView = [[UIScrollView alloc] initWithFrame:frame];
-    _scrollView.delegate = self;
-    
-    self=[super initWithFrame:frame];
-    if(self){
-        _viewControllerArray = array;
-    }
-    return self;
+    self.rootViewController=rootViewController;
+    _titleArray = titleArray;
+    [self addSubViewController];
 }
 
 /**
  根据视图容器布置当前滚动视图布局,并显示
  */
--(void)show{
+-(void)addSubViewController{
     
     if(_viewControllerArray.count>0){
         

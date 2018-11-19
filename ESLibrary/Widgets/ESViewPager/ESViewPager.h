@@ -112,40 +112,11 @@ IB_DESIGNABLE
 
 /**
  初始化ESViewPager布局
- @param array 视图容器
- @return ESViewPager
- */
--(id)initWithArray:(NSMutableArray*) array;
-
-/**
- 初始化ESViewPager布局
- @param array 视图容器
- @param rootViewController 根视图控制器
- @return ESViewPager
- */
--(id)initWithArray:(NSMutableArray*) array rootViewController:(BaseViewController*) rootViewController;
-
-/**
- 初始化ESViewPager布局
- @param array 视图容器
+ @param viewControllerArray 视图容器
  @param rootViewController 根视图控制器
  @param titleArray 标题数组
- @return ESViewPager
  */
--(id)initWithArray:(NSMutableArray*) array rootViewController:(BaseViewController*) rootViewController titles:(NSMutableArray*)titleArray;
-
-/**
- 初始化ESViewPager布局
- @param frame 布局范围
- @param array 视图容器
- @return ESViewPager
- */
--(id)initWithFrame:(CGRect)frame viewControllerArray:(NSMutableArray*) array;
-
-/**
- 根据视图容器布置当期滚动视图布局
- */
--(void)show;
+-(void)initWithViewController:(NSMutableArray*) viewControllerArray rootViewController:(BaseViewController*) rootViewController titles:(NSMutableArray*)titleArray;
 
 /**
  滑动到指定索引页
