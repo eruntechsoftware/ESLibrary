@@ -287,13 +287,13 @@
 
 - (void)setTabTitleHeight:(CGFloat)tabTitleHeight
 {
-    self.tabTitleHeight=tabTitleHeight;
+    _tabTitleHeight=tabTitleHeight;
     _titleViewHeight=tabTitleHeight+2;
 }
 
 - (void)setTabIndexerHeight:(CGFloat)tabIndexerHeight
 {
-    self.tabIndexerHeight=tabIndexerHeight;
+    _tabIndexerHeight=tabIndexerHeight;
 }
 
 @end
