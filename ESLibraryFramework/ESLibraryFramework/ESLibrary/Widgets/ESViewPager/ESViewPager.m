@@ -12,10 +12,6 @@
 @synthesize viewPagerDelegate=_viewPagerDelegate;
 @synthesize viewControllerArray=_viewControllerArray;
 @synthesize count=_count;
-@synthesize index=_index;
-@synthesize titleColor=_titleColor;
-@synthesize titleHighlightedColor=_titleHighlightedColor;
-@synthesize flagColor=_flagColor;
 @synthesize scrollView = _scrollView;
 
 /**
@@ -30,30 +26,23 @@
     }
     
     //设置标题颜色
-    if (_titleColor==nil) {
-        _titleColor=[UIColor blackColor];
+    if (_tabTitleTextDefaultColor==nil) {
+        _tabTitleTextDefaultColor=[UIColor blackColor];
     }
     
     //设置标题高亮颜色
-    if (_titleHighlightedColor==nil) {
-        _titleHighlightedColor=[UIColor orangeColor];
+    if (_tabTitleHighlightedColor==nil) {
+        _tabTitleHighlightedColor=[UIColor redColor];
     }
     
     
     //设置标识线颜色
-    if(_flagColor==nil){
-        _flagColor=[UIColor redColor];
+    if(_tabIndexerColor==nil){
+        _tabIndexerColor=[UIColor redColor];
     }
     _oldIndex = 0;
     
     _scrollIndex = -1;
-    
-    //设置题栏默认标高度
-    _titleHeight = 0;
-    //设置标识线高度
-    _flagHeight = 0;
-    
-    _titleViewHeight = 0;
     
     //实例化滚动视图
     _scrollView = [[UIScrollView alloc] initWithFrame:bounds];
@@ -118,19 +107,6 @@
  */
 -(void)show{
     
-    
-    //初始化一下高度，先加载_scrollView，解决点击被标题遮盖的问题
-    if(_titleArray!=nil && _titleArray.count>0){
-    
-        //设置题栏默认标高度
-        _titleHeight = 40;
-        //设置标识线高度
-        _flagHeight = 1;
-        
-        _titleViewHeight = 42;
-        
-    }
-    
     if(_viewControllerArray.count>0){
         
         self.count = _viewControllerArray.count;
@@ -164,26 +140,26 @@
     //如果标题不为空则布局标题行
     if(_titleArray!=nil && _titleArray.count>0){
         
-        //设置题栏默认标高度
-        _titleHeight = 40;
-        //设置标识线高度
-        _flagHeight = 1;
+//        //设置题栏默认标高度
+//        _tabTitleHeight = 40;
+//        //设置标识线高度
+//        _tabIndexerHeight = 1;
+//        
+//        _titleViewHeight = 42;
         
-        _titleViewHeight = 42;
-        
-        _titleWidth = SCREEN_WIDTH/_titleArray.count;
+        _tabTitleWidth = SCREEN_WIDTH/_titleArray.count;
         
         //初始化标题视图数组
         _titleLabelArray = [NSMutableArray arrayWithCapacity:_titleArray.count];
         
         for(int i=0; i<_titleArray.count; i++){
             
-            UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(_titleWidth*i, 0, _titleWidth, _titleHeight)];
+            UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(_tabTitleWidth*i, 0, _tabTitleWidth, _tabTitleHeight)];
             
             title.textAlignment = NSTextAlignmentCenter;
             title.text = [_titleArray objectAtIndex:i];
-            title.textColor = _titleColor;
-            [title setHighlightedTextColor:_titleHighlightedColor];
+            title.textColor = _tabTitleTextDefaultColor;
+            [title setHighlightedTextColor:_tabTitleHighlightedColor];
             title.font = [UIFont fontWithName:@"Helvetica" size:14];
             
             //设置天际手势
@@ -202,14 +178,14 @@
         [title setHighlighted:YES];
 
         //计算标识线起始位置、宽度
-        _flagWidth = SCREEN_WIDTH/_titleArray.count/2;
-        _flagStartX = SCREEN_WIDTH/_titleArray.count/4;
+        _tabIndexerWidth = SCREEN_WIDTH/_titleArray.count/2;
+        _tabIndexerStartX = SCREEN_WIDTH/_titleArray.count/4;
         
         //初始化标识线对象
-        _flagView = [[UIView alloc] initWithFrame:CGRectMake(_flagStartX, _titleHeight, _flagWidth, _flagHeight)];
-        _flagView.backgroundColor = [UIColor redColor];
+        _tabIndexerView = [[UIView alloc] initWithFrame:CGRectMake(_tabIndexerStartX, _tabTitleHeight, _tabIndexerWidth, _tabIndexerHeight)];
+        _tabIndexerView.backgroundColor = [UIColor redColor];
         
-        [self addSubview:_flagView];
+        [self addSubview:_tabIndexerView];
     }
     
 }
@@ -243,7 +219,7 @@
  */
 -(void)scrollViewToPageIndex:(NSInteger)index{
 
-    [_scrollView setContentOffset:CGPointMake(SCREEN_WIDTH*index, _flagView.frame.size.height+_flagView.frame.size.height) animated:YES];
+    [_scrollView setContentOffset:CGPointMake(SCREEN_WIDTH*index, _tabIndexerView.frame.size.height+_tabIndexerView.frame.size.height) animated:YES];
     
     [self scrollFlagView:index];
 
@@ -258,7 +234,7 @@
 -(void)scrollViewToPageIndexByTag:(UITapGestureRecognizer*)ges{
     
     int index = (int)ges.view.tag;
-    [_scrollView setContentOffset:CGPointMake(SCREEN_WIDTH*index, _flagView.frame.size.height+_flagView.frame.size.height) animated:NO];
+    [_scrollView setContentOffset:CGPointMake(SCREEN_WIDTH*index, _tabIndexerView.frame.size.height+_tabIndexerView.frame.size.height) animated:NO];
     
    // [self scrollFlagView:index];
     
@@ -280,13 +256,13 @@
 -(void)scrollFlagView:(NSInteger)index{
     
     //计算移动的目标位置
-    CGFloat _StartX = _flagStartX+_titleWidth*index;
-    CGRect flagViewFrame = _flagView.frame;
+    CGFloat _StartX = _tabIndexerStartX+_tabTitleWidth*index;
+    CGRect flagViewFrame = _tabIndexerView.frame;
     
     flagViewFrame = CGRectMake(_StartX, flagViewFrame.origin.y, flagViewFrame.size.width, flagViewFrame.size.height);
     
     [UIView animateWithDuration:0.3 animations:^{
-        _flagView.frame = flagViewFrame;
+        _tabIndexerView.frame = flagViewFrame;
         
     }];
 
@@ -311,27 +287,15 @@
     }
 }
 
-/**
- 设置标识线颜色
- @param flagColor 标识线颜色
- */
--(void)setFlagColor:(UIColor *)flagColor{
-    _flagColor = flagColor;
+- (void)setTabTitleHeight:(CGFloat)tabTitleHeight
+{
+    self.tabTitleHeight=tabTitleHeight;
+    _titleViewHeight=tabTitleHeight+2;
 }
 
-/**
- 设置标题文本颜色
- @param titleColor 标题颜色
- */
--(void)setTitleColor:(UIColor *)titleColor{
-    _titleColor=titleColor;
+- (void)setTabIndexerHeight:(CGFloat)tabIndexerHeight
+{
+    self.tabIndexerHeight=tabIndexerHeight;
 }
 
-/**
- 设置标题高亮时文本颜色
- @param titleHighlightedColor 标题高亮颜色
- */
--(void)setTitleHighlightedColor:(UIColor *)titleHighlightedColor{
-    _titleHighlightedColor=titleHighlightedColor;
-}
 @end

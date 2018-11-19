@@ -10,8 +10,13 @@
 
 @implementation ESButton
 
-- (void) initializ
+
+/**
+ 初始化事件
+ */
+-(void)initializ
 {
+    self.hidden=NO;
 }
 
 /**
@@ -25,40 +30,72 @@
 
 /**
  将数据发布到指定位置
- @param dataName 数据名称
- @param data 数据对象
  */
 -(void) release:(NSString *)dataName data:(Data *)data
 {
     if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]]) {
-        [self.titleLabel setText:(NSString*)data.value];
+        [self setTitle:(NSString*)data.value forState:UIControlStateNormal];
+        [self setTitle:(NSString*)data.value forState:UIControlStateHighlighted];
+        [self setTitle:(NSString*)data.value forState:UIControlStateSelected];
+        [self setTitle:(NSString*)data.value forState:UIControlStateFocused];
     }
 }
 
 /**
- 数据收集，返回ETDataCollection
+ 数据收集，返回DataCollection
  */
 -(DataCollection*) collect
 {
-    DataCollection *datas = (DataCollection*)[NSMutableArray arrayWithCapacity:1];
-    Data *data = [[Data alloc] initWithDataName:[self name] dataValue:[self.titleLabel text]];
+    DataCollection *datas = [[DataCollection alloc] initWithCapacity:1];
+    Data *data = [[Data alloc] initWithDataName:self.name dataValue:self.titleLabel.text];
     [datas addObject:data];
     return datas;
 }
 
+/**
+ 设置采集标记，多个标记以‘|!’分割
+ 例如：ForSave|!ForQuery
+ @param sign 采集标记
+ */
+-(void)setCollectSign:(NSMutableString *)sign{
+    _collectSign=sign;
+}
+
+/**
+ 获取收集标记集合，返回NSString[]
+ */
 -(NSString *) getCollectSign
 {
     return _collectSign;
 }
 
-- (void)collectSign:(NSString *)sign {
+- (void)collectSign:(NSMutableString *)sign {
     _collectSign=sign;
 }
+
 
 
 -(NSString*) getName
 {
     return _name;
 }
+
+-(BOOL)dataValidator
+{
+    return YES;
+}
+
+/**
+ * 提示校验错误
+ * **/
+-(void) hint
+{
+    
+}
+
+- (void)setIsRequired:(BOOL)isRequired
+{
+}
+
 
 @end

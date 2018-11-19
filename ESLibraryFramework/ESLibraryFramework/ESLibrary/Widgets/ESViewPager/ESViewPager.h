@@ -23,20 +23,16 @@ IB_DESIGNABLE
     NSMutableArray *_titleArray;
     //标题视图数组
     NSMutableArray *_titleLabelArray;
-    //标题颜色
-    UIColor *_titleColor;
-    //标题选中时颜色
-    UIColor *_titleHighlightedColor;
     
     //标识线
-    UIView *_flagView;
-    //标识线颜色
-    UIColor *_flagColor;
+    UIView *_tabIndexerView;
     
     //定义标题文本宽、高、标识线宽、高
-    CGFloat _titleHeight, _titleWidth, _flagHeight, _flagWidth;
+    CGFloat _tabTitleWidth, _tabIndexerWidth;
+   
     //FlagView起始位置
-    CGFloat _flagStartX;
+    CGFloat _tabIndexerStartX;
+   
     //标题区域高度，含标识线
     CGFloat _titleViewHeight;
     
@@ -93,17 +89,25 @@ IB_DESIGNABLE
 /**
  设置或获取标题颜色
  */
-@property(strong,nonatomic)IBInspectable UIColor *titleColor;
+@property(strong,nonatomic)IBInspectable UIColor *tabTitleTextDefaultColor;
 
 /**
  设置或获取标题选中时颜色
  */
-@property(strong,nonatomic)IBInspectable UIColor *titleHighlightedColor;
+@property(strong,nonatomic)IBInspectable UIColor *tabTitleHighlightedColor;
 
 /**
  设置或获取标识线颜色
  */
-@property(strong,nonatomic)IBInspectable UIColor *flagColor;
+@property(strong,nonatomic)IBInspectable UIColor *tabIndexerColor;
+
+/**
+ 游标高度
+ **/
+@property(nonatomic)IBInspectable CGFloat tabIndexerHeight;
+
+//定义标题文本宽、高、标识线宽、高
+@property(nonatomic)IBInspectable CGFloat tabTitleHeight;
 
 
 /**

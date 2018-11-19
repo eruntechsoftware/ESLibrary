@@ -10,11 +10,12 @@
 #import "ICollectible.h"
 #import "IReleasable.h"
 #import "Initializble.h"
+#import "IValidatible.h"
 #import "ESNSString.h"
 #import "ESView.h"
 
 IB_DESIGNABLE
-@interface ESButton : UIButton<IReleasable,ICollectible,Initializble>
+@interface ESButton : UIButton<ICollectible,IReleasable,Initializble>
 {
     
 }

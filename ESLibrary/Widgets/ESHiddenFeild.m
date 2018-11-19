@@ -53,7 +53,10 @@
 -(void) release:(NSString *)dataName data:(Data *)data
 {
     if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]]) {
-        [self.titleLabel setText:(NSString*)data.value];
+        [self setTitle:(NSString*)data.value forState:UIControlStateNormal];
+        [self setTitle:(NSString*)data.value forState:UIControlStateHighlighted];
+        [self setTitle:(NSString*)data.value forState:UIControlStateSelected];
+        [self setTitle:(NSString*)data.value forState:UIControlStateFocused];
     }
 }
 
