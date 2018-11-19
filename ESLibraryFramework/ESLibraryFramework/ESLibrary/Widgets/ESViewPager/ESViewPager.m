@@ -18,6 +18,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+//        self.contentMode = UIViewContentModeRedraw;
         CGRect bounds = self.bounds;
         if (self.backgroundColor==nil) {
             self.backgroundColor = [UIColor whiteColor];

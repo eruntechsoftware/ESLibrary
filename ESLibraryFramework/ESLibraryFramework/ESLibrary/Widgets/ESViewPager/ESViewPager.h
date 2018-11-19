@@ -109,6 +109,9 @@ IB_DESIGNABLE
 //定义标题文本宽、高、标识线宽、高
 @property(nonatomic)IBInspectable CGFloat tabTitleHeight;
 
+-(instancetype)initWithFrame:(CGRect)frame;
+
+-(instancetype)initWithCoder:(NSCoder *)aDecoder;
 
 /**
  初始化ESViewPager布局
