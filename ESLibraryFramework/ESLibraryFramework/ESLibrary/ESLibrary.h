@@ -62,7 +62,7 @@
 #import "ESRoundImageView.h"
 #import "ESImageView.h"
 #import "ESView.h"
-#import "ESViewPager.h"
+//#import "ESViewPager.h"
 #import "ESViewPagerDelegate.h"
 #import "UINavigationBar+Hidden.h"
 #import "UIView+LayerEffects.h"

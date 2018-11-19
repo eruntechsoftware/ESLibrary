@@ -131,9 +131,6 @@
 		3A112F9B1F024AA3009B1D13 /* TOCropToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112F351F024AA3009B1D13 /* TOCropToolbar.m */; };
 		3A112F9C1F024AA3009B1D13 /* TOCropView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112F361F024AA3009B1D13 /* TOCropView.h */; };
 		3A112F9D1F024AA3009B1D13 /* TOCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112F371F024AA3009B1D13 /* TOCropView.m */; };
-		3A112FD71F038243009B1D13 /* ESViewPager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FD41F038243009B1D13 /* ESViewPager.h */; };
-		3A112FD81F038243009B1D13 /* ESViewPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FD51F038243009B1D13 /* ESViewPager.m */; };
-		3A112FD91F038243009B1D13 /* ESViewPagerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FD61F038243009B1D13 /* ESViewPagerDelegate.h */; };
 		3A112FE41F038E92009B1D13 /* ESBanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FE01F038E92009B1D13 /* ESBanner.h */; };
 		3A112FE51F038E92009B1D13 /* ESBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FE11F038E92009B1D13 /* ESBanner.m */; };
 		3A112FE61F038E92009B1D13 /* ESPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FE21F038E92009B1D13 /* ESPageControl.h */; };
@@ -302,9 +299,6 @@
 		3A112F351F024AA3009B1D13 /* TOCropToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCropToolbar.m; sourceTree = "<group>"; };
 		3A112F361F024AA3009B1D13 /* TOCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOCropView.h; sourceTree = "<group>"; };
 		3A112F371F024AA3009B1D13 /* TOCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOCropView.m; sourceTree = "<group>"; };
-		3A112FD41F038243009B1D13 /* ESViewPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESViewPager.h; sourceTree = "<group>"; };
-		3A112FD51F038243009B1D13 /* ESViewPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESViewPager.m; sourceTree = "<group>"; };
-		3A112FD61F038243009B1D13 /* ESViewPagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESViewPagerDelegate.h; sourceTree = "<group>"; };
 		3A112FE01F038E92009B1D13 /* ESBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBanner.h; sourceTree = "<group>"; };
 		3A112FE11F038E92009B1D13 /* ESBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBanner.m; sourceTree = "<group>"; };
 		3A112FE21F038E92009B1D13 /* ESPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPageControl.h; sourceTree = "<group>"; };
@@ -540,7 +534,6 @@
 				920E4E7C218AEBA60038EB04 /* ESRoundImageView.m */,
 				3A7E93B11F174A3C009719FD /* ESImageCollectionView */,
 				3A112FDF1F038E92009B1D13 /* ESBanner */,
-				3A112FD31F038243009B1D13 /* ESViewPager */,
 				3A112F0F1F024AA3009B1D13 /* SKFCamera */,
 				3AD5EA5A1F00EFB0003F85D8 /* ESImageView.h */,
 				3AD5EA5B1F00EFB0003F85D8 /* ESImageView.m */,
@@ -685,16 +678,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		3A112FD31F038243009B1D13 /* ESViewPager */ = {
-			isa = PBXGroup;
-			children = (
-				3A112FD41F038243009B1D13 /* ESViewPager.h */,
-				3A112FD51F038243009B1D13 /* ESViewPager.m */,
-				3A112FD61F038243009B1D13 /* ESViewPagerDelegate.h */,
-			);
-			path = ESViewPager;
-			sourceTree = "<group>";
-		};
 		3A112FDF1F038E92009B1D13 /* ESBanner */ = {
 			isa = PBXGroup;
 			children = (
@@ -776,7 +759,6 @@
 				3A05AFB61ED28B4C00E69992 /* BaseViewController.h in Headers */,
 				3AD5EA5E1F00EFB0003F85D8 /* ESImageView.h in Headers */,
 				3A05AFD41ED28B4C00E69992 /* DataType.h in Headers */,
-				3A112FD91F038243009B1D13 /* ESViewPagerDelegate.h in Headers */,
 				3A05AFC81ED28B4C00E69992 /* ESNSString.h in Headers */,
 				3A05AFD61ED28B4C00E69992 /* ICollector.h in Headers */,
 				3A05AFBA1ED28B4C00E69992 /* UINavigationBar_Hidden.h in Headers */,
@@ -817,7 +799,6 @@
 				3A05AFD01ED28B4C00E69992 /* DataCollection.h in Headers */,
 				3A1EEFFF21953608000B6662 /* ESButtonCountDown.h in Headers */,
 				3A05AFC61ED28B4C00E69992 /* ESFile.h in Headers */,
-				3A112FD71F038243009B1D13 /* ESViewPager.h in Headers */,
 				3A05AFB21ED28B4C00E69992 /* BaseNavigationController.h in Headers */,
 				3A05AFBD1ED28B4C00E69992 /* ESEncoding.h in Headers */,
 				3A7E93B51F174A3C009719FD /* ImageGardCollectionViewCell.h in Headers */,
@@ -929,7 +910,6 @@
 				3A05AFCB1ED28B4C00E69992 /* GUID.m in Sources */,
 				3A05AFE31ED28B4C00E69992 /* ESButton.m in Sources */,
 				3A05AFC91ED28B4C00E69992 /* ESNSString.m in Sources */,
-				3A112FD81F038243009B1D13 /* ESViewPager.m in Sources */,
 				3A112F801F024AA3009B1D13 /* LLSimpleCamera.m in Sources */,
 				3A112F7E1F024AA3009B1D13 /* LLSimpleCamera+Helper.m in Sources */,
 				3A112F9D1F024AA3009B1D13 /* TOCropView.m in Sources */,
