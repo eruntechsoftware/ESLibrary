@@ -258,8 +258,10 @@
     flagViewFrame = CGRectMake(_StartX, flagViewFrame.origin.y, flagViewFrame.size.width, flagViewFrame.size.height);
     
     [UIView animateWithDuration:0.3 animations:^{
-        _tabIndexerView.frame = flagViewFrame;
-        
+        if(self->_tabIndexerView!=nil)
+        {
+            self->_tabIndexerView.frame = flagViewFrame;
+        }
     }];
 
     UILabel *title = [_titleLabelArray objectAtIndex:index];
