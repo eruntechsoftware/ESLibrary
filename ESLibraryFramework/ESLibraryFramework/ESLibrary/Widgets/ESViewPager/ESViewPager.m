@@ -49,44 +49,6 @@
     }
     return self;
 }
-/**
- 初始化ESViewPager布局
- @return ESViewPager
- */
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        CGRect bounds = self.bounds;
-        if (self.backgroundColor==nil) {
-            self.backgroundColor = [UIColor whiteColor];
-        }
-        
-        //设置标题颜色
-        if (_tabTitleTextDefaultColor==nil) {
-            _tabTitleTextDefaultColor=[UIColor blackColor];
-        }
-        
-        //设置标题高亮颜色
-        if (_tabTitleHighlightedColor==nil) {
-            _tabTitleHighlightedColor=[UIColor redColor];
-        }
-        
-        
-        //设置标识线颜色
-        if(_tabIndexerColor==nil){
-            _tabIndexerColor=[UIColor redColor];
-        }
-        _oldIndex = 0;
-        
-        _scrollIndex = -1;
-        
-        //实例化滚动视图
-        _scrollView = [[UIScrollView alloc] initWithFrame:bounds];
-        _scrollView.delegate = self;
-    }
-    return self;
-}
 
 /**
  初始化ESViewPager布局
@@ -94,11 +56,13 @@
  @param rootViewController 根视图控制器
  @param titleArray 标题数组
  */
--(void)initWithViewController:(NSMutableArray*) viewControllerArray rootViewController:(BaseViewController*) rootViewController titles:(NSMutableArray*)titleArray{
+-(instancetype)initWithViewController:(NSMutableArray*) viewControllerArray rootViewController:(BaseViewController*) rootViewController titles:(NSMutableArray*)titleArray{
+    self=[self initWithFrame:rootViewController.view.frame];
     _viewControllerArray = viewControllerArray;
     self.rootViewController=rootViewController;
     _titleArray = titleArray;
     [self addSubViewController];
+    return self;
 }
 
 /**

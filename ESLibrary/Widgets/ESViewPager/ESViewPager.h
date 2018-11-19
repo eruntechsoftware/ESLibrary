@@ -109,17 +109,13 @@ IB_DESIGNABLE
 //定义标题文本宽、高、标识线宽、高
 @property(nonatomic)IBInspectable CGFloat tabTitleHeight;
 
--(instancetype)initWithFrame:(CGRect)frame;
-
--(instancetype)initWithCoder:(NSCoder *)aDecoder;
-
 /**
  初始化ESViewPager布局
  @param viewControllerArray 视图容器
  @param rootViewController 根视图控制器
  @param titleArray 标题数组
  */
--(void)initWithViewController:(NSMutableArray*) viewControllerArray rootViewController:(BaseViewController*) rootViewController titles:(NSMutableArray*)titleArray;
+-(instancetype)initWithViewController:(NSMutableArray*) viewControllerArray rootViewController:(BaseViewController*) rootViewController titles:(NSMutableArray*)titleArray;
 
 /**
  滑动到指定索引页
