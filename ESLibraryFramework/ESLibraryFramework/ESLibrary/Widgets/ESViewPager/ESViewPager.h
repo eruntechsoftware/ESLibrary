@@ -115,7 +115,7 @@ IB_DESIGNABLE
  @param rootViewController 根视图控制器
  @param titleArray 标题数组
  */
--(instancetype)initWithViewController:(NSMutableArray*) viewControllerArray rootViewController:(BaseViewController*) rootViewController titles:(NSMutableArray*)titleArray;
+-(void)initWithViewController:(NSMutableArray*) viewControllerArray rootViewController:(BaseViewController*) rootViewController titles:(NSMutableArray*)titleArray;
 
 /**
  滑动到指定索引页
