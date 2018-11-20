@@ -82,7 +82,7 @@
     {
         _textField=[ESTextField new];
     }
-    _textField.collectSign=collectSign;
+    _collectSign=collectSign;
 }
 
 -(void)btnAddOnClick:(UIGestureRecognizer *)gestureRecognizer
@@ -111,13 +111,12 @@
     }
 }
 
-- (void)setMaxValue:(int)maxValue
+- (void)setMaxValue:(NSInteger)maxValue
 {
-    
     _maxValue=maxValue;
 }
 
-- (void)setMinValue:(int)minValue
+- (void)setMinValue:(NSInteger)minValue
 {
     _value=minValue;
     _minValue=minValue;
