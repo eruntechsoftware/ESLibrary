@@ -99,6 +99,45 @@
     if(_value==nil){
         return NO;
     }
-    return (BOOL)_value;
+    if([[[_value lowercaseString]trim] isEqualToString:[@"false" lowercaseString]])
+    {
+        return NO;
+    }
+    if([[[_value lowercaseString]trim] isEqualToString:[@"no" lowercaseString]])
+    {
+        return NO;
+    }
+    if([[[_value lowercaseString]trim] isEqualToString:[@"0" lowercaseString]])
+    {
+        return NO;
+    }
+    if([[[_value lowercaseString]trim] isEqualToString:[@"true" lowercaseString]])
+    {
+        return YES;
+    }
+    if([[[_value lowercaseString]trim] isEqualToString:[@"yes" lowercaseString]])
+    {
+        return YES;
+    }
+    if([[[_value lowercaseString]trim] isEqualToString:[@"1" lowercaseString]])
+    {
+        return YES;
+    }
+    return NO;
+}
+
+/**
+ 设置Boolean值
+ */
+-(void)setValueWithBoolean:(BOOL)value
+{
+    if(value)
+    {
+        _value=@"1";
+    }
+    else
+    {
+        _value=@"0";
+    }
 }
 @end

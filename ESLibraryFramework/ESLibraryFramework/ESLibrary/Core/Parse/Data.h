@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DataType.h"
+#import "ESNSString.h"
 typedef void(^OperationBlock)(id listView, NSIndexPath *indexPath);
 
 @interface  Data :NSObject {
@@ -78,4 +79,9 @@ typedef void(^OperationBlock)(id listView, NSIndexPath *indexPath);
  @return Boolean
  */
 -(BOOL) toBoolean;
+
+/**
+ 设置Boolean值
+ */
+-(void)setValueWithBoolean:(BOOL)value;
 @end
