@@ -143,6 +143,9 @@
 		3A23E82F219D19D7000EFD50 /* ESHiddenFeild.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E82D219D19D7000EFD50 /* ESHiddenFeild.m */; };
 		3A57A969218FCB4200F55340 /* ESCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A57A967218FCB4200F55340 /* ESCheckBox.m */; };
 		3A57A96A218FCB4200F55340 /* ESCheckBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A57A968218FCB4200F55340 /* ESCheckBox.h */; };
+		3A5F9E4021A3E80D00D0E8A7 /* ESViewPagerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A5F9E3D21A3E80C00D0E8A7 /* ESViewPagerDelegate.h */; };
+		3A5F9E4121A3E80D00D0E8A7 /* ESViewPager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A5F9E3E21A3E80C00D0E8A7 /* ESViewPager.h */; };
+		3A5F9E4221A3E80D00D0E8A7 /* ESViewPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F9E3F21A3E80C00D0E8A7 /* ESViewPager.m */; };
 		3A7E93B51F174A3C009719FD /* ImageGardCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A7E93B21F174A3C009719FD /* ImageGardCollectionViewCell.h */; };
 		3A7E93B61F174A3C009719FD /* ImageGardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E93B31F174A3C009719FD /* ImageGardCollectionViewCell.m */; };
 		3A7E93B71F174A3C009719FD /* ImageGardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7E93B41F174A3C009719FD /* ImageGardCollectionViewCell.xib */; };
@@ -313,6 +316,9 @@
 		3A23E82D219D19D7000EFD50 /* ESHiddenFeild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESHiddenFeild.m; sourceTree = "<group>"; };
 		3A57A967218FCB4200F55340 /* ESCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESCheckBox.m; sourceTree = "<group>"; };
 		3A57A968218FCB4200F55340 /* ESCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCheckBox.h; sourceTree = "<group>"; };
+		3A5F9E3D21A3E80C00D0E8A7 /* ESViewPagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESViewPagerDelegate.h; sourceTree = "<group>"; };
+		3A5F9E3E21A3E80C00D0E8A7 /* ESViewPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESViewPager.h; sourceTree = "<group>"; };
+		3A5F9E3F21A3E80C00D0E8A7 /* ESViewPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESViewPager.m; sourceTree = "<group>"; };
 		3A7E93B21F174A3C009719FD /* ImageGardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageGardCollectionViewCell.h; sourceTree = "<group>"; };
 		3A7E93B31F174A3C009719FD /* ImageGardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageGardCollectionViewCell.m; sourceTree = "<group>"; };
 		3A7E93B41F174A3C009719FD /* ImageGardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageGardCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -530,6 +536,7 @@
 		3A05AF821ED28B4C00E69992 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				3A5F9E3C21A3E80C00D0E8A7 /* ESViewPager */,
 				3AB0B4DC21A2DDD600DE8C6A /* ESNumberPickerView.h */,
 				3AB0B4DD21A2DDD600DE8C6A /* ESNumberPickerView.m */,
 				3A23E82C219D19D7000EFD50 /* ESHiddenFeild.h */,
@@ -695,6 +702,16 @@
 			path = ESBanner;
 			sourceTree = "<group>";
 		};
+		3A5F9E3C21A3E80C00D0E8A7 /* ESViewPager */ = {
+			isa = PBXGroup;
+			children = (
+				3A5F9E3D21A3E80C00D0E8A7 /* ESViewPagerDelegate.h */,
+				3A5F9E3E21A3E80C00D0E8A7 /* ESViewPager.h */,
+				3A5F9E3F21A3E80C00D0E8A7 /* ESViewPager.m */,
+			);
+			path = ESViewPager;
+			sourceTree = "<group>";
+		};
 		3A7E93B11F174A3C009719FD /* ESImageCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -740,6 +757,7 @@
 				3A05AFE81ED28B4C00E69992 /* ESButtonExecuteSQL.h in Headers */,
 				3A05AFF41ED28B4C00E69992 /* ESTextView.h in Headers */,
 				3A05AFA61ED28B4C00E69992 /* ESCollectViewController.h in Headers */,
+				3A5F9E4021A3E80D00D0E8A7 /* ESViewPagerDelegate.h in Headers */,
 				3A05AFB81ED28B4C00E69992 /* PopAnimation.h in Headers */,
 				3A05AFFC1ED28B4C00E69992 /* UIButton+Bootstrap.h in Headers */,
 				3A23E82E219D19D7000EFD50 /* ESHiddenFeild.h in Headers */,
@@ -775,6 +793,7 @@
 				3A05AFDC1ED28B4C00E69992 /* IReleaser.h in Headers */,
 				3A05AFDD1ED28B4C00E69992 /* IValidatible.h in Headers */,
 				3AB0B4DE21A2DDD600DE8C6A /* ESNumberPickerView.h in Headers */,
+				3A5F9E4121A3E80D00D0E8A7 /* ESViewPager.h in Headers */,
 				3A05AFD91ED28B4C00E69992 /* IDataQuery.h in Headers */,
 				3A91A63B219BFEA3008C2A9A /* IStateProtected.h in Headers */,
 				3A05B0001ED28B4C00E69992 /* UIView+LayerEffects.h in Headers */,
@@ -924,6 +943,7 @@
 				3A05AFB11ED28B4C00E69992 /* ESControlSearcher.m in Sources */,
 				3A05AFF51ED28B4C00E69992 /* ESTextView.m in Sources */,
 				3A05AFB71ED28B4C00E69992 /* BaseViewController.m in Sources */,
+				3A5F9E4221A3E80D00D0E8A7 /* ESViewPager.m in Sources */,
 				3A05AFBF1ED28B4C00E69992 /* SQLExpression.m in Sources */,
 				3A23E82F219D19D7000EFD50 /* ESHiddenFeild.m in Sources */,
 				3A05AFE91ED28B4C00E69992 /* ESButtonExecuteSQL.m in Sources */,
