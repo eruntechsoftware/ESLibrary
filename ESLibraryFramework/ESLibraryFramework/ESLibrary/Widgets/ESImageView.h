@@ -12,6 +12,7 @@
 #import "Validator.h"
 #import "DataTypeExpression.h"
 #import "UIImageView+WebCache.h"
+#import "ESImageViewOnClickListener.h"
 
 IB_DESIGNABLE  // 动态刷新
 
@@ -51,6 +52,8 @@ static NSString *IMAGE_URL_HEAD = @"";
  设置或获取UIView名称
  */
 @property(nonatomic, copy)IBInspectable NSString *name;
+
+@property(nonatomic) id<ESImageViewOnClickListener> onClickListener;
 
 /**
  初始化方法

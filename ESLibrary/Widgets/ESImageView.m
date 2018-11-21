@@ -16,6 +16,8 @@
     [self setClipsToBounds:YES];
     self.userInteractionEnabled=YES;
     self.layer.masksToBounds = YES;
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(btnOnClick:)];
+    [self addGestureRecognizer:singleTap];
     return self;
 }
 
@@ -25,6 +27,8 @@
     self.userInteractionEnabled=YES;
     self.layer.masksToBounds = YES;
     [self setContentMode:UIViewContentModeScaleAspectFill];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(btnOnClick:)];
+    [self addGestureRecognizer:singleTap];
     return self;
 }
 
@@ -175,4 +179,11 @@
     return IMAGE_URL_HEAD;
 }
 
+-(void)btnOnClick:(UIGestureRecognizer *)gestureRecognizer
+{
+    if(_onClickListener!=nil)
+    {
+        [_onClickListener onClickListener:self];
+    }
+}
 @end

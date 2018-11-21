@@ -135,6 +135,7 @@
 		3A112FE51F038E92009B1D13 /* ESBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FE11F038E92009B1D13 /* ESBanner.m */; };
 		3A112FE61F038E92009B1D13 /* ESPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FE21F038E92009B1D13 /* ESPageControl.h */; };
 		3A112FE71F038E92009B1D13 /* ESPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FE31F038E92009B1D13 /* ESPageControl.m */; };
+		3A1B74E321A5863600F9415D /* ESImageViewOnClickListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A1B74E121A5863600F9415D /* ESImageViewOnClickListener.h */; };
 		3A1EEFFF21953608000B6662 /* ESButtonCountDown.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A1EEFFD21953607000B6662 /* ESButtonCountDown.h */; };
 		3A1EF00021953608000B6662 /* ESButtonCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1EEFFE21953608000B6662 /* ESButtonCountDown.m */; };
 		3A23E82A219CFE4E000EFD50 /* ESControlStateProtector.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A23E828219CFE4E000EFD50 /* ESControlStateProtector.h */; };
@@ -308,6 +309,7 @@
 		3A112FE11F038E92009B1D13 /* ESBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBanner.m; sourceTree = "<group>"; };
 		3A112FE21F038E92009B1D13 /* ESPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPageControl.h; sourceTree = "<group>"; };
 		3A112FE31F038E92009B1D13 /* ESPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPageControl.m; sourceTree = "<group>"; };
+		3A1B74E121A5863600F9415D /* ESImageViewOnClickListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESImageViewOnClickListener.h; sourceTree = "<group>"; };
 		3A1EEFFD21953607000B6662 /* ESButtonCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESButtonCountDown.h; sourceTree = "<group>"; };
 		3A1EEFFE21953608000B6662 /* ESButtonCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESButtonCountDown.m; sourceTree = "<group>"; };
 		3A23E828219CFE4E000EFD50 /* ESControlStateProtector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESControlStateProtector.h; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 		3A05AF3F1ED28B4C00E69992 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				3A1B74E021A585EB00F9415D /* Listener */,
 				3A05AF401ED28B4C00E69992 /* Parse */,
 				3A05AF4B1ED28B4C00E69992 /* Security */,
 				3A05AF4E1ED28B4C00E69992 /* ViewController */,
@@ -702,6 +705,14 @@
 			path = ESBanner;
 			sourceTree = "<group>";
 		};
+		3A1B74E021A585EB00F9415D /* Listener */ = {
+			isa = PBXGroup;
+			children = (
+				3A1B74E121A5863600F9415D /* ESImageViewOnClickListener.h */,
+			);
+			path = Listener;
+			sourceTree = "<group>";
+		};
 		3A5F9E3C21A3E80C00D0E8A7 /* ESViewPager */ = {
 			isa = PBXGroup;
 			children = (
@@ -792,6 +803,7 @@
 				3A05AFD51ED28B4C00E69992 /* ICollectible.h in Headers */,
 				3A05AFDC1ED28B4C00E69992 /* IReleaser.h in Headers */,
 				3A05AFDD1ED28B4C00E69992 /* IValidatible.h in Headers */,
+				3A1B74E321A5863600F9415D /* ESImageViewOnClickListener.h in Headers */,
 				3AB0B4DE21A2DDD600DE8C6A /* ESNumberPickerView.h in Headers */,
 				3A5F9E4121A3E80D00D0E8A7 /* ESViewPager.h in Headers */,
 				3A05AFD91ED28B4C00E69992 /* IDataQuery.h in Headers */,
