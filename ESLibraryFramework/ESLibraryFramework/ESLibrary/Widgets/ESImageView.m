@@ -16,8 +16,11 @@
     [self setClipsToBounds:YES];
     self.userInteractionEnabled=YES;
     self.layer.masksToBounds = YES;
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(btnOnClick:)];
-    [self addGestureRecognizer:singleTap];
+    if(_clickEnabled)
+    {
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(btnOnClick:)];
+        [self addGestureRecognizer:singleTap];
+    }
     return self;
 }
 
@@ -27,8 +30,11 @@
     self.userInteractionEnabled=YES;
     self.layer.masksToBounds = YES;
     [self setContentMode:UIViewContentModeScaleAspectFill];
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(btnOnClick:)];
-    [self addGestureRecognizer:singleTap];
+    if(_clickEnabled)
+    {
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(btnOnClick:)];
+        [self addGestureRecognizer:singleTap];
+    }
     return self;
 }
 
@@ -185,5 +191,10 @@
     {
         [_onClickListener onClickListener:self];
     }
+}
+
+- (void)addGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+{
+    
 }
 @end

@@ -53,7 +53,15 @@ static NSString *IMAGE_URL_HEAD = @"";
  */
 @property(nonatomic, copy)IBInspectable NSString *name;
 
+/**
+ 设置或获取单击事件处理
+ */
 @property(nonatomic) id<ESImageViewOnClickListener> onClickListener;
+
+/**
+ 设置或获取是否使用默认处理事件
+ */
+@property(nonatomic)IBInspectable BOOL clickEnabled;
 
 /**
  初始化方法
