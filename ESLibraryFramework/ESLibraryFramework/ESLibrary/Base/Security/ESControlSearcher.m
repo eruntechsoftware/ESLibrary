@@ -30,29 +30,23 @@
 
 /**
  遍历对象方法
- @param viewController 视图控制器
+ @param subview 视图控制器
  */
--(void) search:(id)viewController
+-(void) search:(id)subview
 {
     //主线程执行
 //    dispatch_async(dispatch_get_main_queue(), ^{
-        if ([viewController isKindOfClass:[UIViewController class]]) {
-            UIViewController *view =(UIViewController*)viewController;
-            NSArray *subviews = [view.view subviews];
-            NSEnumerator *enumerator =  [subviews objectEnumerator];
-            for (id ui in enumerator) {
-                [self search:ui];
-            }
+        if ([subview isKindOfClass:[UIViewController class]]) {
+            UIViewController *vc =(UIViewController*)subview;
+            [self search:vc.view];
         }
         else
         {
-            if([viewController isKindOfClass:[UIView class]]){
-                UIView *view = (UIView*)viewController;
-                if([view.subviews count]>0){
-                    NSArray *subviews = view.subviews;
-                    NSEnumerator *enumerator =  [subviews objectEnumerator];
-                    for (id ui in enumerator) {
-                        [self search:ui];
+            if([subview isKindOfClass:[UIView class]]){
+                UIView *views = (UIView*)subview;
+                if([views.subviews count]>0){
+                    for (UIView *view in views.subviews) {
+                        [self search:view];
                     }
                 }
             }
@@ -60,8 +54,8 @@
             NSEnumerator *enumerator = [_handlers objectEnumerator];
             for (id handler in enumerator) {
                 if ([handler respondsToSelector:@selector(isPicked:)]) {
-                    if ([handler isPicked:viewController]) {
-                        [handler handle:viewController];
+                    if ([handler isPicked:subview]) {
+                        [handler handle:subview];
                     }
                 }
             }

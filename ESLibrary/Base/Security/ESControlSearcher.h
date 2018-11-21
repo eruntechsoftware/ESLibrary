@@ -33,5 +33,5 @@
  遍历对象方法
  @param viewController 视图控制器
  */
--(void) search:(nonnull id) viewController;
+-(void) search:(nonnull id) subview;
 @end
