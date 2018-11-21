@@ -36,10 +36,6 @@ IB_DESIGNABLE
 @property(copy,nonatomic)IBInspectable NSString *title;
 //确认消息
 @property(copy,nonatomic)IBInspectable NSString *confirmMessage;
-//状态控制UIView
-@property(copy,nonatomic)IBInspectable NSString *stateHiddenId;
-//希望展示UIView的状态值
-@property(copy,nonatomic)IBInspectable NSString *wantedStateValue;
 //数据库访问对象
 @property(retain,nonatomic) SQLiteDatabase *SQLiteDatabase;
 //获取当前UIView所属视图控制器

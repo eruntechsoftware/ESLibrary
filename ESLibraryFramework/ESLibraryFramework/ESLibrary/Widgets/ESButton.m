@@ -97,5 +97,39 @@
 {
 }
 
+- (NSString *)stateHiddenId {
+    return _stateHiddenId;
+}
 
+- (NSString *)wantedStateValue {
+    return _wantedStateValue;
+}
+
+-(BOOL)wantedModeType{
+    return _wantedModeType;
+}
+
+- (void)protectState:(BOOL)isMatched {
+    if(isMatched)
+    {
+        [self setHidden:NO];
+    }
+    else
+    {
+        [self setHidden:YES];
+    }
+}
+
+- (void)stateHiddenId:(NSString *)stateHiddenId {
+    _stateHiddenId=stateHiddenId;
+}
+
+- (void)wantedStateValue:(NSString *)wantedStateValue {
+    _wantedStateValue=wantedStateValue;
+}
+
+- (void)wantedModeType:(BOOL)wantedModeType
+{
+    _wantedModeType=wantedModeType;
+}
 @end

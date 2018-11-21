@@ -16,18 +16,6 @@
 @synthesize viewController=_viewController;
 
 
--(id)initWithCoder:(NSCoder *)aDecoder{
-    self = [super initWithCoder:aDecoder];
-    [self invalidateIntrinsicContentSize];
-    return self;
-}
-
--(id)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
-    
-    return self;
-}
-
 
 /**
  初始化事件
