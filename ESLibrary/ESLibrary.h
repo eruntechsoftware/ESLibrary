@@ -61,6 +61,7 @@
 #import "ESTextView.h"
 #import "ESRoundImageView.h"
 #import "ESImageView.h"
+#import "ESImageViewOnClickListener.h"
 #import "ESView.h"
 #import "ESNumberPickerView.h"
 #import "ESViewPager.h"
