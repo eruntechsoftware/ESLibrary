@@ -16,7 +16,7 @@
     [self setClipsToBounds:YES];
     self.userInteractionEnabled=YES;
     self.layer.masksToBounds = YES;
-    if(_clickEnabled)
+    if(_clickEnabled==YES)
     {
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(btnOnClick:)];
         [self addGestureRecognizer:singleTap];
@@ -30,7 +30,7 @@
     self.userInteractionEnabled=YES;
     self.layer.masksToBounds = YES;
     [self setContentMode:UIViewContentModeScaleAspectFill];
-    if(_clickEnabled)
+    if(_clickEnabled==YES)
     {
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(btnOnClick:)];
         [self addGestureRecognizer:singleTap];
@@ -179,6 +179,18 @@
 -(NSString*) getName
 {
     return _name;
+}
+
+- (void)setClickEnabled:(BOOL)clickEnabled
+{
+    if(clickEnabled==YES)
+    {
+        _clickEnabled=YES;
+    }
+    else
+    {
+        _clickEnabled=NO;
+    }
 }
 
 +(NSString *)getImageUrlHead{
