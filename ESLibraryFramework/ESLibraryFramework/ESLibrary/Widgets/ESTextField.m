@@ -153,6 +153,16 @@
 -(void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    if(_fouces==YES)
+    {
+        CGContextSetFillColorWithColor(context, [UIColor blackColor].CGColor);
+    }
+    else
+    {
+        CGContextSetFillColorWithColor(context, [UIColor blueColor].CGColor);
+    }
+    CGContextFillRect(context, CGRectMake(0, CGRectGetHeight(self.frame) - 0.5, CGRectGetWidth(self.frame), 0.5));
 }
 
 - (void)setIsRequired:(BOOL)isRequired
@@ -198,5 +208,18 @@
 - (void)wantedModeType:(BOOL)wantedModeType
 {
     _wantedModeType=wantedModeType;
+}
+
+// 获得焦点
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    _fouces=YES;
+    [self setNeedsDisplay];
+    return YES;
+}
+
+// 失去焦点
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    _fouces=NO;
+    [self setNeedsDisplay];
 }
 @end

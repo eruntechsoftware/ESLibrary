@@ -23,7 +23,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 
 IB_DESIGNABLE
-@interface ESTextField : UITextField<ICollectible,IReleasable,IValidatible,Initializble,IStateProtected>
+@interface ESTextField : UITextField<ICollectible,IReleasable,IValidatible,Initializble,IStateProtected,UITextFieldDelegate>
 {
     CGContextRef _context;
     Validator *_validator;
@@ -32,6 +32,7 @@ IB_DESIGNABLE
     BOOL _isRequired;
     NSString * _name;
     UIViewController* _viewController;
+    BOOL _fouces;
 }
 
 
