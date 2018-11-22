@@ -133,4 +133,10 @@
     _value = value;
 }
 
+- (void)setTitle:(NSString *)title forState:(UIControlState)state
+{
+    [super setTitle:title forState:state];
+    _value = title;
+}
+
 @end

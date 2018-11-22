@@ -45,9 +45,9 @@
  */
 - (void)changeState:(UIButton *)sender
 {
-    if([self superview]!=nil && [[self superview] isKindOfClass:[ESViewGroup class]])
+    if(_viewGroup!=nil && [_viewGroup isKindOfClass:[ESViewGroup class]])
     {
-        ESViewGroup *viewGroup = (ESViewGroup*)[self superview];
+        ESViewGroup *viewGroup = (ESViewGroup*)_viewGroup;
         [viewGroup selectTag:_value];
     }
 }
@@ -80,10 +80,9 @@
     _stateCheckedImageView.hidden=YES;
 }
 
-- (void)drawRect:(CGRect)rect
+-(void)setViewGroup:(id)viewGroup
 {
-    [super drawRect:rect];
-//    [_stateNormalImage drawInRect:CGRectMake(5, self.bounds.size.height/2-25/2, 25, 25)];
+    _viewGroup=viewGroup;
 }
 
 @end

@@ -27,6 +27,7 @@
     UIViewController* _viewController;
     UIImageView *_stateNormalImageView;
     UIImageView *_stateCheckedImageView;
+    UIView *_viewGroup;
 }
 
 /**
@@ -53,5 +54,7 @@
  设置或获取选中状态
  **/
 @property(nonatomic)IBInspectable BOOL checked;
+
+-(void)setViewGroup:(id)viewGroup;
 
 @end

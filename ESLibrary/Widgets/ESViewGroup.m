@@ -131,7 +131,9 @@
 {
     NSInteger tag=-1;
     if([subview isKindOfClass:[ESCheckBox class]]){
-        [_checkViews addObject:subview];
+        ESCheckBox *cbox = (ESCheckBox*)subview;
+        [_checkViews addObject:cbox];
+        [cbox setViewGroup:self];
     }
     else
     {
