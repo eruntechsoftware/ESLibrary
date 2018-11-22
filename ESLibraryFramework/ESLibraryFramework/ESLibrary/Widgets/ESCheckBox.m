@@ -14,8 +14,8 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        [self setImage:[UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(_stateNormalImage)] forState:UIControlStateNormal];
-        [self setImage:[UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(_stateCheckedImage)] forState:UIControlStateSelected];
+//        [self setImage:[UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(_stateNormalImage)] forState:UIControlStateNormal];
+//        [self setImage:[UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(_stateCheckedImage)] forState:UIControlStateSelected];
         [self addTarget:self action:@selector(changeState:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
@@ -25,8 +25,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setImage:[UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(_stateNormalImage)] forState:UIControlStateNormal];
-        [self setImage:[UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(_stateCheckedImage)] forState:UIControlStateSelected];
+//        [self setImage:[UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(_stateNormalImage)] forState:UIControlStateNormal];
+//        [self setImage:[UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(_stateCheckedImage)] forState:UIControlStateSelected];
         
         [self addTarget:self action:@selector(changeState:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -141,6 +141,19 @@
 - (void)changeState:(UIButton *)sender
 {
     sender.selected = !sender.selected;
+}
+
+- (void)setStateNormalImage:(UIImage *)stateNormalImage
+{
+    _stateNormalImage=stateNormalImage;
+    [self setImage:[UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(_stateNormalImage)] forState:UIControlStateNormal];
+}
+
+- (void)setStateCheckedImage:(UIImage *)stateCheckedImage
+{
+    _stateCheckedImage=stateCheckedImage;
+    [self setImage:[UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(_stateCheckedImage)] forState:UIControlStateSelected];
+    [self setImage:[UIImage imageWithCGImage:(__bridge CGImageRef _Nonnull)(_stateCheckedImage)] forState:UIControlStateHighlighted];
 }
 
 @end

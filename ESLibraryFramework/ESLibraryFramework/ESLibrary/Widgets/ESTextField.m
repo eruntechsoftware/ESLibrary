@@ -165,17 +165,23 @@
         {
             CGContextSetFillColorWithColor(context, LPFColor(100, 193,234).CGColor);
         }
-        CGContextFillRect(context, CGRectMake(0, CGRectGetHeight(self.frame) - 1.5, CGRectGetWidth(self.frame), 1.5));
+        CGContextFillRect(context, CGRectMake(0, CGRectGetHeight(self.frame) - 1, CGRectGetWidth(self.frame), 1));
     }
 }
 
 - (void)setIsRequired:(BOOL)isRequired
 {
     _isRequired=isRequired;
-    _requiredImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width-36, self.bounds.size.height/2-23/2, 23, 23)];
+    _requiredImageView = [[UIImageView alloc] init];
     _requiredImageView.image=[UIImage imageNamed:@"ESTextField_Required_icon"];
     [self addSubview:_requiredImageView];
     _requiredImageView.hidden=!isRequired;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    _requiredImageView.frame = CGRectMake(self.bounds.size.width-36, self.bounds.size.height/2-23/2, 23, 23);
 }
 
 - (NSString *)stateHiddenId {
