@@ -57,6 +57,7 @@
         [self setTitle:(NSString*)data.value forState:UIControlStateHighlighted];
         [self setTitle:(NSString*)data.value forState:UIControlStateSelected];
         [self setTitle:(NSString*)data.value forState:UIControlStateFocused];
+        _value=data.value;
     }
 }
 
@@ -66,7 +67,7 @@
 -(DataCollection*) collect
 {
     DataCollection *datas = [[DataCollection alloc] initWithCapacity:1];
-    Data *data = [[Data alloc] initWithDataName:self.name dataValue:self.titleLabel.text];
+    Data *data = [[Data alloc] initWithDataName:self.name dataValue:[self value]];
     [datas addObject:data];
     return datas;
 }
@@ -102,12 +103,12 @@
 -(BOOL)dataValidator
 {
     //如果不能为空，则提示消息
-    if(_isRequired && [[self.titleLabel.text trim] isEqualToString:@""]){
+    if(_isRequired && [[_value trim] isEqualToString:@""]){
         return NO;
     }
     if(_regularExpression!=nil && ![_regularExpression isEmpty]){
         //正则表达式验证
-        BOOL result = [_validator validataWithValue:self.titleLabel.text];
+        BOOL result = [_validator validataWithValue:_value];
         return result;
     }
     return YES;
@@ -125,6 +126,11 @@
 - (void)setIsRequired:(BOOL)isRequired
 {
     _isRequired=isRequired;
+}
+
+- (void)setValue:(NSString *)value
+{
+    _value = value;
 }
 
 @end

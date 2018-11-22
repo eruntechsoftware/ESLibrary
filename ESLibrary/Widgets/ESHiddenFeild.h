@@ -50,7 +50,10 @@ NS_ASSUME_NONNULL_BEGIN
  **/
 @property(nonatomic, copy)IBInspectable NSString *name;
 
-
+/**
+ 设置或获取控件值
+ **/
+@property(nonatomic, copy)IBInspectable NSString *value;
 
 /**
  设置或获取当前所属的视图控制器

@@ -20,35 +20,24 @@
 #import "DataType.h"
 #import "DataTypeExpression.h"
 #import "ESNSString.h"
+#import "ESViewGroup.h"
 
-@interface ESCheckBox : UIButton<ICollectible,IReleasable,IValidatible,Initializble>
+@interface ESCheckBox : UIButton
 {
     UIViewController* _viewController;
+    UIImageView *_stateNormalImageView;
+    UIImageView *_stateCheckedImageView;
 }
 
-
 /**
- 设置或获取采集标记
+ 设置或获取控件值
  **/
-@property(nonatomic, copy)IBInspectable NSString *collectSign;
-
-
-/**
- 设置或获取控件名
- **/
-@property(nonatomic, copy)IBInspectable NSString *name;
-
-
+@property(nonatomic, copy)IBInspectable NSString *value;
 
 /**
  设置或获取当前所属的视图控制器
  **/
 @property(retain,nonatomic)UIViewController* viewController;
-
-/**
- 设置或获取当前占位提示颜色
- **/
-@property(retain,nonatomic)IBInspectable UIColor *placeholderColor;
 
 /**
  设置或获取选中时的图片
@@ -61,53 +50,8 @@
 @property(retain,nonatomic)IBInspectable UIImage *stateNormalImage;
 
 /**
- 初始化方法
+ 设置或获取选中状态
  **/
--(void)initializ;
-
-/**
- 添加事件
- **/
--(void) addEvent;
-
-/**
- 获取采集标记名
- **/
--(NSArray*) getRequest;
-
-/**
- 将数据发布到指定位置
- @param dataName 数据名称
- @param data 数据对象
- **/
--(void) release:(NSString *)dataName data:(Data *)data;
-
-/**
- 获取控件名
- **/
--(NSString*) getName;
-
-
-/**
- 数据收集，返回ETDataCollection
- **/
--(DataCollection*) collect;
-
-/**
- 获取收集标记集合，返回NSString[]
- **/
--(NSString *) getCollectSign;
-
-/**
- 设置采集标记，多个标记以‘|!’分割
- 例如：ForSave|!ForQuery
- @param sign 采集标记
- **/
--(void) collectSign:(NSString*) sign;
-
-/**
- 数据校验，验证输入内容合法性
- **/
--(BOOL) dataValidator;
+@property(nonatomic)IBInspectable BOOL checked;
 
 @end
