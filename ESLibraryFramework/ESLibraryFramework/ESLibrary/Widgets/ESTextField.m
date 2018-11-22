@@ -15,7 +15,7 @@
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self=[super initWithCoder:aDecoder];
     if (self) {
-        
+        self.delegate = self;
     }
     return self;
 }
