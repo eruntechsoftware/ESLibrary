@@ -153,16 +153,19 @@
 -(void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    if(_fouces==YES)
+    if(_borderBottom==YES)
     {
-        CGContextSetFillColorWithColor(context, [UIColor blackColor].CGColor);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        if(_fouces==NO)
+        {
+            CGContextSetFillColorWithColor(context, [UIColor blackColor].CGColor);
+        }
+        else
+        {
+            CGContextSetFillColorWithColor(context, [UIColor blueColor].CGColor);
+        }
+        CGContextFillRect(context, CGRectMake(0, CGRectGetHeight(self.frame) - 1, CGRectGetWidth(self.frame), 1));
     }
-    else
-    {
-        CGContextSetFillColorWithColor(context, [UIColor blueColor].CGColor);
-    }
-    CGContextFillRect(context, CGRectMake(0, CGRectGetHeight(self.frame) - 0.5, CGRectGetWidth(self.frame), 0.5));
 }
 
 - (void)setIsRequired:(BOOL)isRequired

@@ -47,6 +47,11 @@ IB_DESIGNABLE
 @property(nonatomic)IBInspectable BOOL isRequired;
 
 /**
+ 设置或获取是否显示底边
+ */
+@property(nonatomic)IBInspectable BOOL borderBottom;
+
+/**
  设置或获取控件名
  */
 @property(nonatomic, copy)IBInspectable NSString *name;

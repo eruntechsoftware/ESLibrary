@@ -43,8 +43,11 @@
     
     tableView.mj_footer = _footer;
 
-    tableView.dataSource=self;
-    tableView.delegate=self;
+    if(tableView.dataSource==nil && tableView.delegate==nil)
+    {
+        tableView.dataSource=self;
+        tableView.delegate=self;
+    }
     //    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(stopRefreshing) userInfo:nil repeats:NO];
     //    [timer fire];
 }
