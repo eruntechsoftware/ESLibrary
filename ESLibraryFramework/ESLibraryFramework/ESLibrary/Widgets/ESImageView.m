@@ -177,8 +177,8 @@
     if(clickEnabled==YES)
     {
         _clickEnabled=YES;
-        _viewController = (BaseViewController*)[self searchViewController];
-        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:_viewController action:@selector(btnOnClick:)];
+//        _viewController = (BaseViewController*)[self searchViewController];
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(btnOnClick:)];
         [self addGestureRecognizer:singleTap];
         
     }
