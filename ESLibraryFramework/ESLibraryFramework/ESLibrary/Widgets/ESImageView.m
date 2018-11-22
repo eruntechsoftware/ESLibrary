@@ -199,9 +199,4 @@
         [_onClickListener onClickListener:self];
     }
 }
-
-- (void)addGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
-{
-    
-}
 @end
