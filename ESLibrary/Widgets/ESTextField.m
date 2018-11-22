@@ -8,7 +8,8 @@
 
 #import "ESTextField.h"
 
-
+#define LPFColor(r,g,b) [UIColor colorWithRed:(r) / 255.0 green:(g) / 255.0 blue:(b) / 255.0 alpha:1]
+#define LPFColorA(r,g,b,a) [UIColor colorWithRed:(r) / 255.0 green:(g) / 255.0 blue:(b) / 255.0 alpha:(a)]
 @implementation ESTextField
 @synthesize context=_context;
 
@@ -162,9 +163,9 @@
         }
         else
         {
-            CGContextSetFillColorWithColor(context, [UIColor blueColor].CGColor);
+            CGContextSetFillColorWithColor(context, LPFColor(100, 193,234).CGColor);
         }
-        CGContextFillRect(context, CGRectMake(0, CGRectGetHeight(self.frame) - 1, CGRectGetWidth(self.frame), 1));
+        CGContextFillRect(context, CGRectMake(0, CGRectGetHeight(self.frame) - 1.5, CGRectGetWidth(self.frame), 1.5));
     }
 }
 

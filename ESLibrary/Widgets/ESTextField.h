@@ -20,6 +20,7 @@
 #import "DataType.h"
 #import "DataTypeExpression.h"
 #import "ESNSString.h"
+#import "UIView+LayerEffects.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 
 IB_DESIGNABLE
