@@ -13,6 +13,7 @@
 #import "DataTypeExpression.h"
 #import "UIImageView+WebCache.h"
 #import "ESImageViewOnClickListener.h"
+#import "BaseViewController.h"
 
 IB_DESIGNABLE  // 动态刷新
 
@@ -22,6 +23,7 @@ static NSString *IMAGE_URL_HEAD = @"";
 {
     Validator *_validator;
     NSString *_URL;
+    BaseViewController *_viewController;
 }
 /**
  设置或获取占位图片
