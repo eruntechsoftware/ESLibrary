@@ -111,16 +111,17 @@
  */
 -(NSString*) collection:(id)subview
 {
-    NSString* tag=@"";
+    NSString* selectValue=@"";
     if([_checkViews count]>0){
         for (ESCheckBox *view in _checkViews) {
             if([view checked]==YES)
             {
-                tag = view.value;
+                selectValue = [view value];
+                break;
             }
         }
     }
-    return tag;
+    return selectValue;
 }
 
 /**
