@@ -39,6 +39,11 @@ NS_ASSUME_NONNULL_BEGIN
  **/
 @property(nonatomic, copy)IBInspectable NSString *name;
 
+/**
+ 设置或获取是否多选模式
+ */
+@property(nonatomic)IBInspectable BOOL multiple;
+
 
 
 /**

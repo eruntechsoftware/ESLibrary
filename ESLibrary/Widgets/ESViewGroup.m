@@ -23,8 +23,8 @@
  **/
 -(void)initializ
 {
-    [self search:self];
     _viewController = [self searchViewController];
+    [self search:self];
 }
 
 /**

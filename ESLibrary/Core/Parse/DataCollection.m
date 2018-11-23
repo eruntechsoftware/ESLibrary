@@ -43,8 +43,12 @@
  添加Data元素
  @param anObject Data
  */
--(void)addObject:(id)anObject{
+-(void)addObject:(Data*)anObject{
     if(_array!=nil){
+        if([self dataWithName: [anObject name]]!=nil)
+        {
+            [_array removeObject:[self dataWithName: [anObject name]]];
+        }
         [_array addObject:anObject];
         [self convert2Array];
     }
@@ -58,8 +62,12 @@
     if(_array!=nil){
         if(dataCollection!=nil && dataCollection.count>0){
             NSEnumerator *enumerator = [dataCollection objectEnumerator];
-            id obj = nil;
+            Data* obj = nil;
             while(obj = [enumerator nextObject]){
+                if([self dataWithName: [obj name]]!=nil)
+                {
+                    [_array removeObject:[self dataWithName: [obj name]]];
+                }
                 [_array addObject:obj];
             }
         }
