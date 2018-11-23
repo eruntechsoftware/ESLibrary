@@ -144,7 +144,7 @@
                 ESHiddenFeild *feild = (ESHiddenFeild*)parentView;
                 if([nameArray containsObject: feild.name])
                 {
-                    [_hiddenFeilds addObject:feild.titleLabel.text];
+                    [_hiddenFeilds addObject:feild.value];
                 }
             }
         }

@@ -53,8 +53,8 @@
 {
     DataCollection *datas = [[DataCollection alloc] initWithCapacity:1];
     Data *data;
-    NSInteger value = [self collection:self];
-    data = [[Data alloc] initWithDataName:self.name dataValue:[NSString stringWithFormat:@"%ld",(long)value]];
+    NSString* value = [self collection:self];
+    data = [[Data alloc] initWithDataName:self.name dataValue:value];
     [datas addObject:data];
     return datas;
 }
@@ -109,14 +109,14 @@
  遍历对象方法
  @param subview 视图控制器
  */
--(NSInteger) collection:(id)subview
+-(NSString*) collection:(id)subview
 {
-    NSInteger tag=-1;
+    NSString* tag=@"";
     if([_checkViews count]>0){
         for (ESCheckBox *view in _checkViews) {
             if([view checked]==YES)
             {
-                tag = view.tag;
+                tag = view.value;
             }
         }
     }
@@ -127,9 +127,8 @@
  遍历对象方法
  @param subview 视图控制器
  */
--(NSInteger) search:(id)subview
+-(void) search:(id)subview
 {
-    NSInteger tag=-1;
     if([subview isKindOfClass:[ESCheckBox class]]){
         ESCheckBox *cbox = (ESCheckBox*)subview;
         [_checkViews addObject:cbox];
@@ -140,13 +139,11 @@
         UIView *views = (UIView*)subview;
         if([views.subviews count]>0){
             for (UIView *view in views.subviews) {
-                tag = [self search:view];
+                [self search:view];
             }
         }
     }
-    return tag;
 }
-
 
 /**
  更改选中状态
