@@ -25,6 +25,7 @@
 -(void)initializ
 {
     _viewController = [self searchViewController];
+    [self addTarget:self action:@selector(changeState:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 

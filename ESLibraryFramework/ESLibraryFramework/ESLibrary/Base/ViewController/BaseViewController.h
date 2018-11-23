@@ -27,24 +27,6 @@
 
 typedef enum
 {
-    iPhone4
-    ,iPhone4S
-    ,iPhone5
-    ,iPhone5C
-    ,iPhone5S
-    ,iPhoneSE
-    ,iPhone6
-    ,iPhone6Plus
-    ,iPhone6S
-    ,iPhone6SPlus
-    ,iPhone7
-    ,iPhone7Plus
-    ,iPhoneSimulatorARM
-    ,iPhoneSimulatorX86
-}DeviceName;
-
-typedef enum
-{
     NoNetwork = 0,  //无网络
     NoDataSouth = 1  //无数据源
     }NoDataType;
@@ -237,11 +219,6 @@ IB_DESIGNABLE
  @return 导航栏高度
  */
 -(CGFloat)getNavigationBarHeight;
-
-/**
- 获取设备类型
- */
--(DeviceName)deviceName;
 
 /**
  导航视图控制器右侧按钮单击事件处理方法

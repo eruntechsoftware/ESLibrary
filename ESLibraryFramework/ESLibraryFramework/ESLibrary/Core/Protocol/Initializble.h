@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "BaseViewController.h"
 
 /**
  初始化协议
