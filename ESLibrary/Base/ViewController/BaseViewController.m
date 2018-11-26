@@ -154,7 +154,7 @@
  @param state 状态值
  @param params 参数集
  */
-- (void)passValue:(int)state param:(DataCollection *)params{
+- (void)passValue:(int)state params:(DataCollection *)params{
     if (params!=nil) {
         //接收子页面传递的数据集
         _subTransferDataParams = params;
