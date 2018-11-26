@@ -143,6 +143,7 @@
     if([subview isKindOfClass:[ESCheckBox class]]){
         ESCheckBox *cbox = (ESCheckBox*)subview;
         [_checkViews addObject:cbox];
+        [cbox initializ];
         [cbox setViewGroup:self];
     }
     else

@@ -55,6 +55,11 @@
  **/
 @property(nonatomic)IBInspectable BOOL checked;
 
+/**
+ 初始化事件
+ **/
+-(void)initializ;
+
 -(void)setViewGroup:(id)viewGroup;
 
 @end
