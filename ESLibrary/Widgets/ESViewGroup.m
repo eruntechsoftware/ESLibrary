@@ -106,10 +106,7 @@
             }
             else
             {
-                if([[[checkbox.value trim] lowercaseString] isEqualToString:[[tag trim] lowercaseString]])
-                {
-                    [checkbox setChecked:YES];
-                }
+                [checkbox setChecked:!checkbox.checked];
             }
         }
     }
