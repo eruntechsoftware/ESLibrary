@@ -271,15 +271,13 @@ static UIColor *NavigationBar_barTintColor;
 }
 
 /**
- 弹出viewController
+ 向父页面发布数据
  @param state 状态值，用于区分发布来源
  @param params 类型数据集
- @param animated 是否动画方式展示
  */
-- (void) popViewControllerAnimated:(int)state params:(nullable DataCollection*)params animated:( BOOL)animated
+- (void) release:(int)state params:(nullable DataCollection*)params
 {
-    [_baseViewController.passValueDelegate passValue: params];
-    [super popViewControllerAnimated:YES];
+    [_baseViewController.passValueDelegate passValue:state params:params];
 }
 
 /**
