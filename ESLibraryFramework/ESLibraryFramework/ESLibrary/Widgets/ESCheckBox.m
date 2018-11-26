@@ -123,6 +123,7 @@
         _stateCheckedImageView.hidden=YES;
         _stateNormalImageView.hidden=NO;
     }
+    _checkedBlock(_checked);
 }
 
 - (void)setStateNormalImage:(UIImage *)stateNormalImage

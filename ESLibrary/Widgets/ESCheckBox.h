@@ -21,7 +21,7 @@
 #import "DataTypeExpression.h"
 #import "ESNSString.h"
 #import "ESViewGroup.h"
-
+typedef void(^ESCheckBoxBlock)(BOOL isChecked);
 @interface ESCheckBox : UIButton<IReleasable,Initializble>
 {
     UIViewController* _viewController;
@@ -64,6 +64,11 @@
  设置或获取选中状态
  **/
 @property(nonatomic)IBInspectable BOOL checked;
+
+/**
+ 设置或获取点击处理回调
+ **/
+@property (strong, nonatomic) ESCheckBoxBlock checkedBlock;
 
 /**
  初始化事件
