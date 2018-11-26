@@ -22,7 +22,7 @@
 #import "ESNSString.h"
 #import "ESViewGroup.h"
 
-@interface ESCheckBox : UIButton<ICollectible,IReleasable,Initializble>
+@interface ESCheckBox : UIButton<IReleasable,Initializble>
 {
     UIViewController* _viewController;
     UIImageView *_stateNormalImageView;
