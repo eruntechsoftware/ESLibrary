@@ -22,13 +22,23 @@
 #import "ESNSString.h"
 #import "ESViewGroup.h"
 
-@interface ESCheckBox : UIButton<Initializble>
+@interface ESCheckBox : UIButton<ICollectible,IReleasable,Initializble>
 {
     UIViewController* _viewController;
     UIImageView *_stateNormalImageView;
     UIImageView *_stateCheckedImageView;
     UIView *_viewGroup;
 }
+
+/**
+ 设置或获取采集标记
+ */
+@property(nonatomic, copy) NSString* collectSign;
+
+/**
+ 设置或获取UIView名称
+ */
+@property(nonatomic, copy)IBInspectable NSString *name;
 
 /**
  设置或获取控件值

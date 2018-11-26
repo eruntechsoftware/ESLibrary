@@ -28,6 +28,66 @@
     [self addTarget:self action:@selector(changeState:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+/**
+ 获取采集标记名
+ */
+-(NSArray*) getRequest
+{
+    NSArray* array = [[NSArray alloc] initWithObjects:_name, nil];
+    return array;
+}
+
+/**
+ 将数据发布到指定位置
+ */
+-(void) release:(NSString *)dataName data:(Data *)data
+{
+    if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]]) {
+        [self setTitle:(NSString*)data.value forState:UIControlStateNormal];
+        [self setTitle:(NSString*)data.value forState:UIControlStateHighlighted];
+        [self setTitle:(NSString*)data.value forState:UIControlStateSelected];
+        [self setTitle:(NSString*)data.value forState:UIControlStateFocused];
+    }
+}
+
+/**
+ 数据收集，返回DataCollection
+ */
+-(DataCollection*) collect
+{
+    DataCollection *datas = [[DataCollection alloc] initWithCapacity:1];
+    Data *data = [[Data alloc] initWithDataName:self.name dataValue:self.titleLabel.text];
+    [datas addObject:data];
+    return datas;
+}
+
+/**
+ 设置采集标记，多个标记以‘|!’分割
+ 例如：ForSave|!ForQuery
+ @param sign 采集标记
+ */
+-(void)setCollectSign:(NSMutableString *)sign{
+    _collectSign=sign;
+}
+
+/**
+ 获取收集标记集合，返回NSString[]
+ */
+-(NSString *) getCollectSign
+{
+    return _collectSign;
+}
+
+- (void)collectSign:(NSMutableString *)sign {
+    _collectSign=sign;
+}
+
+
+
+-(NSString*) getName
+{
+    return _name;
+}
 
 - (void)layoutSubviews
 {

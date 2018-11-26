@@ -106,7 +106,10 @@
             }
             else
             {
-                [checkbox setChecked:!checkbox.checked];
+                if([[[checkbox.value trim] lowercaseString] isEqualToString:[[tag trim] lowercaseString]])
+                {
+                    [checkbox setChecked:!checkbox.checked];
+                }
             }
         }
     }
