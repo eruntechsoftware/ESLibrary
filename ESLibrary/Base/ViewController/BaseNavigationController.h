@@ -73,6 +73,14 @@
 
 /**
  弹出viewController
+ @param state 状态值，用于区分发布来源
+ @param params 类型数据集
+ @param animated 是否动画方式展示
+ */
+- (void) popViewControllerAnimated:(int)state params:(nullable DataCollection*)params animated:( BOOL)animated;
+
+/**
+ 弹出viewController
  @param params 类型数据集
  @param closed 通知父页面是否关闭
  @param animated 是否动画方式展示

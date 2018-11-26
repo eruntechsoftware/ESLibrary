@@ -126,11 +126,6 @@
 //    [validator validator];
 }
 
--(void)onLeftClick
-{
-    [self.baseNavigationController popViewControllerAnimated:self.subTransferDataParams animated:YES];
-}
-
 /**
  UIViewController间数据传值
  @param params 参数集
@@ -143,6 +138,28 @@
         [table addObject:params];
         
         [self release:table];
+        
+        ESDataQueryViewController *queryViewController = [[ESDataQueryViewController alloc] initWithViewController:self];
+        [queryViewController execute];
+        
+        ESControlStateProtector *controlStateProtector = [[ESControlStateProtector alloc] initWithViewController:self];
+        [controlStateProtector stateProtector];
+    }else{
+        [self release:nil];
+    }
+}
+
+/**
+ UIViewController间数据传值
+ @param state 状态值
+ @param params 参数集
+ */
+- (void)passValue:(int)state param:(DataCollection *)params{
+    if (params!=nil) {
+        //接收子页面传递的数据集
+        _subTransferDataParams = params;
+        
+        [self release:state params:params];
         
         ESDataQueryViewController *queryViewController = [[ESDataQueryViewController alloc] initWithViewController:self];
         [queryViewController execute];
@@ -294,6 +311,16 @@
     } @finally {
         
     }
+}
+
+- (void)onLeftClick
+{
+    [self.baseNavigationController popViewControllerAnimated:self.subTransferDataParams animated:YES];
+}
+
+- (void)onRightClick
+{
+    
 }
 
 /**
