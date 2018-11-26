@@ -93,13 +93,23 @@
         NSUInteger size = _checkViews.count;
         for (int i=0; i<size; i++) {
             ESCheckBox *checkbox = (ESCheckBox*)_checkViews[i];
-            if([[[checkbox.value trim] lowercaseString] isEqualToString:[[tag trim] lowercaseString]])
+            if(_multiple==NO)
             {
-                [checkbox setChecked:YES];
+                if([[[checkbox.value trim] lowercaseString] isEqualToString:[[tag trim] lowercaseString]])
+                {
+                    [checkbox setChecked:YES];
+                }
+                else
+                {
+                    [checkbox setChecked:NO];
+                }
             }
             else
             {
-                [checkbox setChecked:NO];
+                if([[[checkbox.value trim] lowercaseString] isEqualToString:[[tag trim] lowercaseString]])
+                {
+                    [checkbox setChecked:YES];
+                }
             }
         }
     }
@@ -144,15 +154,6 @@
             }
         }
     }
-}
-
-/**
- 更改选中状态
- @param sender 点击的对象
- */
-- (void)changeState:(UIButton *)sender
-{
-    NSLog(@"%@",@"单击了按钮，哈哈哈哈哈");
 }
 
 -(void)selectTag:(NSString*)tag
