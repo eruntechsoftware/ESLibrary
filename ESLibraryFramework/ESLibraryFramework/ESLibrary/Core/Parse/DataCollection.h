@@ -41,6 +41,13 @@
 -(void)addObject:(nonnull Data*)anObject;
 
 /**
+ 添加Data元素
+ @param name 字段
+ @param value 值
+ */
+-(void)addData:(nonnull NSString*)name value:(id)value;
+
+/**
  添加DataTable
  @param dataCollection DataCollection
  */

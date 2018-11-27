@@ -71,6 +71,12 @@ typedef void(^OperationBlock)(id listView, NSIndexPath *indexPath);
 -(NSInteger) toInteger;
 
 /**
+ 输出Long值
+ @return 整型数据
+ */
+-(NSInteger) toLong;
+
+/**
  输出String值
  @return String
  */

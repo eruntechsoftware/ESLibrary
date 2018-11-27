@@ -63,6 +63,23 @@
 }
 
 /**
+ 添加Data元素
+ @param name 字段
+ @param value 值
+ */
+-(void)addData:(nonnull NSString*)name value:(id)value
+{
+    if(_array!=nil){
+        if([self dataWithName: name]!=nil)
+        {
+            [_array removeObject:[self dataWithName: name]];
+        }
+        [_array addObject:[Data dataWithName:name dataValue:value]];
+        [self convert2Array];
+    }
+}
+
+/**
  添加DataTable
  @param dataCollection DataCollection
  */
