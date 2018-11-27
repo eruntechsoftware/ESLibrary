@@ -154,11 +154,13 @@
  @param state 状态值
  @param params 参数集
  */
-- (void)passValue:(int)state params:(DataCollection *)params{
+- (void)passValue:(int)state params:(id)params{
     if (params!=nil) {
-        //接收子页面传递的数据集
-        _subTransferDataParams = params;
-        
+        if([params isKindOfClass:[DataCollection class]])
+        {
+            //接收子页面传递的数据集
+            _subTransferDataParams = params;
+        }
         [self release:state params:params];
         
         ESDataQueryViewController *queryViewController = [[ESDataQueryViewController alloc] initWithViewController:self];
@@ -294,14 +296,21 @@
  发布数据到当前ViewController
  @params params 数据集
  */
--(void)release:(int)flag params:(DataCollection*)params
+-(void)release:(int)flag params:(id)params
 {
     @try {
         [self releaseing];
         if(params!=nil)
         {
             DataTable *table = [[DataTable alloc] initWithCapacity:1];
-            [table addObject:params];
+            if([params isKindOfClass:[DataCollection class]])
+            {
+                [table addObject:params];
+            }
+            else
+            {
+                [table addObjectsFromArray:(DataTable*)params];
+            }
             ESReleaseViewController *releaseViewController = [[ESReleaseViewController alloc] initWithViewController:self dataTable:table];
             [releaseViewController release:table];
         }
