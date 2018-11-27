@@ -12,6 +12,14 @@
 @implementation DataCollection
 
 
++(instancetype)dataCollection
+{
+    DataCollection* array = [[DataCollection alloc] initWithCapacity:1];
+    return array;
+}
+
+
+
 /**
  创建DataCollection对象
  @param numbers 初始容量

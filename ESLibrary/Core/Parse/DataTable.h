@@ -15,6 +15,8 @@
     NSMutableArray* _array;
 }
 
++(instancetype)dataTable;
+
 /**
  创建DataTable对象
  @param numbers 初始容量

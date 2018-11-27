@@ -37,6 +37,8 @@ typedef void(^OperationBlock)(id listView, NSIndexPath *indexPath);
  */
 @property(copy, nonatomic) OperationBlock block;
 
++(instancetype)dataWithName:(NSString*)name dataValue:(id)value;
+
 /**
  初始化Data，输入name、value
  @param name 数据名称

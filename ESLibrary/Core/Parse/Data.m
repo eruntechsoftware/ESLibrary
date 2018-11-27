@@ -15,6 +15,11 @@
 @synthesize value=_value;
 
 
++(instancetype)dataWithName:(NSString*)name dataValue:(id)value
+{
+    Data *data = [[Data alloc] initWithDataName:name dataValue:value];
+    return data;
+}
 
 /**
  初始化Data，输入name、value

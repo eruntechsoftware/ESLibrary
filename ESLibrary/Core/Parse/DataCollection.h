@@ -11,13 +11,14 @@
 
 @interface DataCollection : NSObject<NSFastEnumeration>{
     
-@private
     //存储数据的容器
     NSMutableArray* _array;
     //当前位置索引
     int currIndex;
-    Data* __unsafe_unretained _Nullable numbers[2000];
+    Data* __unsafe_unretained _Nullable numbers[80];
 }
+
++(instancetype)dataCollection;
 
 /**
  创建DataCollection对象

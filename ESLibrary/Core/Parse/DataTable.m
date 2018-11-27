@@ -11,6 +11,11 @@
 
 @implementation DataTable
 
++(instancetype)dataTable
+{
+    DataTable* array = [[DataTable alloc] initWithCapacity:1];
+    return array;
+}
 
 /**
  创建DataTable对象
