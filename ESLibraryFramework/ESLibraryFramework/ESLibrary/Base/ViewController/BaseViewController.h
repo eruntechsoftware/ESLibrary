@@ -92,9 +92,14 @@ IB_DESIGNABLE
 @property (nullable,strong,nonatomic) IBInspectable NSString* leftText;
 
 /**
+ 设置或获取视图控制器是否不接收子视图popViewController关闭方法事件
+ */
+@property (assign,nonatomic) IBInspectable BOOL* subViewControllerFromClosed;
+
+/**
  设置或获取视图控制器的Tabbar是否隐藏
  */
-@property (assign,nonatomic) IBInspectable BOOL* hiddenBottomBar;
+@property (assign,nonatomic) BOOL* hiddenBottomBar;
 
 /**
  设置或获取右侧单击事件处理方法

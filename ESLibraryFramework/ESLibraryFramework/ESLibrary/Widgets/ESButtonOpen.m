@@ -78,7 +78,7 @@
             }
             
         }else{
-            [self.viewController.view makeToast:@"未设置跳转目标视图控制器" duration:3.0 position:CSToastPositionCenter];
+            [self.viewController.view makeToast:@"未设置跳转目标视图控制器" duration:3.0 position:CSToastPositionBottom];
         }
         
     }

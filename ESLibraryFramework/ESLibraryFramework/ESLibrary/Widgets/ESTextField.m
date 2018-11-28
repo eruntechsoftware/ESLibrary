@@ -133,8 +133,7 @@
 -(void) hint
 {
     [self shakeAnimationMethod];
-    [self.viewController.view makeToast:self.placeholder duration:3.0
-                               position:CSToastPositionCenter];
+    [self.viewController.view makeToast:self.placeholder duration:3.0 position:CSToastPositionBottom];
 }
 
 /**

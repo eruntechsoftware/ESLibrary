@@ -116,7 +116,7 @@
 -(void) hint
 {
     [self.viewController.view makeToast:self.placeholder duration:3.0
-                               position:CSToastPositionCenter];
+                               position:CSToastPositionBottom];
 }
 
 - (void)setIsRequired:(BOOL)isRequired

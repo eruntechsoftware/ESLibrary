@@ -192,10 +192,12 @@
         
         ESControlStateProtector *controlStateProtector = [[ESControlStateProtector alloc] initWithViewController:self];
         [controlStateProtector stateProtector];
-        
-        [self dismissViewControllerAnimated:YES isParentClosed:closed params:params completion:nil];
-    }else{
-        [self dismissViewControllerAnimated:YES isParentClosed:closed params:nil completion:nil];
+    }
+    
+    //如果当前视图控制器接收子视图popViewController关闭方法控制，则继续弹出当前页面
+    if(_subViewControllerFromClosed==NO)
+    {
+        [[self baseNavigationController] popViewControllerAnimated:params parentClosed:closed animated:YES];
     }
 }
 
