@@ -488,4 +488,9 @@
         [[self baseNavigationController] leftBarButtonItem:self text:_leftText];
     }
 }
+
+- (void)setSubViewControllerFromClosed:(BOOL *)subViewControllerFromClosed
+{
+    _subViewControllerFromClosed=subViewControllerFromClosed;
+}
 @end
