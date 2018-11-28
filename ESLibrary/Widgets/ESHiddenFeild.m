@@ -103,13 +103,9 @@
 -(BOOL)dataValidator
 {
     //如果不能为空，则提示消息
-    if(_isRequired && [[_value trim] isEqualToString:@""]){
+    if(_isRequired){
+        if(_value==nil || [[_value trim] isEqualToString:@""])
         return NO;
-    }
-    if(_regularExpression!=nil && ![_regularExpression isEmpty]){
-        //正则表达式验证
-        BOOL result = [_validator validataWithValue:_value];
-        return result;
     }
     return YES;
 }

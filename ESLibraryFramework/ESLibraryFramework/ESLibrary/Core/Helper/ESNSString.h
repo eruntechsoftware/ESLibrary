@@ -41,6 +41,11 @@
 - (CGSize)sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize;
 
 /**
+ 保留小数位数
+ */
+-(NSString *)notRounding:(float)price afterPoint:(int)position;
+
+/**
  Base64解码
  @return Base64解码后的字符串
  */

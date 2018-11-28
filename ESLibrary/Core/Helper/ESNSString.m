@@ -62,6 +62,21 @@
     return textSize;
 }
 
+/**
+ 保留小数位数
+ */
++(NSString *)notRounding:(float)price afterPoint:(int)position
+{
+    NSString *valueStr = [NSString stringWithFormat:@"%f",price];
+    NSRange range;
+    range = [valueStr rangeOfString:@"."];
+    if (range.location != NSNotFound) {
+        return [valueStr substringToIndex:(range.location+position+1)];
+    }else{
+        return [NSString stringWithFormat:@"%f",price];
+    }
+}
+
 
 /**
  Base64解码
