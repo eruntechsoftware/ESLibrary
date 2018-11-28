@@ -322,6 +322,32 @@
     }
 }
 
+/**
+ 发布数据到当前ViewController
+ @params name uiviewName
+ @params value 数据
+ */
+-(void)releaseWithViewName:(NSString*)name params:(NSString*)value
+{
+    @try
+    {
+        if(value!=nil && name!=nil)
+        {
+            DataTable *table = [[DataTable alloc] initWithCapacity:1];
+            DataCollection *params = [DataCollection dataCollection];
+            [params addData:name value:value];
+            [table addObject:params];
+            
+            ESReleaseViewController *releaseViewController = [[ESReleaseViewController alloc] initWithViewController:self dataTable:table];
+            [releaseViewController release:table];
+        }
+    } @catch (NSException *exception) {
+        
+    } @finally {
+        
+    }
+}
+
 - (void)onLeftClick
 {
     [self.baseNavigationController popViewControllerAnimated:self.subTransferDataParams animated:YES];

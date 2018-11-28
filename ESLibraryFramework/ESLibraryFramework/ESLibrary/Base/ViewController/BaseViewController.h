@@ -195,6 +195,13 @@ IB_DESIGNABLE
 -(void)release:(int)flag params:(DataCollection*)params;
 
 /**
+ 发布数据到当前ViewController
+ @params name uiviewName
+ @params value 数据
+ */
+-(void)releaseWithViewName:(NSString*)name params:(NSString*)value;
+
+/**
  添加关闭键盘输入事件监听
  */
 -(void)addDismissKeyboardAction;
