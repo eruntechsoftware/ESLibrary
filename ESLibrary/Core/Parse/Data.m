@@ -86,6 +86,18 @@
 }
 
 /**
+ 输出Float值
+ @return 浮点数据
+ */
+-(NSDecimalNumber*) toFloat
+{
+    if(_value==nil){
+        return [NSDecimalNumber decimalNumberWithString:@"0.00"];
+    }
+    return [NSDecimalNumber decimalNumberWithString:_value];
+}
+
+/**
  输出String值
  @return String
  */

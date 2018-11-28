@@ -77,6 +77,12 @@ typedef void(^OperationBlock)(id listView, NSIndexPath *indexPath);
 -(NSInteger) toLong;
 
 /**
+ 输出Float值
+ @return 浮点数据
+ */
+-(NSDecimalNumber*) toFloat;
+
+/**
  输出String值
  @return String
  */
