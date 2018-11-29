@@ -281,18 +281,6 @@ static UIColor *NavigationBar_barTintColor;
 }
 
 /**
- 弹出viewController
- @param params 类型数据集
- @param isClosed 通知父页面是否关闭
- @param animated 是否动画方式展示
- */
-- (void) popViewControllerAnimated:(DataCollection*)params parentClosed:(BOOL)isClosed animated:(BOOL)animated{
-    
-    [_baseViewController.passValueDelegate passValue: params isClosed:isClosed];
-    [super popViewControllerAnimated:YES];
-}
-
-/**
  弹出viewController，并将当前页面接收到的子页面数据集继续向父页面传递
  */
 -(void)popViewControllerAnimated{

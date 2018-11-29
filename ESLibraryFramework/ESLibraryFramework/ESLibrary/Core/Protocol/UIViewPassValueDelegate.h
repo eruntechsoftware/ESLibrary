@@ -24,10 +24,4 @@
  */
 - (void)passValue:(int)state params:(id)params;
 
-/**
- UIViewController间数据传值
- @param params 参数集
- @param closed 是否关闭上级页面
- */
-- (void)passValue:(id)params isClosed:(BOOL)closed;
 @end

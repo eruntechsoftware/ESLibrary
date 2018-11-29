@@ -174,34 +174,6 @@
 }
 
 /**
- UIViewController间数据传值
- @param params 参数集
- @param closed 子页面通知是否关闭上级页面
- */
-- (void)passValue:(nullable DataCollection*)params isClosed:(BOOL)closed{
-    if (params!=nil) {
-        //接收子页面传递的数据集
-        _subTransferDataParams = params;
-        DataTable *table = [[DataTable alloc] initWithCapacity:1];
-        [table addObject:params];
-        ESReleaseViewController *release = [[ESReleaseViewController alloc] initWithViewController:self dataTable:table];
-        [release release:table];
-        
-        ESDataQueryViewController *queryViewController = [[ESDataQueryViewController alloc] initWithViewController:self];
-        [queryViewController execute];
-        
-        ESControlStateProtector *controlStateProtector = [[ESControlStateProtector alloc] initWithViewController:self];
-        [controlStateProtector stateProtector];
-    }
-    
-    //如果当前视图控制器接收子视图popViewController关闭方法控制，则继续弹出当前页面
-    if(_subViewControllerFromClosed==NO)
-    {
-        [self dismissViewControllerAnimated:YES isParentClosed:closed params:params completion:nil];
-    }
-}
-
-/**
  跳转到目标ViewController，并且传送参数到目标ViewController
  @param viewControllerToPresent 目标ViewController
  @param dataParams 参数集合
@@ -227,22 +199,6 @@
 -(void)dismissViewControllerAnimated:(BOOL)flag params:(DataCollection *)dataParams completion:(void (^)(void))completion{
     if (_passValueDelegate != nil){
         [_passValueDelegate passValue:dataParams];
-    }
-    [self dismissViewControllerAnimated:flag completion:completion];
-}
-
-/**
- 弹出当前ViewController
- @param flag 是否动画
- @param parentClosed 是否关闭上级屏幕
- @param dataParams 屏幕参数
- @param completion 回调
- */
--(void)dismissViewControllerAnimated:(BOOL)flag isParentClosed:(BOOL)parentClosed params:(nullable DataCollection*)dataParams completion:(void (^ __nullable)(void))completion
-{
-    /**传数据到上级页面**/
-    if (_passValueDelegate != nil){
-        [_passValueDelegate passValue:dataParams isClosed:parentClosed];
     }
     [self dismissViewControllerAnimated:flag completion:completion];
 }
@@ -487,10 +443,5 @@
     if (_leftText!=nil) {
         [[self baseNavigationController] leftBarButtonItem:self text:_leftText];
     }
-}
-
-- (void)setSubViewControllerFromClosed:(BOOL *)subViewControllerFromClosed
-{
-    _subViewControllerFromClosed=subViewControllerFromClosed;
 }
 @end
