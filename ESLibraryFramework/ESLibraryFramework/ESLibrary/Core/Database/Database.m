@@ -156,7 +156,11 @@ static NSString *_name;//数据库名称
     BOOL result = NO;
     @try{
         //读取sql文件
-        NSString*sqlItems = [SQLExpression readSqlFile:sqlFile];
+        if(_sqlExp==nil)
+        {
+            _sqlExp = [SQLExpression initSQLExp];
+        }
+        NSString*sqlItems = [_sqlExp readSqlFile:sqlFile];
         
         //如果不为空或nil，则继续执行
         if(sqlItems!=nil && ![[sqlItems trim]isEqualToString:@""]){
@@ -363,9 +367,14 @@ static NSString *_name;//数据库名称
 -(DataTable*)executeTable:(NSString *)sqlFile params:(DataCollection *)dataParams {
     
     DataTable* result=[[DataTable alloc] initWithCapacity:0];
-    @try{
+    @try
+    {
         //读取sql文件
-        NSString*sqlItems = [SQLExpression readSqlFile:sqlFile];
+        if(_sqlExp==nil)
+        {
+            _sqlExp = [SQLExpression initSQLExp];
+        }
+        NSString*sqlItems = [_sqlExp readSqlFile:sqlFile];
         
         //如果不为空或nil，则继续执行
         if(sqlItems!=nil && ![[sqlItems trim]isEqualToString:@""]){
@@ -409,9 +418,14 @@ static NSString *_name;//数据库名称
 -(nonnull DataTable*) executeTable:(nonnull NSString*)sqlFile params:(nullable DataCollection*)dataParams esencoding:(ESEncoding)encoding{
     
     DataTable* result=[[DataTable alloc] initWithCapacity:0];
-    @try{
+    @try
+    {
         //读取sql文件
-        NSString*sqlItems = [SQLExpression readSqlFile:sqlFile];
+        if(_sqlExp==nil)
+        {
+            _sqlExp = [SQLExpression initSQLExp];
+        }
+        NSString*sqlItems = [_sqlExp readSqlFile:sqlFile];
         
         //如果不为空或nil，则继续执行
         if(sqlItems!=nil && ![[sqlItems trim]isEqualToString:@""]){

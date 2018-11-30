@@ -18,6 +18,7 @@
     sqlite3 *_db;//数据库访问对象
     NSString *sourcePath;
     NSString *targetPath;
+    SQLExpression *_sqlExp;
     @public
     const NSString *name;//数据库路径
 }

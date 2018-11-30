@@ -13,8 +13,10 @@
 #import "ESFile.h"
 
 @interface SQLExpression : NSObject {
-    
+    NSMutableDictionary *_dict;
 }
+
++(instancetype)initSQLExp;
 
 /**
  将SQL模板格式化成执行目标SQL
@@ -38,6 +40,6 @@
  @param fileName sql文件
  @return 读取SQL
  */
-+(nonnull NSString*) readSqlFile:(nullable NSString*)fileName;
+-(nonnull NSString*) readSqlFile:(nullable NSString*)fileName;
 
 @end

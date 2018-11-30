@@ -11,6 +11,21 @@
 
 @implementation SQLExpression
 
++(instancetype)initSQLExp
+{
+    SQLExpression *sqlEx = [[SQLExpression alloc] init];
+    return sqlEx;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _dict = [[NSMutableDictionary alloc] initWithCapacity:1];
+    }
+    return self;
+}
+
 /**
  将SQL模板格式化成执行目标SQL
  @param sql 执行的语句
@@ -120,8 +135,18 @@
  @param fileName sql文件
  @return 读取SQL
  */
-+(NSString*) readSqlFile:(NSString*)fileName
+-(NSString*) readSqlFile:(NSString*)fileName
 {
-    return [ESFile readFile:fileName extension:@"sql"];
+    NSString*sql = @"";
+    if([_dict objectForKey:fileName]!=nil)
+    {
+        sql = [_dict objectForKey:fileName];
+    }
+    else
+    {
+        sql = [ESFile readFile:fileName extension:@"sql"];
+        [_dict setObject:sql forKey:fileName];
+    }
+    return [sql copy];
 }
 @end

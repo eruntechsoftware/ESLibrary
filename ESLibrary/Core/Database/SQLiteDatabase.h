@@ -20,6 +20,7 @@
     NSString *_sql;
     NSMutableArray *_collectors;
     NSMutableArray *_releasers;
+    SQLExpression *_sqlExp;
 }
 
 /**

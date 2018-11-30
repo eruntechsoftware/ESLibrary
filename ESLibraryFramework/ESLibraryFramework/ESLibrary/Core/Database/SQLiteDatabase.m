@@ -45,7 +45,12 @@
             DataCollection *params = [[DataCollection alloc]initWithCapacity:1];
             id collector = [_collectors objectAtIndex:0] ;
             params = [collector collect];
-            _sql=[SQLExpression formatWithSql:[SQLExpression readSqlFile:_sql] params:params];
+            //读取sql文件
+            if(_sqlExp==nil)
+            {
+                _sqlExp = [SQLExpression initSQLExp];
+            }
+            _sql=[SQLExpression formatWithSql:[_sqlExp readSqlFile:_sql] params:params];
             return [_database execute:_sql];
         }
     }
@@ -71,7 +76,12 @@
             DataCollection *params = (DataCollection*)[NSMutableArray arrayWithCapacity:1];
             id collector = [_collectors objectAtIndex:0] ;
             params = [collector collect];
-            _sql=[SQLExpression formatWithSql:[SQLExpression readSqlFile:_sql] params:params];
+            //读取sql文件
+            if(_sqlExp==nil)
+            {
+                _sqlExp = [SQLExpression initSQLExp];
+            }
+            _sql=[SQLExpression formatWithSql:[_sqlExp readSqlFile:_sql] params:params];
             DataTable *dataTable = [_database executeTable:_sql];
             if(dataTable!=nil && dataTable.count>0){
                 [[self.releasers objectAtIndex:0] release:dataTable];
