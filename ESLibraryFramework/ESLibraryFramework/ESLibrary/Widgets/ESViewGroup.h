@@ -53,6 +53,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)selectTag:(NSString*)tag;
 
+-(void)addCheckBoxView:(ESCheckBox*)checkBox;
+
 @end
 
 NS_ASSUME_NONNULL_END

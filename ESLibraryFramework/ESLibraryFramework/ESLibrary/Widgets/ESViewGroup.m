@@ -161,4 +161,12 @@
 {
     [self release:self tag:tag];
 }
+
+-(void)addCheckBoxView:(ESCheckBox*)checkBox
+{
+    if(checkBox!=nil)
+    {
+        [_checkViews addObject:checkBox];
+    }
+}
 @end
