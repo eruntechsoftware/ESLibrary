@@ -21,6 +21,7 @@
 #import "DataTypeExpression.h"
 #import "ESNSString.h"
 #import "ESCheckBox.h"
+@class ESCheckBox;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ESViewGroup : UIView<ICollectible,IReleasable,Initializble>

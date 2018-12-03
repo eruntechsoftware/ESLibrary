@@ -21,6 +21,8 @@
 #import "DataTypeExpression.h"
 #import "ESNSString.h"
 #import "ESViewGroup.h"
+@class ESViewGroup;
+
 typedef void(^ESCheckBoxBlock)(BOOL isChecked);
 @interface ESCheckBox : UIButton<IReleasable,Initializble>
 {
