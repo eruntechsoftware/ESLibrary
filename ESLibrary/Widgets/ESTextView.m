@@ -14,7 +14,7 @@
 /**
  占位符Label
  */
-@property (strong,nonatomic) ESLabel *placeHolderLabel;
+@property (strong,nonatomic) UILabel *placeHolderLabel;
 
 @end
 @implementation ESTextView
@@ -44,6 +44,7 @@
     }
     return self;
 }
+
 
 - (id) initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
@@ -116,7 +117,7 @@
  例如：ForSave|!ForQuery
  @param sign 采集标记
  */
--(void)setCollectSign:(NSMutableString *)sign{
+-(void)setCollectSign:(NSString *)sign{
     _collectSign=sign;
 }
 
@@ -128,6 +129,9 @@
     return _collectSign;
 }
 
+- (void)collectSign:(NSString *)sign {
+    _collectSign=sign;
+}
 
 -(NSString*) getName
 {
@@ -219,6 +223,154 @@
 - (void)wantedModeType:(BOOL*)wantedModeType
 {
     _wantedModeType=wantedModeType;
+}
+
+- (void)deleteBackward {
+    <#code#>
+}
+
+- (void)insertText:(nonnull NSString *)text {
+    <#code#>
+}
+
+- (UITextWritingDirection)baseWritingDirectionForPosition:(nonnull UITextPosition *)position inDirection:(UITextStorageDirection)direction {
+    <#code#>
+}
+
+- (CGRect)caretRectForPosition:(nonnull UITextPosition *)position {
+    <#code#>
+}
+
+- (nullable UITextRange *)characterRangeAtPoint:(CGPoint)point {
+    <#code#>
+}
+
+- (nullable UITextRange *)characterRangeByExtendingPosition:(nonnull UITextPosition *)position inDirection:(UITextLayoutDirection)direction {
+    <#code#>
+}
+
+- (nullable UITextPosition *)closestPositionToPoint:(CGPoint)point {
+    <#code#>
+}
+
+- (nullable UITextPosition *)closestPositionToPoint:(CGPoint)point withinRange:(nonnull UITextRange *)range {
+    <#code#>
+}
+
+- (NSComparisonResult)comparePosition:(nonnull UITextPosition *)position toPosition:(nonnull UITextPosition *)other {
+    <#code#>
+}
+
+- (CGRect)firstRectForRange:(nonnull UITextRange *)range {
+    <#code#>
+}
+
+- (NSInteger)offsetFromPosition:(nonnull UITextPosition *)from toPosition:(nonnull UITextPosition *)toPosition {
+    <#code#>
+}
+
+- (nullable UITextPosition *)positionFromPosition:(nonnull UITextPosition *)position inDirection:(UITextLayoutDirection)direction offset:(NSInteger)offset {
+    <#code#>
+}
+
+- (nullable UITextPosition *)positionFromPosition:(nonnull UITextPosition *)position offset:(NSInteger)offset {
+    <#code#>
+}
+
+- (nullable UITextPosition *)positionWithinRange:(nonnull UITextRange *)range farthestInDirection:(UITextLayoutDirection)direction {
+    <#code#>
+}
+
+- (void)replaceRange:(nonnull UITextRange *)range withText:(nonnull NSString *)text {
+    <#code#>
+}
+
+- (nonnull NSArray<UITextSelectionRect *> *)selectionRectsForRange:(nonnull UITextRange *)range {
+    <#code#>
+}
+
+- (void)setBaseWritingDirection:(UITextWritingDirection)writingDirection forRange:(nonnull UITextRange *)range {
+    <#code#>
+}
+
+- (void)setMarkedText:(nullable NSString *)markedText selectedRange:(NSRange)selectedRange {
+    <#code#>
+}
+
+- (nullable NSString *)textInRange:(nonnull UITextRange *)range {
+    <#code#>
+}
+
+- (nullable UITextRange *)textRangeFromPosition:(nonnull UITextPosition *)fromPosition toPosition:(nonnull UITextPosition *)toPosition {
+    <#code#>
+}
+
+- (void)unmarkText {
+    <#code#>
+}
+
+- (nonnull NSArray<id<UIFocusItem>> *)focusItemsInRect:(CGRect)rect {
+    <#code#>
+}
+
++ (nonnull instancetype)appearance {
+    <#code#>
+}
+
++ (nonnull instancetype)appearanceForTraitCollection:(nonnull UITraitCollection *)trait {
+    <#code#>
+}
+
++ (nonnull instancetype)appearanceForTraitCollection:(nonnull UITraitCollection *)trait whenContainedIn:(nullable Class<UIAppearanceContainer>)ContainerClass, ... {
+    <#code#>
+}
+
++ (nonnull instancetype)appearanceForTraitCollection:(nonnull UITraitCollection *)trait whenContainedInInstancesOfClasses:(nonnull NSArray<Class<UIAppearanceContainer>> *)containerTypes {
+    <#code#>
+}
+
++ (nonnull instancetype)appearanceWhenContainedIn:(nullable Class<UIAppearanceContainer>)ContainerClass, ... {
+    <#code#>
+}
+
++ (nonnull instancetype)appearanceWhenContainedInInstancesOfClasses:(nonnull NSArray<Class<UIAppearanceContainer>> *)containerTypes {
+    <#code#>
+}
+
+- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection {
+    <#code#>
+}
+
+- (CGPoint)convertPoint:(CGPoint)point fromCoordinateSpace:(nonnull id<UICoordinateSpace>)coordinateSpace {
+    <#code#>
+}
+
+- (CGPoint)convertPoint:(CGPoint)point toCoordinateSpace:(nonnull id<UICoordinateSpace>)coordinateSpace {
+    <#code#>
+}
+
+- (CGRect)convertRect:(CGRect)rect fromCoordinateSpace:(nonnull id<UICoordinateSpace>)coordinateSpace {
+    <#code#>
+}
+
+- (CGRect)convertRect:(CGRect)rect toCoordinateSpace:(nonnull id<UICoordinateSpace>)coordinateSpace {
+    <#code#>
+}
+
+- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator {
+    <#code#>
+}
+
+- (void)setNeedsFocusUpdate {
+    <#code#>
+}
+
+- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context {
+    <#code#>
+}
+
+- (void)updateFocusIfNeeded {
+    <#code#>
 }
 
 @end

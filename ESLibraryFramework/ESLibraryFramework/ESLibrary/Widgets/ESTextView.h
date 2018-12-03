@@ -26,7 +26,7 @@
 IB_DESIGNABLE
 @interface ESTextView : UITextView<ICollectible,IReleasable,IValidatible,Initializble>
 {
-    NSMutableString * _collectSign;
+    NSString * _collectSign;
     BOOL _isRequired;
     NSString * _name;
     DataType _dataType;
@@ -35,10 +35,11 @@ IB_DESIGNABLE
     CGContextRef _context;
     UIViewController* _viewController;
 }
+
 /**
  设置或获取采集标记
  */
-@property(nonatomic, copy)IBInspectable NSMutableString *collectSign;
+@property(nonatomic, copy)IBInspectable NSString *collectSign;
 
 /**
  设置或获取是否必填项
@@ -151,7 +152,7 @@ IB_DESIGNABLE
  例如：ForSave|!ForQuery
  @param sign 采集标记
  */
--(void) setCollectSign:(NSMutableString*) sign;
+-(void) setCollectSign:(NSString*) sign;
 
 /**
  杜明悦
