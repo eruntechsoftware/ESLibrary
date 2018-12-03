@@ -167,6 +167,8 @@
     if(checkBox!=nil)
     {
         [_checkViews addObject:checkBox];
+        [checkBox initializ];
+        [checkBox setViewGroup:self];
     }
 }
 @end
