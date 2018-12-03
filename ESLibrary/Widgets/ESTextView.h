@@ -102,6 +102,11 @@ IB_DESIGNABLE
 @property(nonatomic)IBInspectable BOOL *wantedModeType;
 
 /**
+ 设置或获取占位符颜色
+ */
+@property(strong,nonatomic)IBInspectable UIColor *boderColor;
+
+/**
  杜明悦
  初始化方法
  */
