@@ -141,7 +141,7 @@
         }
         else
         {
-            if([[[data.value toString] trim] isEqualToString:@""])
+            if([[[data toString] trim] isEqualToString:@""])
             {
                 if(_placeholderImage!=nil)
                 {

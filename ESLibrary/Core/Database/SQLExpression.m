@@ -55,11 +55,16 @@
         
         if(data!=nil && data.value!=nil){
             value = @"";
-            
-            value = [value stringByAppendingString:@"'"];
-            value = [value stringByAppendingString:[[data toString] stringByReplacingOccurrencesOfString:@"'" withString:@""]];
-            value = [value stringByAppendingString:@"'"];
-            
+            if(data.dataType==Integer)
+            {
+                value = [value stringByAppendingString:[[data toString] stringByReplacingOccurrencesOfString:@"'" withString:@""]];
+            }
+            else
+            {
+                value = [value stringByAppendingString:@"'"];
+                value = [value stringByAppendingString:[[data toString] stringByReplacingOccurrencesOfString:@"'" withString:@""]];
+                value = [value stringByAppendingString:@"'"];
+            }
             if (value!=nil) {
                 NSRange range = [realSql rangeOfString:targetRange];
                 [realSql replaceCharactersInRange:range withString:value];
