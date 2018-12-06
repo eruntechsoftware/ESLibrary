@@ -105,20 +105,29 @@
         
         if(data!=nil && data.value!=nil){
             value = @"";
-            
-            value = [value stringByAppendingString:@"'"];
-            if(encoding == GBK){
-                NSString *valueStr = [[NSString alloc] initWithCString:[[data toString] UTF8String] encoding:encGBK];;
-                value = [value stringByAppendingString:[valueStr stringByReplacingOccurrencesOfString:@"'" withString:@""]];
-            }else{
-                value = [value stringByAppendingString:[[data toString] stringByReplacingOccurrencesOfString:@"'" withString:@""]];
+            if(data.dataType==Integer)
+            {
+                if(encoding == GBK){
+                    NSString *valueStr = [[NSString alloc] initWithCString:[[data toString] UTF8String] encoding:encGBK];;
+                    value = [value stringByAppendingString:[valueStr stringByReplacingOccurrencesOfString:@"'" withString:@""]];
+                }else{
+                    value = [value stringByAppendingString:[[data toString] stringByReplacingOccurrencesOfString:@"'" withString:@""]];
+                }
             }
-            value = [value stringByAppendingString:@"'"];
-            
+            else
+            {
+                value = [value stringByAppendingString:@"'"];
+                if(encoding == GBK){
+                    NSString *valueStr = [[NSString alloc] initWithCString:[[data toString] UTF8String] encoding:encGBK];;
+                    value = [value stringByAppendingString:[valueStr stringByReplacingOccurrencesOfString:@"'" withString:@""]];
+                }else{
+                    value = [value stringByAppendingString:[[data toString] stringByReplacingOccurrencesOfString:@"'" withString:@""]];
+                }
+                value = [value stringByAppendingString:@"'"];
+            }
             if (value!=nil) {
                 NSRange range = [realSql rangeOfString:targetRange];
                 [realSql replaceCharactersInRange:range withString:value];
-                
                 //                realSql = [realSql stringByReplacingOccurrencesOfString:target withString:value];
             }
         }else{

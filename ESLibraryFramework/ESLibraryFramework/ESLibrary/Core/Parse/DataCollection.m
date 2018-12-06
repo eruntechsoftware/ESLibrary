@@ -80,6 +80,25 @@
 }
 
 /**
+ 添加Data元素,类型：Integer，用于like或in查询
+ @param name 字段
+ @param value 值
+ */
+-(void)addDataWithIntegerType:(nonnull NSString*)name value:(id)value
+{
+    if(_array!=nil){
+        if([self dataWithName: name]!=nil)
+        {
+            [_array removeObject:[self dataWithName: name]];
+        }
+        Data *data = [Data dataWithName:name dataValue:value];
+        data.dataType=Integer;
+        [_array addObject:data];
+        [self convert2Array];
+    }
+}
+
+/**
  添加DataTable
  @param dataCollection DataCollection
  */

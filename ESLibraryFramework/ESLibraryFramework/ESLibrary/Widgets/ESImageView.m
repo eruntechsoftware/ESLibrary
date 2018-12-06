@@ -141,7 +141,17 @@
         }
         else
         {
-            [self setImage:[UIImage imageNamed:(NSString*)data.value]];
+            if([[[data.value toString] trim] isEqualToString:@""])
+            {
+                if(_placeholderImage!=nil)
+                {
+                    [self setImage:_placeholderImage];
+                }
+            }
+            else
+            {
+                [self setImage:[UIImage imageNamed:(NSString*)data.value]];
+            }
         }
     }
 }
