@@ -16,6 +16,11 @@
  */
 static UIColor *NavigationBar_barTintColor;
 
+/**
+ 设置或获取navigationBar标题颜色
+ */
+static UIColor *NavigationBar_titleColor;
+
 @synthesize baseViewController=_baseViewController;
 
 
@@ -36,6 +41,21 @@ static UIColor *NavigationBar_barTintColor;
  */
 +(UIColor*)getNavigationBar_barTintColor{
     return NavigationBar_barTintColor;
+}
+
+/**
+ 设置NavigationBar颜色
+ @param titleColor 标题颜色
+ */
++(void)setNavigationBar_titleColor:(nonnull UIColor*)titleColor{
+    NavigationBar_titleColor = titleColor;
+}
+
+/**
+ 获取titleColor颜色
+ */
++(UIColor*)getNavigationBar_titleColor{
+    return NavigationBar_titleColor;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
@@ -168,6 +188,8 @@ static UIColor *NavigationBar_barTintColor;
     {
         UIImageView* backImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 8, 25, 25)];
         backImage.image = [UIImage imageNamed:@"arrow_left_icon"];
+        backImage.image = [img imageWithRenderingMode:(UIImageRenderingModeAlwaysTemplate)];
+        backImage.tintColor=NavigationBar_titleColor;
         backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, self.navigationBar.frame.size.height)];
         [backButton addSubview:backImage];
        
@@ -226,7 +248,7 @@ static UIColor *NavigationBar_barTintColor;
     UIBarButtonItem* barButton;
     if(viewController.navigationItem!=nil){
         //实例化按钮
-        UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, self.navigationBar.frame.size.height)];
+        UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 90, self.navigationBar.frame.size.height)];
         //实例化图片视图
         UIImageView* backImage = [[UIImageView alloc] initWithFrame:CGRectMake(73, self.navigationBar.frame.size.height/2 - 10, 18, 18)];
         backImage.image = img;
