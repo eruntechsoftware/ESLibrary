@@ -55,6 +55,17 @@
 +(UIColor*)getNavigationBar_barTintColor;
 
 /**
+ 获取NavigationBar颜色
+ */
++(UIColor*)getNavigationBar_barTintColor;
+
+/**
+ 设置NavigationBar颜色
+ @param titleColor 标题颜色
+ */
++(void)setNavigationBar_titleColor:(nonnull UIColor*)titleColor;
+
+/**
  推入视图控制器
  @param viewController 目标视图控制器
  @param dataParams DataCollection类型数据集
