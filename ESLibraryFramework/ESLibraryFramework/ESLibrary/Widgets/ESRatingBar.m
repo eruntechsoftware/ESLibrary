@@ -74,38 +74,16 @@
     [super layoutSubviews];
     height = 0.0,width = 0.0;
     
-    if (height < [_ratingFullSelectedImage size].height) {
-        height = [_ratingFullSelectedImage size].height;
-    }
-    if (height < [_ratingHalfSelectedImage size].height) {
-        height = [_ratingHalfSelectedImage size].height;
-    }
-    if (height < [_ratingUnSelectedImage size].height) {
-        height = [_ratingUnSelectedImage size].height;
-    }
-    if (width < [_ratingFullSelectedImage size].width) {
-        width = [_ratingFullSelectedImage size].width;
-    }
-    if (width < [_ratingHalfSelectedImage size].width) {
-        width = [_ratingHalfSelectedImage size].width;
-    }
-    if (width < [_ratingUnSelectedImage size].width) {
-        width = [_ratingUnSelectedImage size].width;
-    }
-    
     starRating = 0.0;
     lastRating = 0.0;
     
-    [_s1 setFrame:CGRectMake(0,         0, width, height)];
-    [_s2 setFrame:CGRectMake(width,     0, width, height)];
-    [_s3 setFrame:CGRectMake(2 * width, 0, width, height)];
-    [_s4 setFrame:CGRectMake(3 * width, 0, width, height)];
-    [_s5 setFrame:CGRectMake(4 * width, 0, width, height)];
-    
     CGRect frame = [self frame];
-    frame.size.width = width * 5;
-    frame.size.height = height;
-    [self setFrame:frame];
+    width = frame.size.width/5;
+    [_s1 setFrame:CGRectMake(0,         0, width, width)];
+    [_s2 setFrame:CGRectMake(width,     0, width, width)];
+    [_s3 setFrame:CGRectMake(2 * width, 0, width, width)];
+    [_s4 setFrame:CGRectMake(3 * width, 0, width, width)];
+    [_s5 setFrame:CGRectMake(4 * width, 0, width, width)];
 }
 
 /**
