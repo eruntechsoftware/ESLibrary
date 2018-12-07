@@ -144,8 +144,8 @@
 		3A23E82F219D19D7000EFD50 /* ESHiddenFeild.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E82D219D19D7000EFD50 /* ESHiddenFeild.m */; };
 		3A287B7721BA5D060080595C /* ESRatingBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A287B7521BA5D060080595C /* ESRatingBar.h */; };
 		3A287B7821BA5D060080595C /* ESRatingBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A287B7621BA5D060080595C /* ESRatingBar.m */; };
-		3A287B7B21BA5E110080595C /* ESProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A287B7921BA5E100080595C /* ESProgressView.h */; };
-		3A287B7C21BA5E110080595C /* ESProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A287B7A21BA5E110080595C /* ESProgressView.m */; };
+		3A287B7F21BA97140080595C /* ESProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A287B7D21BA97140080595C /* ESProgressView.m */; };
+		3A287B8021BA97140080595C /* ESProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A287B7E21BA97140080595C /* ESProgressView.h */; };
 		3A2C093421A79BD2003CB052 /* ESCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C093021A79BD2003CB052 /* ESCheckBox.m */; };
 		3A2C093521A79BD2003CB052 /* ESViewGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2C093121A79BD2003CB052 /* ESViewGroup.h */; };
 		3A2C093621A79BD2003CB052 /* ESCheckBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2C093221A79BD2003CB052 /* ESCheckBox.h */; };
@@ -324,8 +324,8 @@
 		3A23E82D219D19D7000EFD50 /* ESHiddenFeild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESHiddenFeild.m; sourceTree = "<group>"; };
 		3A287B7521BA5D060080595C /* ESRatingBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESRatingBar.h; sourceTree = "<group>"; };
 		3A287B7621BA5D060080595C /* ESRatingBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESRatingBar.m; sourceTree = "<group>"; };
-		3A287B7921BA5E100080595C /* ESProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESProgressView.h; path = ESLibraryFramework/ESLibrary/ESProgressView.h; sourceTree = SOURCE_ROOT; };
-		3A287B7A21BA5E110080595C /* ESProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESProgressView.m; path = ESLibraryFramework/ESLibrary/ESProgressView.m; sourceTree = SOURCE_ROOT; };
+		3A287B7D21BA97140080595C /* ESProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESProgressView.m; sourceTree = "<group>"; };
+		3A287B7E21BA97140080595C /* ESProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESProgressView.h; sourceTree = "<group>"; };
 		3A2C093021A79BD2003CB052 /* ESCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESCheckBox.m; sourceTree = "<group>"; };
 		3A2C093121A79BD2003CB052 /* ESViewGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESViewGroup.h; sourceTree = "<group>"; };
 		3A2C093221A79BD2003CB052 /* ESCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCheckBox.h; sourceTree = "<group>"; };
@@ -551,8 +551,8 @@
 		3A05AF821ED28B4C00E69992 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				3A287B7921BA5E100080595C /* ESProgressView.h */,
-				3A287B7A21BA5E110080595C /* ESProgressView.m */,
+				3A287B7E21BA97140080595C /* ESProgressView.h */,
+				3A287B7D21BA97140080595C /* ESProgressView.m */,
 				3A2C093221A79BD2003CB052 /* ESCheckBox.h */,
 				3A2C093021A79BD2003CB052 /* ESCheckBox.m */,
 				3A2C093121A79BD2003CB052 /* ESViewGroup.h */,
@@ -831,7 +831,7 @@
 				3A91A63B219BFEA3008C2A9A /* IStateProtected.h in Headers */,
 				3A05B0001ED28B4C00E69992 /* UIView+LayerEffects.h in Headers */,
 				3AA16B161EFA08DC00FA5CDA /* ESTextFieldEmail.h in Headers */,
-				3A287B7B21BA5E110080595C /* ESProgressView.h in Headers */,
+				3A287B8021BA97140080595C /* ESProgressView.h in Headers */,
 				3A112F8F1F024AA3009B1D13 /* UIImage+CropRotate.h in Headers */,
 				3A05AFF21ED28B4C00E69992 /* ESTextField.h in Headers */,
 				3A112F8D1F024AA3009B1D13 /* TOCropViewControllerTransitioning.h in Headers */,
@@ -967,7 +967,7 @@
 				3A05AFE71ED28B4C00E69992 /* ESButtonDelete.m in Sources */,
 				3A112F8C1F024AA3009B1D13 /* TOCroppedImageAttributes.m in Sources */,
 				3A05AFCB1ED28B4C00E69992 /* GUID.m in Sources */,
-				3A287B7C21BA5E110080595C /* ESProgressView.m in Sources */,
+				3A287B7F21BA97140080595C /* ESProgressView.m in Sources */,
 				3A05AFE31ED28B4C00E69992 /* ESButton.m in Sources */,
 				3A05AFC91ED28B4C00E69992 /* ESNSString.m in Sources */,
 				3A112F801F024AA3009B1D13 /* LLSimpleCamera.m in Sources */,
