@@ -121,7 +121,9 @@
                     NSError *err;
                     //删除目标文件,防止写入失败
                     [fileManager removeItemAtPath:targetPath error:&err];
-                    [fileManager createDirectoryAtPath:targetPath withIntermediateDirectories:YES attributes:nil error:&err];
+//                    [fileManager createDirectoryAtPath:targetPath withIntermediateDirectories:YES attributes:nil error:&err];
+//                    NSData *data = [NSData dataWithContentsOfFile:sourcePath];
+//                    [fileManager createFileAtPath:targetPath contents:data attributes:nil];
                     if ([fileManager copyItemAtPath:sourcePath toPath:targetPath error:&err]==YES)
                     {
                         NSLog(@"%@",@"成功创建目标文件！");
