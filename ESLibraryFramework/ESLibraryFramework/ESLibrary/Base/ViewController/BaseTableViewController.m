@@ -8,8 +8,8 @@
 
 #import "BaseTableViewController.h"
 #import "BaseNavigationController.h"
-#import "MJRefreshNormalHeader.h"
-#import "MJRefreshAutoNormalFooter.h"
+//#import "MJRefreshNormalHeader.h"
+//#import "MJRefreshAutoNormalFooter.h"
 
 @implementation BaseTableViewController
 
@@ -36,7 +36,7 @@
     
     
     //2. 添加刷新尾部控件的方法
-    _footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+    _footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         //上拉底部执行
         [self pullUpToRefresh];
     }];

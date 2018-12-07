@@ -17,8 +17,9 @@
 #import "UIViewPassValueDelegate.h"
 #import "ESCollectViewController.h"
 #import "Toast.h"
-@class MJRefreshNormalHeader;
-@class MJRefreshAutoNormalFooter;
+//@class MJRefreshNormalHeader;
+//@class MJRefreshBackNormalFooter;
+#import <MJRefresh/MJRefresh.h>
 
 // 获得屏幕尺寸
 #define SCREEN_WIDTH   [[UIScreen mainScreen] bounds].size.width
@@ -31,7 +32,7 @@ IB_DESIGNABLE
 {
     //下拉或上拉刷新组件
     MJRefreshNormalHeader *_header;
-    MJRefreshAutoNormalFooter *_footer;
+    MJRefreshBackNormalFooter *_footer;
 }
 
 /**
@@ -42,7 +43,7 @@ IB_DESIGNABLE
 /**
  获取UITableView页脚视图
  */
-@property (strong, nonatomic, null_unspecified) MJRefreshAutoNormalFooter *footer;
+@property (strong, nonatomic, null_unspecified) MJRefreshBackNormalFooter *footer;
 
 
 /**
