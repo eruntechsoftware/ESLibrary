@@ -63,7 +63,7 @@ static UIColor *NavigationBar_titleColor;
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    NSDictionary<NSString *,id>* navigationTitleAttribute=@{NSForegroundColorAttributeName:[UIColor whiteColor]};
+    NSDictionary<NSString *,id>* navigationTitleAttribute=@{NSForegroundColorAttributeName:NavigationBar_titleColor==nil?[UIColor whiteColor]:NavigationBar_titleColor};
     
     self.navigationBar.titleTextAttributes = navigationTitleAttribute;
     self.navigationBar.translucent=NO;
@@ -255,7 +255,7 @@ static UIColor *NavigationBar_titleColor;
         
         [backButton addSubview:backImage];
         //添加事件
-        [backButton addTarget:self action:@selector(btnRightOnClick)  forControlEvents:UIControlEventTouchUpInside];
+        [backButton addTarget:self action:@selector(onRightClick)  forControlEvents:UIControlEventTouchUpInside];
         barButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
        
         viewController.navigationItem.rightBarButtonItem = barButton;

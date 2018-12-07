@@ -67,6 +67,7 @@
 #import "ESViewGroup.h"
 #import "ESNumberPickerView.h"
 #import "ESViewPager.h"
+//#import "ESProgressView.h"
 #import "ESViewPagerDelegate.h"
 #import "UINavigationBar+Hidden.h"
 #import "UIView+LayerEffects.h"
