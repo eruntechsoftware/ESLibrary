@@ -30,6 +30,8 @@ static NSString *_name;//数据库名称
         _path = [userDefaults objectForKey:@"DataPath"];
     }
     
+    
+    
     //如果路径存在则直接返回
     if(_path!=nil && ![[_path trim] isEqualToString:@""])
     {
@@ -69,13 +71,24 @@ static NSString *_name;//数据库名称
         sourcePath = [ESFile findFile:@"db" extension:@"sqlite"];
     }
     
+    if (targetPath == nil)
+    {
+        targetPath = [[ESFile documentPath] stringByAppendingPathComponent:_name];
+    }
+    
+    //如果目标目录无数据库文件，则复制当前文件到目标目录
+    if(![ESFile existsWithPath:targetPath])
+    {
+        [ESFile copyFileWithSourcePath:sourcePath target:targetPath];
+    }
+    
     //存储数据库路径
     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
     if (self)
     {
         if(userDefaults!=nil)
         {
-            [userDefaults setObject:sourcePath forKey:@"DataPath"];
+            [userDefaults setObject:targetPath forKey:@"DataPath"];
         }
     }
     return self;
