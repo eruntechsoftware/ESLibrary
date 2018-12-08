@@ -57,7 +57,7 @@
             value = @"";
             if(data.dataType==Integer)
             {
-                value = [value stringByAppendingString:[[data toString] stringByReplacingOccurrencesOfString:@"'" withString:@""]];
+                value = [value stringByAppendingString:[data toString]];
             }
             else
             {
@@ -114,9 +114,9 @@
             {
                 if(encoding == GBK){
                     NSString *valueStr = [[NSString alloc] initWithCString:[[data toString] UTF8String] encoding:encGBK];;
-                    value = [value stringByAppendingString:[valueStr stringByReplacingOccurrencesOfString:@"'" withString:@""]];
+                    value = [value stringByAppendingString:valueStr];
                 }else{
-                    value = [value stringByAppendingString:[[data toString] stringByReplacingOccurrencesOfString:@"'" withString:@""]];
+                    value = [value stringByAppendingString:[data toString]];
                 }
             }
             else
