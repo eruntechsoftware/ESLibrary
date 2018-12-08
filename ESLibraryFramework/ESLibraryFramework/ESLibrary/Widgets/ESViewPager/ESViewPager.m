@@ -60,7 +60,10 @@
 //    self.frame=CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height);
     //实例化滚动视图
     _scrollView.frame =CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height);
-    [self addSubViewController];
+    if(_isLayoutSubViews==NO)
+    {
+        [self addSubViewController];
+    }
 }
 
 /**
@@ -107,6 +110,7 @@
             index+=1;
         }
         [self addSubview:_scrollView];
+        _isLayoutSubViews=YES;
     }
     
     //如果标题不为空则布局标题行
@@ -202,7 +206,7 @@
 -(void)scrollViewToPageIndexByTag:(UITapGestureRecognizer*)ges{
     
     int index = (int)ges.view.tag;
-    [_scrollView setContentOffset:CGPointMake(SCREEN_WIDTH*index, _tabIndexerView.frame.size.height+_tabIndexerView.frame.size.height) animated:NO];
+    [_scrollView setContentOffset:CGPointMake(SCREEN_WIDTH*index, _tabIndexerView.frame.size.height+_tabIndexerView.frame.size.height) animated:YES];
     
    // [self scrollFlagView:index];
     

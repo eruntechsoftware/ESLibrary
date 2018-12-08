@@ -57,6 +57,8 @@ IB_DESIGNABLE
     CGFloat _screenWidth;
     //屏幕高度
     CGFloat _screenHeight;
+    
+    BOOL _isLayoutSubViews;
 }
 
 
