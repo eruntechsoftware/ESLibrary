@@ -89,11 +89,16 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    CGRect frame = self.bounds;
-    _stateNormalImageView.frame = CGRectMake(5, frame.size.height/2-25/2, 25, 25);
+    
+    CGFloat imageWH = self.frame.size.height * 0.5;
+    CGFloat LabelW = self.frame.size.width - imageWH - 15;
+    
+    self.titleLabel.frame = CGRectMake(imageWH + 10, 0, LabelW, self.frame.size.height);
+    
+    _stateNormalImageView.frame = CGRectMake(5, imageWH * 0.5, imageWH, imageWH);
     [self addSubview:_stateNormalImageView];
     
-    _stateCheckedImageView.frame = CGRectMake(5, frame.size.height/2-25/2, 25, 25);
+    _stateCheckedImageView.frame = _stateNormalImageView.frame;
     [self addSubview:_stateCheckedImageView];
 }
 

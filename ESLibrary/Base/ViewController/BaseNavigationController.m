@@ -186,13 +186,13 @@ static UIColor *NavigationBar_titleColor;
     //不隐藏导航栏按钮
     if (hidden == NO)
     {
-        UIImageView* backImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 8, 25, 25)];
+        UIImageView* backImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 8, 18, 18)];
         UIImage *image = [UIImage imageNamed:@"arrow_left_icon"];
         backImage.image = [image imageWithRenderingMode:(UIImageRenderingModeAlwaysTemplate)];
         backImage.tintColor=NavigationBar_titleColor;
-        backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, self.navigationBar.frame.size.height)];
+        backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
         [backButton addSubview:backImage];
-       
+        
         //添加默认处理事件
         SEL popViewController = @selector(onLeftClick);
         
@@ -201,7 +201,7 @@ static UIColor *NavigationBar_titleColor;
     }
     else
     {
-        backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, self.navigationBar.frame.size.height)];
+        backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
         barButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     }
     return barButton;
@@ -250,18 +250,19 @@ static UIColor *NavigationBar_titleColor;
         //实例化按钮
         UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 90, self.navigationBar.frame.size.height)];
         //实例化图片视图
-        UIImageView* backImage = [[UIImageView alloc] initWithFrame:CGRectMake(73, self.navigationBar.frame.size.height/2 - 10, 18, 18)];
+        UIImageView* backImage = [[UIImageView alloc] initWithFrame:CGRectMake(73, self.navigationBar.frame.size.height/2 - 10, 20, 20)];
         backImage.image = img;
         
         [backButton addSubview:backImage];
         //添加事件
         [backButton addTarget:self action:@selector(onRightClick)  forControlEvents:UIControlEventTouchUpInside];
         barButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-       
+        
         viewController.navigationItem.rightBarButtonItem = barButton;
     }
     return barButton;
 }
+
 
 /**
  导航视图控制器右侧按钮单击事件处理方法
