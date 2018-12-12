@@ -75,9 +75,4 @@
     }
     return [UIColor colorWithRed:([MaxColor[0] intValue]/255.0f) green:([MaxColor[1] intValue]/255.0f) blue:([MaxColor[2] intValue]/255.0f) alpha:([MaxColor[3] intValue]/255.0f)];
 }
----------------------
-作者：Small_Tgs
-来源：CSDN
-原文：https://blog.csdn.net/small_tgs/article/details/51151197
-版权声明：本文为博主原创文章，转载请附上博文链接！
 @end
