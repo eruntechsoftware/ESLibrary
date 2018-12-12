@@ -135,6 +135,8 @@
 		3A112FE51F038E92009B1D13 /* ESBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FE11F038E92009B1D13 /* ESBanner.m */; };
 		3A112FE61F038E92009B1D13 /* ESPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A112FE21F038E92009B1D13 /* ESPageControl.h */; };
 		3A112FE71F038E92009B1D13 /* ESPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A112FE31F038E92009B1D13 /* ESPageControl.m */; };
+		3A1B414021C10C4300181BA7 /* UIImage+ESImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A1B413F21C10C4300181BA7 /* UIImage+ESImage.h */; };
+		3A1B414221C10C8600181BA7 /* UIImage+ESImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B414121C10C8600181BA7 /* UIImage+ESImage.m */; };
 		3A1B74E321A5863600F9415D /* ESImageViewOnClickListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A1B74E121A5863600F9415D /* ESImageViewOnClickListener.h */; };
 		3A1EEFFF21953608000B6662 /* ESButtonCountDown.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A1EEFFD21953607000B6662 /* ESButtonCountDown.h */; };
 		3A1EF00021953608000B6662 /* ESButtonCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1EEFFE21953608000B6662 /* ESButtonCountDown.m */; };
@@ -315,6 +317,8 @@
 		3A112FE11F038E92009B1D13 /* ESBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBanner.m; sourceTree = "<group>"; };
 		3A112FE21F038E92009B1D13 /* ESPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPageControl.h; sourceTree = "<group>"; };
 		3A112FE31F038E92009B1D13 /* ESPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPageControl.m; sourceTree = "<group>"; };
+		3A1B413F21C10C4300181BA7 /* UIImage+ESImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ESImage.h"; sourceTree = "<group>"; };
+		3A1B414121C10C8600181BA7 /* UIImage+ESImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ESImage.m"; sourceTree = "<group>"; };
 		3A1B74E121A5863600F9415D /* ESImageViewOnClickListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESImageViewOnClickListener.h; sourceTree = "<group>"; };
 		3A1EEFFD21953607000B6662 /* ESButtonCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESButtonCountDown.h; sourceTree = "<group>"; };
 		3A1EEFFE21953608000B6662 /* ESButtonCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESButtonCountDown.m; sourceTree = "<group>"; };
@@ -511,6 +515,8 @@
 				3A05AF6B1ED28B4C00E69992 /* GUID.m */,
 				3A05AF6C1ED28B4C00E69992 /* Validator.h */,
 				3A05AF6D1ED28B4C00E69992 /* Validator.m */,
+				3A1B413F21C10C4300181BA7 /* UIImage+ESImage.h */,
+				3A1B414121C10C8600181BA7 /* UIImage+ESImage.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -817,6 +823,7 @@
 				3A05AFD41ED28B4C00E69992 /* DataType.h in Headers */,
 				3A05AFC81ED28B4C00E69992 /* ESNSString.h in Headers */,
 				3A05AFD61ED28B4C00E69992 /* ICollector.h in Headers */,
+				3A1B414021C10C4300181BA7 /* UIImage+ESImage.h in Headers */,
 				3A05AFBA1ED28B4C00E69992 /* UINavigationBar_Hidden.h in Headers */,
 				3A05AFAC1ED28B4C00E69992 /* ESReleaseViewController.h in Headers */,
 				3A112F871F024AA3009B1D13 /* SKFCamera.h in Headers */,
@@ -1005,6 +1012,7 @@
 				3AA16B1D1EFA08DC00FA5CDA /* ESTextFieldNumber.m in Sources */,
 				3A112FE71F038E92009B1D13 /* ESPageControl.m in Sources */,
 				920E4E7E218AEBA60038EB04 /* ESRoundImageView.m in Sources */,
+				3A1B414221C10C8600181BA7 /* UIImage+ESImage.m in Sources */,
 				3A112F9B1F024AA3009B1D13 /* TOCropToolbar.m in Sources */,
 				3A05AFFD1ED28B4C00E69992 /* UIButton+Bootstrap.m in Sources */,
 				3A05AFC71ED28B4C00E69992 /* ESFile.m in Sources */,

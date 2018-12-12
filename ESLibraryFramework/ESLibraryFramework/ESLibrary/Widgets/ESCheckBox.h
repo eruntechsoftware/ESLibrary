@@ -21,6 +21,7 @@
 #import "DataTypeExpression.h"
 #import "ESNSString.h"
 #import "ESViewGroup.h"
+#import "UIImage+ESImage.h"
 @class ESViewGroup;
 
 typedef void(^ESCheckBoxBlock)(BOOL isChecked);
@@ -61,6 +62,16 @@ typedef void(^ESCheckBoxBlock)(BOOL isChecked);
  设置或获取未选中时的图片
  **/
 @property(retain,nonatomic)IBInspectable UIImage *stateNormalImage;
+
+/**
+ 设置或获取选中时颜色
+ **/
+@property(retain,nonatomic) UIColor *stateCheckedColor;
+
+/**
+ 设置或获取选中时颜色
+ **/
+@property(retain,nonatomic) UIColor *stateNormalColor;
 
 /**
  设置或获取选中状态

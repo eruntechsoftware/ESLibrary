@@ -26,6 +26,14 @@
 {
     _viewController = [self searchViewController];
     [self addTarget:self action:@selector(changeState:) forControlEvents:UIControlEventTouchUpInside];
+    if(_stateNormalColor==nil)
+    {
+        _stateNormalColor=self.titleLabel.textColor;
+    }
+    if(_stateCheckedColor==nil)
+    {
+        _stateCheckedColor=self.titleLabel.textColor;
+    }
 }
 
 /**
@@ -122,11 +130,13 @@
     {
         _stateCheckedImageView.hidden=NO;
         _stateNormalImageView.hidden=YES;
+        self.titleLabel.textColor = _stateNormalColor;
     }
     else
     {
         _stateCheckedImageView.hidden=YES;
         _stateNormalImageView.hidden=NO;
+        self.titleLabel.textColor = _stateCheckedColor;
     }
     if(_checkedBlock!=nil)
     {
@@ -138,6 +148,7 @@
 {
     _stateNormalImage=stateNormalImage;
     _stateNormalImageView = [[UIImageView alloc]initWithImage:_stateNormalImage];
+    _stateNormalColor = [stateNormalImage mostColor:stateNormalImage];
 }
 
 - (void)setStateCheckedImage:(UIImage *)stateCheckedImage
@@ -145,6 +156,7 @@
     _stateCheckedImage=stateCheckedImage;
     _stateCheckedImageView = [[UIImageView alloc]initWithImage:_stateCheckedImage];
     _stateCheckedImageView.hidden=YES;
+    _stateCheckedColor = [stateCheckedImage mostColor:stateCheckedImage];
 }
 
 -(void)setViewGroup:(id)viewGroup

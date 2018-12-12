@@ -14,6 +14,7 @@
 #import "UIImageView+WebCache.h"
 #import "ESImageViewOnClickListener.h"
 #import "BaseViewController.h"
+#import "UIImage+ESImage.h"
 
 IB_DESIGNABLE  // 动态刷新
 
