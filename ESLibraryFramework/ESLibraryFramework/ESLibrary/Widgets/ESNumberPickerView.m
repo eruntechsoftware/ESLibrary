@@ -132,6 +132,11 @@
 -(void)initializ
 {
     _viewController = [self searchViewController];
+    //如果没有设置最大值，则默认设置100
+    if(_maxValue==0)
+    {
+        _maxValue=100;
+    }
 }
 
 /**
