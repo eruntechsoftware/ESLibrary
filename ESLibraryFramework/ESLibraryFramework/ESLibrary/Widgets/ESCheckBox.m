@@ -130,13 +130,13 @@
     {
         _stateCheckedImageView.hidden=NO;
         _stateNormalImageView.hidden=YES;
-        self.titleLabel.textColor = _stateNormalColor;
+        self.titleLabel.textColor = _stateCheckedColor;
     }
     else
     {
         _stateCheckedImageView.hidden=YES;
         _stateNormalImageView.hidden=NO;
-        self.titleLabel.textColor = _stateCheckedColor;
+        self.titleLabel.textColor = _stateNormalColor;
     }
     if(_checkedBlock!=nil)
     {

@@ -37,6 +37,11 @@
 -(void)addAllObjects:(nonnull DataTable*)dataTable;
 
 /**
+ 添加DataTable
+ @param dataTable DataTable
+ */
+-(void)addObjectsFromArray:(nonnull NSArray*)dataTable;
+/**
  移除Data元素
  @param anObject Data
  */

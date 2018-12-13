@@ -144,6 +144,8 @@
 		3A23E82B219CFE4E000EFD50 /* ESControlStateProtector.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E829219CFE4E000EFD50 /* ESControlStateProtector.m */; };
 		3A23E82E219D19D7000EFD50 /* ESHiddenFeild.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A23E82C219D19D7000EFD50 /* ESHiddenFeild.h */; };
 		3A23E82F219D19D7000EFD50 /* ESHiddenFeild.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A23E82D219D19D7000EFD50 /* ESHiddenFeild.m */; };
+		3A2524BB21C2319900236406 /* ESRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2524B921C2319800236406 /* ESRadioButton.m */; };
+		3A2524BC21C2319900236406 /* ESRadioButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2524BA21C2319800236406 /* ESRadioButton.h */; };
 		3A287B7721BA5D060080595C /* ESRatingBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A287B7521BA5D060080595C /* ESRatingBar.h */; };
 		3A287B7821BA5D060080595C /* ESRatingBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A287B7621BA5D060080595C /* ESRatingBar.m */; };
 		3A287B7F21BA97140080595C /* ESProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A287B7D21BA97140080595C /* ESProgressView.m */; };
@@ -326,6 +328,8 @@
 		3A23E829219CFE4E000EFD50 /* ESControlStateProtector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESControlStateProtector.m; sourceTree = "<group>"; };
 		3A23E82C219D19D7000EFD50 /* ESHiddenFeild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESHiddenFeild.h; sourceTree = "<group>"; };
 		3A23E82D219D19D7000EFD50 /* ESHiddenFeild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESHiddenFeild.m; sourceTree = "<group>"; };
+		3A2524B921C2319800236406 /* ESRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRadioButton.m; sourceTree = "<group>"; };
+		3A2524BA21C2319800236406 /* ESRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRadioButton.h; sourceTree = "<group>"; };
 		3A287B7521BA5D060080595C /* ESRatingBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESRatingBar.h; sourceTree = "<group>"; };
 		3A287B7621BA5D060080595C /* ESRatingBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESRatingBar.m; sourceTree = "<group>"; };
 		3A287B7D21BA97140080595C /* ESProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESProgressView.m; sourceTree = "<group>"; };
@@ -557,6 +561,8 @@
 		3A05AF821ED28B4C00E69992 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				3A2524BA21C2319800236406 /* ESRadioButton.h */,
+				3A2524B921C2319800236406 /* ESRadioButton.m */,
 				3A287B7E21BA97140080595C /* ESProgressView.h */,
 				3A287B7D21BA97140080595C /* ESProgressView.m */,
 				3A2C093221A79BD2003CB052 /* ESCheckBox.h */,
@@ -843,6 +849,7 @@
 				3A05AFF21ED28B4C00E69992 /* ESTextField.h in Headers */,
 				3A112F8D1F024AA3009B1D13 /* TOCropViewControllerTransitioning.h in Headers */,
 				3A05AFCE1ED28B4C00E69992 /* Data.h in Headers */,
+				3A2524BC21C2319900236406 /* ESRadioButton.h in Headers */,
 				3A112F851F024AA3009B1D13 /* UIImage+Resize.h in Headers */,
 				3A05AFD81ED28B4C00E69992 /* IDataInitialize.h in Headers */,
 				3A05AFF61ED28B4C00E69992 /* ESView.h in Headers */,
@@ -1020,6 +1027,7 @@
 				3A112F861F024AA3009B1D13 /* UIImage+Resize.m in Sources */,
 				3A05AFB51ED28B4C00E69992 /* BaseTableViewController.m in Sources */,
 				3A112F991F024AA3009B1D13 /* TOCropScrollView.m in Sources */,
+				3A2524BB21C2319900236406 /* ESRadioButton.m in Sources */,
 				3A112FE51F038E92009B1D13 /* ESBanner.m in Sources */,
 				3A287B7821BA5D060080595C /* ESRatingBar.m in Sources */,
 				3AD5EA611F00EFB0003F85D8 /* UIView+UIViewBorderStyle.m in Sources */,

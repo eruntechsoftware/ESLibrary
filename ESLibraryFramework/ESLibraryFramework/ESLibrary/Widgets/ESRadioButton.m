@@ -6,9 +6,9 @@
 //  Copyright © 2017年 吕英良. All rights reserved.
 //
 
-#import "ESCheckBox.h"
+#import "ESRadioButton.h"
 
-@implementation ESCheckBox
+@implementation ESRadioButton
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
@@ -50,21 +50,30 @@
  */
 -(void) release:(NSString *)dataName data:(Data *)data
 {
-    if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]]) {
+    if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]])
+    {
         _value = [data value];
+        if([[_value trim] isEqualToString:@"1"] || [[[_value trim] lowercaseString] isEqualToString:@"true"])
+        {
+            [self setChecked:YES];
+        }
+        else
+        {
+            [self setChecked:NO];
+        }
     }
 }
 
 /**
  数据收集，返回DataCollection
  */
-//-(DataCollection*) collect
-//{
-//    DataCollection *datas = [[DataCollection alloc] initWithCapacity:1];
-//    Data *data = [[Data alloc] initWithDataName:self.name dataValue:self.];
-//    [datas addObject:data];
-//    return datas;
-//}
+-(DataCollection*) collect
+{
+    DataCollection *datas = [[DataCollection alloc] initWithCapacity:1];
+    Data *data = [[Data alloc] initWithDataName:self.name dataValue:self.value];
+    [datas addObject:data];
+    return datas;
+}
 
 /**
  设置采集标记，多个标记以‘|!’分割
@@ -116,31 +125,32 @@
  */
 - (void)changeState:(UIButton *)sender
 {
-    if(_viewGroup!=nil && [_viewGroup isKindOfClass:[ESViewGroup class]])
+    if(_checked==YES)
     {
-        ESViewGroup *viewGroup = (ESViewGroup*)_viewGroup;
-        [viewGroup selectTag:_value];
+        [self setChecked:NO];
+    }
+    else
+    {
+        [self setChecked:YES];
     }
 }
 
 - (void)setChecked:(BOOL)checked
 {
     _checked=checked;
-    if(_checked==YES)
+    if(checked==YES)
     {
         _stateCheckedImageView.hidden=NO;
         _stateNormalImageView.hidden=YES;
         self.titleLabel.textColor = _stateCheckedColor;
+        _value=@"1";
     }
     else
     {
         _stateCheckedImageView.hidden=YES;
         _stateNormalImageView.hidden=NO;
         self.titleLabel.textColor = _stateNormalColor;
-    }
-    if(_checkedBlock!=nil)
-    {
-        _checkedBlock(_checked);
+        _value=@"0";
     }
 }
 

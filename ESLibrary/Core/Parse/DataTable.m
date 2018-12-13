@@ -57,6 +57,23 @@
 }
 
 /**
+ 添加DataTable
+ @param dataTable DataTable
+ */
+-(void)addObjectsFromArray:(NSArray *)dataTable{
+    if(_array!=nil){
+        if(dataTable!=nil && dataTable.count>0){
+            NSEnumerator *enumerator = [dataTable objectEnumerator];
+            id obj = nil;
+            while(obj = [enumerator nextObject]){
+                [_array addObject:obj];
+            }
+        }
+        //        [self convert2Array];
+    }
+}
+
+/**
  移除Data元素
  @param anObject Data
  */
