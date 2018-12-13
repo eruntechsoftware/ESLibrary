@@ -219,8 +219,8 @@
 -(DataCollection*) collect
 {
     DataCollection *datas = (DataCollection*)[NSMutableArray arrayWithCapacity:1];
-//    Data *data = [[Data alloc] initWithDataName:[self name] dataValue:[NSString stringWithFormat:@"%f",_rating]];
-//    [datas addObject:data];
+    Data *data = [[Data alloc] initWithDataName:[self name] dataValue:[NSString stringWithFormat:@"%f",_rating]];
+    [datas addObject:data];
     return datas;
 }
 
