@@ -22,7 +22,7 @@
  */
 -(void)initializ
 {
-    [self defaultStyle];
+//    [self defaultStyle];
     [self addEvent];
     _viewController=(BaseViewController*)[self searchViewController];
 }
