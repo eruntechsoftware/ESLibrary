@@ -111,6 +111,10 @@
 
 - (void) initializ
 {
+    if(_placeholderImage!=nil)
+    {
+        [self sd_setImageWithURL:@"123" placeholderImage:_placeholderImage];
+    }
 }
 
 /**
@@ -180,6 +184,14 @@
 -(NSString*) getName
 {
     return _name;
+}
+
+- (void)setPlaceholderImage:(UIImage *)placeholderImage
+{
+    if(placeholderImage!=nil)
+    {
+        [self sd_setImageWithURL:@"123123" placeholderImage:_placeholderImage];
+    }
 }
 
 - (void)setClickEnabled:(BOOL)clickEnabled
