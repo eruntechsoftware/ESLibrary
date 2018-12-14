@@ -188,6 +188,7 @@
 
 - (void)setPlaceholderImage:(UIImage *)placeholderImage
 {
+    _placeholderImage = placeholderImage;
     if(placeholderImage!=nil)
     {
         [self sd_setImageWithURL:@"123123" placeholderImage:_placeholderImage];
