@@ -30,6 +30,19 @@
     
     _validator=[[Validator alloc] initWithExpression:_regularExpression];
     
+//    _rootViewLayoutConstraintHeight=[NSLayoutConstraint constraintWithItem:_viewController.view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:0];
+    
+//    _rootViewLayoutConstraintHeight=[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_viewController.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    
+
+//    [self addConstraint:_rootViewLayoutConstraintHeight];
+//    for (NSLayoutConstraint *constraint in constraints) {
+//        if(constraint.firstAttribute ==NSLayoutAttributeHeight )
+//        {
+//            NSLog(@"找到高度约束");
+//        }
+//    }
+    
     [[self rac_signalForControlEvents:UIControlEventEditingDidBegin] subscribeNext:^(__kindof UIControl * _Nullable x) {
         [self dataValidator];
     }];
@@ -40,10 +53,57 @@
         BOOL result = [self dataValidator];
         if (!result) {
             [self shakeAnimationMethod];
-            //            [self setNeedsDisplay];
+                        [self setNeedsDisplay];
         }
     }];
+//    //增加监听，当键盘出现或改变时收出消息
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardWillShow:)
+//                                                 name:UIKeyboardWillShowNotification
+//                                               object:nil];
+//    
+//    //增加监听，当键退出时收出消息
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardWillHide:)
+//                                                 name:UIKeyboardWillHideNotification
+//                                               object:nil];
+    
+    
 }
+
+/**
+ 当键盘出现或改变时把整个视图推上去
+ **/
+- (void)keyboardWillShow:(NSNotification *)aNotification
+{
+    //获取键盘的高度
+    NSDictionary *userInfo = [aNotification userInfo];
+    NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardRect = [aValue CGRectValue];
+    
+    CGRect viewFrame = _viewController.view.frame;
+    if(self.frame.origin.y>keyboardRect.origin.y){
+        [UIView animateWithDuration:0.45 animations:^{
+            self->_viewController.view.frame = CGRectMake(0, 0-keyboardRect.size.height+self.frame.size.height*2.2, viewFrame.size.width, viewFrame.size.height);
+        }];
+        
+    }
+}
+
+/**
+ 当键退出时恢复视图的位置
+ **/
+- (void)keyboardWillHide:(NSNotification *)aNotification
+{
+    
+    CGRect viewFrame = _viewController.view.frame;
+    [UIView animateWithDuration:0.35 animations:^{
+        self->_viewController.view.frame = CGRectMake(0, 0, viewFrame.size.width, viewFrame.size.height);
+    }];
+        
+    
+}
+
 
 /**
  添加事件

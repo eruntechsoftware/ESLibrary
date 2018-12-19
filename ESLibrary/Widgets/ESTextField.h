@@ -62,7 +62,7 @@ IB_DESIGNABLE
  */
 //@property(nonatomic, copy)IBInspectable NSString *isRequiredTooltip;
 
-//@property(assign,nonatomic) NSInteger dataTypeValue;
+@property(assign,nonatomic) NSLayoutConstraint *rootViewLayoutConstraintHeight;
 
 /**
  设置或获取正则表达式校验错误提示
