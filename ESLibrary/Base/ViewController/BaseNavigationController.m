@@ -98,15 +98,15 @@ static UIColor *NavigationBar_titleColor;
 /**
  初始化视图控制器
  @param baseViewController 视图控制器
- @param hidden 是否隐藏返回按钮
+ @param animated 是否隐藏返回按钮
  @return BaseNavigationController
  */
-- (nonnull id)initWithViewController:(nonnull BaseViewController*)baseViewController isLeftBtnBackHidden:(BOOL)hidden{
+- (nonnull id)initWithViewController:(nonnull BaseViewController*)baseViewController isLeftBtnBackHidden:(BOOL)animated{
     
     self.baseViewController = baseViewController;
     
     if([self.baseViewController isKindOfClass:[BaseViewController class]]){
-        self.baseViewController.isLeftBtnBackHidden = hidden;
+        self.baseViewController.isLeftBtnBackHidden = animated;
     }
     self = [super initWithRootViewController:baseViewController];
     return self;

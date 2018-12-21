@@ -181,6 +181,7 @@
 }
 
 -(void)setPlaceholder:(NSString *)placeholder{
+    _placeholder=placeholder;
     _placeHolderLabel.text = placeholder;
 }
 
@@ -224,5 +225,7 @@
 {
     _wantedModeType=wantedModeType;
 }
+
+
 @end
 

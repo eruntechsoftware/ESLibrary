@@ -10,6 +10,10 @@
 
 #define LPFColor(r,g,b) [UIColor colorWithRed:(r) / 255.0 green:(g) / 255.0 blue:(b) / 255.0 alpha:1]
 #define LPFColorA(r,g,b,a) [UIColor colorWithRed:(r) / 255.0 green:(g) / 255.0 blue:(b) / 255.0 alpha:(a)]
+@interface ESTextField()
+@property (nonatomic)CGRect rootViewFrame;
+@end
+
 @implementation ESTextField
 @synthesize context=_context;
 
@@ -43,6 +47,7 @@
 //        }
 //    }
     
+    
     [[self rac_signalForControlEvents:UIControlEventEditingDidBegin] subscribeNext:^(__kindof UIControl * _Nullable x) {
         [self dataValidator];
     }];
@@ -56,17 +61,19 @@
                         [self setNeedsDisplay];
         }
     }];
-//    //增加监听，当键盘出现或改变时收出消息
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(keyboardWillShow:)
-//                                                 name:UIKeyboardWillShowNotification
-//                                               object:nil];
-//    
-//    //增加监听，当键退出时收出消息
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(keyboardWillHide:)
-//                                                 name:UIKeyboardWillHideNotification
-//                                               object:nil];
+    
+
+    //增加监听，当键盘出现或改变时收出消息
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+
+    //增加监听，当键退出时收出消息
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
     
     
 }
@@ -81,12 +88,17 @@
     NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGRect keyboardRect = [aValue CGRectValue];
     
+    _rootViewFrame = CGRectMake(_viewController.view.frame.origin.x, _viewController.view.frame.origin.y,_viewController.view.frame.size.width, _viewController.view.frame.size.height);
+    
     CGRect viewFrame = _viewController.view.frame;
-    if(self.frame.origin.y>keyboardRect.origin.y){
-        [UIView animateWithDuration:0.45 animations:^{
-            self->_viewController.view.frame = CGRectMake(0, 0-keyboardRect.size.height+self.frame.size.height*2.2, viewFrame.size.width, viewFrame.size.height);
+    CGRect rect=[self convertRect: self.bounds toView:[[[UIApplication sharedApplication] delegate] window]];
+    CGFloat y = rect.origin.y+rect.size.height*2;
+    if(y>keyboardRect.origin.y)
+    {
+        [UIView animateWithDuration:0.45 animations:
+         ^{
+            self->_viewController.view.frame = CGRectMake(0, 0-keyboardRect.size.height+self.frame.size.height*2, viewFrame.size.width, viewFrame.size.height);
         }];
-        
     }
 }
 
@@ -95,13 +107,9 @@
  **/
 - (void)keyboardWillHide:(NSNotification *)aNotification
 {
-    
-    CGRect viewFrame = _viewController.view.frame;
     [UIView animateWithDuration:0.35 animations:^{
-        self->_viewController.view.frame = CGRectMake(0, 0, viewFrame.size.width, viewFrame.size.height);
+        self->_viewController.view.frame = CGRectMake(0, 0, self->_rootViewFrame.size.width, self->_rootViewFrame.size.height);
     }];
-        
-    
 }
 
 
@@ -291,4 +299,32 @@
     _fouces=NO;
     [self setNeedsDisplay];
 }
+
+/**
+ *  计算一个view相对于屏幕(去除顶部statusbar的20像素)的坐标
+ *  iOS7下UIViewController.view是默认全屏的，要把这20像素考虑进去
+ */
+- (CGRect)relativeFrameForScreenWithView:(UIView *)v
+{
+    BOOL iOS7 = [[[UIDevice currentDevice] systemVersion] floatValue] >= 7;
+    
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    if (!iOS7) {
+        screenHeight -= 20;
+    }
+    UIView *view = v;
+    CGFloat x = .0;
+    CGFloat y = .0;
+    while (view.frame.size.width != 320 || view.frame.size.height != screenHeight) {
+        x += view.frame.origin.x;
+        y += view.frame.origin.y;
+        view = view.superview;
+        if ([view isKindOfClass:[UIScrollView class]]) {
+            x -= ((UIScrollView *) view).contentOffset.x;
+            y -= ((UIScrollView *) view).contentOffset.y;
+        }
+    }
+    return CGRectMake(x, y, v.frame.size.width, v.frame.size.height);
+}
+
 @end
