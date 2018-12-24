@@ -267,5 +267,13 @@
     _titleViewHeight=tabTitleHeight+2;
 }
 
+-(void)setTitleTextWithIndex:(NSUInteger)index title:(NSString*)title
+{
+    if(_titleLabelArray!=nil && _titleLabelArray.count>0)
+    {
+        UILabel *titleLabel = [_titleLabelArray objectAtIndex:0];
+        [titleLabel setText:title];
+    }
+}
 
 @end

@@ -145,4 +145,6 @@ IB_DESIGNABLE
  @param ges 索引手势
  */
 -(void)scrollViewToPageIndexByTag:(UITapGestureRecognizer*)ges;
+
+-(void)setTitleTextWithIndex:(NSUInteger)index title:(NSString*)title;
 @end
