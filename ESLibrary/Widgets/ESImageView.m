@@ -137,7 +137,7 @@
     {
         _validator = [[Validator alloc] initWithExpression:[DataTypeExpression url]];
     }
-    if (data != nil && [[data.name lowercaseString] isEqualToString:[_name lowercaseString]])
+    if (data != nil && [[dataName lowercaseString] isEqualToString:[_name lowercaseString]])
     {
         if([_validator validataWithValue:(NSString*)data.value])
         {
