@@ -107,10 +107,7 @@
  */
 -(void) initWithViewController{
     
-    //是否自动关闭键盘输入
-    if(_isDismissKeyboard == YES){
-        [self addDismissKeyboardAction];
-    }
+    [self addDismissKeyboardAction];
     
     ESInitializeViewController *initViewController = [[ESInitializeViewController alloc] initWithViewController:self];
     [initViewController dataInitialize];
@@ -308,12 +305,13 @@
 
 - (void)onLeftClick
 {
+    [self dismissKeyboard];
     [self.baseNavigationController popViewControllerAnimated:self.subTransferDataParams animated:YES];
 }
 
 - (void)onRightClick
 {
-    
+    [self dismissKeyboard];
 }
 
 /**
