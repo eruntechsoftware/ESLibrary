@@ -50,7 +50,7 @@ IB_DESIGNABLE
 /**
  设置或获取是否显示底边
  */
-@property(nonatomic)IBInspectable BOOL borderBottom;
+@property(nonatomic) BOOL borderBottom;
 
 /**
  设置或获取控件名

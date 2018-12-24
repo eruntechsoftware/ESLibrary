@@ -308,13 +308,12 @@
 
 - (void)onLeftClick
 {
-    [self dismissKeyboard];
     [self.baseNavigationController popViewControllerAnimated:self.subTransferDataParams animated:YES];
 }
 
 - (void)onRightClick
 {
-    [self dismissKeyboard];
+    
 }
 
 /**
@@ -372,6 +371,7 @@
     }
 }
 
+
 /**
  设置标题栏文本
  @param titleText 标题文本
@@ -411,18 +411,29 @@
     return 0;
 }
 
-/**
- 导航视图控制器右侧按钮单击事件处理方法
- */
--(void)btnRightOnClick{
-
+- (void)setRightText:(NSString *)rightText
+{
+    _rightText=rightText;
+    if(_rightText!=nil){
+        [[self baseNavigationController] rightBarButtonItem:self text:_rightText];
+    }
 }
 
-/**
- 导航视图控制器左侧按钮单击事件处理方法
- */
--(void)btnLeftOnClick{
-    
+- (void)setRightImage:(UIImage *)rightImage
+{
+    _rightImage = rightImage;
+    //如果设置右侧图形，则创建并显示为图形按钮
+    if(_rightImage!=nil){
+        [[self baseNavigationController] rightImageBarButtonItem:self rightImageButton:_rightImage];
+    }
+}
+
+- (void)setLeftText:(NSString *)leftText
+{
+    _leftText = leftText;
+    if (_leftText!=nil) {
+        [[self baseNavigationController] leftBarButtonItem:self text:_leftText];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -445,6 +456,4 @@
         [[self baseNavigationController] leftBarButtonItem:self text:_leftText];
     }
 }
-
-
 @end

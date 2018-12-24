@@ -221,19 +221,19 @@
 -(void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
-    if(_borderBottom==YES)
-    {
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        if(_fouces==NO)
-        {
-            CGContextSetFillColorWithColor(context, [UIColor blackColor].CGColor);
-        }
-        else
-        {
-            CGContextSetFillColorWithColor(context, LPFColor(100, 193,234).CGColor);
-        }
-        CGContextFillRect(context, CGRectMake(0, CGRectGetHeight(self.frame) - 1, CGRectGetWidth(self.frame), 1));
-    }
+//    if(_borderBottom==YES)
+//    {
+//        CGContextRef context = UIGraphicsGetCurrentContext();
+//        if(_fouces==NO)
+//        {
+//            CGContextSetFillColorWithColor(context, [UIColor blackColor].CGColor);
+//        }
+//        else
+//        {
+//            CGContextSetFillColorWithColor(context, LPFColor(100, 193,234).CGColor);
+//        }
+//        CGContextFillRect(context, CGRectMake(0, CGRectGetHeight(self.frame) - 1, CGRectGetWidth(self.frame), 1));
+//    }
 }
 
 - (void)setIsRequired:(BOOL)isRequired

@@ -38,10 +38,10 @@
 /**
  初始化视图控制器
  @param baseViewController 视图控制器
- @param animated 是否隐藏返回按钮
+ @param hidden 是否隐藏返回按钮
  @return BaseNavigationController
  */
-- (nonnull id)initWithViewController:(nonnull BaseViewController*)baseViewController isLeftBackHidden:(BOOL)animated;
+- (nonnull id)initWithViewController:(nonnull BaseViewController*)baseViewController isLeftBackHidden:(BOOL)hidden;
 
 /**
  设置NavigationBar颜色
@@ -54,10 +54,6 @@
  */
 +(UIColor*)getNavigationBar_barTintColor;
 
-/**
- 获取NavigationBar颜色
- */
-+(UIColor*)getNavigationBar_barTintColor;
 
 /**
  设置NavigationBar颜色
@@ -122,16 +118,6 @@
  @param img 图片
  */
 - (nullable UIBarButtonItem*) rightImageBarButtonItem:(nonnull UIViewController*)viewController rightImageButton:(nonnull UIImage*)img;
-
-/**
- 导航视图控制器右侧按钮单击事件处理方法
- */
--(void)btnRightOnClick;
-
-/**
- 导航视图控制器左侧按钮单击事件处理方法
- */
--(void)btnLeftOnClick;
 
 /**
  为当前的topbar添加搜索框
