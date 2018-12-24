@@ -109,7 +109,7 @@ IB_DESIGNABLE
 /**
  设置或获取视图控制器是否自动关闭键盘输入
  */
-@property (assign,nonatomic) BOOL isDismissKeyboard;
+@property (assign,nonatomic)IBInspectable BOOL isDismissKeyboard;
 
 /**
  设置或获取是否隐藏左侧返回按钮，默认不隐藏

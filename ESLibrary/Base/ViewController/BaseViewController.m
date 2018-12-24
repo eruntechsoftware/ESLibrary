@@ -107,8 +107,10 @@
  */
 -(void) initWithViewController{
     
-    [self addDismissKeyboardAction];
-    
+    if(_isDismissKeyboard==YES)
+    {
+        [self addDismissKeyboardAction];
+    }
     ESInitializeViewController *initViewController = [[ESInitializeViewController alloc] initWithViewController:self];
     [initViewController dataInitialize];
     
