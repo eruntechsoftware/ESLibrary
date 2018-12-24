@@ -271,7 +271,7 @@
 {
     if(_titleLabelArray!=nil && _titleLabelArray.count>0)
     {
-        UILabel *titleLabel = [_titleLabelArray objectAtIndex:0];
+        UILabel *titleLabel = [_titleLabelArray objectAtIndex:index];
         [titleLabel setText:title];
     }
 }

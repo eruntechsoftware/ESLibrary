@@ -61,56 +61,9 @@
                         [self setNeedsDisplay];
         }
     }];
-    
-
-    //增加监听，当键盘出现或改变时收出消息
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
-
-    //增加监听，当键退出时收出消息
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
-    
-    
 }
 
-/**
- 当键盘出现或改变时把整个视图推上去
- **/
-- (void)keyboardWillShow:(NSNotification *)aNotification
-{
-    //获取键盘的高度
-    NSDictionary *userInfo = [aNotification userInfo];
-    NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
-    CGRect keyboardRect = [aValue CGRectValue];
-    
-    _rootViewFrame = CGRectMake(_viewController.view.frame.origin.x, _viewController.view.frame.origin.y,_viewController.view.frame.size.width, _viewController.view.frame.size.height);
-    
-    CGRect viewFrame = _viewController.view.frame;
-    CGRect rect=[self convertRect: self.bounds toView:[[[UIApplication sharedApplication] delegate] window]];
-    CGFloat y = rect.origin.y+rect.size.height*2;
-    if(y>keyboardRect.origin.y)
-    {
-        [UIView animateWithDuration:0.45 animations:
-         ^{
-            self->_viewController.view.frame = CGRectMake(0, 0-keyboardRect.size.height+self.frame.size.height*2, viewFrame.size.width, viewFrame.size.height);
-        }];
-    }
-}
 
-/**
- 当键退出时恢复视图的位置
- **/
-- (void)keyboardWillHide:(NSNotification *)aNotification
-{
-    [UIView animateWithDuration:0.35 animations:^{
-        self->_viewController.view.frame = CGRectMake(0, 0, self->_rootViewFrame.size.width, self->_rootViewFrame.size.height);
-    }];
-}
 
 
 /**
@@ -290,6 +243,7 @@
 // 获得焦点
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     _fouces=YES;
+    ((BaseViewController*)_viewController).inputView = self;
     [self setNeedsDisplay];
     return YES;
 }

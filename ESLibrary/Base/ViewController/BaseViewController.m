@@ -456,4 +456,54 @@
         [[self baseNavigationController] leftBarButtonItem:self text:_leftText];
     }
 }
+
+- (void)addObserver {
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIKeyboardWillShowNotification object:nil] subscribeNext:^(NSNotification* aNotification) {
+        NSDictionary* info = [aNotification userInfo];
+        CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+        CGRect frame = self.view.frame;
+        [UIView animateWithDuration:0.25 animations:^{
+            self.view.frame = CGRectMake(0,frame.origin.y - kbSize.height, frame.size.width, frame.size.height);
+            [self.view layoutIfNeeded];
+        }];
+    }];
+    
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIKeyboardWillHideNotification object:nil] subscribeNext:^(NSNotification* aNotification) {
+        NSDictionary* info = [aNotification userInfo];
+        CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+        CGRect frame = self.view.frame;
+        [UIView animateWithDuration:0.25 animations:^{
+            self.view.frame = CGRectMake(0,frame.origin.y - kbSize.height, frame.size.width, frame.size.height);
+            [self.view layoutIfNeeded];
+        }];
+    }];
+    
+}
+
+- (void)keyboardWillShow:(NSNotification *)aNotification
+{
+    //获取键盘的高度
+    NSDictionary *userInfo = [aNotification userInfo];
+    NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardRect = [aValue CGRectValue];
+    CGRect frame = self.view.frame;
+    
+    CGRect rect=[self.view convertRect: self.inputView.frame toView:[[[UIApplication sharedApplication] delegate] window]];
+    [UIView animateWithDuration:0.25 animations:^{
+        self.view.frame = CGRectMake(0,frame.origin.y -keyboardRect.size.height, frame.size.width, frame.size.height);
+    }];
+    
+    //    _rootViewFrame = CGRectMake(_viewController.view.frame.origin.x, _viewController.view.frame.origin.y,_viewController.view.frame.size.width, _viewController.view.frame.size.height);
+    //
+    //    //    CGRect viewFrame = _viewController.view.frame;
+    //    CGRect rect=[self convertRect: self.frame toView:[[[UIApplication sharedApplication] delegate] window]];
+    //    CGFloat y = rect.origin.y+rect.size.height*2;
+    //    if(y <= keyboardRect.origin.y) {
+    //        return;
+    //    }
+    //    [UIView animateWithDuration:0.25 animations:
+    //     ^{
+    //         self->_viewController.view.frame = CGRectMake(0, -keyboardRect.size.height, self.viewFrame.size.width, self.viewFrame.size.height);
+    //     }];
+}
 @end

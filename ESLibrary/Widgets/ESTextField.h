@@ -9,6 +9,7 @@
 #import<CoreText/CoreText.h>
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
+#import "BaseViewController.h"
 #import "ICollectible.h"
 #import "IReleasable.h"
 #import "IValidatible.h"

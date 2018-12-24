@@ -10,6 +10,7 @@
 #import<CoreText/CoreText.h>
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
+#import "BaseViewController.h"
 #import "ICollectible.h"
 #import "IReleasable.h"
 #import "IValidatible.h"
@@ -24,7 +25,7 @@
 
 
 IB_DESIGNABLE
-@interface ESTextView : UITextView<ICollectible,IReleasable,IValidatible,Initializble>
+@interface ESTextView : UITextView<ICollectible,IReleasable,IValidatible,Initializble,UITextFieldDelegate>
 {
     NSString * _collectSign;
     BOOL _isRequired;

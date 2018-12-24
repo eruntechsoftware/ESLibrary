@@ -226,6 +226,17 @@
     _wantedModeType=wantedModeType;
 }
 
+// 获得焦点
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
 
+    ((BaseViewController*)_viewController).inputView = self;
+    [self setNeedsDisplay];
+    return YES;
+}
+
+// 失去焦点
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [self setNeedsDisplay];
+}
 @end
 

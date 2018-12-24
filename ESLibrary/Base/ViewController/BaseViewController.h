@@ -19,6 +19,7 @@
 #import "ESControlStateProtector.h"
 #import "Toast.h"
 #import <sys/utsname.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 
 // 获得屏幕尺寸
 #define SCREEN_WIDTH   [[UIScreen mainScreen] bounds].size.width
@@ -110,6 +111,8 @@ IB_DESIGNABLE
  设置或获取视图控制器是否自动关闭键盘输入
  */
 @property (assign,nonatomic)IBInspectable BOOL isDismissKeyboard;
+
+@property (strong,nonatomic) UIView *inputView;
 
 /**
  设置或获取是否隐藏左侧返回按钮，默认不隐藏
