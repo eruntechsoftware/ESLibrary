@@ -41,7 +41,7 @@
     // 指定左边缘滑动
     _ges.edges = UIRectEdgeLeft;
     [self.view addGestureRecognizer:_ges];
-    [self addObserver];
+    
     }
 
 - (void)backHandle:(UIPanGestureRecognizer *)recognizer
@@ -117,6 +117,7 @@
     if(_isDismissKeyboard==YES)
     {
         [self addDismissKeyboardAction];
+        [self addObserver];
     }
     ESInitializeViewController *initViewController = [[ESInitializeViewController alloc] initWithViewController:self];
     [initViewController dataInitialize];
@@ -359,7 +360,11 @@
  关闭键盘输入事件
  */
 -(void) dismissKeyboard{
-    [self resignResponder:self.view];
+    //[self resignResponder:self.view];
+    if(self.inputView!=nil)
+    {
+        [self.inputView resignFirstResponder];
+    }
 }
 
 /**
