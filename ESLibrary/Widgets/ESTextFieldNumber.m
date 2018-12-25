@@ -14,7 +14,7 @@
     self = [super initWithCoder:aDecoder];
     if(self){
         self.regularExpression = [DataTypeExpression numeric];
-        self.placeholder = @"请输入正确的数字";
+//        self.placeholder = @"请输入正确的数字";
         self.keyboardType = UIKeyboardTypeNumberPad;
     }
     return self;
@@ -24,7 +24,7 @@
     self = [super initWithFrame:frame];
     if(self){
         self.regularExpression = [DataTypeExpression numeric];
-        self.placeholder = @"请输入正确的数字";
+//        self.placeholder = @"请输入正确的数字";
         self.keyboardType = UIKeyboardTypeNumberPad;
     }
     return self;
