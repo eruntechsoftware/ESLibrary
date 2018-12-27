@@ -25,6 +25,7 @@
 @property (strong, nonatomic) UIButton *switchButton;
 @property (strong, nonatomic) UIButton *flashButton;
 @property (strong, nonatomic) UIButton *backButton;
+@property (nonatomic)UIDeviceOrientation deviceOrientation;
 
 @end
 
@@ -38,7 +39,7 @@
     self.snapButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.snapButton.clipsToBounds = YES;
     self.snapButton.layer.cornerRadius =75 / 2.0f;
-    [self.snapButton setImage:[UIImage imageNamed:@"PureCamera.bundle/cameraButton"] forState:UIControlStateNormal];
+    [self.snapButton setImage:[UIImage imageNamed:@"cameraButton"] forState:UIControlStateNormal];
     [self.snapButton addTarget:self action:@selector(snapButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.snapButton];
     //闪关灯按钮
@@ -46,7 +47,7 @@
     
     self.flashButton.tintColor = [UIColor whiteColor];
     //     UIImage *image = [UIImage imageNamed:@"PureCamera.bundle/camera-flash.png"];
-    [self.flashButton setImage:[UIImage imageNamed:@"PureCamera.bundle/camera-flash"] forState:UIControlStateNormal];
+    [self.flashButton setImage:[UIImage imageNamed:@"camera-flash"] forState:UIControlStateNormal];
     self.flashButton.imageEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
     [self.flashButton addTarget:self action:@selector(flashButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.flashButton];
@@ -55,17 +56,48 @@
         self.switchButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
         //        self.switchButton.tintColor = [UIColor whiteColor];
-        [self.switchButton setImage:[UIImage imageNamed:@"PureCamera.bundle/swapButton"] forState:UIControlStateNormal];
+        [self.switchButton setImage:[UIImage imageNamed:@"swapButton"] forState:UIControlStateNormal];
         [self.switchButton addTarget:self action:@selector(switchButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:self.switchButton];
         //返回按钮
         self.backButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        [self.backButton setImage:[UIImage imageNamed:@"PureCamera.bundle/closeButton"] forState:UIControlStateNormal];
+        [self.backButton setImage:[UIImage imageNamed:@"closeButton"] forState:UIControlStateNormal];
         [self.backButton addTarget:self action:@selector(backButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:self.backButton];
     }
     
+    //添加屏幕方向监听
+//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(orientationChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+- (void)orientationChange:(NSNotification *)notification
+{
+    
+    //NSDictionary* ntfDict = [notification userInfo];
+    _deviceOrientation = [UIDevice currentDevice].orientation;
+    switch (_deviceOrientation)
+    {
+        case UIDeviceOrientationPortrait:
+            
+        break;
+
+        case UIDeviceOrientationLandscapeLeft:
+        NSLog(@"屏幕 left --- home 键在右侧 --- ");
+        break;
+        case UIDeviceOrientationPortraitUpsideDown:
+
+        break;
+        case UIDeviceOrientationLandscapeRight:
+
+        NSLog(@"屏幕 right --- home 键在左侧 --- ");
+        break;
+        default:
+
+        break;
+
+    }
+
 }
 
 
@@ -99,7 +131,7 @@
     [self.camera setOnDeviceChange:^(LLSimpleCamera *camera, AVCaptureDevice * device) {
         
         NSLog(@"Device changed.");
-        
+
         // device changed, check if flash is available
         if([camera isFlashAvailable]) {
             weakSelf.flashButton.hidden = NO;

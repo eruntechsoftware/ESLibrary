@@ -75,5 +75,9 @@
 #import "UIView+LayerEffects.h"
 #import "UIView+UIViewBorderStyle.h"
 #import <ReactiveObjC/ReactiveObjC.h>
+#import "UIImage+Rotate.h"
+#import "UIImage+Color.h"
+#import "UIImage+Gif.h"
+#import "UIImage+SubImage.h"
 
 #endif /* ESLibrary_h */
