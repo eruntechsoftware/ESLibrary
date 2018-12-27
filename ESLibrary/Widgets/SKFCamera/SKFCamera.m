@@ -154,7 +154,9 @@
     [self.camera togglePosition];
 }
 -(void)backButtonPressed:(UIButton *)button{
-    [self.baseNavigationController popViewControllerAnimated:nil animated:YES];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 - (NSURL *)applicationDocumentsDirectory
 {

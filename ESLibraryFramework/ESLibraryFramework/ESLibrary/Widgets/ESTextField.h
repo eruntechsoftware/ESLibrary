@@ -68,12 +68,12 @@ IB_DESIGNABLE
 /**
  设置或获取正则表达式校验错误提示
  */
-//@property(copy, nonatomic)IBInspectable NSString *regularTooltip;
+//@property(copy, nonatomic)IBInspectable NSString *message;
 
 /**
  设置或获取正则表达式
  */
-@property(copy, nonatomic)IBInspectable NSString *regularExpression;
+@property(copy, nonatomic)IBInspectable NSString *expression;
 
 /**
  设置或获取绘图设备上下文

@@ -13,8 +13,8 @@
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if(self){
-        self.regularExpression = [DataTypeExpression mobile];
-        self.placeholder = @"请输入手机号";
+        self.expression = [DataTypeExpression mobile];
+//        self.placeholder = @"请输入手机号";
 //        self.placeholder = @"大陆地区手机号";
         self.keyboardType = UIKeyboardTypePhonePad;
     }
@@ -24,8 +24,8 @@
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if(self){
-        self.regularExpression = [DataTypeExpression mobile];
-        self.placeholder = @"请输入手机号";
+        self.expression = [DataTypeExpression mobile];
+//        self.placeholder = @"请输入手机号";
 //        self.placeholder = @"大陆地区手机号";
         self.keyboardType = UIKeyboardTypePhonePad;
     }

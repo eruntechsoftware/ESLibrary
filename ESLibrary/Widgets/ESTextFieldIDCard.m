@@ -13,7 +13,7 @@
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if(self){
-        self.regularExpression = [DataTypeExpression idCard];
+        self.expression = [DataTypeExpression idCard];
         self.placeholder = @"请输入身份证号码";
 //        self.placeholder = @"身份证";
     }
@@ -23,7 +23,7 @@
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if(self){
-        self.regularExpression = [DataTypeExpression idCard];
+        self.expression = [DataTypeExpression idCard];
         self.placeholder = @"请输入身份证号码";
 //        self.placeholder = @"身份证";
     }

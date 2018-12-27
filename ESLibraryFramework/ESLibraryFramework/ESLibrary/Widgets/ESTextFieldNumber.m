@@ -13,7 +13,7 @@
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if(self){
-        self.regularExpression = [DataTypeExpression numeric];
+        self.expression = [DataTypeExpression numeric];
 //        self.placeholder = @"请输入正确的数字";
         self.keyboardType = UIKeyboardTypeNumberPad;
     }
@@ -23,7 +23,7 @@
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if(self){
-        self.regularExpression = [DataTypeExpression numeric];
+        self.expression = [DataTypeExpression numeric];
 //        self.placeholder = @"请输入正确的数字";
         self.keyboardType = UIKeyboardTypeNumberPad;
     }

@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  设置或获取正则表达式
  */
-@property(copy, nonatomic)IBInspectable NSString *regularExpression;
+@property(copy, nonatomic)IBInspectable NSString *expression;
 
 
 /**

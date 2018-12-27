@@ -35,7 +35,7 @@
 {
     self.hidden=YES;
     _viewController = [self searchViewController];
-    _validator=[[Validator alloc] initWithExpression:_regularExpression];
+    _validator=[[Validator alloc] initWithExpression:_expression];
 }
 
 /**

@@ -32,7 +32,7 @@
 {
     _viewController = [self searchViewController];
     
-    _validator=[[Validator alloc] initWithExpression:_regularExpression];
+    _validator=[[Validator alloc] initWithExpression:_expression];
     
 //    _rootViewLayoutConstraintHeight=[NSLayoutConstraint constraintWithItem:_viewController.view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:0];
     
@@ -139,7 +139,7 @@
     if(_isRequired && [[self.text trim] isEqualToString:@""]){
         return NO;
     }
-    if(_regularExpression!=nil && ![_regularExpression isEmpty]){
+    if(_expression!=nil && ![_expression isEmpty]){
         //正则表达式验证
         BOOL result = [_validator validataWithValue:self.text];
         //        _btnErrorMessage.hidden = result;
