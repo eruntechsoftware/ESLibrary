@@ -81,6 +81,8 @@ static NSString *IMAGE_URL_HEAD = @"";
  */
 -(NSArray*) getRequest;
 
+-(void) setImageURL:(NSString*) url;
+
 /**
  将数据发布到指定位置
  @param dataName 数据名称

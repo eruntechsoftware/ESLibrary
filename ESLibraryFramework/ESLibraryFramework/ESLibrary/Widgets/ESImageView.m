@@ -34,19 +34,7 @@
  */
 -(UIImage*)imageWithCache
 {
-    if(_URL!=nil)
-    {
-        SDWebImageManager *manager = [SDWebImageManager sharedManager];
-        NSString* key = [manager cacheKeyForURL:[NSURL URLWithString:_URL]];
-        SDImageCache* cache = [SDImageCache sharedImageCache];
-        //此方法会先从memory中取。
-        return [cache imageFromDiskCacheForKey:key];
-    }
-//    else
-//    {
-//        return self.image;
-//    }
-    return nil;
+    return self.image;
 }
 
 
@@ -59,20 +47,36 @@
     @try
     {
         _URL = url;
-        NSURL *nsUrl = [NSURL URLWithString:url];
-        [SDWebImageDownloader.sharedDownloader setValue:@"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"forHTTPHeaderField:@"Accept"];
-        if(_placeholderImage != nil)
+        
+        
+        if(_validator==nil)
         {
-            [self sd_setImageWithURL:nsUrl placeholderImage:_placeholderImage];
+            _validator = [[Validator alloc] initWithExpression:[DataTypeExpression url]];
+        }
+        
+        if([_validator validataWithValue:url])
+        {
+            NSURL *nsUrl = [NSURL URLWithString:url];
+            [SDWebImageDownloader.sharedDownloader setValue:@"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"forHTTPHeaderField:@"Accept"];
+            if(_placeholderImage != nil)
+            {
+                [self sd_setImageWithURL:nsUrl placeholderImage:_placeholderImage];
+            }
+            else
+            {
+                [self sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL)
+                 {
+                     
+                 }];
+                
+            }
         }
         else
         {
-            [self sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL)
-            {
-                
-            }];
-
+            [self setImage:[UIImage imageNamed:url]];
+            
         }
+        
     }
     @catch (NSException *exception)
     {
@@ -84,7 +88,6 @@
     }
     
 }
-
 /**
  设置边框颜色
  */
