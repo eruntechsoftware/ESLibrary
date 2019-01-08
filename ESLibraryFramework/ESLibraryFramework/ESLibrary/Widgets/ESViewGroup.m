@@ -23,8 +23,11 @@
  **/
 -(void)initializ
 {
-    _viewController = [self searchViewController];
-    [self search:self];
+    dispatch_after(1.5, dispatch_get_main_queue(), ^(void){
+        self->_viewController = [self searchViewController];
+        [self search:self];
+    });
+    
 }
 
 /**
@@ -97,18 +100,18 @@
             {
                 if([[[checkbox.value trim] lowercaseString] isEqualToString:[[tag trim] lowercaseString]])
                 {
-                    [checkbox setChecked:YES];
+                    [checkbox setTagWithChecked:YES];
                 }
                 else
                 {
-                    [checkbox setChecked:NO];
+                    [checkbox setTagWithChecked:NO];
                 }
             }
             else
             {
                 if([[[checkbox.value trim] lowercaseString] isEqualToString:[[tag trim] lowercaseString]])
                 {
-                    [checkbox setChecked:!checkbox.checked];
+                    [checkbox setTagWithChecked:!checkbox.checked];
                 }
             }
         }

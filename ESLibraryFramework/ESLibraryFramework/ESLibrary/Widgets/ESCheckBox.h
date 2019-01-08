@@ -90,4 +90,6 @@ typedef void(^ESCheckBoxBlock)(BOOL isChecked);
 
 -(void)setViewGroup:(id)viewGroup;
 
+- (void)setTagWithChecked:(BOOL)checked;
+
 @end

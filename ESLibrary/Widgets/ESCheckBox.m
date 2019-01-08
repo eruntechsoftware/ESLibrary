@@ -2,8 +2,8 @@
 //  ESCheckBox.m
 //  IndicatorPan
 //
-//  Created by 吕英良 on 2017/5/25.
-//  Copyright © 2017年 吕英良. All rights reserved.
+//  Created by 杜明悦 on 2018/10/25.
+//  Copyright © 2018年 杜明悦. All rights reserved.
 //
 
 #import "ESCheckBox.h"
@@ -124,6 +124,15 @@
 }
 
 - (void)setChecked:(BOOL)checked
+{
+    if(_viewGroup!=nil && [_viewGroup isKindOfClass:[ESViewGroup class]])
+    {
+        ESViewGroup *viewGroup = (ESViewGroup*)_viewGroup;
+        [viewGroup selectTag:_value];
+    }
+}
+
+- (void)setTagWithChecked:(BOOL)checked
 {
     _checked=checked;
     if(_checked==YES)

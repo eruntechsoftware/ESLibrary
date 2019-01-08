@@ -25,7 +25,6 @@
 @property (strong, nonatomic) UIButton *switchButton;
 @property (strong, nonatomic) UIButton *flashButton;
 @property (strong, nonatomic) UIButton *backButton;
-@property (nonatomic)UIDeviceOrientation deviceOrientation;
 
 @end
 
@@ -67,37 +66,6 @@
         [self.view addSubview:self.backButton];
     }
     
-    //添加屏幕方向监听
-//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(orientationChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
-}
-
-- (void)orientationChange:(NSNotification *)notification
-{
-    
-    //NSDictionary* ntfDict = [notification userInfo];
-    _deviceOrientation = [UIDevice currentDevice].orientation;
-    switch (_deviceOrientation)
-    {
-        case UIDeviceOrientationPortrait:
-            
-        break;
-
-        case UIDeviceOrientationLandscapeLeft:
-        NSLog(@"屏幕 left --- home 键在右侧 --- ");
-        break;
-        case UIDeviceOrientationPortraitUpsideDown:
-
-        break;
-        case UIDeviceOrientationLandscapeRight:
-
-        NSLog(@"屏幕 right --- home 键在左侧 --- ");
-        break;
-        default:
-
-        break;
-
-    }
-
 }
 
 
@@ -131,7 +99,7 @@
     [self.camera setOnDeviceChange:^(LLSimpleCamera *camera, AVCaptureDevice * device) {
         
         NSLog(@"Device changed.");
-
+        
         // device changed, check if flash is available
         if([camera isFlashAvailable]) {
             weakSelf.flashButton.hidden = NO;
