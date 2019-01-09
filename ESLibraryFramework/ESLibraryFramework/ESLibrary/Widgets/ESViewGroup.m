@@ -23,11 +23,9 @@
  **/
 -(void)initializ
 {
-    dispatch_after(1.5, dispatch_get_main_queue(), ^(void){
-        self->_viewController = [self searchViewController];
-        [self search:self];
-    });
-    
+    [_checkViews removeAllObjects];
+    self->_viewController = [self searchViewController];
+    [self search:self];
 }
 
 /**
@@ -112,6 +110,7 @@
                 if([[[checkbox.value trim] lowercaseString] isEqualToString:[[tag trim] lowercaseString]])
                 {
                     [checkbox setTagWithChecked:!checkbox.checked];
+                    break;
                 }
             }
         }
