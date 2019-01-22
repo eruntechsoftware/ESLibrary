@@ -245,7 +245,7 @@
     _fouces=YES;
     ((BaseViewController*)_viewController).inputView = self;
     [self setNeedsDisplay];
-    return YES;
+    return !_readOnly;
 }
 
 // 失去焦点

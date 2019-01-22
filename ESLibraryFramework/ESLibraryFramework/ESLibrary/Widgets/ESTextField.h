@@ -49,9 +49,9 @@ IB_DESIGNABLE
 @property(nonatomic)IBInspectable BOOL isRequired;
 
 /**
- 设置或获取是否显示底边
+ 设置或获取是否只读
  */
-@property(nonatomic) BOOL borderBottom;
+@property (nonatomic)IBInspectable BOOL readOnly;
 
 /**
  设置或获取控件名
