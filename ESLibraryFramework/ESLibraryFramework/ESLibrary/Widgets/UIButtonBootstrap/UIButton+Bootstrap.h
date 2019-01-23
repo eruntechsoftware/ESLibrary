@@ -15,4 +15,6 @@
 -(void)defaultStyle;
 
 - (UIImage *) buttonImageFromColor:(UIColor *)color;
+
+- (UIImage *) buttonImageFromColor:(UIColor *)color radius:(CGFloat) radius;
 @end
