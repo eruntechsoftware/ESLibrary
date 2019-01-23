@@ -60,7 +60,7 @@
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
 
-    CGFloat radius = 30;
+    CGFloat radius = 4;
     CGFloat width = self.frame.size.width;
     CGFloat height = self.frame.size.height;
     // 移动到初始点
