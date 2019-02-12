@@ -448,6 +448,15 @@
     }
 }
 
+- (void)setLeftImage:(UIImage *)leftImage
+{
+    _leftImage = leftImage;
+    //如果设置右侧图形，则创建并显示为图形按钮
+    if(_leftImage!=nil){
+        [[self baseNavigationController] leftImageBarButtonItem:self leftImageButton:_leftImage];
+    }
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     

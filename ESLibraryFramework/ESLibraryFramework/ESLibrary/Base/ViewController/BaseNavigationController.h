@@ -108,6 +108,12 @@
 - (nullable UIBarButtonItem*) leftBarButtonItem:(nonnull UIViewController*)viewController text:(nonnull NSString*)text;
 
 /**
+ 创建左侧图形按钮,并添加到导航视图控制器
+ @param img 图片
+ */
+- (UIBarButtonItem*) leftImageBarButtonItem:(UIViewController*)viewController leftImageButton:(UIImage*)img;
+
+/**
  创建右侧按钮,并添加到导航视图控制器
  @param text 按钮文本
  */

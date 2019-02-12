@@ -83,6 +83,11 @@ IB_DESIGNABLE
 @property (nullable,strong,nonatomic) IBInspectable UIImage* rightImage;
 
 /**
+ 设置或获取导航栏视图控制器左侧按钮图形
+ */
+@property (nullable,strong,nonatomic) IBInspectable UIImage* leftImage;
+
+/**
  设置或获取导航栏视图控制器右侧按钮文本，多个按钮用|!分割
  */
 @property (nullable,strong,nonatomic) IBInspectable NSString* rightText;

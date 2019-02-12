@@ -225,6 +225,30 @@ static UIColor *NavigationBar_titleColor;
 }
 
 /**
+ 创建左侧图形按钮,并添加到导航视图控制器
+ @param img 图片
+ */
+- (UIBarButtonItem*) leftImageBarButtonItem:(UIViewController*)viewController leftImageButton:(UIImage*)img{
+    
+    UIBarButtonItem* barButton;
+    if(viewController.navigationItem!=nil){
+            //实例化按钮
+        UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, self.navigationBar.frame.size.height)];
+            //实例化图片视图
+        UIImageView* backImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, self.navigationBar.frame.size.height/2 - 10, 20, 20)];
+        backImage.image = img;
+        
+        [backButton addSubview:backImage];
+            //添加事件
+        [backButton addTarget:self action:@selector(onLeftClick)  forControlEvents:UIControlEventTouchUpInside];
+        barButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+        
+        viewController.navigationItem.leftBarButtonItem = barButton;
+    }
+    return barButton;
+}
+
+/**
  创建右侧按钮,并添加到导航视图控制器
  @param text 按钮文本
  */
@@ -248,9 +272,9 @@ static UIColor *NavigationBar_titleColor;
     UIBarButtonItem* barButton;
     if(viewController.navigationItem!=nil){
         //实例化按钮
-        UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 90, self.navigationBar.frame.size.height)];
+        UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, self.navigationBar.frame.size.height)];
         //实例化图片视图
-        UIImageView* backImage = [[UIImageView alloc] initWithFrame:CGRectMake(73, self.navigationBar.frame.size.height/2 - 10, 20, 20)];
+        UIImageView* backImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, self.navigationBar.frame.size.height/2 - 10, 20, 20)];
         backImage.image = img;
         
         [backButton addSubview:backImage];
