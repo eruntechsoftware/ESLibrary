@@ -12,7 +12,7 @@
 @interface DataCollection : NSObject<NSFastEnumeration>{
     
     //存储数据的容器
-    NSMutableArray* _array;
+    NSMutableDictionary* _array;
     //当前位置索引
     int currIndex;
     Data* __unsafe_unretained _Nullable numbers[80];

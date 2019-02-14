@@ -51,7 +51,7 @@
     for (NSTextCheckingResult *key in array) {
         targetRange = [sql substringWithRange:key.range];
         targetName = [targetRange substringWithRange:NSMakeRange(1, [targetRange length]-1)];
-        Data *data = [ESDataIndexOf dataAtName:targetName params:dataParams];
+        Data *data = [dataParams dataWithName:targetName];
         
         if(data!=nil && data.value!=nil){
             value = @"";
@@ -106,7 +106,7 @@
     for (NSTextCheckingResult *key in array) {
         targetRange = [sql substringWithRange:key.range];
         targetName = [targetRange substringWithRange:NSMakeRange(1, [targetRange length]-1)];
-        Data *data = [ESDataIndexOf dataAtName:targetName params:dataParams];
+        Data *data = [dataParams dataWithName:targetName];//[ESDataIndexOf dataAtName:targetName params:dataParams];
         
         if(data!=nil && data.value!=nil){
             value = @"";

@@ -26,7 +26,7 @@
  @return DataCollection
  */
 -(id)initWithCapacity:(NSInteger)numbers{
-    _array = [NSMutableArray arrayWithCapacity:numbers];
+    _array = [NSMutableDictionary dictionaryWithCapacity:numbers];
     return self;
 }
 
@@ -38,11 +38,12 @@
 -(Data*) dataWithName:(NSString*) name
 {
     if (_array != nil) {
-        for (Data* data in _array) {
-            if ([[[data name] uppercaseString] isEqualToString:[name uppercaseString]]) {
-                return data;
-            }
-        }
+        return (Data*)[_array objectForKey:name];
+//        for (Data* data in _array) {
+//            if ([[[data name] uppercaseString] isEqualToString:[name uppercaseString]]) {
+//                return data;
+//            }
+//        }
     }
     return nil;
 }
@@ -53,11 +54,11 @@
  */
 -(void)addObject:(Data*)anObject{
     if(_array!=nil){
-        if([self dataWithName: [anObject name]]!=nil)
+        if([_array objectForKey:[anObject name]]!=nil)
         {
-            [_array removeObject:[self dataWithName: [anObject name]]];
+            [_array removeObjectForKey:[anObject name]];
         }
-        [_array addObject:anObject];
+        [_array setObject:anObject forKey:[anObject name]];
         [self convert2Array];
     }
 }
@@ -72,9 +73,10 @@
     if(_array!=nil){
         if([self dataWithName: name]!=nil)
         {
-            [_array removeObject:[self dataWithName: name]];
+            [_array removeObjectForKey:name];
         }
-        [_array addObject:[Data dataWithName:name dataValue:value]];
+        Data *data = [Data dataWithName:name dataValue:value];
+        [_array setObject:data forKey:name];
         [self convert2Array];
     }
 }
@@ -89,11 +91,11 @@
     if(_array!=nil){
         if([self dataWithName: name]!=nil)
         {
-            [_array removeObject:[self dataWithName: name]];
+            [_array removeObjectForKey:name];
         }
         Data *data = [Data dataWithName:name dataValue:value];
         data.dataType=Integer;
-        [_array addObject:data];
+        [_array setObject:data forKey:[data name]];
         [self convert2Array];
     }
 }
@@ -110,9 +112,9 @@
             while(obj = [enumerator nextObject]){
                 if([self dataWithName: [obj name]]!=nil)
                 {
-                    [_array removeObject:[self dataWithName: [obj name]]];
+                    [_array removeObjectForKey:[obj name]];
                 }
-                [_array addObject:obj];
+                [_array setObject:obj forKey:[obj name]];
             }
         }
         [self convert2Array];
@@ -125,7 +127,7 @@
  */
 -(void)removeObject:(id)anObject{
     if(_array!=nil){
-        [_array removeObject:anObject];
+        [_array removeObjectForKey:[anObject name]];
     }
 }
 
@@ -138,17 +140,6 @@
     }
 }
 
-/**
- 获取指定索引位置的数据集
- @param index 索引位置
- @return Data
- */
--(nonnull Data*)objectAtIndex:(NSUInteger)index{
-    if(_array!=nil){
-        return[_array objectAtIndex:index];
-    }
-    return nil;
-}
 
 /**
  获取元素长度
@@ -166,7 +157,7 @@
  */
 -(void)convert2Array{
     int index=0;
-    for(Data* __unsafe_unretained data in _array){
+    for(Data* __unsafe_unretained data in _array.allValues){
         numbers[index]=data;
         index+=1;
     }

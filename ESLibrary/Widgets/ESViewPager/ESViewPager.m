@@ -84,7 +84,15 @@
  */
 -(void)addSubViewController{
     
-    if(_viewControllerArray.count>0){
+    if(_viewControllerArray!=nil && _viewControllerArray.count>0){
+        
+        if(self.subviews!=nil && self.subviews.count>0)
+        {
+            for(UIView *subView in self.subviews)
+            {
+                [subView removeFromSuperview];
+            }
+        }
         
         CGRect screen_bounds_size = self.bounds;
         self.count = _viewControllerArray.count;
