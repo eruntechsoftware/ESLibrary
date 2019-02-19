@@ -8,6 +8,21 @@
 
 #import "ESViewPager.h"
 
+@interface ESViewPager()
+@property(nonatomic,strong) NSMutableArray *titleArray;//标题数组
+@property(nonatomic,strong) NSMutableArray *titleLabelArray;//标题视图数组
+@property(nonatomic,strong)UIView *tabIndexerView;//标识线
+@property(nonatomic)CGFloat tabTitleWidth;//定义标题文本宽、高、标识线宽、高
+@property(nonatomic)CGFloat tabIndexerWidth;
+@property(nonatomic)CGFloat tabIndexerStartX;//FlagView起始位置
+@property(nonatomic)CGFloat titleViewHeight;//标题区域高度，含标识线
+@property(nonatomic)NSInteger oldIndex;//记录原索引
+@property(nonatomic)NSInteger scrollIndex;//记录SCrollView正在滚动时的索引
+@property(nonatomic)CGFloat screenWidth;//屏幕宽度
+@property(nonatomic)CGFloat screenHeight;//屏幕高度
+@property(nonatomic)BOOL isLayoutSubViews;
+@end
+
 @implementation ESViewPager
 @synthesize viewPagerDelegate=_viewPagerDelegate;
 @synthesize viewControllerArray=_viewControllerArray;
@@ -54,18 +69,6 @@
     return self;
 }
 
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-//    self.frame=CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height);
-    //实例化滚动视图
-    _scrollView.frame =CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height);
-    if(_isLayoutSubViews==NO)
-    {
-        [self addSubViewController];
-    }
-}
-
 /**
  初始化ESViewPager布局
  @param viewControllerArray 视图容器
@@ -73,17 +76,44 @@
  @param titleArray 标题数组
  */
 -(void)initWithViewController:(NSMutableArray*) viewControllerArray rootViewController:(BaseViewController*) rootViewController titles:(NSMutableArray*)titleArray{
-    _viewControllerArray = viewControllerArray;
+    [self removeAllSubViews];
+    self.viewControllerArray = viewControllerArray;
     self.rootViewController=rootViewController;
-    _titleArray = titleArray;
-//    [self addSubViewController];
+    self.titleArray = titleArray;
+    [self setNeedsLayout];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+//    self.frame=CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height);
+    //实例化滚动视图
+    _scrollView.frame =CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height);
+    [self addSubViewController];
+}
+
+-(void)removeAllSubViews
+{
+    @try
+    {
+        if(self.subviews!=nil && self.subviews.count>0)
+        {
+            for(UIView *subView in self.subviews)
+            {
+                [subView removeFromSuperview];
+            }
+        }
+    } @catch (NSException *exception) {
+        
+    } @finally {
+        
+    }
 }
 
 /**
  根据视图容器布置当前滚动视图布局,并显示
  */
 -(void)addSubViewController{
-    
     if(_viewControllerArray!=nil && _viewControllerArray.count>0){
         
         if(self.subviews!=nil && self.subviews.count>0)
