@@ -112,8 +112,9 @@ IB_DESIGNABLE
 
 /**
  设置或获取当前占位提示颜色
- @property(retain,nonatomic)IBInspectable UIColor *placeholderColor;
  */
+@property(retain,nonatomic)IBInspectable UIColor *placeholderColor;
+ 
 
 /**
  非空校验提示

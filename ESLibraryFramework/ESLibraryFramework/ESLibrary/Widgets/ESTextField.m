@@ -189,6 +189,17 @@
 //    }
 }
 
+    // 重写此方法
+-(void)drawPlaceholderInRect:(CGRect)rect {
+        // 计算占位文字的 Size
+    CGSize placeholderSize = [self.placeholder sizeWithAttributes:
+                              @{NSFontAttributeName : self.font}];
+    
+    [self.placeholder drawInRect:CGRectMake(0, (rect.size.height - placeholderSize.height)/2, rect.size.width, rect.size.height) withAttributes:
+     @{NSForegroundColorAttributeName : _placeholderColor,
+       NSFontAttributeName : self.font}];
+}
+
 - (void)setIsRequired:(BOOL)isRequired
 {
     _isRequired=isRequired;
